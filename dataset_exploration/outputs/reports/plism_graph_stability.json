@@ -1,0 +1,60 @@
+{
+  "dataset": "PLISM",
+  "stainer": "GIVH",
+  "scanners": [
+    "AT2",
+    "GT450"
+  ],
+  "feature_model": "facebook/dinov2-small",
+  "matched_nodes": 90,
+  "feature_k": 5,
+  "hybrid_k": 4,
+  "spatial_neighborhood": "8-neighbor grid",
+  "results": [
+    {
+      "graph_type": "Spatial-only",
+      "nodes": 90,
+      "at2_edges": 306,
+      "gt450_edges": 306,
+      "shared_edges": 306,
+      "at2_unique_edges": 0,
+      "gt450_unique_edges": 0,
+      "edge_jaccard": 1.0,
+      "mean_neighbor_jaccard": 1.0,
+      "at2_avg_degree": 6.8,
+      "gt450_avg_degree": 6.8,
+      "at2_components": 1,
+      "gt450_components": 1
+    },
+    {
+      "graph_type": "Feature-kNN",
+      "nodes": 90,
+      "at2_edges": 328,
+      "gt450_edges": 340,
+      "shared_edges": 176,
+      "at2_unique_edges": 152,
+      "gt450_unique_edges": 164,
+      "edge_jaccard": 0.35772357723577236,
+      "mean_neighbor_jaccard": 0.3796071261940939,
+      "at2_avg_degree": 7.288888888888889,
+      "gt450_avg_degree": 7.555555555555555,
+      "at2_components": 1,
+      "gt450_components": 1
+    },
+    {
+      "graph_type": "Hybrid",
+      "nodes": 90,
+      "at2_edges": 231,
+      "gt450_edges": 238,
+      "shared_edges": 208,
+      "at2_unique_edges": 23,
+      "gt450_unique_edges": 30,
+      "edge_jaccard": 0.7969348659003831,
+      "mean_neighbor_jaccard": 0.8153571428571428,
+      "at2_avg_degree": 5.133333333333334,
+      "gt450_avg_degree": 5.288888888888889,
+      "at2_components": 1,
+      "gt450_components": 1
+    }
+  ]
+}

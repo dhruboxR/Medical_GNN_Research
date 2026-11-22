@@ -1,0 +1,11 @@
+PLISM Spatial Region Download Report
+==================================================
+
+Target locations: 90
+Complete pairs: 90
+Valid image files: 180
+AT2 reused: 18
+AT2 newly downloaded: 72
+GT450 reused: 18
+GT450 newly downloaded: 72
+Execution time: 77.81 seconds

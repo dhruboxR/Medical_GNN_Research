@@ -1,0 +1,18 @@
+PLISM Metadata Analysis
+=============================================
+
+Dataset: owkin/plism-dataset-tiles
+Records collected: 100
+Unique scanners: 1
+Unique stainers: 1
+Unique slide groups: 1
+Repeated tile IDs: 0
+Execution time: 31.42 seconds
+
+Scanner distribution:
+scanner
+AT2    100
+
+Slide distribution:
+slide_id
+GIVH_AT2_to_GMH_S60    100

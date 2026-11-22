@@ -1,0 +1,16 @@
+PLISM Shard Inspection
+========================================
+
+Sampled shards: [0, 75, 150, 225, 292]
+Records retrieved: 50
+Scanners found: ['AT2', 'P', 'S360', 'SQ']
+Stainers found: ['GIVH', 'GM', 'HRH', 'KR', 'MY']
+Execution time: 128.17s
+
+Slide groups:
+shard_index  slide_id             scanner  stainer
+0            GIVH_AT2_to_GMH_S60  AT2      GIVH       10
+75           GM_P_to_GMH_S60      P        GM         10
+150          HRH_S360_to_GMH_S60  S360     HRH        10
+225          KR_SQ_to_GMH_S60     SQ       KR         10
+292          MY_SQ_to_GMH_S60     SQ       MY         10

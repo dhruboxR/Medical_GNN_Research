@@ -1,0 +1,18 @@
+PLISM Dataset Initial Inspection
+========================================
+Dataset: owkin/plism-dataset-tiles
+Sample records: 30
+Metadata columns: ['__key__', 'stainer', 'scanner', 'slide_id', 'tile_id']
+
+scanner distribution:
+scanner
+AT2    30
+
+stainer distribution:
+stainer
+GIVH    30
+
+slide_id distribution:
+slide_id
+GIVH_AT2_to_GMH_S60    30
+

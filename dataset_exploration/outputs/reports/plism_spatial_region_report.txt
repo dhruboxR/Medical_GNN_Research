@@ -1,0 +1,38 @@
+PLISM Spatial Region Report
+==================================================
+
+Stainer: GIVH
+Scanners: AT2, GT450
+Grid size: 10 x 10
+Candidate locations: 100
+AT2 locations: 90
+GT450 locations: 90
+Matched locations: 90
+Complete grid: False
+Execution time: 407.45s
+
+Missing AT2 IDs:
+tile_16_100_126
+tile_16_106_135
+tile_16_107_134
+tile_16_107_135
+tile_16_108_133
+tile_16_108_134
+tile_16_108_135
+tile_16_109_133
+tile_16_109_134
+tile_16_109_135
+
+Missing GT450 IDs:
+tile_16_100_126
+tile_16_106_135
+tile_16_107_134
+tile_16_107_135
+tile_16_108_133
+tile_16_108_134
+tile_16_108_135
+tile_16_109_133
+tile_16_109_134
+tile_16_109_135
+
+NOTE: Tile ID coordinates are treated as provisional grid coordinates pending validation.

@@ -1,0 +1,19 @@
+PLISM Spatial Mosaic Validation
+=============================================
+
+Matched pairs: 90
+Grid rows: 10
+Grid columns: 10
+Grid coverage: 0.9
+Mean pixel MAE: 47.67793871561686
+AT2 mean brightness: 179.84873335096572
+GT450 mean brightness: 216.6710900200738
+AT2 mean tissue fraction: 0.8768271240787984
+GT450 mean tissue fraction: 0.6614299886621315
+
+Notes:
+- Tile coordinates are inferred from tile IDs.
+- Gray positions indicate missing tiles.
+- Tissue fraction uses a simple brightness threshold.
+- Pixel MAE is not a registration metric.
+- Graph stability has not yet been evaluated.

@@ -1,0 +1,4 @@
+graph_type,nodes,at2_edges,gt450_edges,shared_edges,at2_unique_edges,gt450_unique_edges,edge_jaccard,mean_neighbor_jaccard,at2_avg_degree,gt450_avg_degree,at2_components,gt450_components
+Spatial-only,90,306,306,306,0,0,1.0,1.0,6.8,6.8,1,1
+Feature-kNN,90,328,340,176,152,164,0.35772357723577236,0.3796071261940939,7.288888888888889,7.555555555555555,1,1
+Hybrid,90,231,238,208,23,30,0.7969348659003831,0.8153571428571428,5.133333333333334,5.288888888888889,1,1
