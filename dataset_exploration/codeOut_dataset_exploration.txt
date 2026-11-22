@@ -1,0 +1,858 @@
+source "$HOME/Unofficial Thesis/.venv-transformers/bin/activate"
+
+---------------------------------------------------------------------------------------
+    RUN - python dataset_exploration/scripts/01_inspect_plism.py
+---------------------------------------------------------------------------------------
+
+============================================================
+PLISM DATASET INSPECTION
+============================================================
+
+[1] Connecting to Hugging Face...
+README.md: 100%|███████████████████████████████████████████████████████████████████████████████████████| 6.61k/6.61k [00:00<00:00, 17.6MB/s]
+Resolving data files: 100%|████████████████████████████████████████████████████████████████████████████| 293/293 [00:00<00:00, 27823.38it/s]
+Resolving data files: 100%|████████████████████████████████████████████████████████████████████████████| 293/293 [00:00<00:00, 28520.76it/s]
+Streaming connection initialized.
+
+[2] Dataset features:
+  __key__: Value('string')
+  stainer: Value('string')
+  scanner: Value('string')
+  slide_id: Value('string')
+  tile_id: Value('string')
+  png: Image(mode=None, decode=True)
+
+[3] Reading 30 metadata records...
+
+First five records:
+                              __key__ stainer scanner            slide_id         tile_id
+./GIVH_AT2_to_GMH_S60/tile_16_100_127    GIVH     AT2 GIVH_AT2_to_GMH_S60 tile_16_100_127
+./GIVH_AT2_to_GMH_S60/tile_16_100_128    GIVH     AT2 GIVH_AT2_to_GMH_S60 tile_16_100_128
+./GIVH_AT2_to_GMH_S60/tile_16_100_129    GIVH     AT2 GIVH_AT2_to_GMH_S60 tile_16_100_129
+./GIVH_AT2_to_GMH_S60/tile_16_100_130    GIVH     AT2 GIVH_AT2_to_GMH_S60 tile_16_100_130
+./GIVH_AT2_to_GMH_S60/tile_16_100_131    GIVH     AT2 GIVH_AT2_to_GMH_S60 tile_16_100_131
+
+[4] Scanner distribution in sample:
+scanner
+AT2    30
+Name: count, dtype: int64
+
+Stainer distribution in sample:
+stainer
+GIVH    30
+Name: count, dtype: int64
+
+Unique slide IDs in sample:
+1
+
+[5] Inspecting tile identifiers...
+tile_16_100_127
+tile_16_100_128
+tile_16_100_129
+tile_16_100_130
+tile_16_100_131
+tile_16_100_132
+tile_16_100_133
+tile_16_100_134
+tile_16_100_135
+tile_16_100_136
+
+Repeated tile IDs in sample: 0
+Note: Repeated IDs do not automatically prove
+that tiles are aligned across scanners.
+
+[6] Files saved:
+dataset_exploration/outputs/tables/plism_sample_metadata.csv
+dataset_exploration/outputs/reports/plism_inspection.txt
+
+PLISM inspection completed successfully.
+
+---------------------------------------------------------------------------------------
+    RUN - python dataset_exploration/scripts/02_analyze_plism_metadata.py
+---------------------------------------------------------------------------------------
+
+PLISM METADATA ANALYSIS
+=================================================================
+
+[1] Connecting to Hugging Face...
+Resolving data files: 100%|████████████████████████████████████████| 293/293 [00:00<00:00, 25719.00it/s]
+Resolving data files: 100%|████████████████████████████████████████| 293/293 [00:00<00:00, 27414.36it/s]
+Streaming connection initialized.
+
+[2] Selecting metadata columns...
+Selected columns: ['__key__', 'stainer', 'scanner', 'slide_id', 'tile_id']
+
+[3] Reading up to 100 records...
+Processed 10/100 records | Elapsed: 31.4s
+Processed 20/100 records | Elapsed: 31.4s
+Processed 30/100 records | Elapsed: 31.4s
+Processed 40/100 records | Elapsed: 31.4s
+Processed 50/100 records | Elapsed: 31.4s
+Processed 60/100 records | Elapsed: 31.4s
+Processed 70/100 records | Elapsed: 31.4s
+Processed 80/100 records | Elapsed: 31.4s
+Processed 90/100 records | Elapsed: 31.4s
+Processed 100/100 records | Elapsed: 31.4s
+
+Total records collected: 100
+
+[4] Scanner distribution:
+scanner
+AT2    100
+
+[5] Stainer distribution:
+stainer
+GIVH    100
+
+[6] Slide groups:
+slide_id
+GIVH_AT2_to_GMH_S60    100
+
+[7] Parsing tile identifiers...
+
+Parsed tile examples:
+        tile_id  tile_part_1  tile_part_2  tile_part_3
+tile_16_100_127           16          100          127
+tile_16_100_128           16          100          128
+tile_16_100_129           16          100          129
+tile_16_100_130           16          100          130
+tile_16_100_131           16          100          131
+tile_16_100_132           16          100          132
+tile_16_100_133           16          100          133
+tile_16_100_134           16          100          134
+tile_16_100_135           16          100          135
+tile_16_100_136           16          100          136
+
+[8] Checking repeated tile IDs...
+Repeated tile IDs: 0
+Note: Repeated IDs alone do not confirm cross-scanner alignment.
+
+[9] Scanner and slide combinations:
+scanner            slide_id  count
+    AT2 GIVH_AT2_to_GMH_S60    100
+
+[10] Saving reports...
+
+Saved files:
+dataset_exploration/outputs/tables/plism_metadata_100.csv
+dataset_exploration/outputs/reports/plism_metadata_analysis.txt
+
+=================================================================
+PLISM METADATA ANALYSIS COMPLETED
+Total execution time: 31.42 seconds
+=================================================================
+
+---------------------------------------------------------------------------------------
+    RUN - python dataset_exploration/scripts/03_inspect_plism_files.py
+---------------------------------------------------------------------------------------
+
+============================================================
+PLISM REMOTE FILE INVENTORY
+============================================================
+
+[1] Retrieving file list...
+Total repository files: 295
+
+[2] File extension distribution:
+.parquet: 293
+(no extension): 1
+.md: 1
+
+[3] First 20 data files:
+data/train-00000-of-00293.parquet
+data/train-00001-of-00293.parquet
+data/train-00002-of-00293.parquet
+data/train-00003-of-00293.parquet
+data/train-00004-of-00293.parquet
+data/train-00005-of-00293.parquet
+data/train-00006-of-00293.parquet
+data/train-00007-of-00293.parquet
+data/train-00008-of-00293.parquet
+data/train-00009-of-00293.parquet
+data/train-00010-of-00293.parquet
+data/train-00011-of-00293.parquet
+data/train-00012-of-00293.parquet
+data/train-00013-of-00293.parquet
+data/train-00014-of-00293.parquet
+data/train-00015-of-00293.parquet
+data/train-00016-of-00293.parquet
+data/train-00017-of-00293.parquet
+data/train-00018-of-00293.parquet
+data/train-00019-of-00293.parquet
+
+Total data files: 293
+
+[4] Saving inventory...
+Saved: dataset_exploration/outputs/tables/plism_remote_file_inventory.csv
+
+Inventory completed.
+
+---------------------------------------------------------------------------------------
+    RUN - python dataset_exploration/scripts/04_inspect_plism_shards.py
+---------------------------------------------------------------------------------------
+
+=================================================================
+PLISM SHARD METADATA INSPECTION
+=================================================================
+
+Inspecting shard 0...
+  Records: 10 | Time: 22.89s
+
+Inspecting shard 75...
+  Records: 10 | Time: 25.98s
+
+Inspecting shard 150...
+  Records: 10 | Time: 21.24s
+
+Inspecting shard 225...
+  Records: 10 | Time: 23.29s
+
+Inspecting shard 292...
+  Records: 10 | Time: 34.71s
+
+=================================================================
+RESULTS
+=================================================================
+
+[1] Sampled scanner groups:
+ shard_index scanner stainer  records
+           0     AT2    GIVH       10
+          75       P      GM       10
+         150    S360     HRH       10
+         225      SQ      KR       10
+         292      SQ      MY       10
+
+[2] Slide groups:
+ shard_index            slide_id scanner stainer  records
+           0 GIVH_AT2_to_GMH_S60     AT2    GIVH       10
+          75     GM_P_to_GMH_S60       P      GM       10
+         150 HRH_S360_to_GMH_S60    S360     HRH       10
+         225    KR_SQ_to_GMH_S60      SQ      KR       10
+         292    MY_SQ_to_GMH_S60      SQ      MY       10
+
+[3] Unique scanners:
+['AT2', 'P', 'S360', 'SQ']
+
+[4] Unique stainers:
+['GIVH', 'GM', 'HRH', 'KR', 'MY']
+
+[5] Example tile identifiers:
+ shard_index            slide_id         tile_id
+           0 GIVH_AT2_to_GMH_S60 tile_16_100_127
+           0 GIVH_AT2_to_GMH_S60 tile_16_100_128
+           0 GIVH_AT2_to_GMH_S60 tile_16_100_129
+           0 GIVH_AT2_to_GMH_S60 tile_16_100_130
+           0 GIVH_AT2_to_GMH_S60 tile_16_100_131
+           0 GIVH_AT2_to_GMH_S60 tile_16_100_132
+           0 GIVH_AT2_to_GMH_S60 tile_16_100_133
+           0 GIVH_AT2_to_GMH_S60 tile_16_100_134
+           0 GIVH_AT2_to_GMH_S60 tile_16_100_135
+           0 GIVH_AT2_to_GMH_S60 tile_16_100_136
+          75     GM_P_to_GMH_S60   tile_16_17_46
+          75     GM_P_to_GMH_S60   tile_16_17_47
+          75     GM_P_to_GMH_S60   tile_16_17_48
+          75     GM_P_to_GMH_S60   tile_16_17_49
+          75     GM_P_to_GMH_S60   tile_16_17_50
+
+[6] Saved reports:
+dataset_exploration/outputs/tables/plism_shard_samples.csv
+dataset_exploration/outputs/reports/plism_shard_inspection.txt
+
+Execution time: 128.17s
+Inspection completed.
+
+---------------------------------------------------------------------------------------
+    RUN - python dataset_exploration/scripts/05_find_scanner_pairs.py
+---------------------------------------------------------------------------------------
+
+=================================================================
+PLISM SAME-STAINER SCANNER PAIR DISCOVERY
+=================================================================
+
+Checking shard 0...
+  Metadata retrieved.
+
+Checking shard 4...
+  Metadata retrieved.
+
+Checking shard 8...
+  Metadata retrieved.
+
+Checking shard 12...
+  Metadata retrieved.
+
+Checking shard 16...
+  Metadata retrieved.
+
+Checking shard 20...
+  Metadata retrieved.
+
+Checking shard 24...
+  Metadata retrieved.
+
+[1] Discovered scanner/stainer groups:
+stainer scanner              slide_id  sampled_rows  example_shard
+    GIV     AT2    GIV_AT2_to_GMH_S60             2             24
+   GIVH     AT2   GIVH_AT2_to_GMH_S60             2              0
+   GIVH   GT450 GIVH_GT450_to_GMH_S60             2              4
+   GIVH       P     GIVH_P_to_GMH_S60             2              8
+   GIVH    S210  GIVH_S210_to_GMH_S60             2             12
+   GIVH    S360  GIVH_S360_to_GMH_S60             2             16
+   GIVH      SQ    GIVH_SQ_to_GMH_S60             2             20
+
+[2] Looking for same-stainer scanner pairs...
+Stainer: GIVH | Scanners: ['AT2', 'GT450', 'P', 'S210', 'S360', 'SQ']
+
+[3] Saving results...
+
+Saved: dataset_exploration/outputs/tables/plism_scanner_pair_candidates.csv
+Saved: dataset_exploration/outputs/reports/plism_scanner_pair_report.txt
+
+Execution time: 299.36s
+Discovery completed.
+
+---------------------------------------------------------------------------------------
+    RUN - python dataset_exploration/scripts/06_verify_scanner_tile_ids.py
+---------------------------------------------------------------------------------------
+
+============================================================
+PLISM CROSS-SCANNER TILE ID VERIFICATION
+============================================================
+
+Checking shard 0 (AT2)...
+Collected 100 matching records.
+
+Checking shard 4 (GT450)...
+Collected 100 matching records.
+
+[1] Sampled scanner groups:
+scanner  slide_id             
+AT2      GIVH_AT2_to_GMH_S60      100
+GT450    GIVH_GT450_to_GMH_S60    100
+
+[2] Tile identifier comparison:
+AT2 unique IDs: 100
+GT450 unique IDs: 100
+Shared tile IDs: 0
+
+[3] Sample identifiers:
+
+AT2:
+tile_16_100_127
+tile_16_100_128
+tile_16_100_129
+tile_16_100_130
+tile_16_100_131
+
+GT450:
+tile_16_168_173
+tile_16_168_174
+tile_16_168_175
+tile_16_168_176
+tile_16_168_177
+
+[4] Shared IDs:
+None in sampled rows
+
+Important:
+No shared IDs in these samples does not mean the full scanner groups lack matches.
+
+Execution time: 33.06s
+Verification completed.
+
+---------------------------------------------------------------------------------------
+    RUN - python dataset_exploration/scripts/07_locate_matching_tiles.py
+---------------------------------------------------------------------------------------
+
+=================================================================
+PLISM MATCHED TILE DISCOVERY
+=================================================================
+
+[1] AT2 target tile IDs: 100
+
+[2] Inspecting shard 3...
+Scanned 1000 rows | GT450 rows: 0 | Matches: 0
+
+[3] Results
+GT450 records examined: 100
+First GT450 tile ID: tile_16_100_127
+Matching tile IDs: 100
+
+Example matches:
+        tile_id stainer scanner_a scanner_b          slide_id_a            slide_id_b  source_shard_a  source_shard_b
+tile_16_100_127    GIVH       AT2     GT450 GIVH_AT2_to_GMH_S60 GIVH_GT450_to_GMH_S60               0               3
+tile_16_100_128    GIVH       AT2     GT450 GIVH_AT2_to_GMH_S60 GIVH_GT450_to_GMH_S60               0               3
+tile_16_100_129    GIVH       AT2     GT450 GIVH_AT2_to_GMH_S60 GIVH_GT450_to_GMH_S60               0               3
+tile_16_100_130    GIVH       AT2     GT450 GIVH_AT2_to_GMH_S60 GIVH_GT450_to_GMH_S60               0               3
+tile_16_100_131    GIVH       AT2     GT450 GIVH_AT2_to_GMH_S60 GIVH_GT450_to_GMH_S60               0               3
+tile_16_100_132    GIVH       AT2     GT450 GIVH_AT2_to_GMH_S60 GIVH_GT450_to_GMH_S60               0               3
+tile_16_100_133    GIVH       AT2     GT450 GIVH_AT2_to_GMH_S60 GIVH_GT450_to_GMH_S60               0               3
+tile_16_100_134    GIVH       AT2     GT450 GIVH_AT2_to_GMH_S60 GIVH_GT450_to_GMH_S60               0               3
+tile_16_100_135    GIVH       AT2     GT450 GIVH_AT2_to_GMH_S60 GIVH_GT450_to_GMH_S60               0               3
+tile_16_100_136    GIVH       AT2     GT450 GIVH_AT2_to_GMH_S60 GIVH_GT450_to_GMH_S60               0               3
+
+Saved: dataset_exploration/outputs/tables/plism_matched_tile_candidates.csv
+Execution time: 73.18s
+Matched tile discovery completed.
+
+---------------------------------------------------------------------------------------
+    RUN - python dataset_exploration/scripts/08_download_matched_tiles.py
+---------------------------------------------------------------------------------------
+
+=================================================================
+PLISM MATCHED IMAGE DOWNLOADER
+=================================================================
+
+[1] Requested matching locations: 20
+
+[2] Processing scanner: AT2
+Saved AT2/tile_16_100_127.png (224x224)
+Saved AT2/tile_16_100_128.png (224x224)
+Saved AT2/tile_16_100_129.png (224x224)
+Saved AT2/tile_16_100_130.png (224x224)
+Saved AT2/tile_16_100_131.png (224x224)
+Saved AT2/tile_16_100_132.png (224x224)
+Saved AT2/tile_16_100_133.png (224x224)
+Saved AT2/tile_16_100_134.png (224x224)
+Saved AT2/tile_16_100_135.png (224x224)
+Saved AT2/tile_16_100_136.png (224x224)
+Saved AT2/tile_16_100_137.png (224x224)
+Saved AT2/tile_16_101_126.png (224x224)
+Saved AT2/tile_16_101_127.png (224x224)
+Saved AT2/tile_16_101_128.png (224x224)
+Saved AT2/tile_16_101_129.png (224x224)
+Saved AT2/tile_16_101_130.png (224x224)
+Saved AT2/tile_16_101_131.png (224x224)
+Saved AT2/tile_16_101_132.png (224x224)
+Saved AT2/tile_16_101_133.png (224x224)
+Saved AT2/tile_16_101_134.png (224x224)
+
+AT2: 20/20 saved
+
+[2] Processing scanner: GT450
+Saved GT450/tile_16_100_127.png (224x224)
+Saved GT450/tile_16_100_128.png (224x224)
+Saved GT450/tile_16_100_129.png (224x224)
+Saved GT450/tile_16_100_130.png (224x224)
+Saved GT450/tile_16_100_131.png (224x224)
+Saved GT450/tile_16_100_132.png (224x224)
+Saved GT450/tile_16_100_133.png (224x224)
+Saved GT450/tile_16_100_134.png (224x224)
+Saved GT450/tile_16_100_135.png (224x224)
+Saved GT450/tile_16_100_136.png (224x224)
+Saved GT450/tile_16_100_137.png (224x224)
+Saved GT450/tile_16_101_126.png (224x224)
+Saved GT450/tile_16_101_127.png (224x224)
+Saved GT450/tile_16_101_128.png (224x224)
+Saved GT450/tile_16_101_129.png (224x224)
+Saved GT450/tile_16_101_130.png (224x224)
+Saved GT450/tile_16_101_131.png (224x224)
+Saved GT450/tile_16_101_132.png (224x224)
+Saved GT450/tile_16_101_133.png (224x224)
+Saved GT450/tile_16_101_134.png (224x224)
+
+GT450: 20/20 saved
+
+[3] Checking downloaded pairs...
+Complete matched pairs: 20
+Total image files: 40
+
+Manifest: dataset_exploration/outputs/tables/plism_download_manifest.csv
+Images: datasets/PLISM/GIVH_AT2_GT450
+
+=================================================================
+DOWNLOAD COMPLETED
+Execution time: 122.34 seconds
+=================================================================
+
+---------------------------------------------------------------------------------------
+    RUN - python dataset_exploration/scripts/09_visualize_scanner_pairs.py
+---------------------------------------------------------------------------------------
+
+=================================================================
+PLISM CROSS-SCANNER IMAGE VISUALIZATION
+=================================================================
+
+Complete pairs available: 20
+Pairs selected for visualization: 12
+Compared 1/12: tile_16_100_127
+Compared 2/12: tile_16_100_128
+Compared 3/12: tile_16_100_129
+Compared 4/12: tile_16_100_130
+Compared 5/12: tile_16_100_131
+Compared 6/12: tile_16_100_132
+Compared 7/12: tile_16_100_133
+Compared 8/12: tile_16_100_134
+Compared 9/12: tile_16_100_135
+Compared 10/12: tile_16_100_136
+Compared 11/12: tile_16_100_137
+Compared 12/12: tile_16_101_126
+
+=================================================================
+VISUALIZATION COMPLETED
+=================================================================
+Comparison image: dataset_exploration/outputs/figures/plism_at2_gt450_comparison.png
+Metrics CSV: dataset_exploration/outputs/tables/plism_pair_visual_metrics.csv
+Mean absolute pixel difference: 45.649
+
+Note:
+Pixel differences reflect scanner appearance,
+color variation, and possible spatial offsets.
+They are not evidence of graph topology drift.
+
+---------------------------------------------------------------------------------------
+    RUN - python dataset_exploration/scripts/10_identify_spatial_tile_region.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PLISM SPATIAL TILE REGION IDENTIFICATION
+======================================================================
+
+[1] Generating candidate 2D grid...
+Grid dimensions: 10 x 10
+Candidate locations: 100
+Rows: 100 to 109
+Columns: 126 to 135
+
+[2] Searching scanner metadata...
+
+Scanner: AT2
+  Opening shard 0...
+  Scanned: 1000 | Found: 90/100
+  Scanned: 2000 | Found: 90/100
+  Scanned: 3000 | Found: 90/100
+  Scanned: 4000 | Found: 90/100
+  Scanned: 5000 | Found: 90/100
+  Finished shard 0. Scanned 5056 records. Found 90 tiles.
+
+AT2: 90/100 candidate tiles found.
+
+Scanner: GT450
+  Opening shard 3...
+  Scanned: 2000 | Found: 90/100
+  Scanned: 3000 | Found: 90/100
+  Scanned: 4000 | Found: 90/100
+  Scanned: 5000 | Found: 90/100
+  Finished shard 3. Scanned 5056 records. Found 90 tiles.
+
+GT450: 90/100 candidate tiles found.
+
+[3] Identifying shared tile IDs...
+AT2 tiles: 90
+GT450 tiles: 90
+Complete matched locations: 90
+Missing from AT2: 10
+Missing from GT450: 10
+
+[4] Building download manifest...
+
+[5] Spatial availability map:
+
+Legend:
+  X = Tile available in both scanners
+  A = Only AT2 available
+  G = Only GT450 available
+  . = Missing in both
+Row\Col 126 127 128 129 130 131 132 133 134 135
+    100   .   X   X   X   X   X   X   X   X   X
+    101   X   X   X   X   X   X   X   X   X   X
+    102   X   X   X   X   X   X   X   X   X   X
+    103   X   X   X   X   X   X   X   X   X   X
+    104   X   X   X   X   X   X   X   X   X   X
+    105   X   X   X   X   X   X   X   X   X   X
+    106   X   X   X   X   X   X   X   X   X   .
+    107   X   X   X   X   X   X   X   X   .   .
+    108   X   X   X   X   X   X   X   .   .   .
+    109   X   X   X   X   X   X   X   .   .   .
+
+[6] Checking grid completeness...
+INCOMPLETE: Not all candidate tiles were found.
+Shared locations: 90/100
+The manifest contains only verified matching tile IDs.
+
+[7] Saved output files:
+dataset_exploration/outputs/tables/plism_spatial_region_manifest.csv
+dataset_exploration/outputs/tables/plism_spatial_region_metadata.csv
+dataset_exploration/outputs/reports/plism_spatial_region_report.txt
+
+======================================================================
+SPATIAL REGION IDENTIFICATION COMPLETED
+Matching locations: 90
+Complete grid: False
+Execution time: 407.45 seconds
+======================================================================
+
+---------------------------------------------------------------------------------------
+    RUN - python dataset_exploration/scripts/11_download_spatial_region.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PLISM SPATIAL REGION IMAGE DOWNLOADER
+======================================================================
+
+[1] Loading verified spatial manifest...
+Verified matched locations: 90
+
+[2] Checking previously downloaded images...
+AT2: 18/90 images already available
+GT450: 18/90 images already available
+
+[3] Downloading missing images...
+
+Scanner AT2: 72 images needed
+  Opening shard 0...
+  Downloaded 10 new AT2 images
+  Downloaded 20 new AT2 images
+  Downloaded 30 new AT2 images
+  Downloaded 40 new AT2 images
+  Downloaded 50 new AT2 images
+  Downloaded 60 new AT2 images
+  Downloaded 70 new AT2 images
+AT2: 90/90 available
+
+Scanner GT450: 72 images needed
+  Opening shard 3...
+  Downloaded 10 new GT450 images
+  Downloaded 20 new GT450 images
+  Downloaded 30 new GT450 images
+  Downloaded 40 new GT450 images
+  Downloaded 50 new GT450 images
+  Downloaded 60 new GT450 images
+  Downloaded 70 new GT450 images
+GT450: 90/90 available
+
+[4] Validating final image pairs...
+Complete matched pairs: 90
+Validated image files: 180
+
+[5] Saving final manifest and report...
+
+======================================================================
+PLISM SPATIAL REGION DOWNLOAD FINISHED
+======================================================================
+AT2: reused 18, downloaded 72
+GT450: reused 18, downloaded 72
+
+Complete pairs: 90/90
+Valid images: 180
+Manifest: dataset_exploration/outputs/tables/plism_spatial_region_download_manifest.csv
+Report: dataset_exploration/outputs/reports/plism_spatial_region_download_report.txt
+Execution time: 77.81s
+
+All requested matched pairs are available.
+
+---------------------------------------------------------------------------------------
+    RUN - python dataset_exploration/scripts/12_validate_spatial_mosaic.py
+---------------------------------------------------------------------------------------
+
+=================================================================
+PLISM SPATIAL MOSAIC VALIDATION
+=================================================================
+
+[1] Matched pairs: 90
+Grid dimensions: 10 x 10
+Rows: 100 to 109
+Columns: 126 to 135
+
+[2] Building AT2 mosaic...
+Saved: dataset_exploration/outputs/figures/plism_AT2_mosaic.png
+
+[2] Building GT450 mosaic...
+Saved: dataset_exploration/outputs/figures/plism_GT450_mosaic.png
+
+[3] Creating comparison mosaic...
+Saved: dataset_exploration/outputs/figures/plism_spatial_mosaic_comparison.png
+
+[4] Calculating image quality metrics...
+
+[5] Summary statistics:
+Matched pairs: 90
+Grid rows: 10
+Grid columns: 10
+Grid coverage: 0.9000
+Mean pixel MAE: 47.6779
+AT2 mean brightness: 179.8487
+GT450 mean brightness: 216.6711
+AT2 mean tissue fraction: 0.8768
+GT450 mean tissue fraction: 0.6614
+
+[6] Output files:
+dataset_exploration/outputs/figures/plism_spatial_mosaic_comparison.png
+dataset_exploration/outputs/tables/plism_spatial_mosaic_metrics.csv
+dataset_exploration/outputs/reports/plism_spatial_mosaic_report.txt
+
+=================================================================
+SPATIAL MOSAIC VALIDATION COMPLETED
+=================================================================
+ 
+---------------------------------------------------------------------------------------
+    RUN - python dataset_exploration/scripts/13_extract_scanner_features.py
+---------------------------------------------------------------------------------------
+
+=================================================================
+PLISM CROSS-SCANNER FEATURE EXTRACTION
+=================================================================
+Device: cuda
+Model: facebook/dinov2-small
+
+Matched locations: 90
+
+Loading DINOv2-Small...
+preprocessor_config.json: 100%|████████████████████████████████████████████████| 436/436 [00:00<00:00, 1.79MB/s]
+config.json: 100%|█████████████████████████████████████████████████████████████| 547/547 [00:00<00:00, 2.80MB/s]
+model.safetensors: downloading bytes: ██████████████████████████████████████████████████████| 83.7MB, 2.90MB/s  
+model.safetensors: reconstructing file: 100%|██████████████████████████████████████| 88.2MB / 88.2MB, 6.39MB/s  
+Loading weights: 100%|██████████████████████████████████████████████████████| 223/223 [00:00<00:00, 8035.27it/s]
+
+Extracting AT2 features...
+AT2: 100%|██████████████████████████████████████████████████████████████████████| 12/12 [00:01<00:00, 10.31it/s]
+AT2 feature shape: (90, 384)
+
+Extracting GT450 features...
+GT450: 100%|████████████████████████████████████████████████████████████████████| 12/12 [00:00<00:00, 21.49it/s]
+GT450 feature shape: (90, 384)
+
+Saving extracted features...
+
+Calculating paired feature similarity...
+
+=================================================================
+FEATURE EXTRACTION COMPLETED
+=================================================================
+Matched pairs: 90
+Feature dimension: 384
+Mean paired cosine similarity: 0.973113
+Minimum paired cosine similarity: 0.940725
+Maximum paired cosine similarity: 0.986593
+Mean Euclidean distance: 11.410014
+
+Features saved: dataset_exploration/outputs/features/plism_dinov2_features.npz
+Metrics saved: dataset_exploration/outputs/features/plism_dinov2_pair_similarity.csv
+
+---------------------------------------------------------------------------------------
+    RUN - python dataset_exploration/scripts/14_analyze_graph_topology.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PLISM CROSS-SCANNER GRAPH TOPOLOGY ANALYSIS
+======================================================================
+
+[1] Loading feature embeddings...
+Matched nodes: 90
+Feature dimensions: 384
+
+[2] Constructing graph variants...
+
+[3] Comparing AT2 and GT450 graphs...
+
+Spatial-only
+  AT2 edges: 306
+  GT450 edges: 306
+  Shared edges: 306
+  Edge Jaccard: 1.000000
+  Mean neighbor Jaccard: 1.000000
+  Components: AT2=1, GT450=1
+
+Feature-kNN
+  AT2 edges: 328
+  GT450 edges: 340
+  Shared edges: 176
+  Edge Jaccard: 0.357724
+  Mean neighbor Jaccard: 0.379607
+  Components: AT2=1, GT450=1
+
+Hybrid
+  AT2 edges: 231
+  GT450 edges: 238
+  Shared edges: 208
+  Edge Jaccard: 0.796935
+  Mean neighbor Jaccard: 0.815357
+  Components: AT2=1, GT450=1
+
+[4] Saving graph comparison results...
+Comparison: dataset_exploration/outputs/tables/plism_graph_stability.csv
+Graph edges: dataset_exploration/outputs/tables/plism_graph_edges.csv
+Report: dataset_exploration/outputs/reports/plism_graph_stability.json
+
+======================================================================
+GRAPH TOPOLOGY ANALYSIS COMPLETED
+======================================================================
+
+---------------------------------------------------------------------------------------
+    RUN - python dataset_exploration/scripts/15_generate_exploration_report.py
+---------------------------------------------------------------------------------------
+
+=================================================================
+PLISM FINAL PILOT EXPLORATION REPORT
+=================================================================
+
+[1] Loading exploration results...
+
+[2] Calculating final statistics...
+
+[3] Generating Markdown report...
+
+[4] Final summary:
+Matched locations: 90
+Feature dimension: 384
+Mean cosine similarity: 0.973113
+Spatial-only: Edge Jaccard = 1.000000
+Feature-kNN: Edge Jaccard = 0.357724
+Hybrid: Edge Jaccard = 0.796935
+
+=================================================================
+PILOT EXPLORATION REPORT GENERATED
+Saved: dataset_exploration/outputs/reports/PLISM_PILOT_FINAL_REPORT.md
+=================================================================
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
