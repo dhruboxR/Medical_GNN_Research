@@ -205,7 +205,6 @@ The completed pilot motivates a larger study of **cross-scanner graph topology s
 ## Dataset and attribution
 
 - **PLISM dataset:** [Hugging Face dataset card](https://huggingface.co/datasets/owkin/plism-dataset-tiles)
-- **Original PLISM collection:** [Figshare](https://plus.figshare.com/collections/Pathology_Images_of_Scanners_and_Mobilephones_PLISM_Dataset/6773925)
 - **Feature extractor:** [DINOv2-Small](https://huggingface.co/facebook/dinov2-small)
 
 Refer to the dataset card and model pages for the applicable licenses, terms of use, and required scholarly attribution. Dataset images are not redistributed by this README.
