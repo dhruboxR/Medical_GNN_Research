@@ -1,0 +1,161 @@
+
+# ============================================================
+# MEDICAL GNN RESEARCH - GITIGNORE
+# ============================================================
+
+# ------------------------------------------------------------
+# 1. Python cache and compiled files
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+.hypothesis/
+
+# ------------------------------------------------------------
+# 2. Virtual environments
+# ------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ------------------------------------------------------------
+# 3. Environment variables and secrets
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets.json
+credentials.json
+
+# ------------------------------------------------------------
+# 4. IDE and editor files
+# ------------------------------------------------------------
+.vscode/*
+!.vscode/settings.example.json
+!.vscode/extensions.json
+.idea/
+*.code-workspace
+*.swp
+*.swo
+*~
+
+# ------------------------------------------------------------
+# 5. Operating system files
+# ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.Trash-*/
+*.bak
+*.tmp
+
+# ------------------------------------------------------------
+# 6. Jupyter notebook checkpoints
+# ------------------------------------------------------------
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# ------------------------------------------------------------
+# 7. Raw datasets and downloaded tiles
+# ------------------------------------------------------------
+datasets/
+data/raw/
+data/downloads/
+data/cache/
+
+# ------------------------------------------------------------
+# 8. Model checkpoints and large weights
+# ------------------------------------------------------------
+checkpoints/
+models/checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+*.joblib
+
+# ------------------------------------------------------------
+# 9. Extracted embeddings and feature arrays
+# ------------------------------------------------------------
+dataset_exploration/outputs/features/*.npz
+dataset_exploration/outputs/features/*.npy
+dataset_exploration/outputs/features/*.pt
+dataset_exploration/outputs/features/*.pth
+
+# ------------------------------------------------------------
+# 10. Temporary experimental artifacts
+# ------------------------------------------------------------
+runs/
+wandb/
+mlruns/
+lightning_logs/
+tensorboard/
+events.out.tfevents.*
+*.log
+logs/
+tmp/
+temp/
+
+# ------------------------------------------------------------
+# 11. Downloaded dataset archives
+# ------------------------------------------------------------
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar
+
+# ------------------------------------------------------------
+# 12. Large dataset formats
+# ------------------------------------------------------------
+*.parquet
+*.arrow
+*.feather
+*.h5ad
+*.tfrecord
+*.tfrecords
+
+# ------------------------------------------------------------
+# 13. Local scratch and backup files
+# ------------------------------------------------------------
+scratch/
+backups/
+*.backup
+*.orig
+*.rej
+
+# ============================================================
+# IMPORTANT: KEEP RESEARCH DOCUMENTATION TRACKED
+# ============================================================
+
+# The following are intentionally NOT ignored:
+#
+# README.md
+# dataset_exploration/README.md
+# dataset_exploration/scripts/*.py
+# dataset_exploration/outputs/figures/*.png
+# dataset_exploration/outputs/tables/*.csv
+# dataset_exploration/outputs/reports/*.md
+# dataset_exploration/outputs/reports/*.txt
+# dataset_exploration/outputs/reports/*.json
+# dataset_exploration/outputs/features/*.csv
+#
+# These files document and reproduce the research.
+# ============================================================
