@@ -1,0 +1,122 @@
+{
+  "phase": "3A",
+  "step": "3.9",
+  "dataset": "PLISM",
+  "scanner_pair": [
+    "AT2",
+    "GT450"
+  ],
+  "stainer": "GIVH",
+  "feature_encoder": "facebook/dinov2-small",
+  "matched_nodes": 90,
+  "edge_budgets": [
+    90,
+    135,
+    180,
+    225
+  ],
+  "global_candidate_edges": 4005,
+  "spatial_candidate_edges": 306,
+  "graph_construction": "Top-M undirected edges ranked by cosine similarity",
+  "edge_budget_matched": true,
+  "spatial_coordinates_verified_physically": false,
+  "independent_specimens_verified": false,
+  "results": [
+    {
+      "method": "Global-feature",
+      "edge_budget": 90,
+      "nodes": 90,
+      "at2_edges": 90,
+      "gt450_edges": 90,
+      "shared_edges": 35,
+      "edge_jaccard": 0.2413793103448276,
+      "neighbor_jaccard": 0.4679462666962667,
+      "at2_components": 42,
+      "gt450_components": 41
+    },
+    {
+      "method": "Spatial-feature",
+      "edge_budget": 90,
+      "nodes": 90,
+      "at2_edges": 90,
+      "gt450_edges": 90,
+      "shared_edges": 63,
+      "edge_jaccard": 0.5384615384615384,
+      "neighbor_jaccard": 0.5862698412698413,
+      "at2_components": 34,
+      "gt450_components": 34
+    },
+    {
+      "method": "Global-feature",
+      "edge_budget": 135,
+      "nodes": 90,
+      "at2_edges": 135,
+      "gt450_edges": 135,
+      "shared_edges": 60,
+      "edge_jaccard": 0.2857142857142857,
+      "neighbor_jaccard": 0.4331496843751746,
+      "at2_components": 36,
+      "gt450_components": 38
+    },
+    {
+      "method": "Spatial-feature",
+      "edge_budget": 135,
+      "nodes": 90,
+      "at2_edges": 135,
+      "gt450_edges": 135,
+      "shared_edges": 112,
+      "edge_jaccard": 0.7088607594936709,
+      "neighbor_jaccard": 0.6561904761904762,
+      "at2_components": 21,
+      "gt450_components": 23
+    },
+    {
+      "method": "Global-feature",
+      "edge_budget": 180,
+      "nodes": 90,
+      "at2_edges": 180,
+      "gt450_edges": 180,
+      "shared_edges": 84,
+      "edge_jaccard": 0.30434782608695654,
+      "neighbor_jaccard": 0.4522134643402759,
+      "at2_components": 30,
+      "gt450_components": 35
+    },
+    {
+      "method": "Spatial-feature",
+      "edge_budget": 180,
+      "nodes": 90,
+      "at2_edges": 180,
+      "gt450_edges": 180,
+      "shared_edges": 159,
+      "edge_jaccard": 0.7910447761194029,
+      "neighbor_jaccard": 0.7552380952380952,
+      "at2_components": 12,
+      "gt450_components": 14
+    },
+    {
+      "method": "Global-feature",
+      "edge_budget": 225,
+      "nodes": 90,
+      "at2_edges": 225,
+      "gt450_edges": 225,
+      "shared_edges": 116,
+      "edge_jaccard": 0.3473053892215569,
+      "neighbor_jaccard": 0.4275649658465575,
+      "at2_components": 26,
+      "gt450_components": 31
+    },
+    {
+      "method": "Spatial-feature",
+      "edge_budget": 225,
+      "nodes": 90,
+      "at2_edges": 225,
+      "gt450_edges": 225,
+      "shared_edges": 204,
+      "edge_jaccard": 0.8292682926829268,
+      "neighbor_jaccard": 0.7808068783068782,
+      "at2_components": 8,
+      "gt450_components": 5
+    }
+  ]
+}

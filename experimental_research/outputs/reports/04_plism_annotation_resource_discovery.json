@@ -1,0 +1,15 @@
+{
+  "phase": "3A",
+  "step": "3.4",
+  "generated_utc": "2026-11-22T20:48:50.039122+00:00",
+  "collection_id": 6773925,
+  "collection_title": "Pathology Images of Scanners and Mobilephones (PLISM) Dataset",
+  "articles_found": 3,
+  "articles_inspected": 3,
+  "attached_files_found": 187,
+  "candidate_annotation_files": 2,
+  "article_errors": [],
+  "complete_collection_inventory": true,
+  "dataset_files_downloaded": 0,
+  "tissue_core_mapping_verified": false
+}

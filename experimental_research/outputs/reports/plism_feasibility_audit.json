@@ -1,0 +1,20 @@
+{
+  "pilot_matched_tile_ids": 90,
+  "complete_downloaded_pairs": 90,
+  "parseable_tile_ids": 90,
+  "tile_id_coordinate_agreement": 90,
+  "unique_scanner_specific_slide_ids_observed": 2,
+  "observed_scanner_groups": 2,
+  "additional_local_metadata_rows": 180,
+  "biologically_independent_specimens_verified": 0,
+  "independence_status": "UNRESOLVED",
+  "dataset": "PLISM",
+  "pilot_stainer": "GIVH",
+  "pilot_scanners": [
+    "AT2",
+    "GT450"
+  ],
+  "biological_independence_note": "Scanner-specific slide IDs do not independently establish unique biological specimens.",
+  "coordinate_validation_note": "Tile ID parsing was verified against the saved manifest, but physical coordinate semantics remain unverified.",
+  "generated_utc": "2026-11-22T20:44:43.347976+00:00"
+}

@@ -1,0 +1,7 @@
+requirement,status,reason
+Biological specimen identifier,UNRESOLVED,The observed tile schema does not contain a verified specimen ID.
+Patient or donor independence,UNRESOLVED,Distinct patient or donor identities cannot be determined from slide IDs.
+Tissue-core identifier,UNRESOLVED,Tile coordinates have not been linked to individual tissue microarray cores.
+Cross-scanner tile pairing,VERIFIED_FOR_PILOT,Corresponding tile IDs and complete images are available across both scanners.
+Physical coordinate semantics,PARTIALLY_VERIFIED,"Tile ID suffixes agree with saved grid coordinates, but their physical interpretation requires external validation."
+Independent held-out evaluation,NOT_READY,Verified biological grouping information is required before specimen-level splitting.

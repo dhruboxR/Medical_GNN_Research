@@ -1,0 +1,13 @@
+{
+  "phase": "3A",
+  "step": "3.3",
+  "generated_utc": "2026-11-22T20:47:47.430989+00:00",
+  "matched_tile_locations": 90,
+  "local_metadata_files_found": 0,
+  "files_with_candidate_identifier_columns": 0,
+  "verified_core_mappings": 0,
+  "core_id_mapping_status": "UNRESOLVED",
+  "coordinate_transform_status": "UNVERIFIED",
+  "independent_specimen_status": "UNVERIFIED",
+  "next_action": "Find authoritative original PLISM annotations and verify their coordinate relationship to the Owkin registered tile grid."
+}

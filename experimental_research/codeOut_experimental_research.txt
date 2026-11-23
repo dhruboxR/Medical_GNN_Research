@@ -1,0 +1,1154 @@
+source "$HOME/Unofficial Thesis/.venv-transformers/bin/activate"
+
+---------------------------------------------------------------------------------------
+    RUN - python experimental_research/scripts/01_audit_plism_feasibility.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3A - PLISM DATASET FEASIBILITY AUDIT
+======================================================================
+
+[1] Loading existing PLISM manifests...
+Spatial manifest rows: 90
+Download manifest rows: 90
+
+[2] Checking downloaded scanner pairs...
+Complete matched pairs: 90
+
+[3] Validating tile ID coordinate structure...
+Parseable tile IDs: 90
+Coordinate agreement: 90
+
+[4] Inspecting scanner-specific slide groups...
+Observed scanner groups: 2
+Unique slide IDs: 2
+
+[5] Remote sampling skipped.
+
+[6] Generating feasibility reports...
+JSON report: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/plism_feasibility_audit.json
+Markdown report: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/01_plism_feasibility_audit.md
+
+======================================================================
+FEASIBILITY AUDIT SUMMARY
+======================================================================
+pilot_matched_tile_ids: 90
+complete_downloaded_pairs: 90
+parseable_tile_ids: 90
+tile_id_coordinate_agreement: 90
+unique_scanner_specific_slide_ids_observed: 2
+observed_scanner_groups: 2
+biologically_independent_specimens_verified: 0
+
+Biological independence: NOT VERIFIED
+Dataset suitability: PILOT BENCHMARK APPROVED
+
+STEP 3.1 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u experimental_research/scripts/02_assess_plism_specimen_independence.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3A - PLISM SPECIMEN INDEPENDENCE ASSESSMENT
+======================================================================
+
+[1] Loading local metadata...
+Spatial records: 90
+Download records: 90
+Additional metadata records: 180
+
+Spatial metadata columns:
+tile_id, stainer, level, grid_row, grid_col, scanner_a, scanner_b, slide_id_a, slide_id_b, source_shard_a, source_shard_b
+
+Additional metadata columns:
+scanner, stainer, slide_id, tile_id, level, grid_row, grid_col, source_shard
+
+[2] Checking biological specimen identifiers...
+No explicit specimen identifier found.
+
+[3] Inspecting scanner-specific slide IDs...
+scanner stainer              slide_id  observed_tiles
+    AT2    GIVH   GIVH_AT2_to_GMH_S60              90
+  GT450    GIVH GIVH_GT450_to_GMH_S60              90
+
+[4] Checking scanner-paired tile correspondence...
+Matched tile locations: 90
+Complete image pairs: 90
+Valid cross-scanner pairs: 90
+
+[5] Building provenance requirements...
+                    requirement             status
+ Biological specimen identifier         UNRESOLVED
+  Patient or donor independence         UNRESOLVED
+         Tissue-core identifier         UNRESOLVED
+     Cross-scanner tile pairing VERIFIED_FOR_PILOT
+  Physical coordinate semantics PARTIALLY_VERIFIED
+Independent held-out evaluation          NOT_READY
+
+[6] Computing independence assessment...
+
+[7] Generating research report...
+
+======================================================================
+SPECIMEN INDEPENDENCE ASSESSMENT COMPLETED
+======================================================================
+Matched tile locations: 90
+Valid scanner pairs: 90
+Observed slide IDs: 2
+Biological independence verified: False
+Independent specimen count: UNKNOWN
+
+Saved outputs:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_acquisition_group_assessment.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_specimen_pair_assessment.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_provenance_requirements.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/02_specimen_independence_assessment.json
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/02_specimen_independence_assessment.md
+
+STEP 3.2 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u experimental_research/scripts/03_audit_tissue_core_annotations.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3A - PLISM TISSUE-CORE ANNOTATION AUDIT
+======================================================================
+
+[1] Loading Phase 1 tile manifest...
+Matched tile locations: 90
+
+[2] Searching local annotation files...
+Candidate metadata files: 0
+
+[3] Creating tile-to-core mapping template...
+Template rows: 90
+
+[4] Assessing annotation readiness...
+
+======================================================================
+TISSUE-CORE ANNOTATION AUDIT COMPLETED
+======================================================================
+Matched tile locations: 90
+Candidate metadata files: 0
+Files with candidate identifier columns: 0
+Verified tissue-core mappings: 0
+Biological independence: UNVERIFIED
+
+Saved outputs:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_local_annotation_inventory.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_tile_to_core_mapping_template.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/03_tissue_core_annotation_audit.json
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/03_tissue_core_annotation_audit.md
+
+STEP 3.3 LOCAL AUDIT COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u experimental_research/scripts/04_discover_plism_annotation_resources.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3A - PLISM ANNOTATION RESOURCE DISCOVERY
+======================================================================
+
+[1] Reading Figshare collection metadata...
+Collection: Pathology Images of Scanners and Mobilephones (PLISM) Dataset
+Collection ID: 6773925
+
+[2] Listing collection articles...
+Page 1: 3 articles
+Discovered articles: 3
+
+[3] Inspecting attached file metadata...
+Inspecting article 1/3 (ID 23590791)
+Inspecting article 2/3 (ID 23614422)
+Inspecting article 3/3 (ID 24988074)
+
+[4] Saving inventories...
+
+[5] Generating discovery report...
+
+======================================================================
+ANNOTATION RESOURCE DISCOVERY COMPLETED
+======================================================================
+Collection articles: 3
+Articles inspected: 3
+Attached files: 187
+Annotation candidates: 2
+Article inspection errors: 0
+Dataset files downloaded: 0
+
+Candidate annotation resources:
+ article_id         filename  size_mb
+   23590791  PLISM_sm_en.csv    4.654
+   23614422 PLISM_wsi_en.csv   19.591
+
+Saved files:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_figshare_articles.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_figshare_file_inventory.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_annotation_candidates.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/04_plism_annotation_resource_discovery.json
+
+STEP 3.4 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u experimental_research/scripts/05_inspect_plism_annotation_schema.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3A - PLISM ANNOTATION SCHEMA INSPECTION
+======================================================================
+
+[1] Loading candidate inventory...
+Candidate records: 2
+
+[2] Inspecting PLISM_sm_en.csv...
+Status: PARTIAL_READ_OK
+Columns found: 5
+  1. path
+  2. stain
+  3. device
+  4. tissue_type
+  5. coordinate
+
+[2] Inspecting PLISM_wsi_en.csv...
+Status: PARTIAL_READ_OK
+Columns found: 5
+  1. stain
+  2. device
+  3. tissue_type
+  4. coordinate
+  5. path
+
+[3] Saving schema reports...
+
+======================================================================
+ANNOTATION SCHEMA INSPECTION FINISHED
+======================================================================
+        filename          status  columns_found
+ PLISM_sm_en.csv PARTIAL_READ_OK              5
+PLISM_wsi_en.csv PARTIAL_READ_OK              5
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_annotation_schema.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_annotation_sample_rows.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/05_annotation_schema_status.json
+
+No complete annotation CSV files or image files were saved.
+
+---------------------------------------------------------------------------------------
+    RUN - python -u experimental_research/scripts/06_analyze_plism_annotation_samples.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3A - PLISM ANNOTATION VALUE ANALYSIS
+======================================================================
+
+[1] Loading previously inspected annotation samples...
+Total sample records: 6
+WSI sample records: 3
+Smartphone sample records: 3
+
+[2] WSI annotation sample values...
+
+WSI sample 1
+  Stain: GIVH
+  Device: AT2
+  Tissue type: 38_EBVGC
+  Coordinate: 100352_61440
+  Path: /GIVH_AT2/GIVH_AT2_100352_61440.png
+
+WSI sample 2
+  Stain: GIVH
+  Device: AT2
+  Tissue type: 38_EBVGC
+  Coordinate: 100352_62464
+  Path: /GIVH_AT2/GIVH_AT2_100352_62464.png
+
+WSI sample 3
+  Stain: GIVH
+  Device: AT2
+  Tissue type: 15_spleen
+  Coordinate: 101376_20480
+  Path: /GIVH_AT2/GIVH_AT2_101376_20480.png
+
+[3] Smartphone annotation sample values...
+
+Smartphone sample 1
+  Stain: GIVH
+  Device: GT450
+  Tissue type: 46_aorta
+  Coordinate: 101314_76122_104202_79785
+  Path: /GIVH/GT450/101314_76122_104202_79785.png
+
+Smartphone sample 2
+  Stain: GIVH
+  Device: GT450
+  Tissue type: 46_aorta
+  Coordinate: 101360_72054_104297_75714
+  Path: /GIVH/GT450/101360_72054_104297_75714.png
+
+Smartphone sample 3
+  Stain: GIVH
+  Device: GT450
+  Tissue type: 46_aorta
+  Coordinate: 101394_76791_104191_80394
+  Path: /GIVH/GT450/101394_76791_104191_80394.png
+
+[4] Checking pilot acquisition identifiers...
+GIVH: 3 sampled WSI rows
+AT2: 3 sampled WSI rows
+GT450: 0 sampled WSI rows
+GMH_S60: 0 sampled WSI rows
+
+Note: Zero matches in a three-row sample do not imply absence from the full dataset.
+
+[5] Assessing coordinate mapping readiness...
+
+======================================================================
+ANNOTATION VALUE ANALYSIS COMPLETED
+======================================================================
+WSI samples analyzed: 3
+Coordinate formats observed: 3
+Specimen independence: UNVERIFIED
+Coordinate mapping: UNVERIFIED
+Saved report: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/06_annotation_value_analysis.json
+
+STEP 3.6 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u experimental_research/scripts/07_analyze_full_plism_wsi_metadata.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3A - FULL PLISM WSI METADATA ANALYSIS
+======================================================================
+
+[1] Retrieving Figshare file metadata...
+File: PLISM_wsi_en.csv
+Size: 19.59 MiB
+Mode: streamed CSV analysis
+
+[2] Preparing metadata analysis...
+
+[3] Reading annotation records...
+Processed chunk 1: 10,000 rows
+Processed chunk 2: 20,000 rows
+Processed chunk 3: 30,000 rows
+Processed chunk 4: 40,000 rows
+Processed chunk 5: 50,000 rows
+Processed chunk 6: 60,000 rows
+Processed chunk 7: 70,000 rows
+Processed chunk 8: 80,000 rows
+Processed chunk 9: 90,000 rows
+Processed chunk 10: 100,000 rows
+Processed chunk 11: 110,000 rows
+Processed chunk 12: 120,000 rows
+Processed chunk 13: 130,000 rows
+Processed chunk 14: 140,000 rows
+Processed chunk 15: 150,000 rows
+Processed chunk 16: 160,000 rows
+Processed chunk 17: 170,000 rows
+Processed chunk 18: 180,000 rows
+Processed chunk 19: 190,000 rows
+Processed chunk 20: 200,000 rows
+Processed chunk 21: 210,000 rows
+Processed chunk 22: 220,000 rows
+Processed chunk 23: 230,000 rows
+Processed chunk 24: 240,000 rows
+Processed chunk 25: 250,000 rows
+Processed chunk 26: 260,000 rows
+Processed chunk 27: 270,000 rows
+Processed chunk 28: 280,000 rows
+Processed chunk 29: 290,000 rows
+Processed chunk 30: 300,000 rows
+Processed chunk 31: 310,000 rows
+Processed chunk 32: 310,947 rows
+
+[4] Building acquisition group inventory...
+Total annotation rows: 310,947
+Staining conditions: 13
+Devices: 7
+Acquisition groups: 91
+
+[5] Comparing GIVH AT2 and GT450...
+at2_annotation_rows: 3417
+gt450_annotation_rows: 3417
+at2_tissue_types: 46
+gt450_tissue_types: 46
+shared_tissue_types: 46
+at2_unique_coordinates: 3417
+gt450_unique_coordinates: 3417
+identical_coordinate_strings: 3417
+scanner_pair_present: True
+
+Important: Matching coordinate strings do not establish spatial registration.
+
+[6] Saving tissue-type comparison...
+
+[7] Generating research report...
+
+======================================================================
+FULL WSI ANNOTATION ANALYSIS COMPLETED
+======================================================================
+Total records: 310,947
+Acquisition groups: 91
+Shared GIVH tissue types: 46
+Identical coordinate strings: 3417
+Independent specimen identity: UNVERIFIED
+Owkin coordinate mapping: UNVERIFIED
+
+Saved outputs:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_full_wsi_acquisition_groups.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_givh_tissue_type_overlap.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/07_full_wsi_metadata_analysis.json
+
+STEP 3.7 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u experimental_research/scripts/08_verify_wsi_coordinate_labels.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3A - WSI COORDINATE LABEL CONSISTENCY
+======================================================================
+
+[1] Retrieving official WSI file information...
+Source: PLISM_wsi_en.csv
+Annotation size: 19.59 MiB
+
+[2] Preparing scanner coordinate maps...
+
+[3] Processing original WSI annotations...
+Chunk 1: 10,000 rows processed
+Chunk 2: 20,000 rows processed
+Chunk 3: 30,000 rows processed
+Chunk 4: 40,000 rows processed
+Chunk 5: 50,000 rows processed
+Chunk 6: 60,000 rows processed
+Chunk 7: 70,000 rows processed
+Chunk 8: 80,000 rows processed
+Chunk 9: 90,000 rows processed
+Chunk 10: 100,000 rows processed
+Chunk 11: 110,000 rows processed
+Chunk 12: 120,000 rows processed
+Chunk 13: 130,000 rows processed
+Chunk 14: 140,000 rows processed
+Chunk 15: 150,000 rows processed
+Chunk 16: 160,000 rows processed
+Chunk 17: 170,000 rows processed
+Chunk 18: 180,000 rows processed
+Chunk 19: 190,000 rows processed
+Chunk 20: 200,000 rows processed
+Chunk 21: 210,000 rows processed
+Chunk 22: 220,000 rows processed
+Chunk 23: 230,000 rows processed
+Chunk 24: 240,000 rows processed
+Chunk 25: 250,000 rows processed
+Chunk 26: 260,000 rows processed
+Chunk 27: 270,000 rows processed
+Chunk 28: 280,000 rows processed
+Chunk 29: 290,000 rows processed
+Chunk 30: 300,000 rows processed
+Chunk 31: 310,000 rows processed
+Chunk 32: 310,947 rows processed
+
+[4] Comparing coordinate inventories...
+AT2 coordinates: 3417
+GT450 coordinates: 3417
+Shared coordinates: 3417
+AT2-only coordinates: 0
+GT450-only coordinates: 0
+
+[5] Checking coordinate-level tissue labels...
+Single-label agreements: 3417
+Conflicting shared coordinates: 0
+AT2 duplicate coordinate groups: 0
+GT450 duplicate coordinate groups: 0
+Shared-coordinate label agreement: 100.0000%
+
+[6] Saving consistency assessment...
+
+======================================================================
+WSI COORDINATE LABEL AUDIT COMPLETED
+======================================================================
+Shared coordinates: 3417
+Exact label agreements: 3417
+Label conflicts: 0
+Agreement rate: 100.0000%
+Owkin coordinate mapping: UNVERIFIED
+Biological independence: UNVERIFIED
+
+Saved outputs:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_givh_coordinate_label_consistency.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/08_wsi_coordinate_label_consistency.json
+
+STEP 3.8 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u experimental_research/scripts/09_controlled_edge_budget_experiment.py
+---------------------------------------------------------------------------------------
+
+PHASE 3A - CONTROLLED GRAPH STABILITY EXPERIMENT
+======================================================================
+
+[1] Loading existing DINOv2 embeddings...
+Matched nodes: 90
+Feature dimensions: 384
+
+[2] Constructing candidate edge sets...
+Global candidate edges: 4005
+Spatial candidate edges: 306
+
+[3] Evaluating matched edge budgets...
+
+Edge budget: 90
+  Global-feature: shared=35, Jaccard=0.241379, neighbor=0.467946, components=42/41
+  Spatial-feature: shared=63, Jaccard=0.538462, neighbor=0.586270, components=34/34
+
+Edge budget: 135
+  Global-feature: shared=60, Jaccard=0.285714, neighbor=0.433150, components=36/38
+  Spatial-feature: shared=112, Jaccard=0.708861, neighbor=0.656190, components=21/23
+
+Edge budget: 180
+  Global-feature: shared=84, Jaccard=0.304348, neighbor=0.452213, components=30/35
+  Spatial-feature: shared=159, Jaccard=0.791045, neighbor=0.755238, components=12/14
+
+Edge budget: 225
+  Global-feature: shared=116, Jaccard=0.347305, neighbor=0.427565, components=26/31
+  Spatial-feature: shared=204, Jaccard=0.829268, neighbor=0.780807, components=8/5
+
+[4] Saving experimental results...
+
+[5] Generating experiment report...
+
+======================================================================
+CONTROLLED GRAPH EXPERIMENT COMPLETED
+======================================================================
+
+Final comparison:
+         method  edge_budget  shared_edges  edge_jaccard  neighbor_jaccard
+ Global-feature           90            35      0.241379          0.467946
+Spatial-feature           90            63      0.538462          0.586270
+ Global-feature          135            60      0.285714          0.433150
+Spatial-feature          135           112      0.708861          0.656190
+ Global-feature          180            84      0.304348          0.452213
+Spatial-feature          180           159      0.791045          0.755238
+ Global-feature          225           116      0.347305          0.427565
+Spatial-feature          225           204      0.829268          0.780807
+
+Saved outputs:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_controlled_graph_stability.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_controlled_graph_edges.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/09_controlled_graph_stability.json
+
+STEP 3.9 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u experimental_research/scripts/10_graph_stability_diagnostics.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3A - GRAPH STABILITY DIAGNOSTICS
+======================================================================
+
+[1] Loading node and graph inventories...
+Nodes: 90
+Saved graph edges: 2520
+
+[2] Constructing candidate pools...
+Global-feature: 4005 candidate edges
+Spatial-feature: 306 candidate edges
+
+[3] Reconstructing saved graphs...
+Graphs reconstructed: 16
+
+[4] Running random and connectivity diagnostics...
+
+Global-feature | budget=90
+  Observed Jaccard: 0.241379
+  Random mean: 0.011657
+  Excess above random: 0.229723
+  Connected components: 42/41
+  Isolated nodes: 40/39
+
+Spatial-feature | budget=90
+  Observed Jaccard: 0.538462
+  Random mean: 0.173838
+  Excess above random: 0.364624
+  Connected components: 34/34
+  Isolated nodes: 27/29
+
+Global-feature | budget=135
+  Observed Jaccard: 0.285714
+  Random mean: 0.017119
+  Excess above random: 0.268595
+  Connected components: 36/38
+  Isolated nodes: 33/37
+
+Spatial-feature | budget=135
+  Observed Jaccard: 0.708861
+  Random mean: 0.282385
+  Excess above random: 0.426475
+  Connected components: 21/23
+  Isolated nodes: 17/19
+
+Global-feature | budget=180
+  Observed Jaccard: 0.304348
+  Random mean: 0.022760
+  Excess above random: 0.281588
+  Connected components: 30/35
+  Isolated nodes: 27/34
+
+Spatial-feature | budget=180
+  Observed Jaccard: 0.791045
+  Random mean: 0.419445
+  Excess above random: 0.371600
+  Connected components: 12/14
+  Isolated nodes: 9/9
+
+Global-feature | budget=225
+  Observed Jaccard: 0.347305
+  Random mean: 0.028829
+  Excess above random: 0.318477
+  Connected components: 26/31
+  Isolated nodes: 24/29
+
+Spatial-feature | budget=225
+  Observed Jaccard: 0.829268
+  Random mean: 0.581277
+  Excess above random: 0.247991
+  Connected components: 8/5
+  Isolated nodes: 7/2
+
+[5] Saving diagnostic results...
+
+======================================================================
+GRAPH STABILITY DIAGNOSTICS COMPLETED
+======================================================================
+         method  edge_budget  observed_jaccard  random_mean  excess_over_random  at2_isolated_nodes  gt450_isolated_nodes
+ Global-feature           90          0.241379     0.011657            0.229723                  40                    39
+Spatial-feature           90          0.538462     0.173838            0.364624                  27                    29
+ Global-feature          135          0.285714     0.017119            0.268595                  33                    37
+Spatial-feature          135          0.708861     0.282385            0.426475                  17                    19
+ Global-feature          180          0.304348     0.022760            0.281588                  27                    34
+Spatial-feature          180          0.791045     0.419445            0.371600                   9                     9
+ Global-feature          225          0.347305     0.028829            0.318477                  24                    29
+Spatial-feature          225          0.829268     0.581277            0.247991                   7                     2
+
+Saved outputs:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_graph_stability_diagnostics.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/10_graph_stability_diagnostics.json
+
+STEP 3.10 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u experimental_research/scripts/11_connectivity_preserving_graphs.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3A - CONNECTIVITY-PRESERVING GRAPHS
+======================================================================
+
+[1] Loading embeddings...
+Nodes: 90
+Feature dimension: 384
+
+[2] Building candidate pools...
+Global candidates: 4005
+Spatial candidates: 306
+
+[3] Constructing fixed spatial backbone...
+Backbone edges: 89
+Components: 1
+Isolated nodes: 0
+
+[4] Running graph comparisons...
+
+Total edge budget: 135
+Feature-selected edges: 46
+
+  Global-feature+MST
+    Full Jaccard: 0.616766
+    Residual Jaccard: 0.179487
+    Random residual mean: 0.006355
+    Residual excess above random: 0.173132
+    Connected components: 1/1
+
+  Spatial-feature+MST
+    Full Jaccard: 0.788079
+    Residual Jaccard: 0.483871
+    Random residual mean: 0.119390
+    Residual excess above random: 0.364481
+    Connected components: 1/1
+
+Total edge budget: 180
+Feature-selected edges: 91
+
+  Global-feature+MST
+    Full Jaccard: 0.506276
+    Residual Jaccard: 0.213333
+    Random residual mean: 0.011658
+    Residual excess above random: 0.201675
+    Connected components: 1/1
+
+  Spatial-feature+MST
+    Full Jaccard: 0.846154
+    Residual Jaccard: 0.716981
+    Random residual mean: 0.267118
+    Residual excess above random: 0.449863
+    Connected components: 1/1
+
+Total edge budget: 225
+Feature-selected edges: 136
+
+  Global-feature+MST
+    Full Jaccard: 0.490066
+    Residual Jaccard: 0.276995
+    Random residual mean: 0.017932
+    Residual excess above random: 0.259063
+    Connected components: 1/1
+
+  Spatial-feature+MST
+    Full Jaccard: 0.882845
+    Residual Jaccard: 0.813333
+    Random residual mean: 0.457457
+    Residual excess above random: 0.355877
+    Connected components: 1/1
+
+[5] Saving experiment results...
+
+======================================================================
+CONNECTIVITY-PRESERVING EXPERIMENT COMPLETED
+======================================================================
+             method  total_edge_budget  full_edge_jaccard  residual_edge_jaccard  random_residual_jaccard_mean  residual_excess_over_random  at2_components  gt450_components
+ Global-feature+MST                135           0.616766               0.179487                      0.006355                     0.173132               1                 1
+Spatial-feature+MST                135           0.788079               0.483871                      0.119390                     0.364481               1                 1
+ Global-feature+MST                180           0.506276               0.213333                      0.011658                     0.201675               1                 1
+Spatial-feature+MST                180           0.846154               0.716981                      0.267118                     0.449863               1                 1
+ Global-feature+MST                225           0.490066               0.276995                      0.017932                     0.259063               1                 1
+Spatial-feature+MST                225           0.882845               0.813333                      0.457457                     0.355877               1                 1
+
+Saved files:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_connected_graph_stability.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_connected_graph_edges.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/11_connected_graph_stability.json
+
+STEP 3.11 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u experimental_research/scripts/12_analyze_connected_graph_structure.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3A - CONNECTED GRAPH STRUCTURAL DIAGNOSTICS
+======================================================================
+
+[1] Loading matched node inventory...
+Matched nodes: 90
+
+[2] Loading Step 3.11 graph edges...
+Graphs loaded: 12
+
+[3] Checking common backbone...
+Common backbone edges: 89
+Backbone consistency: PASSED
+
+[4] Computing graph structure metrics...
+
+Global-feature+MST | Budget=135 | AT2
+  Zero residual-degree nodes: 51
+  Mean residual edge distance: 2.7315
+  Nonlocal residual edges: 29
+
+Global-feature+MST | Budget=135 | GT450
+  Zero residual-degree nodes: 53
+  Mean residual edge distance: 2.5639
+  Nonlocal residual edges: 28
+
+Global-feature+MST | Budget=180 | AT2
+  Zero residual-degree nodes: 41
+  Mean residual edge distance: 3.0759
+  Nonlocal residual edges: 63
+
+Global-feature+MST | Budget=180 | GT450
+  Zero residual-degree nodes: 41
+  Mean residual edge distance: 3.1837
+  Nonlocal residual edges: 68
+
+Global-feature+MST | Budget=225 | AT2
+  Zero residual-degree nodes: 37
+  Mean residual edge distance: 3.2065
+  Nonlocal residual edges: 105
+
+Global-feature+MST | Budget=225 | GT450
+  Zero residual-degree nodes: 36
+  Mean residual edge distance: 3.3436
+  Nonlocal residual edges: 104
+
+Spatial-feature+MST | Budget=135 | AT2
+  Zero residual-degree nodes: 45
+  Mean residual edge distance: 1.2431
+  Nonlocal residual edges: 0
+
+Spatial-feature+MST | Budget=135 | GT450
+  Zero residual-degree nodes: 45
+  Mean residual edge distance: 1.2431
+  Nonlocal residual edges: 0
+
+Spatial-feature+MST | Budget=180 | AT2
+  Zero residual-degree nodes: 28
+  Mean residual edge distance: 1.2549
+  Nonlocal residual edges: 0
+
+Spatial-feature+MST | Budget=180 | GT450
+  Zero residual-degree nodes: 29
+  Mean residual edge distance: 1.2595
+  Nonlocal residual edges: 0
+
+Spatial-feature+MST | Budget=225 | AT2
+  Zero residual-degree nodes: 15
+  Mean residual edge distance: 1.2680
+  Nonlocal residual edges: 0
+
+Spatial-feature+MST | Budget=225 | GT450
+  Zero residual-degree nodes: 16
+  Mean residual edge distance: 1.2619
+  Nonlocal residual edges: 0
+
+[5] Comparing residual neighbors per node...
+
+Node-level comparison:
+             method  edge_budget  mean_node_residual_jaccard  mean_node_jaccard_nonempty_union  both_empty_residual_nodes  mean_absolute_degree_difference
+ Global-feature+MST          135                    0.551627                          0.159301                         42                         0.955556
+ Global-feature+MST          180                    0.463303                          0.167194                         32                         1.288889
+ Global-feature+MST          225                    0.486759                          0.230138                         30                         1.644444
+Spatial-feature+MST          135                    0.681852                          0.449359                         38                         0.533333
+Spatial-feature+MST          180                    0.742963                          0.649495                         24                         0.511111
+Spatial-feature+MST          225                    0.766667                          0.734177                         11                         0.511111
+
+[6] Saving diagnostic outputs...
+
+======================================================================
+GRAPH STRUCTURAL DIAGNOSTICS COMPLETED
+======================================================================
+Nodes: 90
+Graphs analyzed: 12
+All graphs connected: True
+Shared backbone edges: 89
+
+Saved outputs:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_connected_graph_structure.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_connected_graph_node_stability.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_connected_graph_node_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/12_connected_graph_structure.json
+
+STEP 3.12 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u experimental_research/scripts/13_graph_representation_consistency.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3A - GRAPH REPRESENTATION CONSISTENCY
+======================================================================
+
+[1] Loading scanner features...
+Nodes: 90
+Feature dimension: 384
+
+[2] Reconstructing connected graphs...
+Graphs loaded: 12
+
+[3] Preparing graph propagation experiments...
+
+[4] Evaluating representation consistency...
+
+Global-feature+MST | Budget=135
+  Depth 0: natural=0.973113, fixed-feature topology=1.000000
+  Depth 1: natural=0.982487, fixed-feature topology=0.998599
+  Depth 2: natural=0.984529, fixed-feature topology=0.999018
+  Depth 3: natural=0.985429, fixed-feature topology=0.999049
+
+Global-feature+MST | Budget=180
+  Depth 0: natural=0.973113, fixed-feature topology=1.000000
+  Depth 1: natural=0.982814, fixed-feature topology=0.998223
+  Depth 2: natural=0.985101, fixed-feature topology=0.998894
+  Depth 3: natural=0.986056, fixed-feature topology=0.998988
+
+Global-feature+MST | Budget=225
+  Depth 0: natural=0.973113, fixed-feature topology=1.000000
+  Depth 1: natural=0.983202, fixed-feature topology=0.998160
+  Depth 2: natural=0.985559, fixed-feature topology=0.998910
+  Depth 3: natural=0.986543, fixed-feature topology=0.999088
+
+Spatial-feature+MST | Budget=135
+  Depth 0: natural=0.973113, fixed-feature topology=1.000000
+  Depth 1: natural=0.983115, fixed-feature topology=0.999144
+  Depth 2: natural=0.985045, fixed-feature topology=0.999430
+  Depth 3: natural=0.985819, fixed-feature topology=0.999437
+
+Spatial-feature+MST | Budget=180
+  Depth 0: natural=0.973113, fixed-feature topology=1.000000
+  Depth 1: natural=0.983920, fixed-feature topology=0.999129
+  Depth 2: natural=0.985820, fixed-feature topology=0.999526
+  Depth 3: natural=0.986592, fixed-feature topology=0.999594
+
+Spatial-feature+MST | Budget=225
+  Depth 0: natural=0.973113, fixed-feature topology=1.000000
+  Depth 1: natural=0.984862, fixed-feature topology=0.999240
+  Depth 2: natural=0.986704, fixed-feature topology=0.999653
+  Depth 3: natural=0.987373, fixed-feature topology=0.999726
+
+[5] Running backbone-only control...
+  Depth 0: mean node cosine=0.973113
+  Depth 1: mean node cosine=0.982919
+  Depth 2: mean node cosine=0.984597
+  Depth 3: mean node cosine=0.985353
+
+[6] Saving results...
+
+======================================================================
+GRAPH REPRESENTATION EXPERIMENT COMPLETED
+======================================================================
+
+Natural cross-scanner comparison at depth 2:
+             method  edge_budget  mean_node_cosine  mean_node_l2  graph_mean_pool_cosine
+ Global-feature+MST          135          0.984529      0.169946                0.989185
+ Global-feature+MST          180          0.985101      0.166706                0.989360
+ Global-feature+MST          225          0.985559      0.164045                0.989492
+Spatial-feature+MST          135          0.985045      0.167216                0.989294
+Spatial-feature+MST          180          0.985820      0.162700                0.989270
+Spatial-feature+MST          225          0.986704      0.157542                0.989411
+      Backbone-only           89          0.984597      0.169720                0.989281
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_graph_representation_consistency.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/13_graph_representation_consistency.json
+
+STEP 3.13 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u experimental_research/scripts/14_oversmoothing_topology_sensitivity.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3A - OVERSMOOTHING AND TOPOLOGY SENSITIVITY
+======================================================================
+
+[1] Loading features...
+Nodes: 90
+Feature dimensions: 384
+
+[2] Loading connected graphs...
+Graph configurations: 6
+Loaded graphs: 12
+
+[3] Measuring representation dispersion...
+
+Global-feature+MST | budget=135
+  Depth 0: natural cosine=0.973113, topology L2=0.000000, ratio=0.0000
+  Depth 2: natural cosine=0.984529, topology L2=0.034518, ratio=0.2031
+  Depth 5: natural cosine=0.986403, topology L2=0.033669, ratio=0.2121
+
+Global-feature+MST | budget=180
+  Depth 0: natural cosine=0.973113, topology L2=0.000000, ratio=0.0000
+  Depth 2: natural cosine=0.985101, topology L2=0.039463, ratio=0.2367
+  Depth 5: natural cosine=0.987035, topology L2=0.034261, ratio=0.2210
+
+Global-feature+MST | budget=225
+  Depth 0: natural cosine=0.973113, topology L2=0.000000, ratio=0.0000
+  Depth 2: natural cosine=0.985559, topology L2=0.038728, ratio=0.2361
+  Depth 5: natural cosine=0.987544, topology L2=0.029444, ratio=0.1936
+
+Spatial-feature+MST | budget=135
+  Depth 0: natural cosine=0.973113, topology L2=0.000000, ratio=0.0000
+  Depth 2: natural cosine=0.985045, topology L2=0.026647, ratio=0.1594
+  Depth 5: natural cosine=0.986640, topology L2=0.025517, ratio=0.1620
+
+Spatial-feature+MST | budget=180
+  Depth 0: natural cosine=0.973113, topology L2=0.000000, ratio=0.0000
+  Depth 2: natural cosine=0.985820, topology L2=0.022999, ratio=0.1414
+  Depth 5: natural cosine=0.987357, topology L2=0.018783, ratio=0.1225
+
+Spatial-feature+MST | budget=225
+  Depth 0: natural cosine=0.973113, topology L2=0.000000, ratio=0.0000
+  Depth 2: natural cosine=0.986704, topology L2=0.019616, ratio=0.1245
+  Depth 5: natural cosine=0.988010, topology L2=0.014610, ratio=0.0978
+
+Backbone-only | budget=89
+  Depth 0: natural cosine=0.973113, topology L2=0.000000, ratio=0.0000
+  Depth 2: natural cosine=0.984597, topology L2=0.000000, ratio=0.0000
+  Depth 5: natural cosine=0.986159, topology L2=0.000000, ratio=0.0000
+
+[4] Computing dispersion retention...
+
+[5] Saving results...
+
+======================================================================
+OVERSMOOTHING AND TOPOLOGY ANALYSIS COMPLETED
+======================================================================
+
+Depth-2 topology sensitivity:
+             method  edge_budget  natural_cross_scanner_cosine  mean_topology_only_l2  topology_to_natural_l2_ratio
+ Global-feature+MST          135                      0.984529               0.034518                      0.203110
+ Global-feature+MST          180                      0.985101               0.039463                      0.236720
+ Global-feature+MST          225                      0.985559               0.038728                      0.236082
+Spatial-feature+MST          135                      0.985045               0.026647                      0.159356
+Spatial-feature+MST          180                      0.985820               0.022999                      0.141358
+Spatial-feature+MST          225                      0.986704               0.019616                      0.124513
+      Backbone-only           89                      0.984597               0.000000                      0.000000
+
+Depth-5 dispersion retention:
+             method  edge_budget scanner  mean_pairwise_node_cosine  dispersion_retention
+ Global-feature+MST          135     AT2                   0.976805              0.486996
+ Global-feature+MST          135   GT450                   0.978743              0.469380
+ Global-feature+MST          180     AT2                   0.978904              0.464326
+ Global-feature+MST          180   GT450                   0.981907              0.432839
+ Global-feature+MST          225     AT2                   0.980733              0.443715
+ Global-feature+MST          225   GT450                   0.983091              0.418372
+Spatial-feature+MST          135     AT2                   0.975882              0.496916
+Spatial-feature+MST          135   GT450                   0.977247              0.485858
+Spatial-feature+MST          180     AT2                   0.978400              0.470058
+Spatial-feature+MST          180   GT450                   0.980130              0.453577
+Spatial-feature+MST          225     AT2                   0.981316              0.436385
+Spatial-feature+MST          225   GT450                   0.981661              0.435154
+      Backbone-only           89     AT2                   0.971714              0.538611
+      Backbone-only           89   GT450                   0.972704              0.532626
+
+Saved outputs:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_oversmoothing_metrics.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/tables/plism_topology_sensitivity.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/reports/14_oversmoothing_topology_sensitivity.json
+
+STEP 3.14 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u experimental_research/scripts/15_finalize_phase3a.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 2 + PHASE 3A FINALIZATION
+======================================================================
+
+[1] Loading experimental results...
+All 7 required result tables loaded.
+
+[2] Generating final figures...
+  Saved: figure_01_matched_budget_stability (PNG + PDF)
+  Saved: figure_02_chance_adjusted_stability (PNG + PDF)
+  Saved: figure_03_graph_fragmentation (PNG + PDF)
+  Saved: figure_04_connected_residual_stability (PNG + PDF)
+  Saved: figure_05_node_neighborhood_stability (PNG + PDF)
+  Saved: figure_06_topology_sensitivity (PNG + PDF)
+  Saved: figure_07_representation_consistency (PNG + PDF)
+  Saved: figure_08_oversmoothing_dispersion (PNG + PDF)
+
+[3] Saving figure inventory...
+
+[4] Writing Phase 2 README...
+
+[5] Writing Phase 3A README...
+
+[6] Validating final outputs...
+
+======================================================================
+PHASE 2 + PHASE 3A FINALIZATION COMPLETED
+======================================================================
+Final research figures: 8
+PNG files: 8
+PDF files: 8
+
+README files:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/research_design/README.md
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/README.md
+
+Figure directory:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/experimental_research/outputs/figures
+
+All generated outputs validated.
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------

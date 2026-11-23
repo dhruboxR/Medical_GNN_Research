@@ -1,0 +1,11 @@
+filename,article_id,column_position,column_name
+PLISM_sm_en.csv,23590791,1,path
+PLISM_sm_en.csv,23590791,2,stain
+PLISM_sm_en.csv,23590791,3,device
+PLISM_sm_en.csv,23590791,4,tissue_type
+PLISM_sm_en.csv,23590791,5,coordinate
+PLISM_wsi_en.csv,23614422,1,stain
+PLISM_wsi_en.csv,23614422,2,device
+PLISM_wsi_en.csv,23614422,3,tissue_type
+PLISM_wsi_en.csv,23614422,4,coordinate
+PLISM_wsi_en.csv,23614422,5,path

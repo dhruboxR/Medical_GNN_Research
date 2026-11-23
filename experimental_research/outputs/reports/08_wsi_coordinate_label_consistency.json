@@ -1,0 +1,22 @@
+{
+  "phase": "3A",
+  "step": "3.8",
+  "generated_utc": "2026-11-22T20:53:48.583563+00:00",
+  "annotation_source": "PLISM_wsi_en.csv",
+  "stain": "GIVH",
+  "at2_annotation_rows": 3417,
+  "gt450_annotation_rows": 3417,
+  "at2_unique_coordinates": 3417,
+  "gt450_unique_coordinates": 3417,
+  "shared_coordinates": 3417,
+  "at2_only_coordinates": 0,
+  "gt450_only_coordinates": 0,
+  "single_label_agreements": 3417,
+  "conflicting_shared_coordinates": 0,
+  "shared_coordinate_label_agreement": 1.0,
+  "at2_duplicate_coordinate_groups": 0,
+  "gt450_duplicate_coordinate_groups": 0,
+  "original_wsi_coordinates_consistent": true,
+  "owkin_tile_mapping_verified": false,
+  "independent_biological_specimens_verified": false
+}

@@ -1,0 +1,122 @@
+{
+  "phase": "3A",
+  "step": "3.14",
+  "nodes": 90,
+  "feature_dimension": 384,
+  "depths": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "representation_operator": "Row-normalized adjacency with self-loops",
+  "oversmoothing_indicators": [
+    "Increasing within-graph pairwise cosine",
+    "Decreasing embedding dispersion",
+    "Decreasing dispersion retention"
+  ],
+  "topology_isolation": "Compare AT2/GT450 edges with fixed features",
+  "interpretation_limitations": [
+    "One tissue region",
+    "No GNN training",
+    "No classification labels",
+    "No specimen-level statistical inference",
+    "Topology-to-natural ratio is descriptive",
+    "Smoothing is not proof of improved robustness"
+  ],
+  "depth2_sensitivity": [
+    {
+      "method": "Global-feature+MST",
+      "edge_budget": 135,
+      "depth": 2,
+      "natural_cross_scanner_cosine": 0.9845289609745896,
+      "natural_cross_scanner_l2": 0.16994557489082365,
+      "topology_only_cosine_at2": 0.9990180264896218,
+      "topology_only_cosine_gt450": 0.9989848428842415,
+      "topology_only_l2_at2": 0.034110761531704996,
+      "topology_only_l2_gt450": 0.03492441891090255,
+      "mean_topology_only_l2": 0.03451759022130377,
+      "topology_to_natural_l2_ratio": 0.20310967345562567
+    },
+    {
+      "method": "Global-feature+MST",
+      "edge_budget": 180,
+      "depth": 2,
+      "natural_cross_scanner_cosine": 0.9851005420696312,
+      "natural_cross_scanner_l2": 0.16670556508049886,
+      "topology_only_cosine_at2": 0.9988935833456222,
+      "topology_only_cosine_gt450": 0.9987561465140792,
+      "topology_only_l2_at2": 0.03850127129463161,
+      "topology_only_l2_gt450": 0.040423792539180575,
+      "mean_topology_only_l2": 0.03946253191690609,
+      "topology_to_natural_l2_ratio": 0.23671994331953108
+    },
+    {
+      "method": "Global-feature+MST",
+      "edge_budget": 225,
+      "depth": 2,
+      "natural_cross_scanner_cosine": 0.9855588302293586,
+      "natural_cross_scanner_l2": 0.16404465493051654,
+      "topology_only_cosine_at2": 0.998909855419025,
+      "topology_only_cosine_gt450": 0.9988356311722154,
+      "topology_only_l2_at2": 0.03808092082040022,
+      "topology_only_l2_gt450": 0.03937492378033734,
+      "mean_topology_only_l2": 0.03872792230036878,
+      "topology_to_natural_l2_ratio": 0.23608158593629613
+    },
+    {
+      "method": "Spatial-feature+MST",
+      "edge_budget": 135,
+      "depth": 2,
+      "natural_cross_scanner_cosine": 0.9850450853383848,
+      "natural_cross_scanner_l2": 0.16721556853444697,
+      "topology_only_cosine_at2": 0.9994298793268953,
+      "topology_only_cosine_gt450": 0.9993727928398672,
+      "topology_only_l2_at2": 0.026016992342852582,
+      "topology_only_l2_gt450": 0.02727653856865915,
+      "mean_topology_only_l2": 0.026646765455755866,
+      "topology_to_natural_l2_ratio": 0.15935576866018036
+    },
+    {
+      "method": "Spatial-feature+MST",
+      "edge_budget": 180,
+      "depth": 2,
+      "natural_cross_scanner_cosine": 0.9858198588402904,
+      "natural_cross_scanner_l2": 0.16269953266127288,
+      "topology_only_cosine_at2": 0.9995255746990789,
+      "topology_only_cosine_gt450": 0.9994395914402171,
+      "topology_only_l2_at2": 0.02256615692120662,
+      "topology_only_l2_gt450": 0.02343173785642042,
+      "mean_topology_only_l2": 0.02299894738881352,
+      "topology_to_natural_l2_ratio": 0.14135841088551523
+    },
+    {
+      "method": "Spatial-feature+MST",
+      "edge_budget": 225,
+      "depth": 2,
+      "natural_cross_scanner_cosine": 0.9867044353107701,
+      "natural_cross_scanner_l2": 0.1575424648806822,
+      "topology_only_cosine_at2": 0.9996528349999588,
+      "topology_only_cosine_gt450": 0.9996528260760174,
+      "topology_only_l2_at2": 0.019599188077700596,
+      "topology_only_l2_gt450": 0.01963298109676203,
+      "mean_topology_only_l2": 0.01961608458723131,
+      "topology_to_natural_l2_ratio": 0.12451299782625548
+    },
+    {
+      "method": "Backbone-only",
+      "edge_budget": 89,
+      "depth": 2,
+      "natural_cross_scanner_cosine": 0.9845971115973066,
+      "natural_cross_scanner_l2": 0.16971957480176197,
+      "topology_only_cosine_at2": 1.0,
+      "topology_only_cosine_gt450": 1.0,
+      "topology_only_l2_at2": 0.0,
+      "topology_only_l2_gt450": 0.0,
+      "mean_topology_only_l2": 0.0,
+      "topology_to_natural_l2_ratio": 0.0
+    }
+  ]
+}

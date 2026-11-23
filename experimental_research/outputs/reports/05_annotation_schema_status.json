@@ -1,0 +1,12 @@
+[
+  {
+    "filename": "PLISM_sm_en.csv",
+    "status": "PARTIAL_READ_OK",
+    "columns_found": 5
+  },
+  {
+    "filename": "PLISM_wsi_en.csv",
+    "status": "PARTIAL_READ_OK",
+    "columns_found": 5
+  }
+]

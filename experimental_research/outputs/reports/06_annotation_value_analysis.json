@@ -1,0 +1,20 @@
+{
+  "phase": "3A",
+  "step": "3.6",
+  "wsi_sample_rows": 3,
+  "smartphone_sample_rows": 3,
+  "coordinate_examples": [
+    "100352_61440",
+    "100352_62464",
+    "101376_20480"
+  ],
+  "path_examples": [
+    "/GIVH_AT2/GIVH_AT2_100352_61440.png",
+    "/GIVH_AT2/GIVH_AT2_100352_62464.png",
+    "/GIVH_AT2/GIVH_AT2_101376_20480.png"
+  ],
+  "explicit_specimen_id": false,
+  "coordinate_mapping_verified": false,
+  "tissue_core_mapping_verified": false,
+  "next_requirement": "Determine original WSI coordinate conventions and registered Owkin tile-to-source transforms."
+}

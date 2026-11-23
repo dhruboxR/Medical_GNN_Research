@@ -1,0 +1,17 @@
+{
+  "dataset": "PLISM",
+  "phase": "3A",
+  "step": "3.2",
+  "generated_utc": "2026-11-22T20:46:18.567961+00:00",
+  "matched_tile_locations": 90,
+  "complete_image_pairs": 90,
+  "valid_cross_scanner_pairs": 90,
+  "observed_scanner_groups": 2,
+  "observed_slide_ids": 2,
+  "explicit_specimen_fields_found": [],
+  "biological_independence_verified": false,
+  "verified_independent_specimen_count": null,
+  "pilot_pairing_suitable": true,
+  "specimen_level_inference_ready": false,
+  "confirmatory_test_split_ready": false
+}
