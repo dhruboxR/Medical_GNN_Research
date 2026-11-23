@@ -1,0 +1,88 @@
+{
+  "phase": "3B",
+  "status": "CLOSED",
+  "closure_step": "3B.28",
+  "generated_utc": "2026-11-23T21:14:53.563103+00:00",
+  "manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "feature_archive_sha256": "484531c4f192d228cf04135da8afa64142a8ec77b6696a1e06f12a36b0264096",
+  "dataset": "Owkin PLISM original Parquet PNG images",
+  "scanner_pair": [
+    "AT2",
+    "GT450"
+  ],
+  "regions": 10,
+  "paired_tile_positions": 360,
+  "original_images": 720,
+  "model": "facebook/dinov2-small",
+  "feature_dimension": 384,
+  "experiment_inventory": {
+    "20": {
+      "path": "multi_region_research/outputs/tables/plism_phase3b_graph_stability_per_region.csv",
+      "rows": 80,
+      "sha256": "d681bf6a7af0c1af973f5fdf638b92b8e14a105d1bf3017687973656f0fc522f"
+    },
+    "21": {
+      "path": "multi_region_research/outputs/tables/plism_phase3b_connected_graph_per_region.csv",
+      "rows": 60,
+      "sha256": "69eb05eb6a0b39e278b37dfd74ad488af6282b5ecc16f5490e57f10c9534e337"
+    },
+    "22": {
+      "path": "multi_region_research/outputs/tables/plism_phase3b_node_neighborhood_per_region.csv",
+      "rows": 60,
+      "sha256": "fe417a8223f94187f1fa2c24a0b14a295251401ccd61dfbbd593f53a7e94298d"
+    },
+    "23": {
+      "path": "multi_region_research/outputs/tables/plism_phase3b_propagation_per_region.csv",
+      "rows": 300,
+      "sha256": "a90b0e8bb230c255afec86a328d30c5c12f20bcfbbc34ce47733b21c8bab58bb"
+    },
+    "24": {
+      "path": "multi_region_research/outputs/tables/plism_phase3b_oversmoothing_paired.csv",
+      "rows": 150,
+      "sha256": "e9402c42539612bea14e3691a78204cab54bf8eea36e53b8dbef3a7901fea60d"
+    },
+    "25": {
+      "path": "multi_region_research/outputs/tables/plism_phase3b_geometry_conditioned_paired.csv",
+      "rows": 30,
+      "sha256": "5794256ce003ca659b46fa26d1bab1ef071429e591d27e4d5f7247761d48eee0"
+    },
+    "26": {
+      "path": "multi_region_research/outputs/tables/plism_phase3b_smoothing_matched_per_region.csv",
+      "rows": 30,
+      "sha256": "0be3f5c83661075774b61e59646b3bb12f175691c51b481cac75fbe527cba11f"
+    },
+    "27": {
+      "path": "multi_region_research/outputs/tables/plism_phase3b_equal_strength_paired.csv",
+      "rows": 120,
+      "sha256": "ca9c0847ed2e46782af877149d658177509aeadf342b77bfecb89e538ef4c0a0"
+    }
+  },
+  "key_evidence": {
+    "primary_edge_budget": 72,
+    "primary_alpha": 0.5,
+    "primary_depth": 2,
+    "primary_mean_global_topology_l2": 3.681057548497897,
+    "primary_mean_spatial_topology_l2": 2.45261304163351,
+    "primary_relative_l2_reduction": 0.3337205383723679,
+    "primary_positive_regions": 10,
+    "connected_global_mean_residual_jaccard": 0.34462222362685874,
+    "connected_spatial_mean_residual_jaccard": 0.6937870328941625,
+    "geometry_adjusted_spatial_positive_regions": 7,
+    "geometry_adjusted_mean_difference": 0.11088786156711379,
+    "spatial_lower_variance_retention_regions": 10,
+    "variance_matched_acceptable_comparisons": 30,
+    "variance_matched_total_comparisons": 30
+  },
+  "main_conclusion": "Spatial graph construction showed improved observed cross-scanner topology and deterministic representation consistency in the selected regions, with smoothing and geometry-related trade-offs.",
+  "unresolved_limitations": [
+    "One registered scanner acquisition pair",
+    "Biological specimen independence unverified",
+    "Manual registration review not confirmed",
+    "Spatial graph advantage not universal after geometry adjustment",
+    "Variance preservation is not downstream utility",
+    "No trained GNN or clinical task evaluated",
+    "Novelty requires current literature review"
+  ],
+  "next_phase": "Phase 4 - main research design and validation",
+  "frozen_inputs_modified": false
+}

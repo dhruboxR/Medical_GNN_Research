@@ -1,0 +1,16 @@
+{
+  "phase": "3B",
+  "step": "3B.13",
+  "generated_utc": "2026-11-23T20:22:05.646542+00:00",
+  "dataset": "owkin/plism-dataset-tiles",
+  "shards_inspected": 3,
+  "total_rows_in_tested_shards": 15168,
+  "total_row_groups": 153,
+  "tile_id_min_max_available": true,
+  "total_png_compressed_bytes": 1660428377,
+  "metadata_only": true,
+  "image_bytes_downloaded": 0,
+  "full_parquet_files_downloaded": 0,
+  "individual_tile_retrieval_feasible": "NOT_YET_ESTABLISHED",
+  "frozen_manifest_modified": false
+}

@@ -1,0 +1,39 @@
+{
+  "phase": "3B",
+  "step": "3B.4 API",
+  "timestamp_utc": "2026-11-23T19:56:45.670743+00:00",
+  "dataset": "owkin/plism-dataset-tiles",
+  "stainer": "GIVH",
+  "scanners": [
+    "AT2",
+    "GT450"
+  ],
+  "max_pages_per_scanner": 20,
+  "page_size": 100,
+  "requests_completed": {
+    "AT2": 20,
+    "GT450": 20
+  },
+  "reported_scanner_totals": {
+    "AT2": 16278,
+    "GT450": 16278
+  },
+  "observed_tile_counts": {
+    "AT2": 2000,
+    "GT450": 2000
+  },
+  "matched_tile_ids": 2000,
+  "candidate_windows": 749,
+  "selected_regions": 12,
+  "full_dataset_scanned": false,
+  "original_wsi_coordinate_mapping_verified": false,
+  "biological_independence_verified": false,
+  "images_downloaded": 0,
+  "limitations": [
+    "Only initial API pages were examined",
+    "Matched ID coverage may be incomplete",
+    "No tissue labels have been verified",
+    "No biological independence has been established",
+    "No source WSI coordinate transform was inferred"
+  ]
+}

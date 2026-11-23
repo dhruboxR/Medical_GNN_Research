@@ -1,0 +1,61 @@
+{
+  "phase": "3B",
+  "step": "3B.11B",
+  "created_utc": "2026-11-23T20:19:29.661733+00:00",
+  "tile_id": "tile_16_100_127",
+  "frozen_manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "comparisons": {
+    "AT2": {
+      "tile_id": "tile_16_100_127",
+      "original_file": "datasets/PLISM/GIVH_AT2_GT450/AT2/tile_16_100_127.png",
+      "viewer_file": "datasets/PLISM/phase3b_source_comparison/tile_16_100_127_AT2_viewer.jpg",
+      "original_format": "PNG",
+      "viewer_format": "JPEG",
+      "original_mode": "RGB",
+      "viewer_mode": "RGB",
+      "dimensions": [
+        224,
+        224
+      ],
+      "original_sha256": "7f899a2dcfc7ccab999b27cf78c233c2a1cc61587fed348c2c01854a46f09ce3",
+      "viewer_sha256": "700fe31b544f54ba2f795551b9a85e8a46223758bfb6ff7fc794c22536342f9c",
+      "original_bytes": 116236,
+      "viewer_bytes": 15734,
+      "decoded_rgb_exact_match": false,
+      "pixel_mae": 4.9698262214660645,
+      "pixel_rmse": 6.4385528564453125,
+      "maximum_channel_difference": 38,
+      "fraction_of_changed_pixels": 0.9968909438775511
+    },
+    "GT450": {
+      "tile_id": "tile_16_100_127",
+      "original_file": "datasets/PLISM/GIVH_AT2_GT450/GT450/tile_16_100_127.png",
+      "viewer_file": "datasets/PLISM/phase3b_source_comparison/tile_16_100_127_GT450_viewer.jpg",
+      "original_format": "PNG",
+      "viewer_format": "JPEG",
+      "original_mode": "RGB",
+      "viewer_mode": "RGB",
+      "dimensions": [
+        224,
+        224
+      ],
+      "original_sha256": "0272c2241320575987c8a8ed2b4634986d5999060d61cd9da2d2f9200a47b309",
+      "viewer_sha256": "46a2d567cc8c39786d1f0b94805c9a515bad8bcf919095a87e8735d1fcaf66fc",
+      "original_bytes": 107384,
+      "viewer_bytes": 13312,
+      "decoded_rgb_exact_match": false,
+      "pixel_mae": 4.080995082855225,
+      "pixel_rmse": 5.2689127922058105,
+      "maximum_channel_difference": 28,
+      "fraction_of_changed_pixels": 0.9905731823979592
+    }
+  },
+  "both_exact_rgb_matches": false,
+  "interpretation_limitations": [
+    "One tile per scanner was compared",
+    "Local PNG origin is based on Phase 1 file provenance",
+    "Pixel differences alone do not identify their cause",
+    "A match does not prove equivalence for all dataset tiles",
+    "Original WSI tissue attribution remains unverified"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "phase": "3B",
+  "step": "3B.5",
+  "generated_utc": "2026-11-23T19:58:11.824847+00:00",
+  "input_matched_tiles": 2000,
+  "candidate_windows": 749,
+  "fully_populated_candidates": 265,
+  "selected_regions": 8,
+  "selected_matched_tile_positions": 288,
+  "expected_paired_images": 576,
+  "minimum_required_grid_separation": 6.0,
+  "minimum_observed_grid_separation": 6.0,
+  "original_wsi_mapping_verified": false,
+  "tissue_type_verified": false,
+  "biological_independence_verified": false,
+  "source_inventory_complete": false,
+  "images_downloaded": 0,
+  "sampling_limitations": [
+    "Only the initial 2000 API rows per scanner were considered",
+    "Spatially separated regions may share a biological specimen",
+    "Tissue labels are unavailable for these Owkin-native regions",
+    "Farthest-first selection is deterministic, not randomized",
+    "Grid distance is not a verified physical distance"
+  ]
+}

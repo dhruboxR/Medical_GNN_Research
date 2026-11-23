@@ -1,0 +1,38 @@
+{
+  "phase": "3B",
+  "step": "3B.20",
+  "generated_utc": "2026-11-23T20:50:06.903794+00:00",
+  "manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "feature_archive_sha256": "484531c4f192d228cf04135da8afa64142a8ec77b6696a1e06f12a36b0264096",
+  "encoder": "facebook/dinov2-small",
+  "embedding": "raw CLS token",
+  "normalization_for_graph_similarity": "L2 normalization",
+  "regions": 10,
+  "nodes_per_region": 36,
+  "graph_types": [
+    "global",
+    "spatial"
+  ],
+  "edge_budgets": [
+    36,
+    54,
+    72,
+    90
+  ],
+  "experiment_rows": 80,
+  "chance_adjustment": "Observed common-edge fraction adjusted against independent uniform edge selection from the same candidate pool.",
+  "connectivity_enforced": false,
+  "trained_gnn_used": false,
+  "images_modified": false,
+  "frozen_manifest_modified": false,
+  "biological_independence_verified": false,
+  "manual_visual_review_completed": false,
+  "limitations": [
+    "Ten regions originate from one acquisition pair",
+    "Spatial candidate pools are structurally restricted",
+    "Chance adjustment assumes uniform random edge sets",
+    "Top-M selection may create disconnected graphs",
+    "Descriptive statistics do not establish independence",
+    "No trained GNN performance has been evaluated"
+  ]
+}

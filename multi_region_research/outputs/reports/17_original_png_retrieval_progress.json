@@ -1,0 +1,17 @@
+{
+  "phase": "3B",
+  "step": "3B.17",
+  "updated_utc": "2026-11-23T20:40:46.200561+00:00",
+  "manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "target_records": 720,
+  "verified_local_images": 720,
+  "remaining_images": 0,
+  "completed": true,
+  "processed_groups_this_run": 67,
+  "http_requests_this_run": 201,
+  "bytes_transferred_this_run": 684830319,
+  "original_png_bytes_preserved": true,
+  "frozen_manifest_modified": false,
+  "dataset_viewer_jpegs_used": false,
+  "biological_independence_verified": false
+}

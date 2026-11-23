@@ -1,0 +1,47 @@
+{
+  "phase": "3B",
+  "step": "3B.23",
+  "generated_utc": "2026-11-23T20:55:36.359294+00:00",
+  "manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "feature_archive_sha256": "484531c4f192d228cf04135da8afa64142a8ec77b6696a1e06f12a36b0264096",
+  "regions": 10,
+  "nodes_per_region": 36,
+  "edge_budgets": [
+    54,
+    72,
+    90
+  ],
+  "depths": [
+    0,
+    1,
+    2,
+    4,
+    8
+  ],
+  "graph_types": [
+    "global",
+    "spatial"
+  ],
+  "detail_records": 300,
+  "paired_difference_records": 150,
+  "propagation_operator": "D^-1/2 (A+I) D^-1/2",
+  "initial_features": "raw DINOv2-Small CLS embeddings",
+  "topology_effect": "Average of AT2 and GT450 feature matrices propagated through alternate scanner graphs",
+  "feature_effect": "Average difference between AT2 and GT450 features propagated through a fixed graph",
+  "trained_gnn_used": false,
+  "weights_learned": false,
+  "images_modified": false,
+  "features_modified": false,
+  "frozen_manifest_modified": false,
+  "manual_registration_review_completed": false,
+  "biological_independence_verified": false,
+  "limitations": [
+    "Deterministic propagation is not trained GNN evaluation",
+    "No nonlinearities, trainable weights or classification loss",
+    "Graph and feature effects are not additive",
+    "Smaller propagation differences do not imply better accuracy",
+    "Node variance is a descriptive smoothing diagnostic",
+    "All ten regions originate from one acquisition pair",
+    "Spatial and global candidate pools remain different"
+  ]
+}

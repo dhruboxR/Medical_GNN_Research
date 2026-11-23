@@ -1,0 +1,32 @@
+{
+  "phase": "3B",
+  "step": "3B.21",
+  "generated_utc": "2026-11-23T20:51:41.231036+00:00",
+  "manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "feature_archive_sha256": "484531c4f192d228cf04135da8afa64142a8ec77b6696a1e06f12a36b0264096",
+  "regions": 10,
+  "nodes_per_region": 36,
+  "shared_spatial_backbone_edges": 35,
+  "edge_budgets": [
+    54,
+    72,
+    90
+  ],
+  "comparison_records": 60,
+  "all_graphs_connected": true,
+  "spatial_residual_pool_size": 75,
+  "global_residual_pool_size": 595,
+  "method": "Shared coordinate-only spatial MST followed by scanner-specific top-cosine residual edge selection.",
+  "chance_adjustment": "Residual edge agreement adjusted against independent uniform selection from each residual candidate pool.",
+  "trained_gnn_used": false,
+  "biological_independence_verified": false,
+  "manual_registration_review_completed": false,
+  "limitations": [
+    "Shared backbone artificially raises full-edge stability",
+    "Residual-edge comparisons are therefore primary",
+    "Global and spatial residual pools differ in size",
+    "Uniform random overlap is not a geometry-matched null model",
+    "Ten regions are not verified independent specimens",
+    "Connectivity alone does not establish representation robustness"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "phase": "3B",
+  "step": "3B.22",
+  "generated_utc": "2026-11-23T20:53:39.813485+00:00",
+  "manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "feature_sha256": "484531c4f192d228cf04135da8afa64142a8ec77b6696a1e06f12a36b0264096",
+  "regions": 10,
+  "nodes_per_region": 36,
+  "graph_types": [
+    "global",
+    "spatial"
+  ],
+  "edge_budgets": [
+    54,
+    72,
+    90
+  ],
+  "node_records": 2160,
+  "region_records": 60,
+  "shared_backbone_edges": 35,
+  "both_empty_nodes_excluded_from_primary_jaccard": true,
+  "long_range_threshold_grid_units": 1.4142135623730951,
+  "trained_gnn_used": false,
+  "images_modified": false,
+  "frozen_manifest_modified": false,
+  "biological_independence_verified": false,
+  "limitations": [
+    "A shared backbone is used in both scanner graphs",
+    "Residual neighborhood Jaccard excludes both-empty nodes",
+    "Global and spatial candidate pools have different sizes",
+    "Spatial graph residual edges are local by definition",
+    "Ten regions do not establish biological independence",
+    "Node observations within a region are not independent",
+    "No learned GNN representation has been evaluated"
+  ]
+}

@@ -1,0 +1,13 @@
+region_id,tissue_type,original_grid_x_start,original_grid_y_start,original_grid_x_end,original_grid_y_end,original_coordinate_x_start,original_coordinate_y_start,original_coordinate_x_end,original_coordinate_y_end,mapping_to_owkin_verified
+REGION_001,07_renal_cortex,88,3,93,8,90112,3072,95232,8192,False
+REGION_002,08_renal_medulla,101,3,106,8,103424,3072,108544,8192,False
+REGION_003,10_corpus_luteum,16,15,21,20,16384,15360,21504,20480,False
+REGION_004,11_uterine_cervix,33,16,38,21,33792,16384,38912,21504,False
+REGION_005,12_lymph_node,60,16,65,21,61440,16384,66560,21504,False
+REGION_006,15_spleen,101,17,106,22,103424,17408,108544,22528,False
+REGION_007,17_prostate,17,29,22,34,17408,29696,22528,34816,False
+REGION_008,18_liver,31,29,36,34,31744,29696,36864,34816,False
+REGION_009,19_jejunum,46,28,51,33,47104,28672,52224,33792,False
+REGION_010,22_uterine_corpus,87,32,92,37,89088,32768,94208,37888,False
+REGION_011,23_left_ventricle,101,32,106,37,103424,32768,108544,37888,False
+REGION_012,24_pituitary_gland,3,42,8,47,3072,43008,8192,48128,False

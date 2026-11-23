@@ -1,0 +1,4 @@
+shard,file_size_bytes,footer_metadata_bytes,num_rows,num_row_groups,schema_columns
+train-00000-of-00293.parquet,552716146,37173,5056,51,__key__;stainer;scanner;slide_id;tile_id;bytes;path
+train-00001-of-00293.parquet,563516018,37164,5056,51,__key__;stainer;scanner;slide_id;tile_id;bytes;path
+train-00002-of-00293.parquet,544567194,36963,5056,51,__key__;stainer;scanner;slide_id;tile_id;bytes;path

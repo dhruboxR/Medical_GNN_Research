@@ -1,0 +1,13 @@
+region_id,tissue_type,grid_x_start,grid_y_start,grid_x_end,grid_y_end,annotated_positions,window_positions,coverage_fraction,source_coordinate_system,owkin_tile_mapping_verified,independent_specimen_verified
+REGION_001,07_renal_cortex,88,3,93,8,36,36,1.0,Original PLISM WSI,False,False
+REGION_002,08_renal_medulla,101,3,106,8,36,36,1.0,Original PLISM WSI,False,False
+REGION_003,10_corpus_luteum,16,15,21,20,36,36,1.0,Original PLISM WSI,False,False
+REGION_004,11_uterine_cervix,33,16,38,21,36,36,1.0,Original PLISM WSI,False,False
+REGION_005,12_lymph_node,60,16,65,21,36,36,1.0,Original PLISM WSI,False,False
+REGION_006,15_spleen,101,17,106,22,36,36,1.0,Original PLISM WSI,False,False
+REGION_007,17_prostate,17,29,22,34,36,36,1.0,Original PLISM WSI,False,False
+REGION_008,18_liver,31,29,36,34,36,36,1.0,Original PLISM WSI,False,False
+REGION_009,19_jejunum,46,28,51,33,36,36,1.0,Original PLISM WSI,False,False
+REGION_010,22_uterine_corpus,87,32,92,37,36,36,1.0,Original PLISM WSI,False,False
+REGION_011,23_left_ventricle,101,32,106,37,36,36,1.0,Original PLISM WSI,False,False
+REGION_012,24_pituitary_gland,3,42,8,47,36,36,1.0,Original PLISM WSI,False,False

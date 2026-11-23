@@ -1,0 +1,21 @@
+{
+  "phase": "3B",
+  "step": "3B.11",
+  "generated_utc": "2026-11-23T20:17:38.395717+00:00",
+  "tile_id": "tile_16_105_76",
+  "manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "scanner_results": {
+    "AT2": {
+      "status": "ORIGINAL_NOT_FOUND",
+      "viewer_path": "/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/datasets/PLISM/phase3b_pilot_validation/tile_16_105_76_AT2.jpg",
+      "original_candidates": []
+    },
+    "GT450": {
+      "status": "ORIGINAL_NOT_FOUND",
+      "viewer_path": "/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/datasets/PLISM/phase3b_pilot_validation/tile_16_105_76_GT450.jpg",
+      "original_candidates": []
+    }
+  },
+  "all_scanners_compared": false,
+  "original_source_provenance_assumption": "Files under the Phase 1 dataset directory are treated as original PNG candidates. Their download provenance must be confirmed from Phase 1 acquisition records."
+}

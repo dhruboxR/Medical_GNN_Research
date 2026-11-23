@@ -1,0 +1,25 @@
+{
+  "phase": "3B",
+  "step": "3B.15",
+  "generated_utc": "2026-11-23T20:25:50.116962+00:00",
+  "frozen_manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "shard_count_inspected": 12,
+  "total_shards": 293,
+  "total_target_records": 720,
+  "targets_with_candidate_locations": 720,
+  "targets_without_candidate_locations": 0,
+  "candidate_row_groups": 70,
+  "estimated_png_chunk_bytes": 710468519,
+  "exact_tile_locations_verified": false,
+  "images_downloaded": 0,
+  "full_shards_downloaded": 0,
+  "frozen_manifest_modified": false,
+  "notes": [
+    "Only the first 12 shards were inspected",
+    "Parquet statistics use lexicographic string ranges",
+    "Candidate row groups must be checked against actual rows",
+    "Metadata column chunks may require additional HTTP requests",
+    "PNG chunk estimates are approximate transfer costs",
+    "No biological independence established"
+  ]
+}

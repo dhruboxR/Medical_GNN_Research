@@ -1,0 +1,155 @@
+{
+  "phase": "3B",
+  "step": "3B.19",
+  "generated_utc": "2026-11-23T20:48:28.372161+00:00",
+  "manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "feature_archive_sha256": "484531c4f192d228cf04135da8afa64142a8ec77b6696a1e06f12a36b0264096",
+  "model": "facebook/dinov2-small",
+  "batch_size": 8,
+  "device": "cuda",
+  "image_source": "original_plism_parquet_png",
+  "processor": "AutoImageProcessor.from_pretrained",
+  "processor_settings": {
+    "crop_size": {
+      "height": 224,
+      "width": 224
+    },
+    "do_center_crop": true,
+    "do_convert_rgb": true,
+    "do_normalize": true,
+    "do_rescale": true,
+    "do_resize": true,
+    "image_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "image_processor_type": "BitImageProcessor",
+    "image_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "resample": 3,
+    "rescale_factor": 0.00392156862745098,
+    "size": {
+      "shortest_edge": 256
+    }
+  },
+  "model_output": "last_hidden_state[:, 0, :]",
+  "model_eval": true,
+  "torch_inference_mode": true,
+  "stored_embeddings_l2_normalized": false,
+  "embedding_dtype": "float32",
+  "embedding_dimension": 384,
+  "regions": 10,
+  "matched_positions": 360,
+  "images_processed": 720,
+  "overall_mean_paired_cosine": 0.9654862880706787,
+  "overall_std_paired_cosine": 0.01663653366267681,
+  "overall_mean_paired_euclidean": 12.830520629882812,
+  "region_results": [
+    {
+      "region_id": "OWKIN_DISTRIBUTED_001",
+      "paired_positions": 36,
+      "mean_cosine_similarity": 0.9641150203016069,
+      "std_cosine_similarity": 0.011659584939479828,
+      "min_cosine_similarity": 0.9356011748313904,
+      "max_cosine_similarity": 0.9832982420921326,
+      "mean_euclidean_distance": 13.162397384643555
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_002",
+      "paired_positions": 36,
+      "mean_cosine_similarity": 0.9718135479423735,
+      "std_cosine_similarity": 0.008150581270456314,
+      "min_cosine_similarity": 0.9497588276863098,
+      "max_cosine_similarity": 0.9853609800338745,
+      "mean_euclidean_distance": 11.888824224472046
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_003",
+      "paired_positions": 36,
+      "mean_cosine_similarity": 0.963541116979387,
+      "std_cosine_similarity": 0.0150668416172266,
+      "min_cosine_similarity": 0.8918566107749939,
+      "max_cosine_similarity": 0.9822214245796204,
+      "mean_euclidean_distance": 13.278117391798231
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_004",
+      "paired_positions": 36,
+      "mean_cosine_similarity": 0.9451784657107459,
+      "std_cosine_similarity": 0.01967993937432766,
+      "min_cosine_similarity": 0.9026678800582886,
+      "max_cosine_similarity": 0.9787540435791016,
+      "mean_euclidean_distance": 16.428098440170288
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_005",
+      "paired_positions": 36,
+      "mean_cosine_similarity": 0.9740827216042413,
+      "std_cosine_similarity": 0.009063231758773327,
+      "min_cosine_similarity": 0.9414583444595337,
+      "max_cosine_similarity": 0.985748291015625,
+      "mean_euclidean_distance": 11.246976296106974
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_006",
+      "paired_positions": 36,
+      "mean_cosine_similarity": 0.9743100934558444,
+      "std_cosine_similarity": 0.007751718163490295,
+      "min_cosine_similarity": 0.9490175843238831,
+      "max_cosine_similarity": 0.9861867427825928,
+      "mean_euclidean_distance": 11.1392998430464
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_007",
+      "paired_positions": 36,
+      "mean_cosine_similarity": 0.967761723531617,
+      "std_cosine_similarity": 0.012214201502501965,
+      "min_cosine_similarity": 0.9363166093826294,
+      "max_cosine_similarity": 0.9853237271308899,
+      "mean_euclidean_distance": 12.341815842522514
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_008",
+      "paired_positions": 36,
+      "mean_cosine_similarity": 0.9497522314389547,
+      "std_cosine_similarity": 0.017558572813868523,
+      "min_cosine_similarity": 0.8946658372879028,
+      "max_cosine_similarity": 0.976466178894043,
+      "mean_euclidean_distance": 15.776751041412354
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_009",
+      "paired_positions": 36,
+      "mean_cosine_similarity": 0.9766663892401589,
+      "std_cosine_similarity": 0.007329795975238085,
+      "min_cosine_similarity": 0.9545949697494507,
+      "max_cosine_similarity": 0.9878073334693909,
+      "mean_euclidean_distance": 10.638244377242195
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_010",
+      "paired_positions": 36,
+      "mean_cosine_similarity": 0.9676414661937289,
+      "std_cosine_similarity": 0.01865975558757782,
+      "min_cosine_similarity": 0.8774450421333313,
+      "max_cosine_similarity": 0.9902528524398804,
+      "mean_euclidean_distance": 12.404669721921286
+    }
+  ],
+  "manual_visual_review_completed": false,
+  "biological_independence_verified": false,
+  "original_wsi_mapping_verified": false,
+  "phase1_feature_archive_modified": false,
+  "frozen_manifest_modified": false,
+  "limitations": [
+    "Pretrained generic image encoder",
+    "One registered scanner-acquisition pair",
+    "Ten spatial regions are not proven independent specimens",
+    "Manual visual registration assessment remains pending",
+    "GPU and CPU calculations may have small numerical differences"
+  ]
+}

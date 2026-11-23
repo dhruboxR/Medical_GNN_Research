@@ -1,0 +1,36 @@
+{
+  "phase": "3B",
+  "step": "3B.24",
+  "generated_utc": "2026-11-23T20:57:10.176825+00:00",
+  "manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "source_step23_csv_sha256": "a90b0e8bb230c255afec86a328d30c5c12f20bcfbbc34ce47733b21c8bab58bb",
+  "regions": 10,
+  "edge_budgets": [
+    54,
+    72,
+    90
+  ],
+  "depths": [
+    0,
+    1,
+    2,
+    4,
+    8
+  ],
+  "detail_records": 300,
+  "paired_records": 150,
+  "variance_retention": "V(depth)/V(0)",
+  "offdiag_cosine_change": "Mean off-diagonal cosine(depth) minus baseline",
+  "topology_advantage": "Global topology L2 minus spatial topology L2",
+  "trained_gnn_used": false,
+  "frozen_data_modified": false,
+  "biological_independence_verified": false,
+  "limitations": [
+    "Variance retention is an oversmoothing proxy",
+    "Cross-node cosine is not an accuracy metric",
+    "Node variance can change due to normalization",
+    "The ten regions come from one acquisition pair",
+    "Spatial and global candidate pools differ",
+    "No downstream task performance has been evaluated"
+  ]
+}

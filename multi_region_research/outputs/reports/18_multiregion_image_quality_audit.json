@@ -1,0 +1,34 @@
+{
+  "phase": "3B",
+  "step": "3B.18",
+  "generated_utc": "2026-11-23T20:42:44.406300+00:00",
+  "manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "regions": 10,
+  "matched_positions": 360,
+  "validated_png_images": 720,
+  "download_audit_hashes_verified": true,
+  "scanner_pairs_complete": true,
+  "image_dimensions": [
+    224,
+    224
+  ],
+  "exploratory_quality_flag_counts": {},
+  "images_with_quality_flags": 0,
+  "mean_cross_scanner_pixel_mae": 45.66825875176324,
+  "mean_cross_scanner_pixel_rmse": 57.092015997568765,
+  "figure": "multi_region_research/outputs/figures/phase3b_10_region_scanner_pair_contact_sheet.png",
+  "images_excluded": 0,
+  "manual_visual_review_completed": false,
+  "registration_quality_verified": false,
+  "tissue_type_verified": false,
+  "biological_independence_verified": false,
+  "original_wsi_mapping_verified": false,
+  "limitations": [
+    "Quality thresholds are exploratory",
+    "No images were automatically excluded",
+    "White-pixel fraction is not tissue segmentation",
+    "Pixel differences do not verify registration",
+    "Image hashes establish consistency with download audit",
+    "Biological specimen independence is not established"
+  ]
+}

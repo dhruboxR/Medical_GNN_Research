@@ -1,0 +1,34 @@
+{
+  "phase": "3B",
+  "step": "3B.3",
+  "generated_utc": "2026-11-23T19:43:21.382668+00:00",
+  "pilot_tile_count": 90,
+  "pilot_tile_levels": [
+    16
+  ],
+  "direct_tile_id_grid_matches": 90,
+  "swapped_tile_id_grid_matches": 0,
+  "pilot_grid_row_range": [
+    100,
+    109
+  ],
+  "pilot_grid_col_range": [
+    126,
+    135
+  ],
+  "original_wsi_regions": 12,
+  "original_annotation_grid_step": 1024,
+  "phase1_csv_files_inspected": 17,
+  "phase1_files_with_provenance_columns": 15,
+  "mapping_status": "UNVERIFIED",
+  "requirements_before_mapping": [
+    "Official Owkin tile coordinate definitions",
+    "Relationship between registered tiles and original WSI",
+    "Slide registration and coordinate transformations",
+    "Verification using known corresponding image landmarks",
+    "Tissue-label attribution in the registered tile grid"
+  ],
+  "ready_for_targeted_image_extraction": false,
+  "biological_specimen_independence_verified": false,
+  "interpretation": "This audit documents coordinate metadata and possible provenance sources; it does not infer or validate a coordinate transformation."
+}

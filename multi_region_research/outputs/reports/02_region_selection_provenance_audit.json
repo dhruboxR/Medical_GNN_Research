@@ -1,0 +1,31 @@
+{
+  "phase": "3B",
+  "step": "3B.2",
+  "generated_utc": "2026-11-23T19:42:05.548642+00:00",
+  "candidate_windows": 1434,
+  "selected_regions": 12,
+  "candidate_tissue_labels": 42,
+  "selected_tissue_labels": 12,
+  "candidate_label_coverage_fraction": 0.2857142857142857,
+  "selected_annotation_locations": 432,
+  "unique_window_grid_positions": 432,
+  "overlapping_region_pairs": 0,
+  "minimum_footprint_grid_distance": 8.0,
+  "selection_method": "Greedy maximum-coverage selection with lexicographic tie-breaking and tissue diversity preference",
+  "checks": {
+    "window_dimensions_valid": true,
+    "selected_footprints_nonoverlapping": true,
+    "distinct_tissue_labels": true,
+    "original_coordinate_label_pairing": "Verified in Phase 3B.1",
+    "owkin_coordinate_transform_verified": false,
+    "biological_specimen_independence_verified": false
+  },
+  "ready_for_targeted_owkin_extraction": false,
+  "limitations": [
+    "Tissue labels do not establish independent specimens",
+    "Region independence is not biological independence",
+    "Original WSI coordinates are not verified Owkin tile coordinates",
+    "Selection is deterministic but not randomized",
+    "Original annotation-grid distance is not a verified physical distance"
+  ]
+}

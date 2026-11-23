@@ -1,0 +1,110 @@
+{
+  "phase": "3B",
+  "step": "3B.6",
+  "generated_utc": "2026-11-23T20:00:38.905775+00:00",
+  "dataset": "owkin/plism-dataset-tiles",
+  "stainer": "GIVH",
+  "scanners": [
+    "AT2",
+    "GT450"
+  ],
+  "sample_offsets": [
+    0,
+    3200,
+    6400,
+    9600,
+    12800,
+    16000
+  ],
+  "page_size": 100,
+  "reported_scanner_totals": {
+    "AT2": 16278,
+    "GT450": 16278
+  },
+  "metadata_records_collected": 1200,
+  "paired_positions_across_sampled_bands": 600,
+  "bands": [
+    {
+      "offset": 0,
+      "at2_records": 100,
+      "gt450_records": 100,
+      "shared_tile_ids": 100,
+      "at2_only": 0,
+      "gt450_only": 0,
+      "paired_x_min": 100,
+      "paired_x_max": 105,
+      "paired_y_min": 25,
+      "paired_y_max": 171,
+      "paired_levels": "16"
+    },
+    {
+      "offset": 3200,
+      "at2_records": 100,
+      "gt450_records": 100,
+      "shared_tile_ids": 100,
+      "at2_only": 0,
+      "gt450_only": 0,
+      "paired_x_min": 152,
+      "paired_x_max": 153,
+      "paired_y_min": 24,
+      "paired_y_max": 182,
+      "paired_levels": "16"
+    },
+    {
+      "offset": 6400,
+      "at2_records": 100,
+      "gt450_records": 100,
+      "shared_tile_ids": 100,
+      "at2_only": 0,
+      "gt450_only": 0,
+      "paired_x_min": 207,
+      "paired_x_max": 208,
+      "paired_y_min": 8,
+      "paired_y_max": 186,
+      "paired_levels": "16"
+    },
+    {
+      "offset": 9600,
+      "at2_records": 100,
+      "gt450_records": 100,
+      "shared_tile_ids": 100,
+      "at2_only": 0,
+      "gt450_only": 0,
+      "paired_x_min": 241,
+      "paired_x_max": 242,
+      "paired_y_min": 8,
+      "paired_y_max": 183,
+      "paired_levels": "16"
+    },
+    {
+      "offset": 12800,
+      "at2_records": 100,
+      "gt450_records": 100,
+      "shared_tile_ids": 100,
+      "at2_only": 0,
+      "gt450_only": 0,
+      "paired_x_min": 51,
+      "paired_x_max": 51,
+      "paired_y_min": 16,
+      "paired_y_max": 184,
+      "paired_levels": "16"
+    },
+    {
+      "offset": 16000,
+      "at2_records": 100,
+      "gt450_records": 100,
+      "shared_tile_ids": 100,
+      "at2_only": 0,
+      "gt450_only": 0,
+      "paired_x_min": 93,
+      "paired_x_max": 95,
+      "paired_y_min": 15,
+      "paired_y_max": 178,
+      "paired_levels": "16"
+    }
+  ],
+  "images_downloaded": 0,
+  "full_dataset_inventory": false,
+  "biological_independence_verified": false,
+  "interpretation": "A systematic metadata coverage survey. Results cannot establish representative sampling, tissue identity, or specimen independence."
+}

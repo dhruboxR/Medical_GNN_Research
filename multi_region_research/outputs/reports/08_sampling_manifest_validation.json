@@ -1,0 +1,99 @@
+{
+  "phase": "3B",
+  "step": "3B.8",
+  "generated_utc": "2026-11-23T20:11:34.951139+00:00",
+  "regions": 10,
+  "matched_tile_positions": 360,
+  "expected_images": 720,
+  "window_size": 6,
+  "minimum_region_separation": 30.870698080866262,
+  "pilot_overlap": false,
+  "scanner_pairing_verified": true,
+  "all_regions_complete": true,
+  "region_validation": [
+    {
+      "region_id": "OWKIN_DISTRIBUTED_001",
+      "band": "BAND_0",
+      "tile_count": 36,
+      "complete_6x6": true,
+      "unique_positions": 36
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_002",
+      "band": "BAND_1",
+      "tile_count": 36,
+      "complete_6x6": true,
+      "unique_positions": 36
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_003",
+      "band": "BAND_3",
+      "tile_count": 36,
+      "complete_6x6": true,
+      "unique_positions": 36
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_004",
+      "band": "BAND_4",
+      "tile_count": 36,
+      "complete_6x6": true,
+      "unique_positions": 36
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_005",
+      "band": "BAND_5",
+      "tile_count": 36,
+      "complete_6x6": true,
+      "unique_positions": 36
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_006",
+      "band": "BAND_0",
+      "tile_count": 36,
+      "complete_6x6": true,
+      "unique_positions": 36
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_007",
+      "band": "BAND_1",
+      "tile_count": 36,
+      "complete_6x6": true,
+      "unique_positions": 36
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_008",
+      "band": "BAND_3",
+      "tile_count": 36,
+      "complete_6x6": true,
+      "unique_positions": 36
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_009",
+      "band": "BAND_4",
+      "tile_count": 36,
+      "complete_6x6": true,
+      "unique_positions": 36
+    },
+    {
+      "region_id": "OWKIN_DISTRIBUTED_010",
+      "band": "BAND_5",
+      "tile_count": 36,
+      "complete_6x6": true,
+      "unique_positions": 36
+    }
+  ],
+  "frozen_manifest": "multi_region_research/outputs/validated/phase3b_frozen_tile_manifest.csv",
+  "manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "source_inventory_complete": false,
+  "tissue_labels_verified": false,
+  "biological_independence_verified": false,
+  "original_wsi_mapping_verified": false,
+  "images_downloaded": 0,
+  "limitations": [
+    "Sampling uses selected API bands, not full dataset coverage",
+    "Spatial separation does not establish biological independence",
+    "Tissue labels remain unverified",
+    "Original WSI coordinates are not mapped to Owkin tiles",
+    "The manifest is frozen for exploratory experiments only"
+  ]
+}

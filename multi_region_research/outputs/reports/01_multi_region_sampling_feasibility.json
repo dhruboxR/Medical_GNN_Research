@@ -1,0 +1,37 @@
+{
+  "phase": "3B",
+  "step": "3B.1",
+  "generated_utc": "2026-11-23T19:40:03.007277+00:00",
+  "source": "PLISM_wsi_en.csv",
+  "stain": "GIVH",
+  "scanners": [
+    "AT2",
+    "GT450"
+  ],
+  "source_records_processed": 310947,
+  "target_scanner_annotation_rows": 6834,
+  "valid_paired_coordinates": 3417,
+  "tissue_labels": 46,
+  "conflicting_coordinates": 0,
+  "unmatched_coordinates": 0,
+  "invalid_annotation_rows": 0,
+  "duplicate_coordinate_groups": 0,
+  "grid_step": 1024,
+  "window_size": 6,
+  "minimum_annotated_positions": 24,
+  "candidate_windows": 1434,
+  "selected_provisional_regions": 12,
+  "selected_tissue_labels": 12,
+  "images_downloaded": 0,
+  "owkin_tile_coordinate_mapping_verified": false,
+  "biological_specimen_independence_verified": false,
+  "ready_to_extract_new_owkin_tiles": false,
+  "limitations": [
+    "Original WSI coordinates are not mapped to Owkin tiles",
+    "Tissue labels are not verified patient or specimen IDs",
+    "Non-overlapping windows do not prove independent specimens",
+    "The 1024-unit grid interpretation is provisional",
+    "Candidate screening does not validate tissue-core boundaries",
+    "Candidate feasibility does not establish image registration"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "phase": "3B",
+  "step": "3B.10",
+  "status": "completed",
+  "timestamp_utc": "2026-11-23T20:16:33.694164+00:00",
+  "manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "region_id": "OWKIN_DISTRIBUTED_001",
+  "tile_id": "tile_16_105_76",
+  "image_count": 2,
+  "image_statistics": [
+    {
+      "scanner": "AT2",
+      "tile_id": "tile_16_105_76",
+      "source_type": "huggingface_dataset_viewer",
+      "actual_encoding": "JPEG",
+      "http_content_type": "binary/octet-stream",
+      "width": 224,
+      "height": 224,
+      "original_color_mode": "RGB",
+      "stored_bytes": 12587,
+      "sha256": "e3a662e87eb5ebeef937bf5c9535fc117680cb6f401639a8a62efcdf8e7222e9",
+      "mean_pixel_intensity": 181.70204162597656,
+      "pixel_standard_deviation": 55.39057159423828,
+      "relative_path": "datasets/PLISM/phase3b_pilot_validation/tile_16_105_76_AT2.jpg",
+      "original_source_bytes_verified": false
+    },
+    {
+      "scanner": "GT450",
+      "tile_id": "tile_16_105_76",
+      "source_type": "huggingface_dataset_viewer",
+      "actual_encoding": "JPEG",
+      "http_content_type": "binary/octet-stream",
+      "width": 224,
+      "height": 224,
+      "original_color_mode": "RGB",
+      "stored_bytes": 10445,
+      "sha256": "50f42830ac72fc9be888736a671046cffba936297d4d7c0a7bf39267faae2a39",
+      "mean_pixel_intensity": 217.60411071777344,
+      "pixel_standard_deviation": 33.063232421875,
+      "relative_path": "datasets/PLISM/phase3b_pilot_validation/tile_16_105_76_GT450.jpg",
+      "original_source_bytes_verified": false
+    }
+  ],
+  "pixel_mae": 43.097591400146484,
+  "pixel_rmse": 56.36647415161133,
+  "decoded_pixels_identical": false,
+  "image_integrity_verified": true,
+  "scanner_metadata_verified": true,
+  "original_source_image_bytes_verified": false,
+  "original_png_equivalence_verified": false,
+  "visual_correspondence_manually_verified": false,
+  "remaining_images_not_retrieved": 718,
+  "limitations": [
+    "Only one paired tile was examined",
+    "Dataset Viewer encoding may differ from source",
+    "JPEG is a potentially lossy encoding",
+    "Raw pixel differences do not verify registration",
+    "Biological specimen independence unverified"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "phase": "3B",
+  "step": "3B.14",
+  "generated_utc": "2026-11-23T20:23:54.688938+00:00",
+  "shard": "train-00000-of-00293.parquet",
+  "row_group": 0,
+  "tile_id": "tile_16_100_127",
+  "scanner": "AT2",
+  "stainer": "GIVH",
+  "slide_id": "GIVH_AT2_to_GMH_S60",
+  "remote_png_size_bytes": 116236,
+  "remote_png_dimensions": [
+    224,
+    224
+  ],
+  "remote_png_mode": "RGB",
+  "remote_png_sha256": "7f899a2dcfc7ccab999b27cf78c233c2a1cc61587fed348c2c01854a46f09ce3",
+  "local_reference_sha256": "7f899a2dcfc7ccab999b27cf78c233c2a1cc61587fed348c2c01854a46f09ce3",
+  "exact_byte_match": true,
+  "http_range_requests": 7,
+  "total_http_bytes_received": 11313678,
+  "full_shard_downloaded": false,
+  "frozen_manifest_modified": false,
+  "dataset_viewer_jpeg_used": false,
+  "limitations": [
+    "Only one tile and one row group were tested",
+    "Other selected tiles may be in other shards",
+    "Row-group reads transfer more than one PNG",
+    "Dataset-wide original image retrieval is not yet established"
+  ]
+}

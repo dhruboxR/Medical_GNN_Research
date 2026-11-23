@@ -1,0 +1,18 @@
+file,column_count,provenance_columns,has_provenance_columns,inspection_status
+dataset_exploration/outputs/features/plism_dinov2_pair_similarity.csv,5,tile_id; grid_row; grid_col,True,OK
+dataset_exploration/outputs/tables/plism_at2_gt450_metadata_samples.csv,5,stainer; scanner; slide_id; tile_id,True,OK
+dataset_exploration/outputs/tables/plism_at2_gt450_shared_ids.csv,1,tile_id,True,OK
+dataset_exploration/outputs/tables/plism_download_manifest.csv,7,scanner; stainer; slide_id; tile_id,True,OK
+dataset_exploration/outputs/tables/plism_graph_edges.csv,6,scanner,True,OK
+dataset_exploration/outputs/tables/plism_graph_stability.csv,13,,False,OK
+dataset_exploration/outputs/tables/plism_matched_tile_candidates.csv,8,tile_id; stainer; scanner_a; scanner_b; slide_id_a; slide_id_b,True,OK
+dataset_exploration/outputs/tables/plism_metadata_100.csv,8,stainer; scanner; slide_id; tile_id,True,OK
+dataset_exploration/outputs/tables/plism_pair_visual_metrics.csv,4,tile_id,True,OK
+dataset_exploration/outputs/tables/plism_remote_file_inventory.csv,1,,False,OK
+dataset_exploration/outputs/tables/plism_sample_metadata.csv,5,stainer; scanner; slide_id; tile_id,True,OK
+dataset_exploration/outputs/tables/plism_scanner_pair_candidates.csv,5,stainer; scanner; slide_id,True,OK
+dataset_exploration/outputs/tables/plism_shard_samples.csv,6,stainer; scanner; slide_id; tile_id,True,OK
+dataset_exploration/outputs/tables/plism_spatial_mosaic_metrics.csv,8,tile_id; grid_row; grid_col; at2_tissue_fraction; gt450_tissue_fraction,True,OK
+dataset_exploration/outputs/tables/plism_spatial_region_download_manifest.csv,9,tile_id; grid_row; grid_col; stainer,True,OK
+dataset_exploration/outputs/tables/plism_spatial_region_manifest.csv,11,tile_id; stainer; grid_row; grid_col; scanner_a; scanner_b; slide_id_a; slide_id_b,True,OK
+dataset_exploration/outputs/tables/plism_spatial_region_metadata.csv,8,scanner; stainer; slide_id; tile_id; grid_row; grid_col,True,OK

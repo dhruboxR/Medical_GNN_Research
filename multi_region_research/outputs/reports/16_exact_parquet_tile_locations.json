@@ -1,0 +1,23 @@
+{
+  "phase": "3B",
+  "step": "3B.16",
+  "generated_utc": "2026-11-23T20:30:19.124326+00:00",
+  "frozen_manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "target_count": 720,
+  "candidate_row_groups_checked": 70,
+  "shards_checked": 6,
+  "exact_records_found": 720,
+  "unique_targets_verified": 720,
+  "missing_targets": 0,
+  "duplicate_targets": 0,
+  "missing_target_examples": [],
+  "duplicate_target_examples": [],
+  "http_range_requests": 286,
+  "metadata_bytes_transferred": 460188,
+  "all_exact_locations_verified": true,
+  "png_columns_read": false,
+  "images_downloaded": 0,
+  "full_parquet_shards_downloaded": 0,
+  "frozen_manifest_modified": false,
+  "biological_independence_verified": false
+}

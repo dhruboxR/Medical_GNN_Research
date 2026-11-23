@@ -1,0 +1,37 @@
+{
+  "phase": "3B",
+  "step": "3B.25",
+  "generated_utc": "2026-11-23T20:59:20.023054+00:00",
+  "manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "feature_sha256": "484531c4f192d228cf04135da8afa64142a8ec77b6696a1e06f12a36b0264096",
+  "previous_step21_sha256": "69eb05eb6a0b39e278b37dfd74ad488af6282b5ecc16f5490e57f10c9534e337",
+  "regions": 10,
+  "graph_comparisons": 60,
+  "distance_stratum_records": 630,
+  "graph_reconstruction_verified": true,
+  "budgets": [
+    54,
+    72,
+    90
+  ],
+  "methods": [
+    "global",
+    "spatial"
+  ],
+  "null_model": "Independent uniform residual-edge selection within exact squared-grid-distance strata, conditional on scanner-specific stratum counts.",
+  "null_distribution": "Exact convolution of hypergeometric overlap distributions over distance strata.",
+  "conditional_adjustment": "(observed_shared - expected_shared) / (maximum_shared_given_strata - expected_shared)",
+  "exact_tail_probability_interpretation": "Conditional combinatorial null probability, not population-level biological significance.",
+  "frozen_manifest_modified": false,
+  "trained_gnn_used": false,
+  "biological_independence_verified": false,
+  "limitations": [
+    "Distance-stratified null does not preserve feature correlations",
+    "Distance bins do not fully capture spatial edge topology",
+    "Spatial and global graphs have different candidate pools",
+    "Some dense configurations may have little null variance",
+    "The regions belong to one acquisition pair",
+    "No independent patient-level replication",
+    "No clinical downstream task has been evaluated"
+  ]
+}

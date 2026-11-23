@@ -1,0 +1,33 @@
+{
+  "phase": "3B",
+  "step": "3B.9",
+  "manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "sample_region": "OWKIN_DISTRIBUTED_001",
+  "sample_tile_id": "tile_16_105_76",
+  "scanner_results": [
+    {
+      "scanner": "AT2",
+      "tile_id": "tile_16_105_76",
+      "slide_id": "GIVH_AT2_to_GMH_S60",
+      "image_width": 224,
+      "image_height": 224,
+      "reference_scheme": "https",
+      "reference_host": "datasets-server.huggingface.co",
+      "reference_present": true
+    },
+    {
+      "scanner": "GT450",
+      "tile_id": "tile_16_105_76",
+      "slide_id": "GIVH_GT450_to_GMH_S60",
+      "image_width": 224,
+      "image_height": 224,
+      "reference_scheme": "https",
+      "reference_host": "datasets-server.huggingface.co",
+      "reference_present": true
+    }
+  ],
+  "metadata_access_verified": true,
+  "image_bytes_downloaded": false,
+  "pixel_content_verified": false,
+  "all_720_images_verified": false
+}

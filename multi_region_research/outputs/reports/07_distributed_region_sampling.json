@@ -1,0 +1,85 @@
+{
+  "phase": "3B",
+  "step": "3B.7",
+  "generated_utc": "2026-11-23T20:09:33.262549+00:00",
+  "dataset": "owkin/plism-dataset-tiles",
+  "stainer": "GIVH",
+  "initial_matched_tiles": 2000,
+  "new_sample_bands": [
+    {
+      "band": "BAND_1",
+      "start_offset": 3000,
+      "at2_records": 700,
+      "gt450_records": 700,
+      "matched_ids": 700,
+      "new_unique_matched_ids": 700,
+      "at2_only_ids": 0,
+      "gt450_only_ids": 0
+    },
+    {
+      "band": "BAND_2",
+      "start_offset": 6200,
+      "at2_records": 700,
+      "gt450_records": 700,
+      "matched_ids": 700,
+      "new_unique_matched_ids": 700,
+      "at2_only_ids": 0,
+      "gt450_only_ids": 0
+    },
+    {
+      "band": "BAND_3",
+      "start_offset": 9400,
+      "at2_records": 700,
+      "gt450_records": 700,
+      "matched_ids": 700,
+      "new_unique_matched_ids": 700,
+      "at2_only_ids": 0,
+      "gt450_only_ids": 0
+    },
+    {
+      "band": "BAND_4",
+      "start_offset": 12400,
+      "at2_records": 700,
+      "gt450_records": 700,
+      "matched_ids": 700,
+      "new_unique_matched_ids": 700,
+      "at2_only_ids": 0,
+      "gt450_only_ids": 0
+    },
+    {
+      "band": "BAND_5",
+      "start_offset": 15400,
+      "at2_records": 700,
+      "gt450_records": 700,
+      "matched_ids": 700,
+      "new_unique_matched_ids": 700,
+      "at2_only_ids": 0,
+      "gt450_only_ids": 0
+    }
+  ],
+  "total_unique_matched_tiles": 5500,
+  "fully_populated_candidate_windows": 585,
+  "selected_regions": 10,
+  "regions_per_band": {
+    "BAND_0": 2,
+    "BAND_1": 2,
+    "BAND_3": 2,
+    "BAND_4": 2,
+    "BAND_5": 2
+  },
+  "selected_matched_tile_positions": 360,
+  "potential_paired_images": 720,
+  "minimum_grid_separation": 30.870698080866262,
+  "biological_independence_verified": false,
+  "original_wsi_mapping_verified": false,
+  "full_dataset_inventory": false,
+  "images_downloaded": 0,
+  "limitations": [
+    "Metadata collected from selected API bands",
+    "Not a random or exhaustive dataset sample",
+    "A sampling band does not identify a biological specimen",
+    "No tissue labels transferred from original PLISM",
+    "No specimen-level independence established",
+    "Grid separation is not verified physical separation"
+  ]
+}

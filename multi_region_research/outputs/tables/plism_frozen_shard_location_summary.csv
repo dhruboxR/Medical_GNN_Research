@@ -1,0 +1,13 @@
+shard,rows,row_groups,footer_bytes,candidate_row_groups,candidate_target_locations
+train-00000-of-00293.parquet,5056,51,37173,12,144
+train-00001-of-00293.parquet,5056,51,37164,7,72
+train-00002-of-00293.parquet,5056,51,36963,8,72
+train-00003-of-00293.parquet,5056,51,37594,20,936
+train-00004-of-00293.parquet,5056,51,37741,0,0
+train-00005-of-00293.parquet,5056,51,37588,15,144
+train-00006-of-00293.parquet,5056,51,36926,8,432
+train-00007-of-00293.parquet,5056,51,36391,0,0
+train-00008-of-00293.parquet,5056,51,36277,0,0
+train-00009-of-00293.parquet,5056,51,36545,0,0
+train-00010-of-00293.parquet,5056,51,37420,0,0
+train-00011-of-00293.parquet,5056,51,37420,0,0

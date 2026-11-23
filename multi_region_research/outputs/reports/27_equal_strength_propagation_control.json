@@ -1,0 +1,40 @@
+{
+  "phase": "3B",
+  "step": "3B.27",
+  "created_utc": "2026-11-23T21:13:09.966512+00:00",
+  "manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "feature_sha256": "484531c4f192d228cf04135da8afa64142a8ec77b6696a1e06f12a36b0264096",
+  "step21_sha256": "69eb05eb6a0b39e278b37dfd74ad488af6282b5ecc16f5490e57f10c9534e337",
+  "step23_sha256": "a90b0e8bb230c255afec86a328d30c5c12f20bcfbbc34ce47733b21c8bab58bb",
+  "regions": 10,
+  "depth": 2,
+  "edge_budgets": [
+    54,
+    72,
+    90
+  ],
+  "alphas": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "detail_rows": 240,
+  "paired_rows": 120,
+  "summary_rows": 12,
+  "operator": "(1-alpha)*I + alpha*S",
+  "graph_reconstruction_verified": true,
+  "alpha_one_reproduction_verified": true,
+  "same_alpha_across_methods": true,
+  "frozen_manifest_modified": false,
+  "trained_gnn_used": false,
+  "biological_independence_verified": false,
+  "limitations": [
+    "Equal alpha does not imply equal smoothing",
+    "Raw topology L2 depends on propagation strength",
+    "Candidate edge pools differ between graph methods",
+    "Regions belong to one acquisition pair",
+    "No independent specimen-level evaluation",
+    "No trained GNN or downstream task"
+  ]
+}

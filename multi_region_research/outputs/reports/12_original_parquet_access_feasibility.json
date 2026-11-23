@@ -1,0 +1,44 @@
+{
+  "phase": "3B",
+  "step": "3B.12",
+  "generated_utc": "2026-11-23T20:20:33.538457+00:00",
+  "dataset": "owkin/plism-dataset-tiles",
+  "results": [
+    {
+      "shard": "data/train-00000-of-00293.parquet",
+      "head_status": 200,
+      "reported_size": 552716146,
+      "range_status": 206,
+      "content_range": "bytes 552716138-552716145/552716146",
+      "received_bytes": 8,
+      "footer_magic_valid": true,
+      "range_supported": true,
+      "error": null
+    },
+    {
+      "shard": "data/train-00001-of-00293.parquet",
+      "head_status": 200,
+      "reported_size": 563516018,
+      "range_status": 206,
+      "content_range": "bytes 563516010-563516017/563516018",
+      "received_bytes": 8,
+      "footer_magic_valid": true,
+      "range_supported": true,
+      "error": null
+    },
+    {
+      "shard": "data/train-00002-of-00293.parquet",
+      "head_status": 200,
+      "reported_size": 544567194,
+      "range_status": 206,
+      "content_range": "bytes 544567186-544567193/544567194",
+      "received_bytes": 8,
+      "footer_magic_valid": true,
+      "range_supported": true,
+      "error": null
+    }
+  ],
+  "images_downloaded": 0,
+  "full_shards_downloaded": 0,
+  "original_image_bytes_verified": false
+}

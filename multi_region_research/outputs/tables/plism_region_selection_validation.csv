@@ -1,0 +1,13 @@
+region_id,tissue_type,width,height,annotated_positions,coverage_fraction,valid_window
+REGION_001,07_renal_cortex,6,6,36,1.0,True
+REGION_002,08_renal_medulla,6,6,36,1.0,True
+REGION_003,10_corpus_luteum,6,6,36,1.0,True
+REGION_004,11_uterine_cervix,6,6,36,1.0,True
+REGION_005,12_lymph_node,6,6,36,1.0,True
+REGION_006,15_spleen,6,6,36,1.0,True
+REGION_007,17_prostate,6,6,36,1.0,True
+REGION_008,18_liver,6,6,36,1.0,True
+REGION_009,19_jejunum,6,6,36,1.0,True
+REGION_010,22_uterine_corpus,6,6,36,1.0,True
+REGION_011,23_left_ventricle,6,6,36,1.0,True
+REGION_012,24_pituitary_gland,6,6,36,1.0,True
