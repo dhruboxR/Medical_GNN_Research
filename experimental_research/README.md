@@ -1,249 +1,322 @@
-# Phase 3A: PLISM Pilot Experimental Research
 
-## Project
+# Phase 3A: Cross-Scanner Graph Topology Stability
 
-**Cross-Scanner Graph Topology Stability in Computational Histopathology**
+## Overview
 
-This folder contains pilot experiments investigating graph topology
-and representation stability across matched histopathology tiles
-captured using different scanners.
+This phase investigates how scanner-related image variation affects graph topology, neighborhood consistency, and graph representation stability in computational histopathology.
 
-## Status
+We conducted a pilot study using 90 matched histopathology tile locations from the PLISM dataset, captured using two scanners under the same staining condition.
 
-**Phase 3A experimental diagnostics completed.**
+The experiments focus on graph construction, structural robustness, connectivity, and representation smoothing.
 
-The current findings are exploratory and limited to one
-90-location tissue region.
+**Research status:** Phase 3A pilot experiments completed.
 
-## Dataset and Feature Representation
+## 1. Experimental Setup
 
-- Dataset: PLISM, using registered tiles distributed by Owkin.
-- Scanner conditions: AT2 and GT450.
-- Staining condition: GIVH.
-- Matched nodes: 90.
-- Feature encoder: `facebook/dinov2-small`.
-- Feature dimensionality: 384.
+| Component | Configuration |
+|---|---|
+| Dataset | PLISM (Owkin registered tiles) |
+| Scanners | AT2 and GT450 |
+| Staining condition | GIVH |
+| Matched tile locations | 90 |
+| Total tile images | 180 |
+| Feature extractor | DINOv2-Small |
+| Feature dimensionality | 384 |
+| Graph methods | Global-feature and spatial-feature |
+| Edge budgets | 90, 135, 180, 225 |
+| Connected graph budgets | 135, 180, 225 |
+| Connectivity backbone | 89-edge spatial MST |
+| Propagation operator | Row-normalized adjacency with self-loops |
+| Propagation depths | 0–5 |
 
-The two scanner acquisitions correspond to the same selected
-tile locations.
+## 2. Dataset and Annotation Verification
 
-## Original Annotation Validation
-
-Official PLISM WSI annotation analysis found:
+Official PLISM WSI annotation analysis produced the following results:
 
 | Property | Result |
 |---|---:|
-| Total WSI annotation rows | 310,947 |
-| Acquisition groups | 91 |
-| GIVH AT2 annotation coordinates | 3,417 |
-| GIVH GT450 annotation coordinates | 3,417 |
-| Shared coordinate strings | 3,417 |
-| Shared coordinate tissue-label agreement | 100% |
-| Label conflicts | 0 |
+| Total annotation records | 310,947 |
+| Scanner/stain acquisition groups | 91 |
+| GIVH AT2 coordinates | 3,417 |
+| GIVH GT450 coordinates | 3,417 |
+| Shared coordinates | 3,417 |
+| Coordinate-level tissue-label agreement | 100% |
+| Conflicting tissue labels | 0 |
 
-Original WSI coordinates have not been verified against the
-registered Owkin tile-coordinate system.
+The original PLISM annotations show complete coordinate-string and tissue-label agreement between the two scanner conditions.
 
-Tissue-type identifiers do not establish patient-level or
-specimen-level biological independence.
+However, a verified mapping between original WSI coordinates and Owkin registered tile coordinates has not been established. Biological specimen independence also remains unresolved.
 
-## Experiment Overview
+## 3. Experimental Methodology
 
-### 3A.1: Dataset and Provenance Audits
+Phase 3A consists of the following experiments:
 
-Scripts 01-08 examine:
+| Step | Experiment |
+|---|---|
+| 01–08 | Dataset feasibility, provenance, and annotation verification |
+| 09 | Controlled edge-budget graph stability |
+| 10 | Random-baseline and graph connectivity diagnostics |
+| 11 | Connectivity-preserving graph construction |
+| 12 | Structural and node-level stability diagnostics |
+| 13 | Cross-scanner representation consistency |
+| 14 | Oversmoothing and topology sensitivity |
+| 15 | Final research figure generation |
 
-- Paired tile inventory.
-- Scanner acquisition metadata.
-- Specimen identity availability.
-- Official PLISM annotation resources.
-- Annotation schemas.
-- Tissue labels and coordinate consistency.
+The graph experiments compare two methods:
 
-### 3A.2: Matched Edge-Budget Stability
+**Global-feature:** Selects edges using feature similarity across all available node pairs.
 
-Script 09 compares global and spatial-feature graph construction
-with equal edge budgets.
+**Spatial-feature:** Selects feature-similar edges from spatially adjacent tile locations.
 
-| Budget | Global Jaccard | Spatial Jaccard |
+For connected graph experiments, both methods share the same fixed spatial minimum spanning tree. Scanner-dependent feature-selected edges are evaluated separately to avoid overstating stability.
+
+---
+
+# 4. Final Experimental Figures
+
+All figures were generated from saved experimental results using `scripts/15_finalize_phase3a.py`.
+
+Each figure is available in PNG and vector PDF format under `outputs/figures/`.
+
+### Figure 1. Matched-Budget Graph Topology Stability
+
+![Figure 1: Matched-Budget Graph Topology Stability](outputs/figures/figure_01_matched_budget_stability.png)
+
+[View PDF](outputs/figures/figure_01_matched_budget_stability.pdf)
+
+This figure compares cross-scanner edge Jaccard similarity between global-feature and spatial-feature graphs under identical edge budgets.
+
+Spatial-feature graphs achieved greater raw edge agreement at all four budgets.
+
+| Edge budget | Global-feature | Spatial-feature |
 |---|---:|---:|
-| 90 | 0.241379 | 0.538462 |
-| 135 | 0.285714 | 0.708861 |
-| 180 | 0.304348 | 0.791045 |
-| 225 | 0.347305 | 0.829268 |
+| 90 | 0.2414 | 0.5385 |
+| 135 | 0.2857 | 0.7089 |
+| 180 | 0.3043 | 0.7910 |
+| 225 | 0.3473 | 0.8293 |
 
-The unrestricted top-M construction resulted in disconnected graphs.
+### Figure 2. Graph Stability Above Random Reference
 
-### 3A.3: Random and Connectivity Diagnostics
+![Figure 2: Graph Stability Above Random Reference](outputs/figures/figure_02_chance_adjusted_stability.png)
 
-Script 10 assesses:
+[View PDF](outputs/figures/figure_02_chance_adjusted_stability.pdf)
 
-- Candidate-pool effects.
-- Empirical random-overlap references.
-- Graph fragmentation.
-- Isolated nodes.
+This figure compares observed edge Jaccard with the mean from random edge selections within each method's eligible candidate pool.
 
-Raw stability scores alone are insufficient to compare methods
-with different eligible candidate-pool sizes.
+Spatial-feature graphs showed higher excess agreement at budgets of 90, 135, and 180 edges. Global-feature graphs showed higher excess agreement at 225 edges.
 
-### 3A.4: Connectivity-Preserving Graph Construction
+These comparisons are descriptive and do not establish statistical significance.
 
-Script 11 introduces a common 89-edge spatial spanning tree
-and adds feature-selected edges.
+### Figure 3. Graph Fragmentation
 
-All tested graph configurations are connected.
+![Figure 3: Graph Fragmentation](outputs/figures/figure_03_graph_fragmentation.png)
 
-Residual feature-edge agreement excludes the fixed backbone:
+[View PDF](outputs/figures/figure_03_graph_fragmentation.pdf)
 
-| Budget | Global residual Jaccard | Spatial residual Jaccard |
+This figure illustrates isolated-node counts in the original top-M graph construction.
+
+Both methods produced disconnected graphs, even at larger edge budgets.
+
+Spatial-feature graphs generally had fewer isolated nodes, motivating the use of a connectivity-preserving spatial backbone.
+
+### Figure 4. Connectivity-Preserving Residual Edge Stability
+
+![Figure 4: Connectivity-Preserving Residual Edge Stability](outputs/figures/figure_04_connected_residual_stability.png)
+
+[View PDF](outputs/figures/figure_04_connected_residual_stability.pdf)
+
+This figure compares residual feature-selected edges after excluding the 89-edge shared spatial spanning tree.
+
+| Total budget | Global residual Jaccard | Spatial residual Jaccard |
 |---|---:|---:|
-| 135 | 0.179487 | 0.483871 |
-| 180 | 0.213333 | 0.716981 |
-| 225 | 0.276995 | 0.813333 |
+| 135 | 0.1795 | 0.4839 |
+| 180 | 0.2133 | 0.7170 |
+| 225 | 0.2770 | 0.8133 |
 
-Spatially constrained graph construction produced greater
-residual edge agreement at all three evaluated budgets.
+All connected graph configurations contained one connected component and zero isolated nodes.
 
-### 3A.5: Node-Level Structural Stability
+The spatial-feature method retained greater cross-scanner residual-edge agreement at every tested budget.
 
-Script 12 measures:
+### Figure 5. Node-Level Neighborhood Stability
 
-- Residual degree distributions.
-- Nodes connected only through the backbone.
-- Neighbor-set consistency.
-- Long-distance versus local edges.
-- Cross-scanner degree variation.
+![Figure 5: Node-Level Neighborhood Stability](outputs/figures/figure_05_node_neighborhood_stability.png)
 
-### 3A.6: Representation Consistency
+[View PDF](outputs/figures/figure_05_node_neighborhood_stability.pdf)
 
-Script 13 uses deterministic row-normalized propagation
-with self-loops and no learned GNN weights.
+This figure measures residual neighbor-set consistency across corresponding nodes.
 
-At propagation depth 2:
+Nodes with empty residual neighborhoods in both scanners are excluded from the reported mean.
 
-| Method | Budget | Mean paired-node cosine |
+| Budget | Global-feature | Spatial-feature |
 |---|---:|---:|
-| Global + MST | 135 | 0.984529 |
-| Spatial + MST | 135 | 0.985045 |
-| Global + MST | 180 | 0.985101 |
-| Spatial + MST | 180 | 0.985820 |
-| Global + MST | 225 | 0.985559 |
-| Spatial + MST | 225 | 0.986704 |
+| 135 | 0.1593 | 0.4494 |
+| 180 | 0.1672 | 0.6495 |
+| 225 | 0.2301 | 0.7342 |
+
+Spatial-feature graphs exhibited more consistent residual neighborhoods across the two scanners.
+
+### Figure 6. Graph Topology Sensitivity
+
+![Figure 6: Graph Topology Sensitivity](outputs/figures/figure_06_topology_sensitivity.png)
+
+[View PDF](outputs/figures/figure_06_topology_sensitivity.pdf)
+
+This figure measures representation changes caused by replacing scanner-specific graph connections while keeping node features fixed.
+
+The comparison uses two propagation steps.
+
+| Budget | Global topology L2 | Spatial topology L2 |
+|---|---:|---:|
+| 135 | 0.034518 | 0.026647 |
+| 180 | 0.039463 | 0.022999 |
+| 225 | 0.038728 | 0.019616 |
+
+The spatial-feature method showed smaller topology-only representation differences at every matched budget.
+
+### Figure 7. Cross-Scanner Representation Consistency
+
+![Figure 7: Cross-Scanner Representation Consistency](outputs/figures/figure_07_representation_consistency.png)
+
+[View PDF](outputs/figures/figure_07_representation_consistency.pdf)
+
+This figure compares corresponding node representations after two deterministic graph propagation steps.
+
+| Method | Budget | Mean node cosine |
+|---|---:|---:|
+| Global-feature + MST | 135 | 0.984529 |
+| Spatial-feature + MST | 135 | 0.985045 |
+| Global-feature + MST | 180 | 0.985101 |
+| Spatial-feature + MST | 180 | 0.985820 |
+| Global-feature + MST | 225 | 0.985559 |
+| Spatial-feature + MST | 225 | 0.986704 |
 | Backbone-only | 89 | 0.984597 |
 
-These differences are descriptive and have not been assessed
-through independent biological replication.
+Spatial-feature graphs produced slightly greater cross-scanner representation similarity at equal budgets.
 
-### 3A.7: Oversmoothing and Topology Sensitivity
+The differences are small, and increased similarity alone does not establish better downstream predictive performance.
 
-Script 14 evaluates:
+### Figure 8. Oversmoothing and Embedding Dispersion Retention
 
-- Within-graph embedding dispersion.
-- Cross-scanner representation differences.
-- Fixed-feature topology sensitivity.
-- Dispersion retention at increasing propagation depths.
+![Figure 8: Oversmoothing and Embedding Dispersion Retention](outputs/figures/figure_08_oversmoothing_dispersion.png)
 
-Repeated propagation increased cross-scanner similarity
-but reduced node embedding dispersion.
+[View PDF](outputs/figures/figure_08_oversmoothing_dispersion.pdf)
 
-This is consistent with smoothing and means that greater
-similarity alone should not be interpreted as improved
-representation quality.
+This figure shows the proportion of original embedding dispersion retained after five propagation steps.
 
-## Final Figures
+| Graph | AT2 retention | GT450 retention |
+|---|---:|---:|
+| Global + MST, 225 edges | 0.4437 | 0.4184 |
+| Spatial + MST, 225 edges | 0.4364 | 0.4352 |
+| Backbone-only | 0.5386 | 0.5326 |
 
-All final figures are saved in `outputs/figures/`.
+Repeated feature propagation increased cross-scanner similarity while reducing within-graph embedding dispersion.
 
-| Figure | Description |
-|---|---|
-| 01 | Matched-budget graph stability |
-| 02 | Stability above random reference |
-| 03 | Graph fragmentation |
-| 04 | Connected residual-edge stability |
-| 05 | Node-neighborhood stability |
-| 06 | Topology sensitivity |
-| 07 | Representation consistency |
-| 08 | Oversmoothing and dispersion retention |
+This behavior is consistent with oversmoothing and motivates examining information preservation in subsequent experiments.
 
-Every figure is generated as a PNG and vector PDF.
+---
 
-The exact files are listed in
-`outputs/figures/FIGURE_INVENTORY.csv`.
+## 5. Main Research Findings
 
-## Research Findings
+The Phase 3A pilot produced five main observations.
 
-The pilot provides evidence that spatially constrained
-feature-based graphs have more stable scanner-paired
-neighborhood structure under the tested conditions.
+1. **Scanner-dependent graph instability:** Feature-based graph connections differed between matched AT2 and GT450 image representations.
 
-The effect remains visible after matching edge budgets,
-enforcing connectivity, and excluding a fixed backbone.
+2. **Improved spatial edge agreement:** Spatial restrictions increased cross-scanner edge agreement under controlled edge budgets in this selected region.
 
-However, representation differences are substantially smaller
-than raw edge differences under deterministic propagation.
+3. **Connectivity preservation:** A shared 89-edge spatial MST eliminated isolated nodes and disconnected components.
 
-The observed representation consistency is accompanied
-by decreased embedding dispersion at greater depths.
+4. **Reduced topology sensitivity:** Spatial-feature graphs exhibited smaller representation changes when scanner-specific edges were exchanged.
 
-## Important Limitations
+5. **Representation smoothing:** Increased propagation depth produced more similar cross-scanner representations but reduced the distinctiveness of node embeddings.
 
-1. Only one 90-node tissue region was analyzed.
-2. Biological specimen identities have not been verified.
-3. The original WSI and Owkin coordinate systems have not
-   been linked by a validated transform.
-4. Candidate edge pools differ between global and spatial methods.
-5. Fixed backbone edges artificially raise full-graph agreement.
-6. Graph representation analysis is deterministic, not trained GNN evaluation.
-7. Graph coarsening and pooling stability remain untested.
-8. No downstream classification performance is established.
-9. No independent specimen-level inferential conclusions are supported.
+These findings support further investigation of spatially constrained graph construction in scanner-variable computational histopathology.
 
-## Directory Structure
+## 6. Research Limitations
+
+- Experiments used only one selected region containing 90 matched tile locations.
+- Independent biological specimens have not been verified.
+- Original WSI annotation coordinates have not been mapped to the registered Owkin tile coordinate system.
+- Global and spatial methods have different eligible candidate-edge pools.
+- Shared backbone edges increase full-graph stability by construction.
+- Representation propagation was deterministic and did not involve trained GNN weights.
+- Graph coarsening, pooling, and downstream prediction remain untested.
+- Results do not establish generalization across independent specimens.
+
+## 7. Repository Structure
 
 ```text
 experimental_research/
 ├── README.md
-├── scripts/
 ├── Docs/
+├── scripts/
+│   ├── 01_audit_plism_feasibility.py
+│   ├── ...
+│   ├── 14_oversmoothing_topology_sensitivity.py
+│   └── 15_finalize_phase3a.py
 └── outputs/
     ├── tables/
     ├── reports/
     └── figures/
+        ├── figure_01_matched_budget_stability.png
+        ├── figure_02_chance_adjusted_stability.png
+        ├── figure_03_graph_fragmentation.png
+        ├── figure_04_connected_residual_stability.png
+        ├── figure_05_node_neighborhood_stability.png
+        ├── figure_06_topology_sensitivity.png
+        ├── figure_07_representation_consistency.png
+        ├── figure_08_oversmoothing_dispersion.png
+        ├── corresponding PDF versions
+        └── FIGURE_INVENTORY.csv
 ```
 
-## Reproducing Figures
+## 8. Reproducibility
 
-From the project root:
+Activate the research environment:
 
 ```bash
-python experimental_research/scripts/15_finalize_phase3a.py
+cd ~/MEDICAL_GNN_RESEARCH
+
+source "$HOME/Unofficial Thesis/.venv-transformers/bin/activate"
 ```
 
-Requires NumPy, pandas, and Matplotlib.
+Regenerate the final figures and Phase 2/3A README templates:
 
-## Next Research Phase
+```bash
+python -u experimental_research/scripts/15_finalize_phase3a.py
+```
 
-**Phase 3B: Multi-Region Controlled Experiments**
+**Important:** Script 15 overwrites the Phase 3A README with its original generated template. Back up this expanded README before rerunning Script 15.
 
-Location: `../multi_region_research/`
+The experimental results are stored in:
 
-The next phase should prioritize spatially separated matched
-regions, tissue attribution, independent analysis-unit verification,
-and multi-region experimental replication before strong
-generalization claims.
+- `outputs/tables/`: Graph stability, structural diagnostics, node-level metrics, and representation results.
+- `outputs/reports/`: Machine-readable experiment reports.
+- `outputs/figures/`: Final PNG/PDF research figures.
 
-## Research References
+## 9. Next Phase: Multi-Region Research
 
-- Official PLISM dataset:
-  https://doi.org/10.1038/s41597-024-03122-5
-- Owkin registered PLISM tiles:
-  https://huggingface.co/datasets/owkin/plism-dataset-tiles
+The next stage is **Phase 3B: Multi-Region Controlled Experiments**, maintained separately in:
+
+`../multi_region_research/`
+
+The objectives are to:
+
+1. Identify multiple spatially separated paired histopathology regions.
+2. Verify tissue provenance and prevent overlapping evaluation regions.
+3. Incorporate pathology-specific feature encoders.
+4. Replicate controlled graph comparisons.
+5. Examine graph coarsening and representation stability.
+6. Evaluate variability across defensible independent analysis units.
+
+## 10. References
+
+1. [PLISM Dataset Publication](https://doi.org/10.1038/s41597-024-03122-5)
+2. [Owkin PLISM Registered Tile Dataset](https://huggingface.co/datasets/owkin/plism-dataset-tiles)
 
 ## Conclusion
 
-Phase 3A establishes a reproducible exploratory baseline
-for cross-scanner graph topology stability.
+Phase 3A establishes a reproducible pilot baseline for studying graph topology stability across scanner-acquired histopathology images.
 
-Its results motivate expanded evaluation, but do not yet
-demonstrate clinically useful prediction improvements or
-generalization across independent specimens.
+The results indicate that spatially constrained feature-based graphs can provide more consistent connections and lower topology-induced representation variation under the evaluated conditions.
+
+Broader multi-region experiments, verified specimen provenance, graph coarsening analysis, and downstream evaluation are necessary before making stronger research claims.
