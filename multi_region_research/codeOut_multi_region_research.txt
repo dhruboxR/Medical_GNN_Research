@@ -1,0 +1,2336 @@
+source "$HOME/Unofficial Thesis/.venv-transformers/bin/activate"
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/01_identify_plism_candidate_regions.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B - MULTI-REGION SAMPLING FEASIBILITY
+======================================================================
+
+[1] Retrieving official annotation metadata...
+Annotation file: PLISM_wsi_en.csv
+Size: 19.59 MiB
+Image downloads: none
+
+[2] Reading scanner annotation records...
+Processed 10,000 annotation rows
+Processed 20,000 annotation rows
+Processed 30,000 annotation rows
+Processed 40,000 annotation rows
+Processed 50,000 annotation rows
+Processed 60,000 annotation rows
+Processed 70,000 annotation rows
+Processed 80,000 annotation rows
+Processed 90,000 annotation rows
+Processed 100,000 annotation rows
+Processed 110,000 annotation rows
+Processed 120,000 annotation rows
+Processed 130,000 annotation rows
+Processed 140,000 annotation rows
+Processed 150,000 annotation rows
+Processed 160,000 annotation rows
+Processed 170,000 annotation rows
+Processed 180,000 annotation rows
+Processed 190,000 annotation rows
+Processed 200,000 annotation rows
+Processed 210,000 annotation rows
+Processed 220,000 annotation rows
+Processed 230,000 annotation rows
+Processed 240,000 annotation rows
+Processed 250,000 annotation rows
+Processed 260,000 annotation rows
+Processed 270,000 annotation rows
+Processed 280,000 annotation rows
+Processed 290,000 annotation rows
+Processed 300,000 annotation rows
+Processed 310,000 annotation rows
+Processed 310,947 annotation rows
+
+[3] Validating cross-scanner tissue labels...
+Valid paired coordinates: 3417
+Tissue labels: 46
+Conflicting coordinates: 0
+Unmatched coordinates: 0
+Invalid rows: 0
+Duplicate coordinate groups: 0
+
+[4] Finding candidate spatial windows...
+Candidate windows: 1434
+
+[5] Selecting provisional candidate regions...
+
+[6] Saving candidate inventories...
+
+[7] Generating feasibility report...
+
+======================================================================
+PHASE 3B.1 - SAMPLING FEASIBILITY COMPLETED
+======================================================================
+Paired coordinates: 3417
+Available tissue labels: 46
+Candidate windows: 1434
+Provisional regions selected: 12
+Distinct selected tissue labels: 12
+
+Provisional region shortlist:
+ region_id        tissue_type  annotated_positions  coverage_fraction  grid_x_start  grid_y_start
+REGION_001    07_renal_cortex                   36                1.0            88             3
+REGION_002   08_renal_medulla                   36                1.0           101             3
+REGION_003   10_corpus_luteum                   36                1.0            16            15
+REGION_004  11_uterine_cervix                   36                1.0            33            16
+REGION_005      12_lymph_node                   36                1.0            60            16
+REGION_006          15_spleen                   36                1.0           101            17
+REGION_007        17_prostate                   36                1.0            17            29
+REGION_008           18_liver                   36                1.0            31            29
+REGION_009         19_jejunum                   36                1.0            46            28
+REGION_010  22_uterine_corpus                   36                1.0            87            32
+REGION_011  23_left_ventricle                   36                1.0           101            32
+REGION_012 24_pituitary_gland                   36                1.0             3            42
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_region_candidates.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_provisional_region_shortlist.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/01_multi_region_sampling_feasibility.json
+
+Owkin coordinate mapping: UNVERIFIED
+Independent biological specimens: UNVERIFIED
+Image downloads: NONE
+
+STEP 3B.1 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/02_audit_candidate_region_selection.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B - REGION SELECTION AND PROVENANCE AUDIT
+======================================================================
+
+[1] Loading region inventories...
+Candidate windows: 1434
+Selected regions: 12
+
+[2] Validating region dimensions and coverage...
+Window validation: PASSED
+Fully populated regions: 12
+
+[3] Measuring spatial separation...
+Region pairs checked: 66
+Overlapping pairs: 0
+Minimum footprint distance: 8.0
+
+[4] Evaluating tissue diversity...
+Tissues with candidate windows: 42
+Selected tissue labels: 12
+Candidate tissue-label coverage: 28.57%
+Selected annotated positions: 432
+Unique window-grid positions: 432
+
+[5] Assessing sampling readiness...
+Window geometry: VERIFIED
+Spatial non-overlap: VERIFIED
+Owkin coordinate mapping: UNVERIFIED
+Biological independence: UNVERIFIED
+Ready for targeted Owkin tile extraction: False
+
+[6] Saving audit outputs...
+
+======================================================================
+PHASE 3B.2 - REGION AUDIT COMPLETED
+======================================================================
+Selected regions: 12
+Distinct selected tissue labels: 12
+Overlapping region pairs: 0
+Minimum grid separation: 8.0
+Unique window positions: 432
+Targeted image extraction ready: False
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_region_selection_validation.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_region_pairwise_distances.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/02_region_selection_provenance_audit.json
+
+STEP 3B.2 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/03_investigate_coordinate_mapping.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B - COORDINATE MAPPING INVESTIGATION
+======================================================================
+
+[1] Loading existing research metadata...
+Pilot matched tiles: 90
+Feature dimensions: 384
+Selected original WSI regions: 12
+
+[2] Examining Owkin tile identifiers...
+Tile ID levels: [16]
+Direct ID/grid matches: 90
+Swapped ID/grid matches: 0
+Pilot row range: 100 to 109
+Pilot col range: 126 to 135
+
+Note: Matching saved grid fields to tile IDs does not establish their source WSI coordinates.
+
+[3] Examining original annotation grid regions...
+Original annotation grid X range: 3 to 106
+Original annotation grid Y range: 3 to 47
+Original coordinate system: 1024-unit grid inferred from annotation values
+
+[4] Inspecting saved Phase 1 metadata schemas...
+CSV metadata files inspected: 17
+Files with relevant columns: 15
+
+Potential provenance sources:
+                                                                         file                                                                 provenance_columns
+        dataset_exploration/outputs/features/plism_dinov2_pair_similarity.csv                                                        tile_id; grid_row; grid_col
+      dataset_exploration/outputs/tables/plism_at2_gt450_metadata_samples.csv                                                stainer; scanner; slide_id; tile_id
+            dataset_exploration/outputs/tables/plism_at2_gt450_shared_ids.csv                                                                            tile_id
+               dataset_exploration/outputs/tables/plism_download_manifest.csv                                                scanner; stainer; slide_id; tile_id
+                     dataset_exploration/outputs/tables/plism_graph_edges.csv                                                                            scanner
+         dataset_exploration/outputs/tables/plism_matched_tile_candidates.csv                     tile_id; stainer; scanner_a; scanner_b; slide_id_a; slide_id_b
+                    dataset_exploration/outputs/tables/plism_metadata_100.csv                                                stainer; scanner; slide_id; tile_id
+             dataset_exploration/outputs/tables/plism_pair_visual_metrics.csv                                                                            tile_id
+                 dataset_exploration/outputs/tables/plism_sample_metadata.csv                                                stainer; scanner; slide_id; tile_id
+         dataset_exploration/outputs/tables/plism_scanner_pair_candidates.csv                                                         stainer; scanner; slide_id
+                   dataset_exploration/outputs/tables/plism_shard_samples.csv                                                stainer; scanner; slide_id; tile_id
+          dataset_exploration/outputs/tables/plism_spatial_mosaic_metrics.csv            tile_id; grid_row; grid_col; at2_tissue_fraction; gt450_tissue_fraction
+dataset_exploration/outputs/tables/plism_spatial_region_download_manifest.csv                                               tile_id; grid_row; grid_col; stainer
+         dataset_exploration/outputs/tables/plism_spatial_region_manifest.csv tile_id; stainer; grid_row; grid_col; scanner_a; scanner_b; slide_id_a; slide_id_b
+         dataset_exploration/outputs/tables/plism_spatial_region_metadata.csv                            scanner; stainer; slide_id; tile_id; grid_row; grid_col
+
+[5] Saving coordinate investigation tables...
+
+[6] Assessing coordinate mapping readiness...
+
+======================================================================
+PHASE 3B.3 - COORDINATE INVESTIGATION COMPLETED
+======================================================================
+Pilot nodes: 90
+Original WSI candidate regions: 12
+Provenance-related CSV files: 15
+
+Original-to-Owkin mapping: UNVERIFIED
+Independent biological specimens: UNVERIFIED
+Ready for targeted image extraction: False
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_owkin_tile_id_audit.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_original_region_coordinate_audit.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase1_metadata_inventory.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/03_coordinate_mapping_investigation.json
+
+STEP 3B.3 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/04b_discover_owkin_regions_api.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B.4 - OWKIN API REGION DISCOVERY
+======================================================================
+
+[1] Retrieving scanner metadata...
+
+Scanner: AT2
+  Page 01: 100 rows, 100 valid tile IDs
+  Page 02: 100 rows, 200 valid tile IDs
+  Page 03: 100 rows, 300 valid tile IDs
+  Page 04: 100 rows, 400 valid tile IDs
+  Page 05: 100 rows, 500 valid tile IDs
+  Page 06: 100 rows, 600 valid tile IDs
+  Page 07: 100 rows, 700 valid tile IDs
+  Page 08: 100 rows, 800 valid tile IDs
+  Page 09: 100 rows, 900 valid tile IDs
+  Page 10: 100 rows, 1000 valid tile IDs
+  Page 11: 100 rows, 1100 valid tile IDs
+  Page 12: 100 rows, 1200 valid tile IDs
+  Page 13: 100 rows, 1300 valid tile IDs
+  Page 14: 100 rows, 1400 valid tile IDs
+  Page 15: 100 rows, 1500 valid tile IDs
+  Page 16: 100 rows, 1600 valid tile IDs
+  Page 17: 100 rows, 1700 valid tile IDs
+  Page 18: 100 rows, 1800 valid tile IDs
+  Page 19: 100 rows, 1900 valid tile IDs
+  Page 20: 100 rows, 2000 valid tile IDs
+  Total discovered: 2000
+  Dataset matching rows: 16278
+
+Scanner: GT450
+  Page 01: 100 rows, 100 valid tile IDs
+  Page 02: 100 rows, 200 valid tile IDs
+  Page 03: 100 rows, 300 valid tile IDs
+  Page 04: 100 rows, 400 valid tile IDs
+  Page 05: 100 rows, 500 valid tile IDs
+  Page 06: 100 rows, 600 valid tile IDs
+  Page 07: 100 rows, 700 valid tile IDs
+  Page 08: 100 rows, 800 valid tile IDs
+  Page 09: 100 rows, 900 valid tile IDs
+  Page 10: 100 rows, 1000 valid tile IDs
+  Page 11: 100 rows, 1100 valid tile IDs
+  Page 12: 100 rows, 1200 valid tile IDs
+  Page 13: 100 rows, 1300 valid tile IDs
+  Page 14: 100 rows, 1400 valid tile IDs
+  Page 15: 100 rows, 1500 valid tile IDs
+  Page 16: 100 rows, 1600 valid tile IDs
+  Page 17: 100 rows, 1700 valid tile IDs
+  Page 18: 100 rows, 1800 valid tile IDs
+  Page 19: 100 rows, 1900 valid tile IDs
+  Page 20: 100 rows, 2000 valid tile IDs
+  Total discovered: 2000
+  Dataset matching rows: 16278
+
+[2] Matching scanner tile IDs...
+AT2 observed IDs: 2000
+GT450 observed IDs: 2000
+Shared IDs: 2000
+Note: The scanner inventories are truncated to the requested API pages.
+
+[3] Finding candidate spatial windows...
+Candidate windows: 749
+
+[4] Selecting provisional regions...
+
+[5] Saving results...
+
+======================================================================
+PHASE 3B.4 API DISCOVERY COMPLETED
+======================================================================
+AT2 observed: 2000
+GT450 observed: 2000
+Matched tile IDs: 2000
+Candidate windows: 749
+Selected regions: 12
+
+Provisional region shortlist:
+       region_id  level  x_start  y_start  x_end  y_end  matched_positions  coverage_fraction tissue_type specimen_id
+OWKIN_REGION_001     16      105       76    110     81                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_002     16      107      167    112    172                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_003     16      108      111    113    116                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_004     16      111       72    116     77                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_005     16      111       78    116     83                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_006     16      113       86    118     91                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_007     16      113      166    118    171                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_008     16      114      111    119    116                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_009     16      114      172    119    177                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_010     16      117       71    122     76                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_011     16      117       77    122     82                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_012     16      120      109    125    114                 36                1.0  UNVERIFIED  UNVERIFIED
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_api_matched_tile_inventory.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_api_region_shortlist.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/04b_owkin_api_region_discovery.json
+
+Image downloads: NONE
+Biological independence: UNVERIFIED
+Original WSI mapping: UNVERIFIED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/05_audit_and_resample_owkin_regions.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B - REGION SEPARATION AND RESAMPLING
+======================================================================
+
+[1] Loading matched tile inventory...
+Matched positions: 2000
+Levels: [16]
+Scanner acquisition IDs: VERIFIED
+
+[2] Reconstructing candidate windows...
+Eligible windows: 749
+
+[3] Selecting spatially separated regions...
+Fully populated candidates: 265
+Sampling pool: 265
+Regions selected: 8
+
+[4] Building exact region-to-tile manifest...
+Selected matched tile positions: 288
+Expected paired images: 576
+
+[5] Verifying pairwise region distances...
+Region pairs: 28
+Minimum same-level distance: 6.0
+
+[6] Saving revised sampling outputs...
+
+======================================================================
+PHASE 3B.5 - REGION RESAMPLING COMPLETED
+======================================================================
+Candidate windows: 749
+Selected regions: 8
+Selected matched positions: 288
+Potential paired images: 576
+Minimum grid separation: 6.0
+
+Revised region shortlist:
+       region_id  level  x_start  y_start  x_end  y_end  matched_positions  coverage_fraction tissue_type specimen_id
+OWKIN_REGION_001     16      117       71    122     76                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_002     16      119      176    124    181                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_003     16      109      114    114    119                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_004     16      136      138    141    143                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_005     16      124      105    129    110                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_006     16      113       86    118     91                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_007     16      107      167    112    172                 36                1.0  UNVERIFIED  UNVERIFIED
+OWKIN_REGION_008     16      106       75    111     80                 36                1.0  UNVERIFIED  UNVERIFIED
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_spatially_separated_regions.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_spatially_separated_tile_manifest.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_spatial_region_distances.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/05_owkin_region_resampling_audit.json
+
+Image downloads: NONE
+Biological independence: UNVERIFIED
+Source inventory complete: False
+
+STEP 3B.5 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/06_survey_owkin_spatial_coverage.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B - OWKIN SPATIAL COVERAGE SURVEY
+======================================================================
+
+[1] Preparing systematic offset survey...
+Offsets: [0, 3200, 6400, 9600, 12800, 16000]
+Scanners: ('AT2', 'GT450')
+Records per scanner per offset: 100
+
+[2] Retrieving distributed metadata samples...
+
+Offset: 0
+  AT2: 100 tiles
+  GT450: 100 tiles
+  Shared IDs: 100
+  X range: 100 - 105
+  Y range: 25 - 171
+
+Offset: 3200
+  AT2: 100 tiles
+  GT450: 100 tiles
+  Shared IDs: 100
+  X range: 152 - 153
+  Y range: 24 - 182
+
+Offset: 6400
+  AT2: 100 tiles
+  GT450: 100 tiles
+  Shared IDs: 100
+  X range: 207 - 208
+  Y range: 8 - 186
+
+Offset: 9600
+  AT2: 100 tiles
+  GT450: 100 tiles
+  Shared IDs: 100
+  X range: 241 - 242
+  Y range: 8 - 183
+
+Offset: 12800
+  AT2: 100 tiles
+  GT450: 100 tiles
+  Shared IDs: 100
+  X range: 51 - 51
+  Y range: 16 - 184
+
+Offset: 16000
+  AT2: 100 tiles
+  GT450: 100 tiles
+  Shared IDs: 100
+  X range: 93 - 95
+  Y range: 15 - 178
+
+[3] Validating survey data...
+Metadata records collected: 1200
+Matched IDs across sampled bands: 600
+Duplicate records: 0
+
+[4] Saving spatial survey outputs...
+
+======================================================================
+PHASE 3B.6 - SPATIAL COVERAGE SURVEY COMPLETED
+======================================================================
+
+Survey summary:
+ offset  shared_tile_ids  paired_x_min  paired_x_max  paired_y_min  paired_y_max
+      0              100           100           105            25           171
+   3200              100           152           153            24           182
+   6400              100           207           208             8           186
+   9600              100           241           242             8           183
+  12800              100            51            51            16           184
+  16000              100            93            95            15           178
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_spatial_coverage_samples.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_spatial_coverage_by_offset.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/06_owkin_spatial_coverage_survey.json
+
+Image downloads: NONE
+Biological independence: UNVERIFIED
+Full inventory: NOT YET COLLECTED
+
+STEP 3B.6 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/07_distributed_region_sampling.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B - DISTRIBUTED REGION SAMPLING
+======================================================================
+
+[1] Loading existing metadata...
+Previously matched tiles: 2000
+
+[2] Retrieving distributed metadata bands...
+
+BAND_1 | start offset=3000
+  AT2: 100 records
+  AT2: 200 records
+  AT2: 300 records
+  AT2: 400 records
+  AT2: 500 records
+  AT2: 600 records
+  AT2: 700 records
+  GT450: 100 records
+  GT450: 200 records
+  GT450: 300 records
+  GT450: 400 records
+  GT450: 500 records
+  GT450: 600 records
+  GT450: 700 records
+  Matched tile IDs: 700
+  New unique positions: 700
+
+BAND_2 | start offset=6200
+  AT2: 100 records
+  AT2: 200 records
+  AT2: 300 records
+  AT2: 400 records
+  AT2: 500 records
+    Attempt 1: 502 Server Error: Bad Gateway for url: https://datasets-server.huggingface.co/filter?dataset=owkin%2Fplism-dataset-tiles&config=default&split=train&where=%22stainer%22%3D%27GIVH%27+AND+%22scanner%22%3D%27AT2%27&offset=6700&length=100
+  AT2: 600 records
+  AT2: 700 records
+  GT450: 100 records
+  GT450: 200 records
+  GT450: 300 records
+  GT450: 400 records
+  GT450: 500 records
+  GT450: 600 records
+  GT450: 700 records
+  Matched tile IDs: 700
+  New unique positions: 700
+
+BAND_3 | start offset=9400
+  AT2: 100 records
+  AT2: 200 records
+  AT2: 300 records
+  AT2: 400 records
+  AT2: 500 records
+  AT2: 600 records
+  AT2: 700 records
+  GT450: 100 records
+  GT450: 200 records
+  GT450: 300 records
+  GT450: 400 records
+  GT450: 500 records
+  GT450: 600 records
+  GT450: 700 records
+  Matched tile IDs: 700
+  New unique positions: 700
+
+BAND_4 | start offset=12400
+  AT2: 100 records
+  AT2: 200 records
+  AT2: 300 records
+  AT2: 400 records
+  AT2: 500 records
+  AT2: 600 records
+  AT2: 700 records
+  GT450: 100 records
+  GT450: 200 records
+  GT450: 300 records
+  GT450: 400 records
+  GT450: 500 records
+  GT450: 600 records
+  GT450: 700 records
+  Matched tile IDs: 700
+  New unique positions: 700
+
+BAND_5 | start offset=15400
+  AT2: 100 records
+  AT2: 200 records
+  AT2: 300 records
+  AT2: 400 records
+  AT2: 500 records
+  AT2: 600 records
+  AT2: 700 records
+  GT450: 100 records
+  GT450: 200 records
+  GT450: 300 records
+  GT450: 400 records
+  GT450: 500 records
+  GT450: 600 records
+  GT450: 700 records
+  Matched tile IDs: 700
+  New unique positions: 700
+
+[3] Generating 6x6 candidate windows...
+Fully populated candidate windows: 585
+
+[4] Selecting distributed regions...
+Selected regions: 10
+
+[5] Creating region tile manifest...
+
+[6] Checking separation...
+Region pairs checked: 45
+Minimum grid separation: 30.870698080866262
+
+[7] Saving sampling outputs...
+
+======================================================================
+PHASE 3B.7 - DISTRIBUTED SAMPLING COMPLETED
+======================================================================
+Unique matched tiles: 5500
+Full 6x6 windows: 585
+Selected regions: 10
+Matched selected positions: 360
+Potential images: 720
+Minimum grid separation: 30.870698080866262
+
+Regions per sampling band:
+  BAND_0: 2
+  BAND_1: 2
+  BAND_2: 0
+  BAND_3: 2
+  BAND_4: 2
+  BAND_5: 2
+
+Final provisional region shortlist:
+            region_id   band  level  x_start  y_start  x_end  y_end  matched_positions tissue_type specimen_id
+OWKIN_DISTRIBUTED_001 BAND_0     16      105       76    110     81                 36  UNVERIFIED  UNVERIFIED
+OWKIN_DISTRIBUTED_002 BAND_1     16      151      175    156    180                 36  UNVERIFIED  UNVERIFIED
+OWKIN_DISTRIBUTED_003 BAND_3     16      240       10    245     15                 36  UNVERIFIED  UNVERIFIED
+OWKIN_DISTRIBUTED_004 BAND_4     16       48      166     53    171                 36  UNVERIFIED  UNVERIFIED
+OWKIN_DISTRIBUTED_005 BAND_5     16       89      173     94    178                 36  UNVERIFIED  UNVERIFIED
+OWKIN_DISTRIBUTED_006 BAND_0     16      136      138    141    143                 36  UNVERIFIED  UNVERIFIED
+OWKIN_DISTRIBUTED_007 BAND_1     16      151       24    156     29                 36  UNVERIFIED  UNVERIFIED
+OWKIN_DISTRIBUTED_008 BAND_3     16      240      115    245    120                 36  UNVERIFIED  UNVERIFIED
+OWKIN_DISTRIBUTED_009 BAND_4     16       47       56     52     61                 36  UNVERIFIED  UNVERIFIED
+OWKIN_DISTRIBUTED_010 BAND_5     16       87       43     92     48                 36  UNVERIFIED  UNVERIFIED
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_distributed_matched_tiles.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_distributed_region_shortlist.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_distributed_tile_manifest.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_distributed_region_distances.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/07_distributed_region_sampling.json
+
+Image downloads: NONE
+Biological independence: UNVERIFIED
+Dataset-wide inventory: INCOMPLETE
+
+STEP 3B.7 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/08_validate_and_freeze_sampling.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B - SAMPLING MANIFEST VALIDATION
+======================================================================
+
+[1] Loading sampling files...
+Inventory positions: 5500
+Regions: 10
+Manifest positions: 360
+
+[2] Checking acquisition provenance...
+All selected tiles found in paired inventory.
+Scanner acquisition provenance: PASSED
+
+[3] Validating region geometry...
+Complete regions: 10
+Unique matched positions: 360
+
+[4] Checking pilot exclusion and separation...
+Pilot overlap: 0
+Minimum region separation: 30.8707
+
+[5] Creating frozen sampling manifest...
+Frozen manifest created.
+SHA256: 69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9
+
+[6] Saving validation report...
+
+======================================================================
+PHASE 3B.8 - MANIFEST VALIDATION COMPLETED
+======================================================================
+Regions validated: 10
+Matched tile positions: 360
+Potential images: 720
+Minimum separation: 30.8707
+Scanner pairing: VERIFIED
+Complete region geometry: VERIFIED
+Pilot overlap: NONE
+
+Frozen manifest:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/validated/phase3b_frozen_tile_manifest.csv
+
+Manifest SHA256:
+69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9
+
+Validation report:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/08_sampling_manifest_validation.json
+
+Biological independence: UNVERIFIED
+Tissue attribution: UNVERIFIED
+Image downloads: NONE
+
+STEP 3B.8 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/09_test_paired_image_access.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B - PAIRED IMAGE ACCESS TEST
+======================================================================
+
+[1] Verifying frozen manifest...
+Manifest fingerprint: VERIFIED
+Region: OWKIN_DISTRIBUTED_001
+Selected tile: tile_16_105_76
+
+[2] Checking exact scanner-paired metadata...
+
+AT2
+  Tile ID: tile_16_105_76
+  Acquisition: GIVH_AT2_to_GMH_S60
+  Dimensions: 224 x 224
+  Reference scheme: https
+  Reference host: datasets-server.huggingface.co
+
+GT450
+  Tile ID: tile_16_105_76
+  Acquisition: GIVH_GT450_to_GMH_S60
+  Dimensions: 224 x 224
+  Reference scheme: https
+  Reference host: datasets-server.huggingface.co
+
+[3] Validating pair dimensions...
+Pair dimensions: MATCHED
+
+======================================================================
+PAIRED IMAGE ACCESS TEST COMPLETED
+======================================================================
+Metadata and image references: VERIFIED
+Pixel content: NOT YET VERIFIED
+Images downloaded: NONE
+Report: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/09_paired_image_access_test.json
+
+STEP 3B.9 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/10_validate_paired_image_pixels.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B - CORRECTED IMAGE VALIDATION
+======================================================================
+
+[1] Checking frozen manifest...
+Manifest SHA256: VERIFIED
+Region: OWKIN_DISTRIBUTED_001
+Tile: tile_16_105_76
+
+[2] Retrieving scanner pair...
+
+Scanner: AT2
+  Detected encoding: JPEG
+  Image size: 224 x 224
+  Bytes: 12587
+  SHA256: e3a662e87eb5ebeef937bf5c9535fc117680cb6f401639a8a62efcdf8e7222e9
+  Image integrity: PASSED
+
+Scanner: GT450
+  Detected encoding: JPEG
+  Image size: 224 x 224
+  Bytes: 10445
+  SHA256: 50f42830ac72fc9be888736a671046cffba936297d4d7c0a7bf39267faae2a39
+  Image integrity: PASSED
+
+[3] Computing pixel statistics...
+Pixel MAE: 43.0976
+Pixel RMSE: 56.3665
+Identical decoded pixels: False
+
+[4] Generating comparison figure...
+
+[5] Saving validation report...
+
+======================================================================
+PHASE 3B.10 - IMAGE VALIDATION COMPLETED
+======================================================================
+Validated scanner pairs: 1
+Validated images: 2
+AT2: JPEG | 12587 bytes
+GT450: JPEG | 10445 bytes
+Pixel MAE: 43.0976
+Pixel RMSE: 56.3665
+
+Saved images:
+datasets/PLISM/phase3b_pilot_validation/tile_16_105_76_AT2.jpg
+datasets/PLISM/phase3b_pilot_validation/tile_16_105_76_GT450.jpg
+
+Comparison figure:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/figures/phase3b_first_pair_validation.png
+
+Report:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/10_paired_image_pixel_validation.json
+
+Original source bytes: UNVERIFIED
+Manual visual correspondence: PENDING
+Remaining images: 718
+
+STEP 3B.10 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/11_verify_original_image_equivalence.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B - ORIGINAL IMAGE EQUIVALENCE
+======================================================================
+
+[1] Verifying research manifest...
+Frozen manifest: VERIFIED
+
+[2] Scanner: AT2
+Viewer image: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/datasets/PLISM/phase3b_pilot_validation/tile_16_105_76_AT2.jpg
+Original directory: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/datasets/PLISM/GIVH_AT2_GT450/AT2
+Exact original PNG candidates: 0
+Status: ORIGINAL_NOT_FOUND
+
+[2] Scanner: GT450
+Viewer image: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/datasets/PLISM/phase3b_pilot_validation/tile_16_105_76_GT450.jpg
+Original directory: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/datasets/PLISM/GIVH_AT2_GT450/GT450
+Exact original PNG candidates: 0
+Status: ORIGINAL_NOT_FOUND
+
+[3] Saving comparison report...
+
+======================================================================
+PHASE 3B.11 - COMPARISON FINISHED
+======================================================================
+
+AT2: ORIGINAL_NOT_FOUND
+
+GT450: ORIGINAL_NOT_FOUND
+
+Report:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/11_original_image_equivalence.json
+
+No images downloaded.
+Frozen manifest unchanged.
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/11b_compare_original_and_viewer_images.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B.11B - ORIGINAL VS VIEWER COMPARISON
+======================================================================
+
+[1] Checking frozen manifest...
+Frozen manifest: VERIFIED
+Comparison tile: tile_16_100_127
+Note: This pilot tile is outside the frozen cohort.
+
+[2] Comparing AT2 images...
+  Original encoding: PNG
+  Viewer encoding: JPEG
+  Original bytes: 116236
+  Viewer bytes: 15734
+  Exact RGB equality: False
+  Pixel MAE: 4.969826
+  Pixel RMSE: 6.438553
+  Maximum difference: 38
+  Fraction changed pixels: 0.996891
+
+[2] Comparing GT450 images...
+  Original encoding: PNG
+  Viewer encoding: JPEG
+  Original bytes: 107384
+  Viewer bytes: 13312
+  Exact RGB equality: False
+  Pixel MAE: 4.080995
+  Pixel RMSE: 5.268913
+  Maximum difference: 28
+  Fraction changed pixels: 0.990573
+
+[3] Creating comparison figure...
+
+[4] Saving report...
+
+======================================================================
+PHASE 3B.11B - COMPARISON COMPLETED
+======================================================================
+AT2: exact=False, MAE=4.969826, RMSE=6.438553
+GT450: exact=False, MAE=4.080995, RMSE=5.268913
+
+Comparison figure: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/figures/phase3b_original_vs_viewer_comparison.png
+Report: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/11b_original_vs_viewer_comparison.json
+Frozen manifest: UNCHANGED
+
+STEP 3B.11B COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/12_test_original_parquet_access.py
+---------------------------------------------------------------------------------------
+
+ccess.py
+======================================================================
+PHASE 3B - ORIGINAL PARQUET ACCESS TEST
+======================================================================
+
+Testing: data/train-00000-of-00293.parquet
+  HEAD status: 200
+  Reported size: 552716146
+  Range status: 206
+  Content-Range: bytes 552716138-552716145/552716146
+  Bytes received: 8
+  Parquet footer: VALID
+
+Testing: data/train-00001-of-00293.parquet
+  HEAD status: 200
+  Reported size: 563516018
+  Range status: 206
+  Content-Range: bytes 563516010-563516017/563516018
+  Bytes received: 8
+  Parquet footer: VALID
+
+Testing: data/train-00002-of-00293.parquet
+  HEAD status: 200
+  Reported size: 544567194
+  Range status: 206
+  Content-Range: bytes 544567186-544567193/544567194
+  Bytes received: 8
+  Parquet footer: VALID
+
+======================================================================
+PHASE 3B.12 - ACCESS DIAGNOSTIC
+======================================================================
+Shards tested: 3
+Valid ranged Parquet responses: 3
+Decision: Partial Parquet access appears feasible.
+
+Report: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/12_original_parquet_access_feasibility.json
+No complete shards or images downloaded.
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/13_inspect_parquet_row_groups.py
+---------------------------------------------------------------------------------------
+
+PHASE 3B - REMOTE PARQUET METADATA INSPECTION
+======================================================================
+
+[1] Inspecting train-00000-of-00293.parquet...
+  Remote file size: 552716146 bytes
+  Footer metadata: 37173 bytes
+  Total rows: 5056
+  Row groups: 51
+  Schema columns: ['__key__', 'stainer', 'scanner', 'slide_id', 'tile_id', 'bytes', 'path']
+
+[2] Inspecting row-group column chunks...
+
+  Column: tile_id
+    Column chunks: 51
+    Total compressed bytes: 35647
+    Largest compressed chunk: 756
+    Chunks with min/max: 51
+    RG 0: min=tile_16_100_127 | max=tile_16_105_171
+    RG 1: min=tile_16_105_76 | max=tile_16_108_169
+    RG 2: min=tile_16_108_170 | max=tile_16_10_144
+    RG 3: min=tile_16_10_145 | max=tile_16_110_76
+    RG 4: min=tile_16_110_77 | max=tile_16_112_166
+
+  Column: png
+    Column chunks: 102
+    Total compressed bytes: 552591272
+    Largest compressed chunk: 11484218
+    Chunks with min/max: 51
+
+[1] Inspecting train-00001-of-00293.parquet...
+  Remote file size: 563516018 bytes
+  Footer metadata: 37164 bytes
+  Total rows: 5056
+  Row groups: 51
+  Schema columns: ['__key__', 'stainer', 'scanner', 'slide_id', 'tile_id', 'bytes', 'path']
+
+[2] Inspecting row-group column chunks...
+
+  Column: tile_id
+    Column chunks: 51
+    Total compressed bytes: 34610
+    Largest compressed chunk: 747
+    Chunks with min/max: 51
+    RG 0: min=tile_16_183_11 | max=tile_16_184_81
+    RG 1: min=tile_16_184_82 | max=tile_16_186_63
+    RG 2: min=tile_16_186_64 | max=tile_16_189_148
+    RG 3: min=tile_16_189_149 | max=tile_16_18_27
+    RG 4: min=tile_16_18_28 | max=tile_16_191_52
+
+  Column: png
+    Column chunks: 102
+    Total compressed bytes: 563393235
+    Largest compressed chunk: 11562255
+    Chunks with min/max: 51
+
+[1] Inspecting train-00002-of-00293.parquet...
+  Remote file size: 544567194 bytes
+  Footer metadata: 36963 bytes
+  Total rows: 5056
+  Row groups: 51
+  Schema columns: ['__key__', 'stainer', 'scanner', 'slide_id', 'tile_id', 'bytes', 'path']
+
+[2] Inspecting row-group column chunks...
+
+  Column: tile_id
+    Column chunks: 51
+    Total compressed bytes: 34980
+    Largest compressed chunk: 723
+    Chunks with min/max: 51
+    RG 0: min=tile_16_245_89 | max=tile_16_246_53
+    RG 1: min=tile_16_246_54 | max=tile_16_247_180
+    RG 2: min=tile_16_247_181 | max=tile_16_248_165
+    RG 3: min=tile_16_248_166 | max=tile_16_249_142
+    RG 4: min=tile_16_249_143 | max=tile_16_24_137
+
+  Column: png
+    Column chunks: 102
+    Total compressed bytes: 544443870
+    Largest compressed chunk: 11414997
+    Chunks with min/max: 51
+
+[3] Saving metadata inventory...
+
+======================================================================
+PHASE 3B.13 - METADATA INSPECTION COMPLETED
+======================================================================
+Shards inspected: 3
+Total rows inspected via metadata: 15168
+Total row groups: 153
+Tile-ID min/max statistics available: True
+Smallest row group: 56 rows
+Largest row group: 100 rows
+Largest PNG column chunk: 11562255 bytes
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_remote_parquet_shard_metadata.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_remote_parquet_row_groups.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_remote_parquet_column_chunks.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/13_remote_parquet_metadata_inspection.json
+
+Original images downloaded: NONE
+Frozen manifest: UNCHANGED
+Individual tile retrieval: NOT YET VERIFIED
+
+STEP 3B.13 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/14_recover_original_png_range.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B - ORIGINAL PNG RANGE RETRIEVAL
+======================================================================
+
+[1] Checking local reference image...
+Frozen manifest: VERIFIED
+Reference PNG: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/datasets/PLISM/GIVH_AT2_GT450/AT2/tile_16_100_127.png
+Reference SHA256: 7f899a2dcfc7ccab999b27cf78c233c2a1cc61587fed348c2c01854a46f09ce3
+
+[2] Opening remote Parquet metadata...
+Remote shard size: 552716146 bytes
+Row groups: 51
+Selected row group: 0
+
+[3] Locating target tile in row group...
+Rows in group: 100
+Exact matching records: 1
+
+[4] Reading selected PNG column chunk...
+
+[5] Comparing remote and local PNG...
+Remote PNG bytes: 116236
+Remote PNG dimensions: (224, 224)
+Remote image mode: RGB
+Remote SHA256: 7f899a2dcfc7ccab999b27cf78c233c2a1cc61587fed348c2c01854a46f09ce3
+Local SHA256: 7f899a2dcfc7ccab999b27cf78c233c2a1cc61587fed348c2c01854a46f09ce3
+Exact byte match: True
+HTTP range requests: 7
+Total transferred: 11313678 bytes
+
+======================================================================
+PHASE 3B.14 - ORIGINAL PNG TEST COMPLETED
+======================================================================
+Recovered image encoding: PNG
+Exact source-byte match: True
+Complete shard downloaded: NO
+Frozen manifest modified: NO
+Report: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/14_original_png_range_retrieval.json
+
+RESULT: Original PNG retrieval verified for this pilot tile.
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/15_locate_frozen_tiles_in_parquet.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B - PARQUET TILE LOCATION DISCOVERY
+======================================================================
+
+[1] Verifying frozen manifest...
+Frozen manifest: VERIFIED
+Matched positions: 360
+Scanner-tile targets: 720
+
+[2] Scanning Parquet footer metadata...
+
+Shard 000: train-00000-of-00293.parquet
+  Row groups: 51
+  Candidate row groups: 12
+  Candidate target locations: 144
+
+Shard 001: train-00001-of-00293.parquet
+  Row groups: 51
+  Candidate row groups: 7
+  Candidate target locations: 72
+
+Shard 002: train-00002-of-00293.parquet
+  Row groups: 51
+  Candidate row groups: 8
+  Candidate target locations: 72
+
+Shard 003: train-00003-of-00293.parquet
+  Row groups: 51
+  Candidate row groups: 20
+  Candidate target locations: 936
+
+Shard 004: train-00004-of-00293.parquet
+  Row groups: 51
+  Candidate row groups: 0
+  Candidate target locations: 0
+
+Shard 005: train-00005-of-00293.parquet
+  Row groups: 51
+  Candidate row groups: 15
+  Candidate target locations: 144
+
+Shard 006: train-00006-of-00293.parquet
+  Row groups: 51
+  Candidate row groups: 8
+  Candidate target locations: 432
+
+Shard 007: train-00007-of-00293.parquet
+  Row groups: 51
+  Candidate row groups: 0
+  Candidate target locations: 0
+
+Shard 008: train-00008-of-00293.parquet
+  Row groups: 51
+  Candidate row groups: 0
+  Candidate target locations: 0
+
+Shard 009: train-00009-of-00293.parquet
+  Row groups: 51
+  Candidate row groups: 0
+  Candidate target locations: 0
+
+Shard 010: train-00010-of-00293.parquet
+  Row groups: 51
+  Candidate row groups: 0
+  Candidate target locations: 0
+
+Shard 011: train-00011-of-00293.parquet
+  Row groups: 51
+  Candidate row groups: 0
+  Candidate target locations: 0
+
+[3] Summarizing candidate coverage...
+Total target records: 720
+Targets with candidate locations: 720
+No candidate in inspected shards: 0
+Candidate PNG-column transfer estimate: 710.47 MB
+Note: Candidate group estimates may overstate actual retrieval work until row matches are verified.
+
+[4] Saving discovery tables...
+
+======================================================================
+PHASE 3B.15 - LOCATION DISCOVERY COMPLETED
+======================================================================
+Shards inspected: 12
+Total target images: 720
+Targets with candidate locations: 720
+Targets not yet located: 0
+Candidate row groups: 70
+
+Candidate locations by scanner:
+  AT2: 360
+  GT450: 360
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_frozen_tile_candidate_locations.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_frozen_shard_location_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_candidate_image_row_groups.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/15_frozen_tile_location_discovery.json
+
+Image data downloaded: NONE
+Actual row locations: NOT YET VERIFIED
+Frozen manifest: UNCHANGED
+
+STEP 3B.15 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/16_verify_exact_parquet_tile_locations.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B - EXACT PARQUET LOCATION VALIDATION
+======================================================================
+
+[1] Verifying input files...
+Frozen manifest: VERIFIED
+Target scanner-tile records: 720
+Candidate location rows: 1800
+
+[2] Organizing candidate groups...
+Candidate groups: 70
+Relevant shards: 6
+
+[3] Reading metadata columns...
+
+Shard: train-00000-of-00293.parquet
+  RG 01: 100 rows | 18 exact matches
+  RG 02: 100 rows | 12 exact matches
+  RG 03: 100 rows | 1 exact matches
+  RG 04: 100 rows | 5 exact matches
+  RG 16: 100 rows | 18 exact matches
+  RG 17: 100 rows | 6 exact matches
+  RG 19: 100 rows | 12 exact matches
+  RG 31: 100 rows | 12 exact matches
+  RG 32: 100 rows | 18 exact matches
+  RG 33: 100 rows | 18 exact matches
+  RG 34: 100 rows | 12 exact matches
+  RG 35: 100 rows | 12 exact matches
+  Network: 49 requests, 77,101 bytes
+
+Shard: train-00001-of-00293.parquet
+  RG 43: 100 rows | 12 exact matches
+  RG 44: 100 rows | 11 exact matches
+  RG 45: 100 rows | 11 exact matches
+  RG 46: 100 rows | 4 exact matches
+  RG 47: 100 rows | 10 exact matches
+  RG 48: 100 rows | 12 exact matches
+  RG 49: 100 rows | 12 exact matches
+  Network: 29 requests, 72,051 bytes
+
+Shard: train-00002-of-00293.parquet
+  RG 22: 100 rows | 6 exact matches
+  RG 23: 100 rows | 6 exact matches
+  RG 24: 100 rows | 12 exact matches
+  RG 25: 100 rows | 10 exact matches
+  RG 26: 100 rows | 8 exact matches
+  RG 27: 100 rows | 12 exact matches
+  RG 28: 100 rows | 12 exact matches
+  RG 29: 100 rows | 6 exact matches
+  Network: 33 requests, 73,063 bytes
+
+Shard: train-00003-of-00293.parquet
+  RG 02: 100 rows | 6 exact matches
+  RG 03: 100 rows | 6 exact matches
+  RG 04: 100 rows | 12 exact matches
+  RG 05: 100 rows | 12 exact matches
+  RG 06: 100 rows | 12 exact matches
+  RG 07: 100 rows | 15 exact matches
+  RG 08: 100 rows | 9 exact matches
+  RG 11: 100 rows | 0 exact matches
+  RG 12: 100 rows | 18 exact matches
+  RG 13: 100 rows | 12 exact matches
+  RG 15: 100 rows | 6 exact matches
+  RG 27: 100 rows | 18 exact matches
+  RG 28: 100 rows | 6 exact matches
+  RG 30: 100 rows | 6 exact matches
+  RG 31: 100 rows | 6 exact matches
+  RG 42: 100 rows | 12 exact matches
+  RG 43: 100 rows | 12 exact matches
+  RG 44: 100 rows | 22 exact matches
+  RG 45: 100 rows | 14 exact matches
+  RG 46: 100 rows | 12 exact matches
+  Network: 81 requests, 84,926 bytes
+
+Shard: train-00005-of-00293.parquet
+  RG 04: 100 rows | 12 exact matches
+  RG 05: 100 rows | 12 exact matches
+  RG 06: 100 rows | 12 exact matches
+  RG 07: 100 rows | 12 exact matches
+  RG 08: 100 rows | 10 exact matches
+  RG 09: 100 rows | 3 exact matches
+  RG 10: 100 rows | 11 exact matches
+  RG 33: 100 rows | 2 exact matches
+  RG 34: 100 rows | 10 exact matches
+  RG 35: 100 rows | 12 exact matches
+  RG 36: 100 rows | 6 exact matches
+  RG 37: 100 rows | 12 exact matches
+  RG 38: 100 rows | 12 exact matches
+  RG 39: 100 rows | 7 exact matches
+  RG 40: 100 rows | 11 exact matches
+  Network: 61 requests, 79,790 bytes
+
+Shard: train-00006-of-00293.parquet
+  RG 13: 100 rows | 6 exact matches
+  RG 14: 100 rows | 6 exact matches
+  RG 15: 100 rows | 12 exact matches
+  RG 16: 100 rows | 12 exact matches
+  RG 17: 100 rows | 12 exact matches
+  RG 18: 100 rows | 12 exact matches
+  RG 19: 100 rows | 12 exact matches
+  RG 22: 100 rows | 0 exact matches
+  Network: 33 requests, 73,257 bytes
+
+[4] Auditing exact locations...
+Exact records found: 720
+Unique targets verified: 720
+Missing targets: 0
+Duplicate targets: 0
+Metadata bytes transferred: 460188
+
+[5] Saving exact location audit...
+
+======================================================================
+PHASE 3B.16 - EXACT LOCATION AUDIT COMPLETED
+======================================================================
+Target records: 720
+Candidate row groups checked: 70
+Exact records found: 720
+Missing targets: 0
+Duplicate targets: 0
+HTTP requests: 286
+Metadata transferred: 0.460 MB
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_exact_parquet_tile_locations.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_exact_location_target_audit.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_verified_image_row_groups.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/16_exact_parquet_tile_locations.json
+
+All exact locations verified: True
+Image data downloaded: NONE
+Frozen manifest: UNCHANGED
+
+VALIDATION PASSED: All 720 scanner-tile records have one verified source location.
+
+STEP 3B.16 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/17_download_verified_original_pngs.py --all \
+          2>&1 | tee multi_region_research/phase3b_full_download.log
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B.17 - ORIGINAL IMAGE RETRIEVAL
+======================================================================
+Verified original PNGs: 720
+Remaining original PNGs: 0
+Transferred this run: 684.830 MB
+HTTP requests this run: 201
+
+Image directory:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/datasets/PLISM/phase3b_original_png
+
+Audit CSV:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_original_png_download_audit.csv
+
+Progress report:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/17_original_png_retrieval_progress.json
+
+Frozen manifest: UNCHANGED
+JPEG previews used: NO
+
+RESULT: All 720 original PNG images have been collected and validated.
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/18_audit_multiregion_image_quality.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B.18 - MULTI-REGION IMAGE QUALITY AUDIT
+======================================================================
+
+[1] Validating input files...
+Frozen manifest: VERIFIED
+Matched positions: 360
+Download audit: 720/720
+Region geometry counts: PASSED
+
+[2] Validating images and SHA256 hashes...
+  OWKIN_DISTRIBUTED_001: 36 matched pairs verified
+  OWKIN_DISTRIBUTED_002: 36 matched pairs verified
+  OWKIN_DISTRIBUTED_003: 36 matched pairs verified
+  OWKIN_DISTRIBUTED_004: 36 matched pairs verified
+  OWKIN_DISTRIBUTED_005: 36 matched pairs verified
+  OWKIN_DISTRIBUTED_006: 36 matched pairs verified
+  OWKIN_DISTRIBUTED_007: 36 matched pairs verified
+  OWKIN_DISTRIBUTED_008: 36 matched pairs verified
+  OWKIN_DISTRIBUTED_009: 36 matched pairs verified
+  OWKIN_DISTRIBUTED_010: 36 matched pairs verified
+
+[3] Computing region-level statistics...
+Verified images: 720
+Verified scanner pairs: 360
+Images with exploratory quality flags: 0
+
+[4] Creating scanner-pair contact sheet...
+
+[5] Saving reports and tables...
+
+======================================================================
+PHASE 3B.18 - IMAGE QUALITY AUDIT COMPLETED
+======================================================================
+Validated regions: 10
+Validated PNG images: 720
+Matched scanner pairs: 360
+Images with quality flags: 0
+Mean paired pixel MAE: 45.6683
+Mean paired pixel RMSE: 57.0920
+
+Region-level results:
+            region_id scanner  image_count  mean_brightness  mean_near_white_fraction  flagged_images  mean_pixel_mae
+OWKIN_DISTRIBUTED_001     AT2           36       144.799945                  0.013011               0       53.167100
+OWKIN_DISTRIBUTED_001   GT450           36       197.211894                  0.127699               0       53.167100
+OWKIN_DISTRIBUTED_002     AT2           36       193.050001                  0.056405               0       39.176075
+OWKIN_DISTRIBUTED_002   GT450           36       225.431598                  0.246558               0       39.176075
+OWKIN_DISTRIBUTED_003     AT2           36       173.138821                  0.025474               0       44.182043
+OWKIN_DISTRIBUTED_003   GT450           36       213.678430                  0.227938               0       44.182043
+OWKIN_DISTRIBUTED_004     AT2           36       212.364902                  0.035955               0       25.492995
+OWKIN_DISTRIBUTED_004   GT450           36       236.616783                  0.336012               0       25.492995
+OWKIN_DISTRIBUTED_005     AT2           36       197.444871                  0.021818               0       34.121289
+OWKIN_DISTRIBUTED_005   GT450           36       228.220510                  0.253413               0       34.121289
+OWKIN_DISTRIBUTED_006     AT2           36       159.468110                  0.029304               0       55.914850
+OWKIN_DISTRIBUTED_006   GT450           36       205.422099                  0.189566               0       55.914850
+OWKIN_DISTRIBUTED_007     AT2           36       133.519360                  0.031204               0       68.413607
+OWKIN_DISTRIBUTED_007   GT450           36       185.766861                  0.127302               0       68.413607
+OWKIN_DISTRIBUTED_008     AT2           36       126.141633                  0.000888               0       57.626973
+OWKIN_DISTRIBUTED_008   GT450           36       186.498008                  0.009173               0       57.626973
+OWKIN_DISTRIBUTED_009     AT2           36       175.002856                  0.031277               0       44.260187
+OWKIN_DISTRIBUTED_009   GT450           36       214.294108                  0.151987               0       44.260187
+OWKIN_DISTRIBUTED_010     AT2           36       194.891265                  0.031469               0       34.327469
+OWKIN_DISTRIBUTED_010   GT450           36       226.552205                  0.187314               0       34.327469
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_image_quality_metrics.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_pair_quality_metrics.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_region_quality_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/figures/phase3b_10_region_scanner_pair_contact_sheet.png
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/18_multiregion_image_quality_audit.json
+
+Original PNGs modified: NONE
+Frozen manifest: UNCHANGED
+Manual visual review: PENDING
+Biological independence: UNVERIFIED
+
+STEP 3B.18 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/19_extract_multiregion_dinov2_features.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B.19 - MULTI-REGION DINOV2 FEATURES
+======================================================================
+
+[1] Verifying frozen manifest...
+Frozen manifest: VERIFIED
+Regions: 10
+Matched tile positions: 360
+
+[2] Checking image inventory...
+AT2: 360 image paths verified
+GT450: 360 image paths verified
+
+[3] Loading DINOv2-Small...
+Device: cuda
+Model: facebook/dinov2-small
+Batch size: 8
+Loading weights: 100%|███████████████████████████████████████████████████████████████████████████████████| 223/223 [00:00<00:00, 5533.32it/s]
+Model loaded successfully.
+
+[4] Extracting features...
+
+Scanner: AT2
+AT2: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████| 45/45 [00:03<00:00, 14.27it/s]
+AT2 features: (360, 384)
+
+Scanner: GT450
+GT450: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████| 45/45 [00:02<00:00, 19.04it/s]
+GT450 features: (360, 384)
+
+[5] Calculating paired similarity...
+Overall mean cosine similarity: 0.965486
+Overall mean Euclidean distance: 12.830521
+
+[6] Saving feature archive...
+
+[7] Saving reproducibility report...
+
+======================================================================
+PHASE 3B.19 - FEATURE EXTRACTION COMPLETED
+======================================================================
+Model: facebook/dinov2-small
+Device: cuda
+Matched positions: 360
+Regions: 10
+AT2 feature shape: (360, 384)
+GT450 feature shape: (360, 384)
+Feature dtype: float32
+Mean paired cosine: 0.965486
+Mean paired Euclidean distance: 12.830521
+
+Region-level similarity:
+            region_id  paired_positions  mean_cosine_similarity  std_cosine_similarity  min_cosine_similarity  max_cosine_similarity  mean_euclidean_distance
+OWKIN_DISTRIBUTED_001                36                0.964115               0.011660               0.935601               0.983298                13.162397
+OWKIN_DISTRIBUTED_002                36                0.971814               0.008151               0.949759               0.985361                11.888824
+OWKIN_DISTRIBUTED_003                36                0.963541               0.015067               0.891857               0.982221                13.278117
+OWKIN_DISTRIBUTED_004                36                0.945178               0.019680               0.902668               0.978754                16.428098
+OWKIN_DISTRIBUTED_005                36                0.974083               0.009063               0.941458               0.985748                11.246976
+OWKIN_DISTRIBUTED_006                36                0.974310               0.007752               0.949018               0.986187                11.139300
+OWKIN_DISTRIBUTED_007                36                0.967762               0.012214               0.936317               0.985324                12.341816
+OWKIN_DISTRIBUTED_008                36                0.949752               0.017559               0.894666               0.976466                15.776751
+OWKIN_DISTRIBUTED_009                36                0.976666               0.007330               0.954595               0.987807                10.638244
+OWKIN_DISTRIBUTED_010                36                0.967641               0.018660               0.877445               0.990253                12.404670
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/features/plism_phase3b_dinov2_features.npz
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_dinov2_pair_similarity.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_dinov2_region_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/19_multiregion_dinov2_extraction.json
+
+Original images: UNCHANGED
+Frozen manifest: UNCHANGED
+Phase 1 feature archive: UNCHANGED
+
+STEP 3B.19 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/20_multiregion_graph_topology_stability.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B.20 - MULTI-REGION GRAPH STABILITY
+======================================================================
+
+[1] Verifying frozen inputs...
+Frozen manifest: VERIFIED
+Feature archive: VERIFIED
+Matched positions: 360
+Regions: 10
+
+[2] Running controlled graph comparisons...
+
+OWKIN_DISTRIBUTED_001: mean paired cosine=0.964115
+  global: 630 candidate edges
+  spatial: 110 candidate edges
+
+OWKIN_DISTRIBUTED_002: mean paired cosine=0.971814
+  global: 630 candidate edges
+  spatial: 110 candidate edges
+
+OWKIN_DISTRIBUTED_003: mean paired cosine=0.963541
+  global: 630 candidate edges
+  spatial: 110 candidate edges
+
+OWKIN_DISTRIBUTED_004: mean paired cosine=0.945178
+  global: 630 candidate edges
+  spatial: 110 candidate edges
+
+OWKIN_DISTRIBUTED_005: mean paired cosine=0.974083
+  global: 630 candidate edges
+  spatial: 110 candidate edges
+
+OWKIN_DISTRIBUTED_006: mean paired cosine=0.974310
+  global: 630 candidate edges
+  spatial: 110 candidate edges
+
+OWKIN_DISTRIBUTED_007: mean paired cosine=0.967762
+  global: 630 candidate edges
+  spatial: 110 candidate edges
+
+OWKIN_DISTRIBUTED_008: mean paired cosine=0.949752
+  global: 630 candidate edges
+  spatial: 110 candidate edges
+
+OWKIN_DISTRIBUTED_009: mean paired cosine=0.976666
+  global: 630 candidate edges
+  spatial: 110 candidate edges
+
+OWKIN_DISTRIBUTED_010: mean paired cosine=0.967641
+  global: 630 candidate edges
+  spatial: 110 candidate edges
+
+[3] Aggregating region-level results...
+
+Spatial minus global Jaccard by budget:
+                 mean       std       min       max
+edge_budget                                        
+36           0.191433  0.112117  0.000000  0.336842
+54           0.316902  0.091394  0.196364  0.456221
+72           0.356860  0.092661  0.209582  0.512821
+90           0.426450  0.102814  0.287594  0.580868
+
+Graph stability summary:
+graph_type  edge_budget  region_count  mean_jaccard  std_jaccard  mean_chance_adjusted  mean_at2_components  mean_gt450_components
+    global           36            10      0.367041     0.143919              0.493266                 17.3                   18.3
+    global           54            10      0.367444     0.115651              0.483507                 13.6                   13.9
+    global           72            10      0.417102     0.111474              0.526434                 10.9                   11.4
+    global           90            10      0.445591     0.111941              0.543704                  8.6                    9.5
+   spatial           36            10      0.558474     0.075684              0.574700                 11.6                   12.1
+   spatial           54            10      0.684346     0.094833              0.625331                  6.4                    5.9
+   spatial           72            10      0.773962     0.074392              0.626096                  3.6                    3.3
+   spatial           90            10      0.872041     0.043652              0.621111                  1.8                    1.5
+
+[4] Saving experimental outputs...
+
+======================================================================
+PHASE 3B.20 - GRAPH STABILITY COMPLETED
+======================================================================
+Regions: 10
+Nodes per region: 36
+Graph methods: 2
+Edge budgets: [36, 54, 72, 90]
+Experiment records: 80
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_graph_stability_per_region.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_graph_stability_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/20_multiregion_graph_stability.json
+
+Trained GNN: NOT USED
+Connectivity enforced: NO
+Frozen manifest: UNCHANGED
+Biological independence: UNVERIFIED
+
+STEP 3B.20 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/21_multiregion_connected_graph_stability.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B.21 - CONNECTED GRAPH STABILITY
+======================================================================
+
+[1] Validating frozen inputs...
+Manifest: VERIFIED
+Feature ordering: VERIFIED
+Regions: 10
+
+[2] Constructing connected graphs...
+
+OWKIN_DISTRIBUTED_001: backbone=35
+  Connected graph comparisons: PASSED
+
+OWKIN_DISTRIBUTED_002: backbone=35
+  Connected graph comparisons: PASSED
+
+OWKIN_DISTRIBUTED_003: backbone=35
+  Connected graph comparisons: PASSED
+
+OWKIN_DISTRIBUTED_004: backbone=35
+  Connected graph comparisons: PASSED
+
+OWKIN_DISTRIBUTED_005: backbone=35
+  Connected graph comparisons: PASSED
+
+OWKIN_DISTRIBUTED_006: backbone=35
+  Connected graph comparisons: PASSED
+
+OWKIN_DISTRIBUTED_007: backbone=35
+  Connected graph comparisons: PASSED
+
+OWKIN_DISTRIBUTED_008: backbone=35
+  Connected graph comparisons: PASSED
+
+OWKIN_DISTRIBUTED_009: backbone=35
+  Connected graph comparisons: PASSED
+
+OWKIN_DISTRIBUTED_010: backbone=35
+  Connected graph comparisons: PASSED
+
+[3] Aggregating results...
+
+Connected graph summary:
+graph_type  edge_budget  regions  mean_full_jaccard  mean_residual_jaccard  std_residual_jaccard  mean_chance_adjusted  mean_shared_residual  mean_at2_components  mean_gt450_components
+    global           54       10           0.662944               0.276116              0.134360              0.396519                   7.9                  1.0                    1.0
+    global           72       10           0.596218               0.344622              0.129513              0.466846                  18.5                  1.0                    1.0
+    global           90       10           0.566790               0.379314              0.107833              0.495152                  29.8                  1.0                    1.0
+   spatial           54       10           0.804258               0.532300              0.103434              0.584117                  13.1                  1.0                    1.0
+   spatial           72       10           0.828829               0.693787              0.090832              0.637269                  30.2                  1.0                    1.0
+   spatial           90       10           0.873795               0.802099              0.059439              0.584091                  48.9                  1.0                    1.0
+
+Spatial minus global residual differences:
+            spatial_minus_global_residual_jaccard                     spatial_minus_global_chance_adjusted                    
+                                             mean       min       max                                 mean       min       max
+edge_budget                                                                                                                   
+54                                       0.256184 -0.050265  0.492973                             0.187598 -0.199457  0.555686
+72                                       0.349165  0.210726  0.611330                             0.170423  0.009840  0.507107
+90                                       0.422785  0.232264  0.594487                             0.088939 -0.232997  0.312121
+
+[4] Saving outputs...
+
+======================================================================
+PHASE 3B.21 - CONNECTED GRAPH ANALYSIS COMPLETED
+======================================================================
+Regions: 10
+Experiment records: 60
+Shared backbone edges: 35
+All graphs connected: YES
+All graphs without isolated nodes: YES
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_connected_graph_per_region.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_connected_graph_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_connected_graph_paired_differences.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/21_multiregion_connected_graph_stability.json
+
+Trained GNN: NOT USED
+Frozen data: UNCHANGED
+Biological independence: UNVERIFIED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/22_multiregion_node_neighborhood_stability.py
+---------------------------------------------------------------------------------------
+
+(.venv-transformers) dhrubo_roy@dhruboxR-IDG-3-15ARH7:~/MEDICAL_GNN_RESEARCH$ python -u multi_region_research/scripts/22_multiregion_node_neighborhood_stability.py
+======================================================================
+PHASE 3B.22 - NODE NEIGHBORHOOD STABILITY
+======================================================================
+
+[1] Validating research inputs...
+Frozen manifest: VERIFIED
+Feature archive: VERIFIED
+Regions: 10
+
+[2] Measuring node neighborhoods...
+  OWKIN_DISTRIBUTED_001: completed
+  OWKIN_DISTRIBUTED_002: completed
+  OWKIN_DISTRIBUTED_003: completed
+  OWKIN_DISTRIBUTED_004: completed
+  OWKIN_DISTRIBUTED_005: completed
+  OWKIN_DISTRIBUTED_006: completed
+  OWKIN_DISTRIBUTED_007: completed
+  OWKIN_DISTRIBUTED_008: completed
+  OWKIN_DISTRIBUTED_009: completed
+  OWKIN_DISTRIBUTED_010: completed
+
+[3] Summarizing results...
+
+Neighborhood stability summary:
+graph_type  edge_budget  regions  mean_node_jaccard  std_node_jaccard  mean_both_empty_nodes  mean_changed_fraction  mean_residual_degree_difference  mean_edge_distance  mean_long_range_fraction
+    global           54       10           0.225369          0.106771                   16.9               0.502778                         0.833333            2.579815                  0.718421
+    global           72       10           0.283725          0.110545                   11.8               0.650000                         1.233333            2.576238                  0.727027
+    global           90       10           0.287939          0.087400                    7.7               0.769444                         1.544444            2.712136                  0.760909
+   spatial           54       10           0.497051          0.110732                   13.1               0.458333                         0.511111            1.258338                  0.000000
+   spatial           72       10           0.654415          0.106517                    4.9               0.516667                         0.627778            1.262522                  0.000000
+   spatial           90       10           0.777366          0.059282                    1.4               0.472222                         0.550000            1.264344                  0.000000
+
+Budget 54: spatial-minus-global node Jaccard
+  Mean: 0.271682
+  Minimum: 0.102113
+  Maximum: 0.417803
+  Positive regions: 10/10
+
+Budget 72: spatial-minus-global node Jaccard
+  Mean: 0.370690
+  Minimum: 0.252967
+  Maximum: 0.666500
+  Positive regions: 10/10
+
+Budget 90: spatial-minus-global node Jaccard
+  Mean: 0.489427
+  Minimum: 0.301597
+  Maximum: 0.593507
+  Positive regions: 10/10
+
+[4] Saving results...
+
+======================================================================
+PHASE 3B.22 - NODE STABILITY COMPLETED
+======================================================================
+Regions analyzed: 10
+Graph configurations: 60
+Node records: 2160
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_node_neighborhood_details.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_node_neighborhood_per_region.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_node_neighborhood_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/22_multiregion_node_neighborhood_stability.json
+
+Original images: UNCHANGED
+Frozen manifest: UNCHANGED
+Trained GNN: NOT USED
+Biological independence: UNVERIFIED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/23_multiregion_graph_propagation_sensitivity.py
+---------------------------------------------------------------------------------------
+
+pagation_sensitivity.py
+======================================================================
+PHASE 3B.23 - GRAPH PROPAGATION SENSITIVITY
+======================================================================
+
+[1] Validating frozen research inputs...
+Frozen manifest: VERIFIED
+Feature archive: VERIFIED
+Regions: 10
+
+[2] Running representation experiments...
+  OWKIN_DISTRIBUTED_001: all crossed conditions completed
+  OWKIN_DISTRIBUTED_002: all crossed conditions completed
+  OWKIN_DISTRIBUTED_003: all crossed conditions completed
+  OWKIN_DISTRIBUTED_004: all crossed conditions completed
+  OWKIN_DISTRIBUTED_005: all crossed conditions completed
+  OWKIN_DISTRIBUTED_006: all crossed conditions completed
+  OWKIN_DISTRIBUTED_007: all crossed conditions completed
+  OWKIN_DISTRIBUTED_008: all crossed conditions completed
+  OWKIN_DISTRIBUTED_009: all crossed conditions completed
+  OWKIN_DISTRIBUTED_010: all crossed conditions completed
+
+[3] Summarizing propagation outcomes...
+
+Depth 2 topology-only L2:
+graph_type  edge_budget  mean_topology_l2  std_topology_l2  mean_natural_l2  mean_natural_cosine
+    global           54          4.370371         0.970518        10.593633             0.979476
+    global           72          5.038501         0.900392        10.614513             0.980011
+    global           90          5.569465         0.778831        10.804372             0.980171
+   spatial           54          3.132087         0.653448         9.948760             0.979904
+   spatial           72          3.076643         0.692282         9.606337             0.980853
+   spatial           90          2.560666         0.721076         9.320324             0.981463
+
+Global minus spatial topology L2 at depth 2:
+                 mean       min       max
+edge_budget                              
+54           1.238284 -0.236324  2.735395
+72           1.961859  0.855260  3.568561
+90           3.008799  1.805051  4.615153
+
+Depth progression at budget 72:
+graph_type  depth  mean_topology_l2  mean_natural_l2  mean_at2_variance  mean_gt450_variance
+    global      0          0.000000        12.830519         233.587751           237.396219
+    global      1          5.019684        11.111242         130.559332           133.063306
+    global      2          5.038501        10.614513         110.585750           113.209286
+    global      4          5.474249        10.500559         104.761336           108.941392
+    global      8          5.684988        10.420335         102.455123           108.656445
+   spatial      0          0.000000        12.830519         233.587751           237.396219
+   spatial      1          3.499916        10.290088         112.798770           114.102174
+   spatial      2          3.076643         9.606337          86.384671            86.123671
+   spatial      4          3.201845         9.349505          75.985918            74.113919
+   spatial      8          3.231187         9.181722          68.517338            65.122209
+
+[4] Saving results...
+
+======================================================================
+PHASE 3B.23 - PROPAGATION ANALYSIS COMPLETED
+======================================================================
+Regions: 10
+Graph configurations: 60
+Propagation depths: [0, 1, 2, 4, 8]
+Detailed experiment records: 300
+Paired comparison records: 150
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_propagation_per_region.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_propagation_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_propagation_paired_differences.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/23_multiregion_graph_propagation.json
+
+Trained GNN: NO
+Frozen manifest: UNCHANGED
+Original features: UNCHANGED
+Biological independence: UNVERIFIED
+
+STEP 3B.23 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/24_audit_multiregion_oversmoothing.py
+---------------------------------------------------------------------------------------
+
+(.venv-transformers) dhrubo_roy@dhruboxR-IDG-3-15ARH7:~/MEDICAL_GNN_RESEARCH$ python -u multi_region_research/scripts/24_audit_multiregion_oversmoothing.py
+======================================================================
+PHASE 3B.24 - OVERSMOOTHING AUDIT
+======================================================================
+
+[1] Verifying previous experiment...
+Previous experiment: VERIFIED
+Regions: 10
+Experiment records: 300
+
+[2] Computing variance retention...
+
+[3] Comparing stability and smoothing...
+
+Depth 2 results:
+graph_type  edge_budget  mean_variance_retention  mean_cosine_change  mean_topology_l2  mean_natural_l2
+    global           54                 0.439854            0.065393          4.370371        10.593633
+    global           72                 0.483935            0.067750          5.038501        10.614513
+    global           90                 0.516041            0.069982          5.569465        10.804372
+   spatial           54                 0.394170            0.066731          3.132087         9.948760
+   spatial           72                 0.371187            0.071530          3.076643         9.606337
+   spatial           90                 0.314853            0.076531          2.560666         9.320324
+
+Paired spatial-minus-global trade-offs at depth 2:
+
+Budget 54:
+  Regions with lower spatial topology L2: 9 /10
+  Regions with lower spatial variance retention: 10 /10
+  Mean topology L2 advantage: 1.238284
+  Mean retention difference: -0.045684
+  Mean cosine-change difference: 0.001338
+
+Budget 72:
+  Regions with lower spatial topology L2: 10 /10
+  Regions with lower spatial variance retention: 10 /10
+  Mean topology L2 advantage: 1.961859
+  Mean retention difference: -0.112748
+  Mean cosine-change difference: 0.003781
+
+Budget 90:
+  Regions with lower spatial topology L2: 10 /10
+  Regions with lower spatial variance retention: 10 /10
+  Mean topology L2 advantage: 3.008799
+  Mean retention difference: -0.201188
+  Mean cosine-change difference: 0.006550
+
+Depth progression at budget 72:
+graph_type  depth  mean_variance_retention  mean_cosine_change  mean_topology_l2
+    global      0                 1.000000            0.000000          0.000000
+    global      1                 0.564498            0.054702          5.019684
+    global      2                 0.483935            0.067750          5.038501
+    global      4                 0.470746            0.078919          5.474249
+    global      8                 0.472894            0.087368          5.684988
+   spatial      0                 1.000000            0.000000          0.000000
+   spatial      1                 0.486425            0.058876          3.499916
+   spatial      2                 0.371187            0.071530          3.076643
+   spatial      4                 0.329156            0.081569          3.201845
+   spatial      8                 0.299667            0.089129          3.231187
+
+[4] Saving research outputs...
+
+======================================================================
+PHASE 3B.24 - OVERSMOOTHING AUDIT COMPLETED
+======================================================================
+Regions: 10
+Detailed records: 300
+Paired comparison records: 150
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_oversmoothing_details.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_oversmoothing_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_oversmoothing_paired.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/24_multiregion_oversmoothing_audit.json
+
+Original data: UNCHANGED
+Trained GNN: NOT USED
+Biological independence: UNVERIFIED
+
+STEP 3B.24 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/25_geometry_conditioned_graph_stability.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B.25 - GEOMETRY-CONDITIONED STABILITY
+======================================================================
+
+[1] Verifying inputs...
+Frozen manifest: VERIFIED
+DINOv2 features: VERIFIED
+Previous connected graphs: AVAILABLE
+Regions: 10
+
+[2] Evaluating distance-conditioned overlap...
+  OWKIN_DISTRIBUTED_001: connected graphs and null distributions verified
+  OWKIN_DISTRIBUTED_002: connected graphs and null distributions verified
+  OWKIN_DISTRIBUTED_003: connected graphs and null distributions verified
+  OWKIN_DISTRIBUTED_004: connected graphs and null distributions verified
+  OWKIN_DISTRIBUTED_005: connected graphs and null distributions verified
+  OWKIN_DISTRIBUTED_006: connected graphs and null distributions verified
+  OWKIN_DISTRIBUTED_007: connected graphs and null distributions verified
+  OWKIN_DISTRIBUTED_008: connected graphs and null distributions verified
+  OWKIN_DISTRIBUTED_009: connected graphs and null distributions verified
+  OWKIN_DISTRIBUTED_010: connected graphs and null distributions verified
+
+[3] Comparing geometry-conditioned stability...
+
+Geometry-conditioned summary:
+graph_type  edge_budget  regions  mean_observed_shared  mean_expected_shared  mean_excess_shared  mean_conditional_adjusted  mean_null_z  positive_excess_regions
+    global           54       10                   7.9              1.012181            6.887819                   0.532200     7.364135                       10
+    global           72       10                  18.5              3.517125           14.982875                   0.572055     9.107266                       10
+    global           90       10                  29.8              7.010278           22.789722                   0.583319    10.208950                       10
+   spatial           54       10                  13.1              5.032000            8.068000                   0.622571     4.912404                       10
+   spatial           72       10                  30.2             18.408000           11.792000                   0.682943     5.444031                       10
+   spatial           90       10                  48.9             40.510000            8.390000                   0.638470     4.939201                       10
+
+Paired spatial-minus-global adjusted advantage:
+
+Budget 54
+  Mean difference: 0.090372
+  Minimum: -0.407677
+  Maximum: 0.598032
+  Spatial-positive regions: 7/10
+
+Budget 72
+  Mean difference: 0.110888
+  Minimum: -0.192685
+  Maximum: 0.443202
+  Spatial-positive regions: 7/10
+
+Budget 90
+  Mean difference: 0.055151
+  Minimum: -0.306585
+  Maximum: 0.359259
+  Spatial-positive regions: 6/10
+
+[4] Saving results...
+
+======================================================================
+PHASE 3B.25 - GEOMETRY CONTROL COMPLETED
+======================================================================
+Regions: 10
+Graph comparisons: 60
+Distance-stratum records: 630
+Phase 3B.21 graph reproduction: VERIFIED
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_geometry_conditioned_per_region.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_geometry_distance_strata.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_geometry_conditioned_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_geometry_conditioned_paired.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/25_geometry_conditioned_graph_stability.json
+
+Frozen manifest: UNCHANGED
+Original features: UNCHANGED
+Trained GNN: NOT USED
+Biological independence: UNVERIFIED
+
+STEP 3B.25 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u multi_region_research/scripts/26_smoothing_matched_representation_stability.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B.26 - SMOOTHING-MATCHED STABILITY
+======================================================================
+
+[1] Validating research inputs...
+Frozen manifest: VERIFIED
+Feature alignment: VERIFIED
+Step 3B.21 connected graph results: AVAILABLE
+Step 3B.23 propagation results: AVAILABLE
+Regions: 10
+
+[2] Reconstructing graphs and calibrating smoothing...
+  OWKIN_DISTRIBUTED_001: completed
+  OWKIN_DISTRIBUTED_002: completed
+  OWKIN_DISTRIBUTED_003: completed
+  OWKIN_DISTRIBUTED_004: completed
+  OWKIN_DISTRIBUTED_005: completed
+  OWKIN_DISTRIBUTED_006: completed
+  OWKIN_DISTRIBUTED_007: completed
+  OWKIN_DISTRIBUTED_008: completed
+  OWKIN_DISTRIBUTED_009: completed
+  OWKIN_DISTRIBUTED_010: completed
+
+[3] Summarizing smoothing-matched results...
+
+Smoothing-matched summary:
+ edge_budget  regions  mean_spatial_alpha  min_spatial_alpha  max_spatial_alpha  mean_retention_error  max_retention_error  acceptable_matches  mean_global_retention  mean_matched_spatial_retention  mean_global_topology_l2  mean_original_spatial_l2  mean_matched_spatial_l2  mean_original_advantage  mean_matched_advantage  matched_positive_regions  mean_global_natural_l2  mean_matched_spatial_natural_l2
+          54       10              0.6983              0.501              0.966              0.000058             0.000103                  10               0.439854                        0.439847                 4.370371                  3.132087                 2.803327                 1.238284                1.567044                         9               10.593633                        10.174363
+          72       10              0.4521              0.280              0.640              0.000144             0.000346                  10               0.483935                        0.483972                 5.038501                  3.076643                 2.255941                 1.961859                2.782561                        10               10.614513                        10.251287
+          90       10              0.3155              0.201              0.501              0.000335             0.000606                  10               0.516041                        0.515928                 5.569465                  2.560666                 1.516488                 3.008799                4.052977                        10               10.804372                        10.483913
+
+Per-budget interpretation:
+
+Edge budget: 54
+  Mean calibrated alpha: 0.6983
+  Mean global topology L2: 4.370371
+  Mean original spatial topology L2: 3.132087
+  Mean matched spatial topology L2: 2.803327
+  Original spatial advantage: 1.238284
+  Matched spatial advantage: 1.567044
+  Regions with positive matched advantage: 9/10
+  Acceptable variance matches: 10/10
+
+Edge budget: 72
+  Mean calibrated alpha: 0.4521
+  Mean global topology L2: 5.038501
+  Mean original spatial topology L2: 3.076643
+  Mean matched spatial topology L2: 2.255941
+  Original spatial advantage: 1.961859
+  Matched spatial advantage: 2.782561
+  Regions with positive matched advantage: 10/10
+  Acceptable variance matches: 10/10
+
+Edge budget: 90
+  Mean calibrated alpha: 0.3155
+  Mean global topology L2: 5.569465
+  Mean original spatial topology L2: 2.560666
+  Mean matched spatial topology L2: 1.516488
+  Original spatial advantage: 3.008799
+  Matched spatial advantage: 4.052977
+  Regions with positive matched advantage: 10/10
+  Acceptable variance matches: 10/10
+
+[4] Saving research outputs...
+
+======================================================================
+PHASE 3B.26 - SMOOTHING MATCH AUDIT COMPLETED
+======================================================================
+Regions: 10
+Paired comparisons: 30
+Maximum variance-retention mismatch: 0.000606
+Acceptable variance matches: 30/30
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_smoothing_matched_per_region.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_smoothing_matched_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/26_smoothing_matched_stability.json
+
+Frozen manifest: UNCHANGED
+Original features: UNCHANGED
+Trained GNN: NOT USED
+Biological independence: UNVERIFIED
+
+STEP 3B.26 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \multi_region_research/scripts/27_equal_strength_propagation_control.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B.27 - EQUAL-STRENGTH PROPAGATION CONTROL
+======================================================================
+
+[1] Verifying frozen inputs...
+Frozen manifest: VERIFIED
+Feature alignment: VERIFIED
+Prior graph results: AVAILABLE
+Regions: 10
+
+[2] Running equal-alpha comparisons...
+  OWKIN_DISTRIBUTED_001: completed
+  OWKIN_DISTRIBUTED_002: completed
+  OWKIN_DISTRIBUTED_003: completed
+  OWKIN_DISTRIBUTED_004: completed
+  OWKIN_DISTRIBUTED_005: completed
+  OWKIN_DISTRIBUTED_006: completed
+  OWKIN_DISTRIBUTED_007: completed
+  OWKIN_DISTRIBUTED_008: completed
+  OWKIN_DISTRIBUTED_009: completed
+  OWKIN_DISTRIBUTED_010: completed
+
+[3] Comparing methods at equal alpha...
+
+Equal-alpha comparison summary:
+ edge_budget  alpha  regions  mean_global_topology_l2  mean_spatial_topology_l2  mean_topology_advantage  min_topology_advantage  positive_regions  mean_global_retention  mean_spatial_retention  mean_retention_difference  mean_global_natural_l2  mean_spatial_natural_l2
+          54   0.25       10                 1.840135                  1.438105                 0.402030               -0.310498                 8               0.641041                0.627125                  -0.013916               11.208385                11.062851
+          54   0.50       10                 3.138349                  2.400573                 0.737776               -0.449166                 8               0.508521                0.482393                  -0.026129               10.708177                10.373444
+          54   0.75       10                 3.945302                  2.932016                 1.013286               -0.416622                 8               0.465389                0.428445                  -0.036945               10.626544                10.119781
+          54   1.00       10                 4.370371                  3.132087                 1.238284               -0.236324                 9               0.439854                0.394170                  -0.045684               10.593633                 9.948760
+          72   0.25       10                 2.169282                  1.484012                 0.685270                0.132131                10               0.641493                0.605202                  -0.036291               11.169511                10.892194
+          72   0.50       10                 3.681058                  2.452613                 1.228445                0.318209                10               0.521036                0.456110                  -0.064926               10.691420                10.094430
+          72   0.75       10                 4.595507                  2.950317                 1.645190                0.554967                10               0.494724                0.404447                  -0.090277               10.639520                 9.796107
+          72   1.00       10                 5.038501                  3.076643                 1.961859                0.855260                10               0.483935                0.371187                  -0.112748               10.614513                 9.606337
+          90   0.25       10                 2.493810                  1.261316                 1.232494                0.573474                10               0.640548                0.562688                  -0.077859               11.188247                10.727883
+          90   0.50       10                 4.195544                  2.070902                 2.124642                1.056412                10               0.529911                0.395571                  -0.134340               10.802872                 9.831947
+          90   0.75       10                 5.171646                  2.471252                 2.700393                1.479400                10               0.516635                0.342002                  -0.174634               10.817411                 9.507359
+          90   1.00       10                 5.569465                  2.560666                 3.008799                1.805051                10               0.516041                0.314853                  -0.201188               10.804372                 9.320324
+
+Alpha = 0.50:
+ edge_budget  mean_global_topology_l2  mean_spatial_topology_l2  mean_topology_advantage  positive_regions  mean_global_retention  mean_spatial_retention
+          54                 3.138349                  2.400573                 0.737776                 8               0.508521                0.482393
+          72                 3.681058                  2.452613                 1.228445                10               0.521036                0.456110
+          90                 4.195544                  2.070902                 2.124642                10               0.529911                0.395571
+
+[4] Saving outputs...
+
+======================================================================
+PHASE 3B.27 - EQUAL-STRENGTH CONTROL COMPLETED
+======================================================================
+Regions: 10
+Detailed records: 240
+Paired comparisons: 120
+Summary configurations: 12
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_equal_strength_details.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_equal_strength_paired.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/tables/plism_phase3b_equal_strength_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/27_equal_strength_propagation_control.json
+
+Frozen manifest: UNCHANGED
+Original features: UNCHANGED
+Trained GNN: NOT USED
+Biological independence: UNVERIFIED
+
+STEP 3B.27 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \multi_region_research/scripts/28_finalize_phase3b.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 3B.28 - FINAL RESEARCH CONSOLIDATION
+======================================================================
+
+[1] Verifying frozen research inputs...
+Frozen regions: 10
+Paired tiles: 360
+Feature dimensions: 384
+
+[2] Verifying experiment outputs...
+  Step 3B.20: 80 records verified
+  Step 3B.21: 60 records verified
+  Step 3B.22: 60 records verified
+  Step 3B.23: 300 records verified
+  Step 3B.24: 150 records verified
+  Step 3B.25: 30 records verified
+  Step 3B.26: 30 records verified
+  Step 3B.27: 120 records verified
+
+[3] Extracting final evidence...
+Primary L2 reduction: 33.37%
+Primary spatial-positive regions: 10/10
+Geometry-adjusted spatial-positive regions: 7/10
+
+[4] Writing closure documents...
+
+======================================================================
+PHASE 3B - FINAL CONSOLIDATION COMPLETED
+======================================================================
+Experiments audited: 8
+Primary regions: 10
+Phase status: CLOSED
+Previous outputs: UNCHANGED
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/28_phase3b_final_evidence.json
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/reports/PHASE_3B_FINAL_RESEARCH_SUMMARY.md
+
+NEXT: PHASE 4 - MAIN RESEARCH
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \multi_region_research/scripts/29_generate_phase3b_readme_figures.py
+---------------------------------------------------------------------------------------
+
+=================================================================
+PHASE 3B - FINAL README FIGURE GENERATION
+=================================================================
+Saved: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/figures/phase3b_feature_similarity_by_region.png
+Saved: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/figures/phase3b_connected_graph_stability.png
+Saved: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/figures/phase3b_geometry_conditioned_stability.png
+Saved: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/figures/phase3b_stability_smoothing_tradeoff.png
+Saved: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/multi_region_research/outputs/figures/phase3b_equal_strength_control.png
+
+=================================================================
+FINAL FIGURE GENERATION COMPLETED
+=================================================================
+Generated research figures: 5
+Original experiment tables: UNCHANGED
+Frozen manifest: UNCHANGED
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
