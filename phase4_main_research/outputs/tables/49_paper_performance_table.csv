@@ -1,0 +1,5 @@
+model,split,normal_recall_percent,discordant_recall_percent,robustness_drop_pp
+ResidualGate05,validation,96.94444457689922,78.09259307384491,18.851851503054306
+ResidualGate05,held_out_test,92.22222288449605,70.0370373527209,22.185185531775154
+TopologyConsistentResidual,validation,96.01851920286815,85.25925991932552,10.759259283542633
+TopologyConsistentResidual,held_out_test,91.29629691441853,80.46296375989914,10.833333154519398

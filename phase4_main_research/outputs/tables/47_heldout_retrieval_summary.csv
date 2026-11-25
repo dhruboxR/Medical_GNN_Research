@@ -1,0 +1,5 @@
+model,condition,measurements,mean_recall_at_1,mean_mrr
+ResidualGate05,normal_spatial,30,0.9222222288449605,0.9532743116219838
+ResidualGate05,scanner_discordant_random,150,0.700370373527209,0.7932785753409067
+TopologyConsistentResidual,normal_spatial,30,0.9129629691441854,0.94624964594841
+TopologyConsistentResidual,scanner_discordant_random,150,0.8046296375989914,0.8696145852406819

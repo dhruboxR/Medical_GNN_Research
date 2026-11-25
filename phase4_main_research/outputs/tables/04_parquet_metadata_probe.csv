@@ -1,0 +1,4 @@
+shard_index,repository_file,row_count,row_groups,schema_columns,has_required_columns,metadata_bytes
+0,data/train-00000-of-00293.parquet,5056,51,__key__;stainer;scanner;slide_id;tile_id;png,True,37173
+146,data/train-00146-of-00293.parquet,5056,51,__key__;stainer;scanner;slide_id;tile_id;png,True,37161
+292,data/train-00292-of-00293.parquet,5055,51,__key__;stainer;scanner;slide_id;tile_id;png,True,35855

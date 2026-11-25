@@ -1,0 +1,4 @@
+spatial_split,images,at2_images,gt450_images,total_png_bytes
+train,2880,1440,1440,301016630
+validation,720,360,360,71825884
+test,720,360,360,74666757

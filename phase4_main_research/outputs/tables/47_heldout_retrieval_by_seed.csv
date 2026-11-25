@@ -1,0 +1,13 @@
+model,seed,condition,mean_recall_at_1,mean_mrr
+ResidualGate05,42,normal_spatial,0.9305555582046509,0.9556105196475982
+ResidualGate05,123,normal_spatial,0.919444453716278,0.953873461484909
+ResidualGate05,2026,normal_spatial,0.9166666746139527,0.9503389537334442
+ResidualGate05,42,scanner_discordant_random,0.7055555552244186,0.7960804033279419
+ResidualGate05,123,scanner_discordant_random,0.715000006556511,0.8038410246372223
+ResidualGate05,2026,scanner_discordant_random,0.6805555588006973,0.7799142980575562
+TopologyConsistentResidual,42,normal_spatial,0.9055555641651154,0.9427888035774231
+TopologyConsistentResidual,123,normal_spatial,0.9027777850627899,0.9433345377445221
+TopologyConsistentResidual,2026,normal_spatial,0.9305555582046509,0.9526255965232849
+TopologyConsistentResidual,42,scanner_discordant_random,0.8366666793823242,0.8928892683982849
+TopologyConsistentResidual,123,scanner_discordant_random,0.7788888925313949,0.8531101381778717
+TopologyConsistentResidual,2026,scanner_discordant_random,0.798333340883255,0.8628443491458893
