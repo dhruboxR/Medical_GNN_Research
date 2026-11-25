@@ -1,0 +1,3327 @@
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/dataset_audit/01_phase4_dataset_inventory.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.1.1 - PLISM DATASET INVENTORY
+======================================================================
+
+[1] Checking research workspace...
+Phase 3B frozen manifest: VERIFIED
+Phase 3B feature archive: FOUND
+
+[2] Auditing existing research data...
+Frozen regions: 10
+Matched tile positions: 360
+Existing AT2 PNG files: 360
+Existing GT450 PNG files: 360
+Free disk space (GiB): 333.414
+
+[3] Fetching official PLISM metadata...
+Remote dataset: owkin/plism-dataset-tiles
+Repository revision: 489cfa632886ce411ce0ab6e678e0587ac0ead04
+Repository metadata: RETRIEVED
+
+[4] Inventorying published files...
+Published repository entries: 295
+Parquet files identified: 293
+Entries with known sizes: 295
+Total known published file size (GiB): 136.202
+
+[5] Saving Phase 4 inventory...
+
+======================================================================
+PHASE 4.1.1 - DATASET INVENTORY COMPLETED
+======================================================================
+Frozen Phase 3B positions: 360
+Local original PNG files: 720
+Remote metadata retrieved: True
+Remote Parquet files: 293
+Free disk GiB: 333.414
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/01_phase4_dataset_inventory.json
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/01_plism_published_file_inventory.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/datasets/metadata/owkin_plism_tiles_dataset_info.json
+
+Phase 3B data: UNCHANGED
+Image downloads: NONE
+Independent specimens: NOT YET VERIFIED
+
+STEP 4.1.1 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/dataset_audit/02_audit_plism_acquisitions.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.1.2 - PLISM ACQUISITION AUDIT
+======================================================================
+
+[1] Fetching companion repository metadata...
+Repository: owkin/plism-dataset
+Revision: 73d7d53f6ac321d3f52c142dcc4fe25c05a7d5ea
+Repository entries: 93
+HDF5 acquisition files: 91
+
+[2] Summarizing acquisition conditions...
+
+Source scanner tokens:
+  AT2: 13
+  GT450: 13
+  P: 13
+  S210: 13
+  S360: 13
+  S60: 13
+  SQ: 13
+
+Source condition tokens:
+  GIVH: 7
+  GIV: 7
+  GMH: 7
+  GM: 7
+  GVH: 7
+  GV: 7
+  HRH: 7
+  HR: 7
+  KRH: 7
+  KR: 7
+  LMH: 7
+  LM: 7
+  MY: 7
+
+Largest acquisition groups:
+  GIV -> GMH S60 | acquisitions: 7 | scanners: AT2;GT450;P;S210;S360;S60;SQ
+  GIVH -> GMH S60 | acquisitions: 7 | scanners: AT2;GT450;P;S210;S360;S60;SQ
+  GM -> GMH S60 | acquisitions: 7 | scanners: AT2;GT450;P;S210;S360;S60;SQ
+  GMH -> GMH S60 | acquisitions: 7 | scanners: AT2;GT450;P;S210;S360;S60;SQ
+  GV -> GMH S60 | acquisitions: 7 | scanners: AT2;GT450;P;S210;S360;S60;SQ
+  GVH -> GMH S60 | acquisitions: 7 | scanners: AT2;GT450;P;S210;S360;S60;SQ
+  HR -> GMH S60 | acquisitions: 7 | scanners: AT2;GT450;P;S210;S360;S60;SQ
+  HRH -> GMH S60 | acquisitions: 7 | scanners: AT2;GT450;P;S210;S360;S60;SQ
+  KR -> GMH S60 | acquisitions: 7 | scanners: AT2;GT450;P;S210;S360;S60;SQ
+  KRH -> GMH S60 | acquisitions: 7 | scanners: AT2;GT450;P;S210;S360;S60;SQ
+  LM -> GMH S60 | acquisitions: 7 | scanners: AT2;GT450;P;S210;S360;S60;SQ
+  LMH -> GMH S60 | acquisitions: 7 | scanners: AT2;GT450;P;S210;S360;S60;SQ
+  MY -> GMH S60 | acquisitions: 7 | scanners: AT2;GT450;P;S210;S360;S60;SQ
+
+[3] Saving evidence...
+
+======================================================================
+PHASE 4.1.2 - ACQUISITION AUDIT COMPLETED
+======================================================================
+Acquisitions: 91
+Parsed acquisitions: 91
+Acquisition groups: 13
+Unique scanner tokens: 7
+Unique condition tokens: 13
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/02_plism_acquisitions.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/02_plism_acquisition_groups.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/02_plism_acquisition_audit.json
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/datasets/metadata/02_companion_repo_metadata.json
+
+Images downloaded: NONE
+Original Phase 3B cohort: UNCHANGED
+Independent specimens: UNVERIFIED
+
+STEP 4.1.2 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/dataset_audit/03_plan_plism_expansion.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.1.3 - PLISM DATASET EXPANSION PLAN
+======================================================================
+
+[1] Validating previous acquisition inventory...
+Complete acquisition matrix: VERIFIED
+Conditions: 13
+Scanners: 7
+Acquisitions: 91
+
+[2] Building the scanner-condition matrix...
+
+[3] Selecting candidate acquisitions...
+Candidate acquisition count: 31
+Cross-scanner arm: 7 acquisitions
+Cross-condition arm: 26 acquisitions
+Unique acquisitions: 31
+
+Selected scanner coverage:
+  AT2: 13
+  GT450: 13
+  P: 1
+  S210: 1
+  S360: 1
+  S60: 1
+  SQ: 1
+
+Selected condition coverage:
+  GIV: 2
+  GIVH: 7
+  GM: 2
+  GMH: 2
+  GV: 2
+  GVH: 2
+  HR: 2
+  HRH: 2
+  KR: 2
+  KRH: 2
+  LM: 2
+  LMH: 2
+  MY: 2
+
+[4] Saving provisional research plan...
+
+======================================================================
+PHASE 4.1.3 - EXPANSION PLAN COMPLETED
+======================================================================
+Original acquisitions: 91
+Provisional acquisitions: 31
+Tile coordinate verification: PENDING
+Biological independence: UNVERIFIED
+Image downloads: NONE
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/03_plism_acquisition_matrix.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/datasets/manifests/03_candidate_acquisitions.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/03_plism_expansion_plan.json
+
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/dataset_audit/04_probe_plism_parquet_metadata.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.1.4 - PARQUET METADATA PROBE
+======================================================================
+
+[1] Checking previous inventory...
+Pinned revision: 489cfa632886ce411ce0ab6e678e0587ac0ead04
+Published Parquet shards: 293
+Probe shards: 3
+
+[2] Inspecting remote Parquet footers...
+
+  Shard index 0: data/train-00000-of-00293.parquet
+    Rows: 5056
+    Row groups: 51
+    Columns: ['__key__', 'stainer', 'scanner', 'slide_id', 'tile_id', 'png']
+
+  Shard index 146: data/train-00146-of-00293.parquet
+    Rows: 5056
+    Row groups: 51
+    Columns: ['__key__', 'stainer', 'scanner', 'slide_id', 'tile_id', 'png']
+
+  Shard index 292: data/train-00292-of-00293.parquet
+    Rows: 5055
+    Row groups: 51
+    Columns: ['__key__', 'stainer', 'scanner', 'slide_id', 'tile_id', 'png']
+
+[3] Summarizing probe...
+Probed shards: 3
+Total probed rows: 15167
+Total row groups: 153
+slide_id: min/max statistics in 153/153 row groups
+tile_id: min/max statistics in 153/153 row groups
+scanner: min/max statistics in 153/153 row groups
+stainer: min/max statistics in 153/153 row groups
+
+Sample slide ID ranges:
+  Group 0: GIVH_AT2_to_GMH_S60 to GIVH_AT2_to_GMH_S60
+  Group 1: GIVH_AT2_to_GMH_S60 to GIVH_AT2_to_GMH_S60
+  Group 2: GIVH_AT2_to_GMH_S60 to GIVH_AT2_to_GMH_S60
+  Group 3: GIVH_AT2_to_GMH_S60 to GIVH_AT2_to_GMH_S60
+  Group 4: GIVH_AT2_to_GMH_S60 to GIVH_AT2_to_GMH_S60
+  Group 5: GIVH_AT2_to_GMH_S60 to GIVH_AT2_to_GMH_S60
+  Group 6: GIVH_AT2_to_GMH_S60 to GIVH_AT2_to_GMH_S60
+  Group 7: GIVH_AT2_to_GMH_S60 to GIVH_AT2_to_GMH_S60
+
+[4] Saving metadata audit...
+
+======================================================================
+PHASE 4.1.4 - PARQUET PROBE COMPLETED
+======================================================================
+Parquet shards probed: 3
+Rows represented: 15167
+Row groups inspected: 153
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/04_parquet_metadata_probe.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/04_parquet_rowgroup_probe.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/04_parquet_metadata_probe.json
+
+PNG column values: NOT READ
+Original images: UNCHANGED
+Phase 3B: UNCHANGED
+Biological independence: UNVERIFIED
+
+STEP 4.1.4 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/dataset_audit/05_index_plism_rowgroups.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.1.5 - FULL PLISM ROW-GROUP INDEX
+======================================================================
+
+[1] Verifying research inputs...
+Pinned dataset revision: 489cfa632886ce411ce0ab6e678e0587ac0ead04
+Parquet shards: 293
+Selected acquisitions: 31
+
+[2] Inspecting metadata footers...
+  Processed 20/293 shards; row groups indexed: 1020
+  Processed 40/293 shards; row groups indexed: 2040
+  Processed 60/293 shards; row groups indexed: 3060
+  Processed 80/293 shards; row groups indexed: 4080
+  Processed 100/293 shards; row groups indexed: 5100
+  Processed 120/293 shards; row groups indexed: 6120
+  Processed 140/293 shards; row groups indexed: 7140
+  Processed 160/293 shards; row groups indexed: 8160
+  Processed 180/293 shards; row groups indexed: 9180
+  Processed 200/293 shards; row groups indexed: 10200
+  Processed 220/293 shards; row groups indexed: 11220
+  Processed 240/293 shards; row groups indexed: 12240
+  Processed 260/293 shards; row groups indexed: 13260
+  Processed 280/293 shards; row groups indexed: 14280
+  Processed 293/293 shards; row groups indexed: 14943
+
+[3] Selecting candidate row groups...
+Total row groups indexed: 14943
+Candidate slide/row-group mappings: 5120
+Selected slides with candidates: 31
+
+Candidate row-group counts by acquisition:
+  GIV_AT2_to_GMH_S60: 165 groups
+  GIV_GT450_to_GMH_S60: 165 groups
+  GIVH_AT2_to_GMH_S60: 165 groups
+  GIVH_GT450_to_GMH_S60: 165 groups
+  GIVH_P_to_GMH_S60: 165 groups
+  GIVH_S210_to_GMH_S60: 165 groups
+  GIVH_S360_to_GMH_S60: 165 groups
+  GIVH_S60_to_GMH_S60: 166 groups
+  GIVH_SQ_to_GMH_S60: 165 groups
+  GM_AT2_to_GMH_S60: 165 groups
+  GM_GT450_to_GMH_S60: 166 groups
+  GMH_AT2_to_GMH_S60: 165 groups
+  GMH_GT450_to_GMH_S60: 165 groups
+  GV_AT2_to_GMH_S60: 165 groups
+  GV_GT450_to_GMH_S60: 166 groups
+  GVH_AT2_to_GMH_S60: 165 groups
+  GVH_GT450_to_GMH_S60: 165 groups
+  HR_AT2_to_GMH_S60: 165 groups
+  HR_GT450_to_GMH_S60: 165 groups
+  HRH_AT2_to_GMH_S60: 165 groups
+  HRH_GT450_to_GMH_S60: 165 groups
+  KR_AT2_to_GMH_S60: 165 groups
+  KR_GT450_to_GMH_S60: 165 groups
+  KRH_AT2_to_GMH_S60: 165 groups
+  KRH_GT450_to_GMH_S60: 166 groups
+  LM_AT2_to_GMH_S60: 165 groups
+  LM_GT450_to_GMH_S60: 166 groups
+  LMH_AT2_to_GMH_S60: 165 groups
+  LMH_GT450_to_GMH_S60: 165 groups
+  MY_AT2_to_GMH_S60: 165 groups
+  MY_GT450_to_GMH_S60: 165 groups
+
+[4] Saving full metadata index...
+
+======================================================================
+PHASE 4.1.5 - ROW-GROUP INDEX COMPLETED
+======================================================================
+Shards indexed: 293
+Row groups indexed: 14943
+Selected acquisitions: 31
+Acquisitions with candidate groups: 31
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/05_all_parquet_rowgroups.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/05_candidate_acquisition_rowgroups.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/05_acquisition_rowgroup_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/05_parquet_rowgroup_index.json
+
+PNG images downloaded: NONE
+Tile-coordinate intersections: NOT YET VERIFIED
+Phase 3B: UNCHANGED
+Biological independence: UNVERIFIED
+
+STEP 4.1.5 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/dataset_audit/06_verify_plism_tile_overlap.py
+---------------------------------------------------------------------------------------
+
+(.venv-transformers) dhrubo_roy@dhruboxR-IDG-3-15ARH7:~/MEDICAL_GNN_RESEARCH$ python -u \
+  phase4_main_research/scripts/dataset_audit/06_verify_plism_tile_overlap.py
+======================================================================
+PHASE 4.1.6 - EXACT PLISM TILE OVERLAP
+======================================================================
+
+[1] Verifying inputs...
+Selected acquisitions: 31
+Candidate mappings: 5120
+Shards requiring metadata reads: 111
+Revision: 489cfa632886ce411ce0ab6e678e0587ac0ead04
+
+[2] Reading exact metadata...
+  Completed 20/111 shards
+  Completed 40/111 shards
+  Completed 60/111 shards
+  Completed 80/111 shards
+  Completed 100/111 shards
+  Completed 111/111 shards
+
+[3] Verifying exact tile sets...
+Exact tile records: 504618
+Acquisitions with exact records: 31
+Duplicate tile IDs: 0
+
+Per-acquisition verification:
+  GIVH_AT2_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GIVH_GT450_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GIVH_P_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GIVH_S210_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GIVH_S360_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GIVH_S60_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GIVH_SQ_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GIV_AT2_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GIV_GT450_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GMH_AT2_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GMH_GT450_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GM_AT2_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GM_GT450_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GVH_AT2_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GVH_GT450_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GV_AT2_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  GV_GT450_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  HRH_AT2_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  HRH_GT450_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  HR_AT2_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  HR_GT450_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  KRH_AT2_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  KRH_GT450_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  KR_AT2_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  KR_GT450_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  LMH_AT2_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  LMH_GT450_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  LM_AT2_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  LM_GT450_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  MY_AT2_to_GMH_S60: 16278 unique tiles, 0 duplicates
+  MY_GT450_to_GMH_S60: 16278 unique tiles, 0 duplicates
+
+[4] Calculating exact tile intersections...
+GIVH seven-scanner shared positions: 16278
+  GIV AT2/GT450: 16278 shared positions
+  GIVH AT2/GT450: 16278 shared positions
+  GM AT2/GT450: 16278 shared positions
+  GMH AT2/GT450: 16278 shared positions
+  GV AT2/GT450: 16278 shared positions
+  GVH AT2/GT450: 16278 shared positions
+  HR AT2/GT450: 16278 shared positions
+  HRH AT2/GT450: 16278 shared positions
+  KR AT2/GT450: 16278 shared positions
+  KRH AT2/GT450: 16278 shared positions
+  LM AT2/GT450: 16278 shared positions
+  LMH AT2/GT450: 16278 shared positions
+  MY AT2/GT450: 16278 shared positions
+All 31 acquisitions shared positions: 16278
+
+[5] Saving verified metadata...
+
+======================================================================
+PHASE 4.1.6 - EXACT TILE OVERLAP COMPLETED
+======================================================================
+Exact tile records: 504618
+Acquisitions verified: 31
+GIVH seven-scanner intersection: 16278
+All-31 acquisition intersection: 16278
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/06_exact_plism_tile_locations.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/06_acquisition_tile_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/06_tile_overlap_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/06_exact_tile_overlap_audit.json
+
+PNG column explicitly read: NO
+Original images downloaded: NONE
+Phase 3B data: UNCHANGED
+Biological independence: UNVERIFIED
+
+STEP 4.1.6 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/dataset_audit/07_select_phase4_spatial_regions.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.1.7 - SPATIAL REGION SELECTION
+======================================================================
+
+[1] Verifying metadata and historical cohort...
+Verified acquisitions: 31
+Shared level-16 positions: 16278
+Frozen pilot coordinates: 360
+
+[2] Finding complete 6x6 candidate regions...
+Eligible complete 6x6 anchors: 5139
+
+[3] Selecting spatially separated regions...
+  Selected 10/60 regions
+  Selected 20/60 regions
+  Selected 30/60 regions
+  Selected 40/60 regions
+  Selected 50/60 regions
+  Selected 60/60 regions
+
+[4] Assigning provisional spatial partitions...
+Selected regions: 60
+Selected positions: 2160
+Overlap with Phase 3B: 0
+Provisional split:
+  train: 40 regions
+  validation: 10 regions
+  test: 10 regions
+
+[5] Saving provisional region plan...
+
+======================================================================
+PHASE 4.1.7 - REGION SELECTION COMPLETED
+======================================================================
+Selected regions: 60
+Selected tile positions: 2160
+Provisional spatial splits: {'train': 40, 'validation': 10, 'test': 10}
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/datasets/manifests/07_provisional_phase4_regions.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/07_phase4_region_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/07_phase4_region_selection.json
+
+Phase 3B original data: UNCHANGED
+Images downloaded: NONE
+Biological independence: UNVERIFIED
+Final training protocol: NOT YET FROZEN
+
+STEP 4.1.7 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/dataset_audit/08_prepare_phase4_download_manifest.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.1.8 - STAGE A DOWNLOAD MANIFEST
+======================================================================
+
+[1] Validating previous research metadata...
+Regions: 60
+Tile positions: 2160
+Scanners: AT2, GT450
+Pinned revision: 489cfa632886ce411ce0ab6e678e0587ac0ead04
+
+[2] Resolving exact original PNG locations...
+Exact original PNG locations: 4320
+
+[3] Preparing partition-aware download records...
+
+Planned images by split:
+  train: 2880 images
+  validation: 720 images
+  test: 720 images
+
+[4] Saving verified download manifest...
+
+======================================================================
+PHASE 4.1.8 - DOWNLOAD MANIFEST COMPLETED
+======================================================================
+Selected regions: 60
+Matched positions: 2160
+Original PNGs planned: 4320
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/datasets/manifests/08_stage_a_original_png_download_manifest.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/08_stage_a_download_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/08_stage_a_download_manifest_audit.json
+
+Images downloaded: NONE
+Phase 3B: UNCHANGED
+Final evaluation protocol: NOT YET FROZEN
+
+STEP 4.1.8 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/dataset_download/09_download_stage_a_pilot.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.1.9 - ORIGINAL PNG DOWNLOAD PILOT
+======================================================================
+
+[1] Validating manifest and research inputs...
+Pilot region: PHASE4_REGION_001
+Scanner pair: AT2 / GT450
+Paired positions: 36
+Images requested: 72
+Pinned revision: 489cfa632886ce411ce0ab6e678e0587ac0ead04
+
+[2] Grouping remote Parquet requests...
+Unique row groups: 12
+Unique remote shards: 3
+
+[3] Retrieving and validating original PNGs...
+  Shard 1/3: data/train-00002-of-00293.parquet
+    Images validated: 24/72
+  Shard 2/3: data/train-00003-of-00293.parquet
+    Images validated: 36/72
+  Shard 3/3: data/train-00006-of-00293.parquet
+    Images validated: 72/72
+
+[4] Verifying complete scanner pairing...
+Original PNGs validated: 72
+Complete scanner pairs: 36
+New image files: 72
+Existing verified files: 0
+
+[5] Saving pilot provenance...
+
+======================================================================
+PHASE 4.1.9 - ORIGINAL PNG PILOT COMPLETED
+======================================================================
+Region: PHASE4_REGION_001
+Validated original images: 72
+Matched scanner pairs: 36
+New files: 72
+Reused files: 0
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/09_stage_a_pilot_download_audit.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/09_stage_a_pilot_download_report.json
+
+Phase 3B data: UNCHANGED
+Original PNG bytes: PRESERVED
+Independent biological samples: UNVERIFIED
+Manual registration review: PENDING
+
+STEP 4.1.9 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/dataset_download/10_download_complete_stage_a.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.1.10 - COMPLETE STAGE A DOWNLOAD
+======================================================================
+
+[1] Validating frozen download plan...
+Regions: 60
+Paired positions: 2160
+Images expected: 4320
+Pinned revision: 489cfa632886ce411ce0ab6e678e0587ac0ead04
+
+[2] Organizing source Parquet requests...
+Remote shards: 7
+Required row groups: 311
+
+[3] Downloading original images...
+  Shards: 1/7 | Row groups: 49/311 | Validated images: 612/4320
+  Shards: 2/7 | Row groups: 99/311 | Validated images: 1326/4320
+  Shards: 3/7 | Row groups: 149/311 | Validated images: 2082/4320
+  Shards: 4/7 | Row groups: 193/311 | Validated images: 2622/4320
+  Shards: 5/7 | Row groups: 243/311 | Validated images: 3365/4320
+  Shards: 6/7 | Row groups: 292/311 | Validated images: 4032/4320
+  Shards: 7/7 | Row groups: 311/311 | Validated images: 4320/4320
+
+[4] Running final pairing and integrity checks...
+Validated original images: 4320
+Complete scanner pairs: 2160
+New image files: 4248
+Existing source-verified files: 72
+Checkpointed row groups reused: 0
+
+[5] Saving final Stage A provenance...
+
+======================================================================
+PHASE 4.1.10 - STAGE A DOWNLOAD COMPLETED
+======================================================================
+Validated original PNGs: 4320
+Matched tile pairs: 2160
+Actual PNG storage (GiB): 0.417
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/10_stage_a_original_png_audit.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/10_stage_a_download_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/10_stage_a_download_report.json
+
+Phase 3B: UNCHANGED
+Manual registration review: PENDING
+Biological independence: UNVERIFIED
+
+STEP 4.1.10 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/dataset_audit/11_audit_stage_a_image_quality.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.1.11 - IMAGE QUALITY AND PAIR REVIEW
+======================================================================
+
+[1] Validating source provenance...
+Images: 4320
+Matched pairs: 2160
+Regions: 60
+
+[2] Measuring image quality and rechecking integrity...
+  Validated 500/4320 images
+  Validated 1000/4320 images
+  Validated 1500/4320 images
+  Validated 2000/4320 images
+  Validated 2500/4320 images
+  Validated 3000/4320 images
+  Validated 3500/4320 images
+  Validated 4000/4320 images
+  Validated 4320/4320 images
+
+[3] Measuring matched-pair image similarity...
+Paired comparisons: 2160
+
+[4] Creating scanner-paired contact sheets...
+  train: PHASE4_REGION_001
+  validation: PHASE4_REGION_009
+  test: PHASE4_REGION_002
+
+[5] Saving quality tables and report...
+
+======================================================================
+PHASE 4.1.11 - IMAGE QUALITY AUDIT COMPLETED
+======================================================================
+Images verified: 4320
+Scanner pairs assessed: 2160
+Regions: 60
+Median paired grayscale correlation: 0.1437
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/11_image_quality_metrics.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/11_scanner_pair_metrics.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/11_image_quality_report.json
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/11_train_at2_gt450_contact_sheet.png
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/11_validation_at2_gt450_contact_sheet.png
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/11_test_at2_gt450_contact_sheet.png
+
+Original PNG images: UNCHANGED
+Manual registration review: PENDING
+Biological independence: UNVERIFIED
+
+STEP 4.1.11 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/dataset_audit/12_quantitative_registration_audit.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.1.12 - CROSS-SCANNER REGISTRATION AUDIT
+======================================================================
+
+[1] Validating research inputs...
+Regions: 60
+Matched image pairs: 2160
+Original PNGs: 4320
+
+[2] Computing quantitative registration metrics...
+  Assessed 250/2160 pairs
+  Assessed 500/2160 pairs
+  Assessed 750/2160 pairs
+  Assessed 1000/2160 pairs
+  Assessed 1250/2160 pairs
+  Assessed 1500/2160 pairs
+  Assessed 1750/2160 pairs
+  Assessed 2000/2160 pairs
+  Assessed 2160/2160 pairs
+
+[3] Summarizing results by region...
+Region summaries: 60
+
+[4] Creating worst-pair visual review sheets...
+  train: 4 lowest-SSIM pairs
+  validation: 4 lowest-SSIM pairs
+  test: 4 lowest-SSIM pairs
+
+[5] Saving registration audit...
+
+======================================================================
+PHASE 4.1.12 - REGISTRATION AUDIT COMPLETED
+======================================================================
+Pairs assessed: 2160
+Regions assessed: 60
+Median raw_ssim: 0.0666
+Median normalized_ssim: 0.0188
+Median edge_correlation: 0.0525
+Median estimated_shift_magnitude: 12.6491
+Pairs with bounded translation proposals: 641
+Pairs with improved edge agreement: 641
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/12_registration_pair_metrics.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/12_registration_region_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/12_registration_audit_report.json
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/12_train_worst_scanner_pairs.png
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/12_validation_worst_scanner_pairs.png
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/12_test_worst_scanner_pairs.png
+
+Original images: UNCHANGED
+Image pairs excluded: 0
+Biological independence: UNVERIFIED
+Training approval: PENDING REVIEW
+
+STEP 4.1.12 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/dataset_audit/13_verify_registration_reliability.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.1.13 - REGISTRATION RELIABILITY
+======================================================================
+
+[1] Validating source files...
+Original images: 4320
+Paired positions: 2160
+Spatial regions: 60
+
+[2] Synthetic-shift recovery experiment...
+  Synthetic cases: 30/120
+  Synthetic cases: 60/120
+  Synthetic cases: 90/120
+  Synthetic cases: 120/120
+Synthetic tests: 120
+Recovered within 1 px per axis: 120
+Recovery rate: 100.00%
+
+[3] Independent AT2/GT450 alignment validation...
+  Validated 250/2160 pairs
+  Validated 500/2160 pairs
+  Validated 750/2160 pairs
+  Validated 1000/2160 pairs
+  Validated 1250/2160 pairs
+  Validated 1500/2160 pairs
+  Validated 1750/2160 pairs
+  Validated 2000/2160 pairs
+  Validated 2160/2160 pairs
+
+[4] Creating region-level summaries...
+Region summaries: 60
+Bounded shift proposals: 649
+Independent improvements: 639
+Independent improvement proportion: 98.46%
+
+[5] Saving reproducible research outputs...
+
+======================================================================
+PHASE 4.1.13 - RELIABILITY AUDIT COMPLETED
+======================================================================
+Synthetic cases: 120
+Synthetic recovery rate: 100.00%
+Real scanner pairs: 2160
+Bounded shift proposals: 649
+Independent improvements: 639
+Median independent edge-correlation improvement: 0.45864234622887234
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/13_synthetic_shift_recovery.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/13_independent_registration_metrics.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/13_registration_region_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/13_registration_reliability_report.json
+
+Original PNGs: UNCHANGED
+Pairs excluded: 0
+Dataset approval: PENDING
+Biological independence: UNVERIFIED
+
+STEP 4.1.13 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/feature_extraction/14_extract_stage_a_dinov2_features.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.1.14 - DINOV2 FEATURE EXTRACTION
+======================================================================
+
+[1] Verifying Stage A dataset...
+Original images: 4320
+Paired positions: 2160
+Spatial regions: 60
+Device: cuda
+GPU: NVIDIA GeForce RTX 4050 Laptop GPU
+
+[2] Loading DINOv2-Small...
+Loading weights: 100%|███████████████████████████████████████████████████████████████████| 223/223 [00:00<00:00, 5059.97it/s]
+Model: facebook/dinov2-small
+Batch size: 8
+Weight SHA256: e2caabae87ec37343e1695c10cd341179d3fa671d2ea00a3802b52cccd7773bb
+Processor SHA256: 0f6addc5987e9ab323986e0e3ad4ef3aeea735e6839c6df97dc9397e8df50669
+Model revision: None
+Processor revision: None
+
+[3] Extracting paired CLS features...
+  Regions 5/60 | New: 5 | Reused: 0
+  Regions 10/60 | New: 10 | Reused: 0
+  Regions 15/60 | New: 15 | Reused: 0
+  Regions 20/60 | New: 20 | Reused: 0
+  Regions 25/60 | New: 25 | Reused: 0
+  Regions 30/60 | New: 30 | Reused: 0
+  Regions 35/60 | New: 35 | Reused: 0
+  Regions 40/60 | New: 40 | Reused: 0
+  Regions 45/60 | New: 45 | Reused: 0
+  Regions 50/60 | New: 50 | Reused: 0
+  Regions 55/60 | New: 55 | Reused: 0
+  Regions 60/60 | New: 60 | Reused: 0
+
+[4] Assembling paired feature archive...
+AT2: (2160, 384)
+GT450: (2160, 384)
+
+[5] Measuring paired feature similarity...
+Median paired cosine similarity: 0.969132
+Median paired Euclidean distance: 12.436958
+
+[6] Saving reproducible feature outputs...
+
+======================================================================
+PHASE 4.1.14 - DINOV2 EXTRACTION COMPLETED
+======================================================================
+Original PNGs: 4320
+Regions: 60
+Paired positions: 2160
+AT2 feature shape: (2160, 384)
+GT450 feature shape: (2160, 384)
+Median paired cosine: 0.969132
+New checkpoints: 60
+Reused checkpoints: 0
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/features/14_stage_a_dinov2_features.npz
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/14_feature_metadata.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/14_paired_feature_similarity.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/14_feature_extraction_report.json
+
+Original images: UNCHANGED
+Phase 3B: UNCHANGED
+Final GNN training protocol: NOT FROZEN
+XAI integration: PLANNED
+
+STEP 4.1.14 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/graph_construction/15_build_stage_a_graph_dataset.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.1.15 - FEATURE AND GRAPH DATASET AUDIT
+======================================================================
+
+[1] Validating source archive and metadata...
+Verified feature positions: 2160
+Verified feature vectors: 4320
+Encoder dimension: 384
+
+[2] Preparing spatial reference topology...
+Nodes per graph: 36
+Undirected edges: 60
+Directed edges: 120
+
+[3] Building graph-ready feature arrays...
+Constructed graphs: 120
+Graph tensor: (120, 36, 384)
+Matched graph pairs: 60
+
+[4] Evaluating cross-scanner feature baselines...
+Median matched cosine: 0.969132
+Median within-region negative cosine: 0.919622
+Median cross-region negative cosine: 0.803881
+Within-region retrieval Recall@1: 0.8866
+Within-region retrieval MRR: 0.9211
+
+[5] Saving graph dataset and audit...
+
+======================================================================
+PHASE 4.1.15 - GRAPH DATASET COMPLETED
+======================================================================
+Graphs: 120
+Node features: (120, 36, 384)
+Edges per graph: 120
+Retrieval Recall@1: 0.8866
+Retrieval MRR: 0.9211
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/features/15_stage_a_spatial_graphs.npz
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/15_graph_inventory.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/15_feature_retrieval_metrics.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/15_graph_dataset_report.json
+
+GNN training: NOT STARTED
+Final training protocol: NOT FROZEN
+Original PNGs: UNCHANGED
+Phase 3B: UNCHANGED
+XAI: PLANNED FOR MODEL EVALUATION
+
+STEP 4.1.15 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/training/16_prepare_gnn_experimental_protocol.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.1 - GNN EXPERIMENTAL PROTOCOL
+======================================================================
+
+[1] Validating existing graph dataset...
+Graphs: 120
+Node features: (120, 36, 384)
+Edge index: (2, 120)
+Spatial splits: {np.str_('train'): 80, np.str_('test'): 20, np.str_('validation'): 20}
+
+[2] Verifying graph pairs and spatial separation...
+Verified matched graph pairs: 60
+Unique tissue positions: 2160
+Minimum spatial buffer: 2 tiles
+
+[3] Preparing experimental protocol...
+
+======================================================================
+PHASE 4.2.1 - PROTOCOL VERIFICATION COMPLETED
+======================================================================
+Graphs verified: 120
+Matched graph pairs: 60
+Unique spatial positions: 2160
+Spatial buffer: VERIFIED
+Train/validation/test: {'train': 40, 'test': 10, 'validation': 10}
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/configs/16_initial_gnn_experimental_protocol.json
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/16_gnn_protocol_verification.json
+
+GNN training: NOT STARTED
+Initial experiment protocol: SAVED
+Biological independence: UNVERIFIED
+XAI: INCLUDED IN FUTURE EVALUATION PLAN
+
+STEP 4.2.1 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/training/17_train_mlp_baseline.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.2 - MLP BASELINE TRAINING
+======================================================================
+
+[1] Validating protocol and graph provenance...
+Graphs: 120
+Graph feature dimensions: (120, 36, 384)
+Device: cuda
+GPU: NVIDIA GeForce RTX 4050 Laptop GPU
+
+[2] Preparing training and validation pairs...
+Training region pairs: 40
+Validation region pairs: 10
+Test region pairs: 10 (not evaluated)
+
+[3] Training shared MLP projection...
+
+Random seed: 42
+  Epoch 001 | Train loss 1.7999 | Val R@1 0.8889 | Val MRR 0.9325
+  Epoch 002 | Train loss 1.0668 | Val R@1 0.9000 | Val MRR 0.9393
+  Epoch 003 | Train loss 0.7243 | Val R@1 0.9056 | Val MRR 0.9383
+  Epoch 005 | Train loss 0.4386 | Val R@1 0.9111 | Val MRR 0.9453
+  Epoch 010 | Train loss 0.1430 | Val R@1 0.9194 | Val MRR 0.9500
+  Epoch 020 | Train loss 0.0316 | Val R@1 0.9222 | Val MRR 0.9501
+  Epoch 030 | Train loss 0.0158 | Val R@1 0.9250 | Val MRR 0.9530
+  Epoch 040 | Train loss 0.0107 | Val R@1 0.9167 | Val MRR 0.9496
+  Epoch 050 | Train loss 0.0082 | Val R@1 0.9167 | Val MRR 0.9481
+  Early stopping at epoch 55
+  Best epoch: 35 | Best validation Recall@1: 0.9250
+
+Random seed: 123
+  Epoch 001 | Train loss 1.8711 | Val R@1 0.9028 | Val MRR 0.9415
+  Epoch 002 | Train loss 1.0317 | Val R@1 0.9194 | Val MRR 0.9533
+  Epoch 004 | Train loss 0.5492 | Val R@1 0.9194 | Val MRR 0.9539
+  Epoch 005 | Train loss 0.4282 | Val R@1 0.9306 | Val MRR 0.9582
+  Epoch 010 | Train loss 0.1326 | Val R@1 0.9333 | Val MRR 0.9616
+  Epoch 020 | Train loss 0.0287 | Val R@1 0.9306 | Val MRR 0.9581
+  Epoch 030 | Train loss 0.0157 | Val R@1 0.9361 | Val MRR 0.9621
+  Early stopping at epoch 32
+  Best epoch: 12 | Best validation Recall@1: 0.9417
+
+Random seed: 2026
+  Epoch 001 | Train loss 1.8254 | Val R@1 0.8778 | Val MRR 0.9193
+  Epoch 002 | Train loss 0.9599 | Val R@1 0.8944 | Val MRR 0.9375
+  Epoch 003 | Train loss 0.6942 | Val R@1 0.9167 | Val MRR 0.9490
+  Epoch 010 | Train loss 0.1419 | Val R@1 0.9194 | Val MRR 0.9493
+  Epoch 020 | Train loss 0.0308 | Val R@1 0.9250 | Val MRR 0.9540
+  Epoch 030 | Train loss 0.0159 | Val R@1 0.9111 | Val MRR 0.9476
+  Early stopping at epoch 32
+  Best epoch: 12 | Best validation Recall@1: 0.9306
+
+[4] Saving experimental results...
+
+======================================================================
+PHASE 4.2.2 - MLP BASELINE COMPLETED
+======================================================================
+Seed 42 | Best epoch 35 | Validation Recall@1 0.9250 | MRR 0.9533
+Seed 123 | Best epoch 12 | Validation Recall@1 0.9417 | MRR 0.9654
+Seed 2026 | Best epoch 12 | Validation Recall@1 0.9306 | MRR 0.9574
+
+Mean validation Recall@1: 0.9324
+Standard deviation: 0.0085
+
+Saved checkpoints:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/17_mlp_baseline/mlp_seed_42.pt
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/17_mlp_baseline/mlp_seed_123.pt
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/17_mlp_baseline/mlp_seed_2026.pt
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/17_mlp_training_history.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/17_mlp_validation_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/17_mlp_baseline_report.json
+
+Test partition: NOT EVALUATED
+Graph edges: NOT USED
+Original images and features: UNCHANGED
+XAI evaluation: PLANNED
+
+STEP 4.2.2 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/training/18_train_gcn_baseline.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.3 - SPATIAL GCN BASELINE
+======================================================================
+
+[1] Validating graph and protocol...
+Graphs: 120
+Feature shape: (120, 36, 384)
+Spatial directed edges: 120
+Device: cuda
+GPU: NVIDIA GeForce RTX 4050 Laptop GPU
+
+[2] Preparing region-level partitions...
+Training graph pairs: 40
+Validation graph pairs: 10
+Test graph pairs: 10 (reserved)
+
+[3] Training spatial GCN...
+
+Random seed: 42
+  Epoch 001 | Loss 2.9429 | Val R@1 0.6083 | MRR 0.7314
+  Epoch 010 | Loss 1.2812 | Val R@1 0.6556 | MRR 0.7745
+  Epoch 020 | Loss 0.8325 | Val R@1 0.5972 | MRR 0.7428
+  Early stopping at epoch 28
+  Best epoch: 8 | Val R@1: 0.6639
+
+Random seed: 123
+  Epoch 001 | Loss 2.9880 | Val R@1 0.6111 | MRR 0.7326
+  Epoch 010 | Loss 1.2983 | Val R@1 0.7250 | MRR 0.8205
+  Epoch 020 | Loss 0.8699 | Val R@1 0.6361 | MRR 0.7624
+  Early stopping at epoch 27
+  Best epoch: 7 | Val R@1: 0.7278
+
+Random seed: 2026
+  Epoch 001 | Loss 2.9303 | Val R@1 0.5806 | MRR 0.7157
+  Epoch 010 | Loss 1.3295 | Val R@1 0.6750 | MRR 0.7926
+  Epoch 020 | Loss 0.9257 | Val R@1 0.6278 | MRR 0.7599
+  Early stopping at epoch 27
+  Best epoch: 7 | Val R@1: 0.6833
+
+[4] Saving reproducible GCN results...
+
+======================================================================
+PHASE 4.2.3 - GCN BASELINE COMPLETED
+======================================================================
+Seed 42 | Best epoch 8 | Val R@1 0.6639 | MRR 0.7740
+Seed 123 | Best epoch 7 | Val R@1 0.7278 | MRR 0.8213
+Seed 2026 | Best epoch 7 | Val R@1 0.6833 | MRR 0.8004
+
+GCN mean validation Recall@1: 0.6917
+MLP mean validation Recall@1: 0.9324
+GCN - MLP: -24.07 pp
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/18_gcn_training_history.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/18_gcn_validation_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/18_gcn_baseline_report.json
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/18_gcn_baseline/gcn_seed_42.pt
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/18_gcn_baseline/gcn_seed_123.pt
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/18_gcn_baseline/gcn_seed_2026.pt
+
+Test partition: NOT EVALUATED
+Original dataset: UNCHANGED
+Proposed stability-aware GNN: NOT YET TRAINED
+XAI: PLANNED
+
+STEP 4.2.3 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/training/19_train_graphsage_baseline.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.4 - GRAPHSAGE BASELINE
+======================================================================
+
+[1] Validating sources...
+Graph tensor: (120, 36, 384)
+Spatial edges: (2, 120)
+Device: cuda
+
+[2] Preparing paired spatial partitions...
+Training pairs: 40
+Validation pairs: 10
+Test pairs: 10, reserved
+
+[3] Training GraphSAGE...
+
+Seed: 42
+  Epoch 001 | Train loss 2.2645 | Val R@1 0.9806 | MRR 0.9886
+  Epoch 010 | Train loss 0.1965 | Val R@1 0.9194 | MRR 0.9518
+  Epoch 020 | Train loss 0.0433 | Val R@1 0.9389 | MRR 0.9622
+  Early stopping: epoch 21
+  Best epoch 1 | Validation R@1 0.9806
+
+Seed: 123
+  Epoch 001 | Train loss 2.2917 | Val R@1 0.9583 | MRR 0.9774
+  Epoch 010 | Train loss 0.2213 | Val R@1 0.9361 | MRR 0.9613
+  Epoch 020 | Train loss 0.0480 | Val R@1 0.9444 | MRR 0.9684
+  Early stopping: epoch 22
+  Best epoch 2 | Validation R@1 0.9667
+
+Seed: 2026
+  Epoch 001 | Train loss 2.3218 | Val R@1 0.9417 | MRR 0.9635
+  Epoch 010 | Train loss 0.2159 | Val R@1 0.9306 | MRR 0.9573
+  Epoch 020 | Train loss 0.0396 | Val R@1 0.9389 | MRR 0.9641
+  Early stopping: epoch 22
+  Best epoch 2 | Validation R@1 0.9750
+
+[4] Saving validation results...
+
+======================================================================
+PHASE 4.2.4 - GRAPHSAGE BASELINE COMPLETED
+======================================================================
+Seed 42 | Best epoch 1 | Val R@1 0.9806 | MRR 0.9886
+Seed 123 | Best epoch 2 | Val R@1 0.9667 | MRR 0.9813
+Seed 2026 | Best epoch 2 | Val R@1 0.9750 | MRR 0.9845
+
+GraphSAGE mean R@1: 0.9741
+GCN mean R@1: 0.6917
+MLP mean R@1: 0.9324
+GraphSAGE vs MLP: +4.17 pp
+GraphSAGE vs GCN: +28.24 pp
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/19_graphsage_training_history.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/19_graphsage_validation_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/19_graphsage_baseline_report.json
+
+Test partition: NOT EVALUATED
+Original images and features: UNCHANGED
+Proposed stability-aware GNN: NOT YET TRAINED
+XAI: PLANNED
+
+STEP 4.2.4 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/20_analyze_graphsage_baseline.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.5 - GRAPHSAGE DIAGNOSTICS
+======================================================================
+
+[1] Verifying experiment provenance...
+Validation region pairs: 10
+Seeds: (42, 123, 2026)
+Test region pairs: NOT LOADED INTO EVALUATION
+
+[2] Measuring frozen encoder retrieval...
+
+[3] Running GraphSAGE neighbor ablation...
+  Seed 42: completed
+  Seed 123: completed
+  Seed 2026: completed
+
+[4] Aggregating validation statistics...
+  Frozen DINOv2: R@1=0.8833 MRR=0.9214
+  MLP: R@1=0.9324 MRR=0.9587
+  GCN: R@1=0.6917 MRR=0.7986
+  GraphSAGE original: R@1=0.9741 MRR=0.9848
+  GraphSAGE neighbors disabled: R@1=0.8343 MRR=0.8867
+
+[5] Saving reproducible diagnostic outputs...
+
+======================================================================
+PHASE 4.2.5 - DIAGNOSTICS COMPLETED
+======================================================================
+GraphSAGE original - neighbors disabled: +13.98 pp
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/20_graphsage_region_diagnostics.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/20_baseline_comparison.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/20_graphsage_diagnostics.json
+
+Training performed: NO
+Test partition evaluated: NO
+Original models and data: UNCHANGED
+XAI: PLANNED
+
+STEP 4.2.5 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/training/21_train_permuted_topology_control.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.6 - PERMUTED TOPOLOGY CONTROL
+======================================================================
+
+[1] Validating sources...
+Graphs: 120
+Original directed edges: 120
+
+[2] Preparing paired partitions...
+Train regions: 40
+Validation regions: 10
+Test regions: 10, reserved
+
+[3] Training permuted-topology GraphSAGE...
+
+Seed: 42
+  Epoch 001 | Train loss 2.1736 | Val R@1 0.9722 | MRR 0.9843
+  Epoch 010 | Train loss 0.1362 | Val R@1 0.9639 | MRR 0.9776
+  Epoch 020 | Train loss 0.0285 | Val R@1 0.9694 | MRR 0.9822
+  Early stopping: epoch 23
+  Best epoch: 3 | Permuted R@1: 0.9806 | Original R@1: 0.9806
+
+Seed: 123
+  Epoch 001 | Train loss 2.2341 | Val R@1 0.9778 | MRR 0.9858
+  Epoch 010 | Train loss 0.1335 | Val R@1 0.9500 | MRR 0.9704
+  Epoch 020 | Train loss 0.0243 | Val R@1 0.9444 | MRR 0.9676
+  Early stopping: epoch 25
+  Best epoch: 5 | Permuted R@1: 0.9778 | Original R@1: 0.9667
+
+Seed: 2026
+  Epoch 001 | Train loss 2.2423 | Val R@1 0.9722 | MRR 0.9829
+  Epoch 010 | Train loss 0.1730 | Val R@1 0.9694 | MRR 0.9816
+  Epoch 020 | Train loss 0.0285 | Val R@1 0.9722 | MRR 0.9837
+  Early stopping: epoch 22
+  Best epoch: 2 | Permuted R@1: 0.9806 | Original R@1: 0.9750
+
+[4] Saving topology-control results...
+
+======================================================================
+PHASE 4.2.6 - TOPOLOGY CONTROL COMPLETED
+======================================================================
+Seed 42 | Original 0.9806 | Permuted 0.9806 | Difference +0.00 pp
+Seed 123 | Original 0.9667 | Permuted 0.9778 | Difference -1.11 pp
+Seed 2026 | Original 0.9750 | Permuted 0.9806 | Difference -0.56 pp
+
+Mean original GraphSAGE R@1: 0.9741
+Mean permuted GraphSAGE R@1: 0.9796
+Mean original - permuted: -0.56 pp
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/21_permuted_training_history.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/21_permuted_validation_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/21_permuted_topology_report.json
+
+Test partition: NOT EVALUATED
+Original GraphSAGE checkpoints: UNCHANGED
+Original graph archive: UNCHANGED
+Proposed GNN: NOT YET TRAINED
+XAI: PLANNED
+
+STEP 4.2.6 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/training/22_train_self_only_graphsage_control.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.7 - SELF-ONLY GRAPHSAGE CONTROL
+======================================================================
+
+[1] Verifying source experiments...
+Graph tensor: (120, 36, 384)
+Device: cuda
+
+[2] Preparing spatial partitions...
+Training pairs: 40
+Validation pairs: 10
+Test pairs: 10 (reserved)
+
+[3] Training self-only controls...
+
+Seed: 42
+  Epoch 001 | Train loss 1.8286 | Val R@1 0.8889 | MRR 0.9327
+  Epoch 010 | Train loss 0.1359 | Val R@1 0.9278 | MRR 0.9553
+  Epoch 020 | Train loss 0.0297 | Val R@1 0.9278 | MRR 0.9575
+  Epoch 030 | Train loss 0.0152 | Val R@1 0.9333 | MRR 0.9608
+  Early stopping: epoch 32
+  Best epoch: 12 | Self-only R@1: 0.9472
+
+Seed: 123
+  Epoch 001 | Train loss 1.7980 | Val R@1 0.8972 | MRR 0.9400
+  Epoch 010 | Train loss 0.1372 | Val R@1 0.9333 | MRR 0.9583
+  Epoch 020 | Train loss 0.0295 | Val R@1 0.9417 | MRR 0.9656
+  Epoch 030 | Train loss 0.0157 | Val R@1 0.9333 | MRR 0.9598
+  Early stopping: epoch 33
+  Best epoch: 13 | Self-only R@1: 0.9500
+
+Seed: 2026
+  Epoch 001 | Train loss 1.8104 | Val R@1 0.8833 | MRR 0.9281
+  Epoch 010 | Train loss 0.1490 | Val R@1 0.9278 | MRR 0.9563
+  Epoch 020 | Train loss 0.0282 | Val R@1 0.9250 | MRR 0.9545
+  Epoch 030 | Train loss 0.0152 | Val R@1 0.9361 | MRR 0.9591
+  Epoch 040 | Train loss 0.0105 | Val R@1 0.9278 | MRR 0.9555
+  Early stopping: epoch 49
+  Best epoch: 29 | Self-only R@1: 0.9417
+
+[4] Saving experiment results...
+
+======================================================================
+PHASE 4.2.7 - SELF-ONLY CONTROL COMPLETED
+======================================================================
+Seed 42 | Self-only 0.9472 | Original 0.9806 | Permuted 0.9806
+Seed 123 | Self-only 0.9500 | Original 0.9667 | Permuted 0.9778
+Seed 2026 | Self-only 0.9417 | Original 0.9750 | Permuted 0.9806
+
+Self-only mean R@1: 0.9463
+Original mean R@1: 0.9741
+Permuted mean R@1: 0.9796
+Original - self-only: +2.78 pp
+Permuted - self-only: +3.33 pp
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/22_self_only_training_history.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/22_self_only_validation_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/22_self_only_graphsage_report.json
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/22_self_only_graphsage/self_only_seed_42.pt
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/22_self_only_graphsage/self_only_seed_123.pt
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/22_self_only_graphsage/self_only_seed_2026.pt
+
+Test partition: NOT EVALUATED
+Previous experiments: UNCHANGED
+Proposed stability-aware GNN: NOT TRAINED
+XAI: PLANNED
+
+STEP 4.2.7 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/23_evaluate_cross_region_retrieval.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.8 - CROSS-REGION RETRIEVAL
+======================================================================
+
+[1] Validating inputs...
+
+[2] Loading validation graph pairs...
+Validation regions: 10
+Candidates per query: 360
+Test regions: NOT USED
+
+[3] Evaluating frozen DINOv2...
+  Frozen DINOv2, seed none: Within R@1=0.8833, Global R@1=0.8833, Global R@5=0.9694, Global MRR=0.9199
+
+[4] Evaluating saved models...
+  MLP, seed 42: Within R@1=0.9250, Global R@1=0.9194, Global R@5=0.9861, Global MRR=0.9490
+  MLP, seed 123: Within R@1=0.9417, Global R@1=0.9417, Global R@5=0.9972, Global MRR=0.9653
+  MLP, seed 2026: Within R@1=0.9306, Global R@1=0.9278, Global R@5=0.9972, Global MRR=0.9556
+  GCN, seed 42: Within R@1=0.6639, Global R@1=0.6639, Global R@5=0.9222, Global MRR=0.7740
+  GCN, seed 123: Within R@1=0.7278, Global R@1=0.7278, Global R@5=0.9389, Global MRR=0.8213
+  GCN, seed 2026: Within R@1=0.6833, Global R@1=0.6833, Global R@5=0.9556, Global MRR=0.8004
+  GraphSAGE, seed 42: Within R@1=0.9806, Global R@1=0.9806, Global R@5=0.9972, Global MRR=0.9886
+  GraphSAGE, seed 123: Within R@1=0.9667, Global R@1=0.9667, Global R@5=1.0000, Global MRR=0.9812
+  GraphSAGE, seed 2026: Within R@1=0.9750, Global R@1=0.9750, Global R@5=1.0000, Global MRR=0.9845
+  Permuted GraphSAGE, seed 42: Within R@1=0.9806, Global R@1=0.9806, Global R@5=0.9972, Global MRR=0.9879
+  Permuted GraphSAGE, seed 123: Within R@1=0.9778, Global R@1=0.9778, Global R@5=1.0000, Global MRR=0.9860
+  Permuted GraphSAGE, seed 2026: Within R@1=0.9806, Global R@1=0.9806, Global R@5=1.0000, Global MRR=0.9881
+  Self-only GraphSAGE, seed 42: Within R@1=0.9472, Global R@1=0.9444, Global R@5=0.9944, Global MRR=0.9659
+  Self-only GraphSAGE, seed 123: Within R@1=0.9500, Global R@1=0.9472, Global R@5=0.9944, Global MRR=0.9656
+  Self-only GraphSAGE, seed 2026: Within R@1=0.9417, Global R@1=0.9361, Global R@5=0.9944, Global MRR=0.9599
+
+[5] Saving validation-only retrieval results...
+
+======================================================================
+PHASE 4.2.8 - RETRIEVAL EVALUATION COMPLETED
+======================================================================
+Frozen DINOv2: mean global R@1 = 0.8833
+MLP: mean global R@1 = 0.9296
+GCN: mean global R@1 = 0.6917
+GraphSAGE: mean global R@1 = 0.9741
+Permuted GraphSAGE: mean global R@1 = 0.9796
+Self-only GraphSAGE: mean global R@1 = 0.9426
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/23_cross_region_retrieval.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/23_retrieval_by_region.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/23_cross_region_retrieval_report.json
+
+Training: NO
+Test partition: NOT EVALUATED
+Existing checkpoints: UNCHANGED
+XAI: PLANNED
+
+STEP 4.2.8 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/training/24_train_region_specific_topology_control.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.9 - REGION-SPECIFIC TOPOLOGY CONTROL
+======================================================================
+
+[1] Verifying source experiments...
+Graph tensor: (120, 36, 384)
+Device: cuda
+
+[2] Preparing training and validation regions...
+Training pairs: 40
+Validation pairs: 10
+Test pairs: 10, reserved
+
+[3] Training region-specific GraphSAGE...
+
+Seed: 42
+  Epoch 001 | Loss 2.1526 | Val R@1 0.9833 | MRR 0.9917
+  Epoch 010 | Loss 0.1369 | Val R@1 0.9444 | MRR 0.9670
+  Epoch 020 | Loss 0.0310 | Val R@1 0.9389 | MRR 0.9632
+  Early stopping at epoch 21
+  Best epoch 1 | Region-specific R@1 0.9833
+
+Seed: 123
+  Epoch 001 | Loss 2.2327 | Val R@1 0.9667 | MRR 0.9804
+  Epoch 010 | Loss 0.1409 | Val R@1 0.9417 | MRR 0.9650
+  Epoch 020 | Loss 0.0279 | Val R@1 0.9472 | MRR 0.9650
+  Early stopping at epoch 22
+  Best epoch 2 | Region-specific R@1 0.9694
+
+Seed: 2026
+  Epoch 001 | Loss 2.2537 | Val R@1 0.9861 | MRR 0.9924
+  Epoch 010 | Loss 0.1334 | Val R@1 0.9639 | MRR 0.9779
+  Epoch 020 | Loss 0.0219 | Val R@1 0.9722 | MRR 0.9825
+  Early stopping at epoch 21
+  Best epoch 1 | Region-specific R@1 0.9861
+
+[4] Saving controlled experiment...
+
+======================================================================
+PHASE 4.2.9 - REGION TOPOLOGY CONTROL COMPLETED
+======================================================================
+Seed 42 | Original 0.9806 | Fixed permuted 0.9806 | Region-specific 0.9833
+Seed 123 | Original 0.9667 | Fixed permuted 0.9778 | Region-specific 0.9694
+Seed 2026 | Original 0.9750 | Fixed permuted 0.9806 | Region-specific 0.9861
+
+Original mean R@1: 0.9741
+Fixed-permuted mean R@1: 0.9796
+Region-specific mean R@1: 0.9796
+Original minus region-specific: -0.56 pp
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/24_region_topology_history.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/24_region_topology_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/24_region_topology_report.json
+
+Test partition: NOT EVALUATED
+Previous experiments: UNCHANGED
+Proposed model: NOT TRAINED
+XAI: PLANNED
+
+STEP 4.2.9 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/training/25_prepare_stability_aware_architecture.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.10 - STABILITY-AWARE ARCHITECTURE
+======================================================================
+
+[1] Verifying experiment provenance...
+Verified historical experiments: 8
+Graph provenance: VERIFIED
+Protocol provenance: VERIFIED
+
+[2] Recording baseline performance...
+  frozen_dinov2: 0.8833
+  mlp: 0.9324
+  gcn: 0.6917
+  graphsage: 0.9741
+  fixed_random: 0.9796
+  self_only: 0.9463
+  region_random: 0.9796
+
+[3] Defining candidate architecture...
+
+[4] Saving protocol verification...
+
+======================================================================
+PHASE 4.2.10 - ARCHITECTURE SPECIFIED
+======================================================================
+Baseline reports verified: 8
+Architecture: GatedResidualGraphSAGE
+Initial gate: 0.1
+Planned ablations: 6
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/configs/25_stability_aware_gnn_architecture_v1.json
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/25_architecture_protocol_report.json
+
+Model training: NOT STARTED
+Held-out test: NOT EVALUATED
+Historical experiments: UNCHANGED
+XAI: INCLUDED IN ARCHITECTURE PLAN
+
+STEP 4.2.10 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/training/26_train_gated_residual_graphsage.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.11 - GATED RESIDUAL GRAPHSAGE
+======================================================================
+
+[1] Verifying frozen experimental inputs...
+Graph tensor: (120, 36, 384)
+Device: cuda
+Initial gate: 0.1
+GPU: NVIDIA GeForce RTX 4050 Laptop GPU
+
+[2] Preparing spatial partitions...
+Training pairs: 40
+Validation pairs: 10
+Test pairs: 10 (reserved)
+
+[3] Training gated residual models...
+
+Seed: 42
+  Epoch 001 | Train loss 2.6568 | Val R@1 0.8861 | MRR 0.9232 | Gate 0.1002
+  Epoch 010 | Train loss 2.5233 | Val R@1 0.8917 | MRR 0.9255 | Gate 0.1046
+  Epoch 020 | Train loss 2.3641 | Val R@1 0.8972 | MRR 0.9293 | Gate 0.1112
+  Epoch 030 | Train loss 2.2728 | Val R@1 0.9056 | MRR 0.9360 | Gate 0.1184
+  Epoch 040 | Train loss 2.2014 | Val R@1 0.9028 | MRR 0.9362 | Gate 0.1258
+  Epoch 050 | Train loss 2.1419 | Val R@1 0.9083 | MRR 0.9389 | Gate 0.1335
+  Epoch 060 | Train loss 2.0695 | Val R@1 0.9111 | MRR 0.9430 | Gate 0.1415
+  Epoch 070 | Train loss 2.0137 | Val R@1 0.9194 | MRR 0.9463 | Gate 0.1500
+  Epoch 080 | Train loss 1.9467 | Val R@1 0.9167 | MRR 0.9461 | Gate 0.1588
+  Epoch 090 | Train loss 1.8846 | Val R@1 0.9194 | MRR 0.9491 | Gate 0.1682
+  Epoch 100 | Train loss 1.8173 | Val R@1 0.9222 | MRR 0.9506 | Gate 0.1779
+  Best epoch: 98 | Val R@1 0.9250 | Global R@1 0.9222 | Gate 0.1760
+
+Seed: 123
+  Epoch 001 | Train loss 2.6504 | Val R@1 0.8861 | MRR 0.9227 | Gate 0.1004
+  Epoch 010 | Train loss 2.5002 | Val R@1 0.8917 | MRR 0.9265 | Gate 0.1049
+  Epoch 020 | Train loss 2.3463 | Val R@1 0.8917 | MRR 0.9273 | Gate 0.1115
+  Epoch 030 | Train loss 2.2624 | Val R@1 0.9056 | MRR 0.9363 | Gate 0.1185
+  Epoch 040 | Train loss 2.1848 | Val R@1 0.9111 | MRR 0.9413 | Gate 0.1259
+  Epoch 050 | Train loss 2.1236 | Val R@1 0.9111 | MRR 0.9427 | Gate 0.1335
+  Epoch 060 | Train loss 2.0616 | Val R@1 0.9222 | MRR 0.9486 | Gate 0.1415
+  Epoch 070 | Train loss 2.0001 | Val R@1 0.9194 | MRR 0.9486 | Gate 0.1498
+  Epoch 080 | Train loss 1.9325 | Val R@1 0.9306 | MRR 0.9548 | Gate 0.1585
+  Epoch 090 | Train loss 1.8722 | Val R@1 0.9278 | MRR 0.9548 | Gate 0.1678
+  Epoch 100 | Train loss 1.8052 | Val R@1 0.9306 | MRR 0.9570 | Gate 0.1775
+  Best epoch: 99 | Val R@1 0.9389 | Global R@1 0.9361 | Gate 0.1765
+
+Seed: 2026
+  Epoch 001 | Train loss 2.6520 | Val R@1 0.8889 | MRR 0.9242 | Gate 0.1002
+  Epoch 010 | Train loss 2.5293 | Val R@1 0.8944 | MRR 0.9275 | Gate 0.1046
+  Epoch 020 | Train loss 2.3638 | Val R@1 0.8917 | MRR 0.9269 | Gate 0.1112
+  Epoch 030 | Train loss 2.2689 | Val R@1 0.9111 | MRR 0.9391 | Gate 0.1184
+  Epoch 040 | Train loss 2.1983 | Val R@1 0.9028 | MRR 0.9356 | Gate 0.1258
+  Epoch 050 | Train loss 2.1381 | Val R@1 0.9028 | MRR 0.9354 | Gate 0.1335
+  Epoch 060 | Train loss 2.0684 | Val R@1 0.9056 | MRR 0.9394 | Gate 0.1416
+  Epoch 070 | Train loss 2.0222 | Val R@1 0.9056 | MRR 0.9415 | Gate 0.1501
+  Epoch 080 | Train loss 1.9443 | Val R@1 0.9194 | MRR 0.9487 | Gate 0.1589
+  Epoch 090 | Train loss 1.8818 | Val R@1 0.9167 | MRR 0.9491 | Gate 0.1683
+  Epoch 100 | Train loss 1.8180 | Val R@1 0.9167 | MRR 0.9483 | Gate 0.1780
+  Best epoch: 95 | Val R@1 0.9222 | Global R@1 0.9194 | Gate 0.1731
+
+[4] Saving model results...
+
+======================================================================
+PHASE 4.2.11 - GATED RESIDUAL TRAINING COMPLETED
+======================================================================
+Seed 42 | Best epoch 98 | Val R@1 0.9250 | Global R@1 0.9222 | Gate 0.1760
+Seed 123 | Best epoch 99 | Val R@1 0.9389 | Global R@1 0.9361 | Gate 0.1765
+Seed 2026 | Best epoch 95 | Val R@1 0.9222 | Global R@1 0.9194 | Gate 0.1731
+
+Mean validation R@1: 0.9287
+Mean global validation R@1: 0.9259
+Original GraphSAGE R@1: 0.9741
+Region-random GraphSAGE R@1: 0.9796
+Difference vs original GraphSAGE: -4.54 pp
+Mean learned gate: 0.1752
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/26_gated_residual_training_history.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/26_gated_residual_validation_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/26_gated_residual_region_metrics.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/26_gated_residual_graphsage_report.json
+
+Checkpoints:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/26_gated_residual_graphsage/gated_residual_seed_42.pt
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/26_gated_residual_graphsage/gated_residual_seed_123.pt
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/26_gated_residual_graphsage/gated_residual_seed_2026.pt
+
+Test partition: NOT EVALUATED
+Historical experiments: UNCHANGED
+Explicit stability loss: NOT YET ADDED
+XAI: PLANNED
+
+STEP 4.2.11 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/27_diagnose_residual_gate.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.12 - RESIDUAL GATE DIAGNOSTICS
+======================================================================
+
+[1] Verifying frozen model sources...
+
+[2] Preparing validation-only inputs...
+Validation region pairs: 10
+Candidate positions: 360
+Test regions: NOT EVALUATED
+
+[3] Evaluating gate sensitivity...
+  Seed 42 | fixed_0              | Within 0.8833 | Global 0.8833
+  Seed 42 | fixed_0.1            | Within 0.9139 | Global 0.9139
+  Seed 42 | fixed_0.25           | Within 0.9361 | Global 0.9361
+  Seed 42 | fixed_0.5            | Within 0.9417 | Global 0.9417
+  Seed 42 | fixed_1              | Within 0.9333 | Global 0.9333
+  Seed 42 | fixed_2              | Within 0.9278 | Global 0.9278
+  Seed 42 | fixed_4              | Within 0.9278 | Global 0.9250
+  Seed 42 | checkpoint_learned   | Within 0.9250 | Global 0.9222
+  Seed 42 | graph_only           | Within 0.9333 | Global 0.9250
+  Seed 123 | fixed_0              | Within 0.8833 | Global 0.8833
+  Seed 123 | fixed_0.1            | Within 0.9167 | Global 0.9167
+  Seed 123 | fixed_0.25           | Within 0.9306 | Global 0.9306
+  Seed 123 | fixed_0.5            | Within 0.9222 | Global 0.9222
+  Seed 123 | fixed_1              | Within 0.9250 | Global 0.9250
+  Seed 123 | fixed_2              | Within 0.9194 | Global 0.9194
+  Seed 123 | fixed_4              | Within 0.9194 | Global 0.9194
+  Seed 123 | checkpoint_learned   | Within 0.9389 | Global 0.9361
+  Seed 123 | graph_only           | Within 0.9250 | Global 0.9222
+  Seed 2026 | fixed_0              | Within 0.8833 | Global 0.8833
+  Seed 2026 | fixed_0.1            | Within 0.9111 | Global 0.9083
+  Seed 2026 | fixed_0.25           | Within 0.9250 | Global 0.9222
+  Seed 2026 | fixed_0.5            | Within 0.9361 | Global 0.9333
+  Seed 2026 | fixed_1              | Within 0.9250 | Global 0.9194
+  Seed 2026 | fixed_2              | Within 0.9222 | Global 0.9167
+  Seed 2026 | fixed_4              | Within 0.9222 | Global 0.9167
+  Seed 2026 | checkpoint_learned   | Within 0.9222 | Global 0.9194
+  Seed 2026 | graph_only           | Within 0.9222 | Global 0.9167
+
+[4] Aggregating diagnostic findings...
+
+======================================================================
+PHASE 4.2.12 - GATE DIAGNOSTICS COMPLETED
+======================================================================
+checkpoint_learned   | Within R@1 0.9287 | Global R@1 0.9259
+fixed_0              | Within R@1 0.8833 | Global R@1 0.8833
+fixed_0.1            | Within R@1 0.9139 | Global R@1 0.9130
+fixed_0.25           | Within R@1 0.9306 | Global R@1 0.9296
+fixed_0.5            | Within R@1 0.9333 | Global R@1 0.9324
+fixed_1              | Within R@1 0.9278 | Global R@1 0.9259
+fixed_2              | Within R@1 0.9231 | Global R@1 0.9213
+fixed_4              | Within R@1 0.9231 | Global R@1 0.9204
+graph_only           | Within R@1 0.9269 | Global R@1 0.9213
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/27_residual_gate_sensitivity.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/27_residual_gate_diagnostics.json
+
+Training: NO
+Checkpoints modified: NO
+Test partition evaluated: NO
+XAI: PLANNED
+
+STEP 4.2.12 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/training/28_train_residual_gate_init05.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.13 - RESIDUAL GATE INITIALIZATION 0.5
+======================================================================
+
+[1] Verifying source experiments...
+Graph tensor: (120, 36, 384)
+Device: cuda
+Original initial gate: 0.1
+New initial gate: 0.5
+
+[2] Preparing train/validation partitions...
+Training pairs: 40
+Validation pairs: 10
+Test pairs: 10 (reserved)
+
+[3] Training independent seeds...
+
+Seed: 42
+  Epoch 001 | Train loss 2.3154 | Val R@1 0.9000 | MRR 0.9362 | Gate 0.5004
+  Epoch 010 | Train loss 1.1049 | Val R@1 0.9361 | MRR 0.9634 | Gate 0.5124
+  Epoch 020 | Train loss 0.6704 | Val R@1 0.9472 | MRR 0.9701 | Gate 0.5255
+  Epoch 030 | Train loss 0.4755 | Val R@1 0.9583 | MRR 0.9771 | Gate 0.5379
+  Epoch 040 | Train loss 0.3637 | Val R@1 0.9528 | MRR 0.9728 | Gate 0.5492
+  Epoch 050 | Train loss 0.3087 | Val R@1 0.9556 | MRR 0.9743 | Gate 0.5598
+  Epoch 060 | Train loss 0.2268 | Val R@1 0.9639 | MRR 0.9785 | Gate 0.5693
+  Early stopping at epoch 61
+  Best epoch 41 | Val R@1 0.9694 | Global R@1 0.9694 | Gate 0.5503
+
+Seed: 123
+  Epoch 001 | Train loss 2.2764 | Val R@1 0.9083 | MRR 0.9412 | Gate 0.5005
+  Epoch 010 | Train loss 1.1645 | Val R@1 0.9361 | MRR 0.9633 | Gate 0.5125
+  Epoch 020 | Train loss 0.6969 | Val R@1 0.9417 | MRR 0.9674 | Gate 0.5256
+  Epoch 030 | Train loss 0.4722 | Val R@1 0.9472 | MRR 0.9697 | Gate 0.5378
+  Epoch 040 | Train loss 0.3594 | Val R@1 0.9528 | MRR 0.9743 | Gate 0.5491
+  Epoch 050 | Train loss 0.2978 | Val R@1 0.9583 | MRR 0.9775 | Gate 0.5595
+  Epoch 060 | Train loss 0.2236 | Val R@1 0.9639 | MRR 0.9810 | Gate 0.5691
+  Epoch 070 | Train loss 0.2101 | Val R@1 0.9611 | MRR 0.9789 | Gate 0.5778
+  Early stopping at epoch 71
+  Best epoch 51 | Val R@1 0.9722 | Global R@1 0.9722 | Gate 0.5605
+
+Seed: 2026
+  Epoch 001 | Train loss 2.3079 | Val R@1 0.9000 | MRR 0.9341 | Gate 0.5003
+  Epoch 010 | Train loss 1.2934 | Val R@1 0.9417 | MRR 0.9651 | Gate 0.5125
+  Epoch 020 | Train loss 0.7190 | Val R@1 0.9528 | MRR 0.9704 | Gate 0.5256
+  Epoch 030 | Train loss 0.4885 | Val R@1 0.9639 | MRR 0.9786 | Gate 0.5379
+  Epoch 040 | Train loss 0.3749 | Val R@1 0.9472 | MRR 0.9699 | Gate 0.5494
+  Epoch 050 | Train loss 0.2933 | Val R@1 0.9556 | MRR 0.9753 | Gate 0.5599
+  Epoch 060 | Train loss 0.2423 | Val R@1 0.9611 | MRR 0.9779 | Gate 0.5695
+  Epoch 070 | Train loss 0.2050 | Val R@1 0.9583 | MRR 0.9767 | Gate 0.5783
+  Epoch 080 | Train loss 0.1626 | Val R@1 0.9556 | MRR 0.9755 | Gate 0.5866
+  Epoch 090 | Train loss 0.1331 | Val R@1 0.9639 | MRR 0.9795 | Gate 0.5938
+  Early stopping at epoch 99
+  Best epoch 79 | Val R@1 0.9667 | Global R@1 0.9667 | Gate 0.5858
+
+[4] Saving controlled experiment...
+
+======================================================================
+PHASE 4.2.13 - GATE INIT 0.5 COMPLETED
+======================================================================
+Seed 42 | Epoch 41 | Val R@1 0.9694 | Global R@1 0.9694 | Gate 0.5503
+Seed 123 | Epoch 51 | Val R@1 0.9722 | Global R@1 0.9722 | Gate 0.5605
+Seed 2026 | Epoch 79 | Val R@1 0.9667 | Global R@1 0.9667 | Gate 0.5858
+
+New mean validation R@1: 0.9694
+Original gate 0.1 mean: 0.9287
+Improvement: +4.07 pp
+Difference vs original GraphSAGE: -0.46 pp
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/28_gate_init05_training_history.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/28_gate_init05_validation_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/28_gate_init05_report.json
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/28_residual_gate_init05/gate_init05_seed_42.pt
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/28_residual_gate_init05/gate_init05_seed_123.pt
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/28_residual_gate_init05/gate_init05_seed_2026.pt
+
+Previous experiments: UNCHANGED
+Test partition: NOT EVALUATED
+XAI: PLANNED
+
+STEP 4.2.13 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/29_audit_representation_stability.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.14 - REPRESENTATION STABILITY AUDIT
+======================================================================
+
+[1] Verifying provenance...
+
+[2] Preparing paired validation graphs...
+Validation region pairs: 10
+Matched tile positions: 360
+Test partition: RESERVED
+
+[3] Evaluating frozen and trained models...
+  Frozen DINOv2      seed=none: Global R@1=0.8833 Matched cosine=0.9619
+  MLP                seed=42: Global R@1=0.9194 Matched cosine=0.7537
+  MLP                seed=123: Global R@1=0.9417 Matched cosine=0.7833
+  MLP                seed=2026: Global R@1=0.9278 Matched cosine=0.7917
+  GraphSAGE          seed=42: Global R@1=0.9806 Matched cosine=0.9059
+  GraphSAGE          seed=123: Global R@1=0.9667 Matched cosine=0.8787
+  GraphSAGE          seed=2026: Global R@1=0.9750 Matched cosine=0.8672
+  ResidualGate05     seed=42: Global R@1=0.9694 Matched cosine=0.8890
+  ResidualGate05     seed=123: Global R@1=0.9722 Matched cosine=0.8860
+  ResidualGate05     seed=2026: Global R@1=0.9667 Matched cosine=0.8818
+
+[4] Aggregating stability and diversity metrics...
+  Frozen DINOv2      | R@1 0.8833 | Cosine 0.9619 | Margin 0.0291 | Rank AT2 15.75
+  MLP                | R@1 0.9324 | Cosine 0.7762 | Margin 0.1714 | Rank AT2 19.16
+  GraphSAGE          | R@1 0.9741 | Cosine 0.8839 | Margin 0.0860 | Rank AT2 16.78
+  ResidualGate05     | R@1 0.9694 | Cosine 0.8856 | Margin 0.1261 | Rank AT2 17.21
+
+[5] Saving reproducible audit outputs...
+
+======================================================================
+PHASE 4.2.14 - STABILITY AUDIT COMPLETED
+======================================================================
+Models evaluated: 4
+Validation regions: 10
+Training performed: NO
+Test evaluated: NO
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/29_representation_region_metrics.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/29_representation_stability_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/29_representation_stability_report.json
+
+Previous checkpoints: UNCHANGED
+Original images: UNCHANGED
+XAI: PLANNED
+
+STEP 4.2.14 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/30_audit_topology_robustness.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.15 - TOPOLOGY ROBUSTNESS AUDIT
+======================================================================
+
+[1] Verifying experiment sources...
+
+[2] Loading paired validation regions...
+Validation regions: 10
+Randomization repetitions: 5
+Test partition: NOT EVALUATED
+
+[3] Evaluating topology interventions...
+  GraphSAGE, seed 42: completed
+  GraphSAGE, seed 123: completed
+  GraphSAGE, seed 2026: completed
+  ResidualGate05, seed 42: completed
+  ResidualGate05, seed 123: completed
+  ResidualGate05, seed 2026: completed
+
+[4] Verifying baseline reproduction...
+Original checkpoint performance: VERIFIED
+
+[5] Aggregating robustness statistics...
+  GraphSAGE        | original                    | R@1 0.9741 | Delta +0.00 pp
+  GraphSAGE        | shared_random               | R@1 0.9741 | Delta +0.00 pp
+  GraphSAGE        | scanner_discordant_random   | R@1 0.5439 | Delta -43.02 pp
+  ResidualGate05   | original                    | R@1 0.9694 | Delta +0.00 pp
+  ResidualGate05   | shared_random               | R@1 0.9689 | Delta -0.06 pp
+  ResidualGate05   | scanner_discordant_random   | R@1 0.7809 | Delta -18.85 pp
+
+[6] Saving robustness audit...
+
+======================================================================
+PHASE 4.2.15 - TOPOLOGY ROBUSTNESS COMPLETED
+======================================================================
+GraphSAGE | original | R@1 0.9741 | Difference +0.00 pp
+GraphSAGE | shared_random | R@1 0.9741 | Difference +0.00 pp
+GraphSAGE | scanner_discordant_random | R@1 0.5439 | Difference -43.02 pp
+ResidualGate05 | original | R@1 0.9694 | Difference +0.00 pp
+ResidualGate05 | shared_random | R@1 0.9689 | Difference -0.06 pp
+ResidualGate05 | scanner_discordant_random | R@1 0.7809 | Difference -18.85 pp
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/30_topology_robustness_by_region.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/30_topology_robustness_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/30_topology_robustness_report.json
+
+Training performed: NO
+Existing checkpoints modified: NO
+Test partition evaluated: NO
+XAI: PLANNED
+
+STEP 4.2.15 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/training/31_train_topology_consistent_residual.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.16 - TOPOLOGY-CONSISTENT RESIDUAL GNN
+======================================================================
+
+[1] Verifying experiment provenance...
+
+[2] Preparing spatial graph pairs...
+Training pairs: 40
+Validation pairs: 10
+Test pairs: 10, reserved
+Device: cuda
+Topology loss weight: 1.0
+
+[3] Training topology-consistent models...
+
+Seed: 42
+  Epoch 001 | Train total 2.3216 | Topology 0.0050 | Val R@1 0.9000 | Gate 0.5003
+  Epoch 010 | Train total 1.1967 | Topology 0.0431 | Val R@1 0.9444 | Gate 0.5124
+  Epoch 020 | Train total 0.7382 | Topology 0.0715 | Val R@1 0.9500 | Gate 0.5250
+  Epoch 030 | Train total 0.5293 | Topology 0.0764 | Val R@1 0.9444 | Gate 0.5367
+  Epoch 040 | Train total 0.4338 | Topology 0.0752 | Val R@1 0.9528 | Gate 0.5475
+  Epoch 050 | Train total 0.3617 | Topology 0.0752 | Val R@1 0.9500 | Gate 0.5575
+  Epoch 060 | Train total 0.3045 | Topology 0.0730 | Val R@1 0.9444 | Gate 0.5665
+  Epoch 070 | Train total 0.2571 | Topology 0.0700 | Val R@1 0.9500 | Gate 0.5746
+  Epoch 080 | Train total 0.2507 | Topology 0.0633 | Val R@1 0.9500 | Gate 0.5826
+  Epoch 090 | Train total 0.2104 | Topology 0.0607 | Val R@1 0.9639 | Gate 0.5899
+  Epoch 100 | Train total 0.1811 | Topology 0.0579 | Val R@1 0.9528 | Gate 0.5965
+  Best epoch 90 | Normal R@1 0.9639 | Discordant R@1 0.8883 | Gate 0.5899
+
+Seed: 123
+  Epoch 001 | Train total 2.2826 | Topology 0.0058 | Val R@1 0.9028 | Gate 0.5004
+  Epoch 010 | Train total 1.2435 | Topology 0.0368 | Val R@1 0.9417 | Gate 0.5125
+  Epoch 020 | Train total 0.7540 | Topology 0.0670 | Val R@1 0.9528 | Gate 0.5251
+  Epoch 030 | Train total 0.5651 | Topology 0.0737 | Val R@1 0.9500 | Gate 0.5368
+  Epoch 040 | Train total 0.4426 | Topology 0.0738 | Val R@1 0.9472 | Gate 0.5477
+  Epoch 050 | Train total 0.3616 | Topology 0.0735 | Val R@1 0.9472 | Gate 0.5576
+  Early stopping at epoch 58
+  Best epoch 38 | Normal R@1 0.9583 | Discordant R@1 0.8356 | Gate 0.5456
+
+Seed: 2026
+  Epoch 001 | Train total 2.3131 | Topology 0.0034 | Val R@1 0.9000 | Gate 0.5003
+  Epoch 010 | Train total 1.3548 | Topology 0.0223 | Val R@1 0.9389 | Gate 0.5124
+  Epoch 020 | Train total 0.7758 | Topology 0.0652 | Val R@1 0.9306 | Gate 0.5251
+  Epoch 030 | Train total 0.5486 | Topology 0.0759 | Val R@1 0.9444 | Gate 0.5368
+  Epoch 040 | Train total 0.4441 | Topology 0.0761 | Val R@1 0.9500 | Gate 0.5476
+  Epoch 050 | Train total 0.3500 | Topology 0.0762 | Val R@1 0.9528 | Gate 0.5573
+  Early stopping at epoch 57
+  Best epoch 37 | Normal R@1 0.9583 | Discordant R@1 0.8339 | Gate 0.5445
+
+[4] Comparing stability and retrieval...
+Previous residual normal R@1: 0.9694
+New topology-consistent normal R@1: 0.9602
+Previous scanner-discordant R@1: 0.7809
+New scanner-discordant R@1: 0.8526
+
+[5] Saving experiment artifacts...
+
+======================================================================
+PHASE 4.2.16 - TOPOLOGY-CONSISTENT TRAINING COMPLETED
+======================================================================
+Seed 42 | Epoch 90 | Normal R@1 0.9639 | Discordant R@1 0.8883 | Gate 0.5899
+Seed 123 | Epoch 38 | Normal R@1 0.9583 | Discordant R@1 0.8356 | Gate 0.5456
+Seed 2026 | Epoch 37 | Normal R@1 0.9583 | Discordant R@1 0.8339 | Gate 0.5445
+
+Mean normal validation R@1: 0.9602
+Mean scanner-discordant R@1: 0.8526
+Normal gain vs prior residual: -0.93 pp
+Discordant gain vs prior residual: +7.17 pp
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/31_topology_consistent_history.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/31_topology_consistent_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/31_topology_consistent_robustness.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/31_topology_consistent_report.json
+
+Checkpoints:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/31_topology_consistent_residual/topology_consistent_seed_42.pt
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/31_topology_consistent_residual/topology_consistent_seed_123.pt
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/checkpoints/31_topology_consistent_residual/topology_consistent_seed_2026.pt
+
+Historical experiments: UNCHANGED
+Held-out test: NOT EVALUATED
+XAI: PLANNED
+
+STEP 4.2.16 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/32_audit_paired_robustness.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.17 - PAIRED ROBUSTNESS AUDIT
+======================================================================
+
+[1] Verifying historical robustness outputs...
+
+[2] Matching seed, region, and repetition...
+Paired measurements: 150
+Distinct regions: 10
+Test partition: NOT EVALUATED
+
+[3] Computing seed-level improvements...
+  Seed 42 | Baseline 0.7839 | Consistency 0.8883 | Difference +10.44 pp
+  Seed 123 | Baseline 0.7917 | Consistency 0.8356 | Difference +4.39 pp
+  Seed 2026 | Baseline 0.7672 | Consistency 0.8339 | Difference +6.67 pp
+
+[4] Computing region-level differences...
+Regions improved: 10
+Regions worsened: 0
+Regions unchanged: 0
+
+[5] Estimating region-level uncertainty...
+Overall paired improvement: +7.17 pp
+Descriptive 95% region bootstrap interval: [+5.31, +9.00] pp
+
+[6] Saving paired audit outputs...
+
+======================================================================
+PHASE 4.2.17 - PAIRED AUDIT COMPLETED
+======================================================================
+Baseline discordant R@1: 0.7809
+Consistency discordant R@1: 0.8526
+Paired improvement: +7.17 pp
+Descriptive bootstrap interval: [+5.31, +9.00] pp
+Improved / worsened / unchanged regions: 10 0 0
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/32_paired_robustness_differences.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/32_robustness_by_region.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/32_robustness_by_seed.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/32_paired_robustness_audit.json
+
+Training: NO
+Checkpoints modified: NO
+Test evaluated: NO
+XAI: PLANNED
+
+STEP 4.2.17 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/33_audit_representation_preservation.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.18 - REPRESENTATION PRESERVATION AUDIT
+======================================================================
+
+[1] Validating provenance...
+
+[2] Loading validation regions...
+Validation regions: 10
+Seeds: (42, 123, 2026)
+Perturbation repetitions: 5
+Test regions: RESERVED
+
+[3] Evaluating saved checkpoints...
+  ResidualGate05, seed 42 | Normal 0.9694 | Discordant 0.7839
+  ResidualGate05, seed 123 | Normal 0.9722 | Discordant 0.7917
+  ResidualGate05, seed 2026 | Normal 0.9667 | Discordant 0.7672
+  TopologyConsistentResidual, seed 42 | Normal 0.9639 | Discordant 0.8883
+  TopologyConsistentResidual, seed 123 | Normal 0.9583 | Discordant 0.8356
+  TopologyConsistentResidual, seed 2026 | Normal 0.9583 | Discordant 0.8339
+
+[4] Verifying robustness reproduction...
+Normal and discordant retrieval: VERIFIED
+
+[5] Aggregating representation statistics...
+  ResidualGate05: Normal 0.9694 | Discordant 0.7809 | Margin 0.1261 | Rank 17.21 | AT2 stability 0.9088
+  TopologyConsistentResidual: Normal 0.9602 | Discordant 0.8526 | Margin 0.1196 | Rank 16.79 | AT2 stability 0.9443
+
+[6] Saving representation audit...
+
+======================================================================
+PHASE 4.2.18 - REPRESENTATION AUDIT COMPLETED
+======================================================================
+ResidualGate05 | Normal R@1 0.9694 | Discordant R@1 0.7809 | AT2 rank 17.21 | AT2 topology cosine 0.9088
+TopologyConsistentResidual | Normal R@1 0.9602 | Discordant R@1 0.8526 | AT2 rank 16.79 | AT2 topology cosine 0.9443
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/33_representation_preservation_detail.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/33_representation_preservation_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/33_representation_preservation_report.json
+
+Training: NO
+Checkpoints modified: NO
+Test evaluated: NO
+XAI: PLANNED
+
+STEP 4.2.18 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/34_audit_neighbor_dependence.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.19 - NEIGHBORHOOD DEPENDENCE AUDIT
+======================================================================
+
+[1] Verifying sources...
+
+[2] Preparing validation pairs...
+Validation regions: 10
+Seeds: (42, 123, 2026)
+Perturbation repetitions: 5
+Test: RESERVED
+
+[3] Evaluating saved models...
+  ResidualGate05, seed 42: completed
+  ResidualGate05, seed 123: completed
+  ResidualGate05, seed 2026: completed
+  TopologyConsistentResidual, seed 42: completed
+  TopologyConsistentResidual, seed 123: completed
+  TopologyConsistentResidual, seed 2026: completed
+
+[4] Checking prior results...
+Normal and discordant retrieval: VERIFIED
+
+[5] Summarizing neighborhood dependence...
+  ResidualGate05: Normal 0.9694 | No neighbors 0.8963 | Discordant 0.7809 | Removal penalty +7.31 pp
+  TopologyConsistentResidual: Normal 0.9602 | No neighbors 0.9019 | Discordant 0.8526 | Removal penalty +5.83 pp
+
+[6] Saving diagnostic outputs...
+
+======================================================================
+PHASE 4.2.19 - NEIGHBOR AUDIT COMPLETED
+======================================================================
+ResidualGate05 | normal_spatial | R@1 0.9694 | Final-identity cosine 0.8271
+ResidualGate05 | neighbors_disabled | R@1 0.8963 | Final-identity cosine 0.8404
+ResidualGate05 | scanner_discordant_random | R@1 0.7809 | Final-identity cosine 0.8274
+TopologyConsistentResidual | normal_spatial | R@1 0.9602 | Final-identity cosine 0.8310
+TopologyConsistentResidual | neighbors_disabled | R@1 0.9019 | Final-identity cosine 0.8438
+TopologyConsistentResidual | scanner_discordant_random | R@1 0.8526 | Final-identity cosine 0.8311
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/34_neighbor_dependence_detail.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/34_neighbor_dependence_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/34_neighbor_dependence_report.json
+
+Training: NO
+Existing checkpoints modified: NO
+Held-out test evaluated: NO
+XAI: PLANNED
+
+STEP 4.2.19 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/explainable_ai/35_explain_structural_importance.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.20 - STRUCTURAL EXPLAINABILITY AUDIT
+======================================================================
+
+[1] Verifying experiment sources...
+
+[2] Loading validation graph pairs...
+Validation pairs: 10
+Nodes per graph: 36
+Structural interventions per scanner: 36
+Device: cuda
+Test partition: NOT EVALUATED
+
+[3] Computing structural attributions...
+  ResidualGate05, seed 42 | Normal R@1 0.9694 | Attribution complete
+  ResidualGate05, seed 123 | Normal R@1 0.9722 | Attribution complete
+  ResidualGate05, seed 2026 | Normal R@1 0.9667 | Attribution complete
+  TopologyConsistentResidual, seed 42 | Normal R@1 0.9639 | Attribution complete
+  TopologyConsistentResidual, seed 123 | Normal R@1 0.9583 | Attribution complete
+  TopologyConsistentResidual, seed 2026 | Normal R@1 0.9583 | Attribution complete
+
+[4] Aggregating XAI results...
+  ResidualGate05 | Rank correlation 0.3865 | Top-5 overlap 1.83/5 | AT2 fidelity gap 0.2748
+  TopologyConsistentResidual | Rank correlation 0.3265 | Top-5 overlap 1.80/5 | AT2 fidelity gap 0.2103
+
+[5] Saving explanation artifacts...
+
+======================================================================
+PHASE 4.2.20 - STRUCTURAL XAI COMPLETED
+======================================================================
+ResidualGate05 | Mean rank correlation 0.3865 | Top-5 overlap 1.83/5
+TopologyConsistentResidual | Mean rank correlation 0.3265 | Top-5 overlap 1.80/5
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/35_structural_node_importance.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/35_structural_explanation_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/35_structural_xai_report.json
+
+Training performed: NO
+Existing checkpoints modified: NO
+Held-out test evaluated: NO
+XAI stage: STARTED
+
+STEP 4.2.20 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/explainable_ai/36_audit_degree_controlled_xai
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.21 - DEGREE-CONTROLLED XAI AUDIT
+======================================================================
+
+[1] Verifying source explanations...
+
+[2] Reconstructing paired scanner attributions...
+Degree groups: {np.int64(2): 4, np.int64(3): 16, np.int64(4): 16}
+
+[3] Computing degree-controlled null distributions...
+  ResidualGate05 | Observed rho 0.3865 | Null rho 0.0279 | Excess rho +0.3586
+  TopologyConsistentResidual | Observed rho 0.3265 | Null rho 0.0239 | Excess rho +0.3026
+
+[4] Comparing models by validation region...
+
+[5] Computing descriptive uncertainty intervals...
+  observed_spearman | Difference -0.0600 | Descriptive interval [-0.1102, -0.0016]
+  excess_spearman | Difference -0.0560 | Descriptive interval [-0.1144, +0.0063]
+  observed_top5_overlap | Difference -0.0333 | Descriptive interval [-0.3667, +0.3000]
+  excess_top5_overlap | Difference -0.0221 | Descriptive interval [-0.3491, +0.3488]
+
+[6] Saving degree-aware XAI audit...
+
+======================================================================
+PHASE 4.2.21 - DEGREE-CONTROLLED XAI COMPLETED
+======================================================================
+ResidualGate05 | Observed rho 0.3865 | Degree-null rho 0.0279 | Excess rho +0.3586 | Excess top-5 overlap +1.090
+TopologyConsistentResidual | Observed rho 0.3265 | Degree-null rho 0.0239 | Excess rho +0.3026 | Excess top-5 overlap +1.068
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/36_degree_controlled_xai.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/36_paired_xai_by_region.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/36_degree_controlled_xai_report.json
+
+Training: NO
+Model inference: NO
+Existing checkpoints: UNCHANGED
+Test partition: NOT EVALUATED
+XAI: IN PROGRESS
+
+STEP 4.2.21 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/explainable_ai/37_integrated_gradients_feature_xai.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.22 - INTEGRATED GRADIENTS FEATURE XAI
+======================================================================
+
+[1] Verifying model and XAI sources...
+
+[2] Preparing paired validation features...
+Validation region pairs: 10
+IG integration steps: 32
+Random fidelity controls: 20
+Test: RESERVED
+
+[3] Computing Integrated Gradients...
+  ResidualGate05, seed 42 | R@1 0.9694 | IG completed
+  ResidualGate05, seed 123 | R@1 0.9722 | IG completed
+  ResidualGate05, seed 2026 | R@1 0.9667 | IG completed
+  TopologyConsistentResidual, seed 42 | R@1 0.9639 | IG completed
+  TopologyConsistentResidual, seed 123 | R@1 0.9583 | IG completed
+  TopologyConsistentResidual, seed 2026 | R@1 0.9583 | IG completed
+
+[4] Aggregating feature attribution metrics...
+  ResidualGate05 | Node rho 0.3222308022308022 | Top-5 overlap 1.17 | Feature cosine 0.9709138544938767
+  TopologyConsistentResidual | Node rho 0.33357357357357353 | Top-5 overlap 1.63 | Feature cosine 0.9724423708681711
+
+[5] Saving Integrated Gradients results...
+
+======================================================================
+PHASE 4.2.22 - INTEGRATED GRADIENTS COMPLETED
+======================================================================
+ResidualGate05 | Node correlation 0.3222308022308022 | Top-5 overlap 1.17 | Channel cosine 0.9709138544938767
+TopologyConsistentResidual | Node correlation 0.33357357357357353 | Top-5 overlap 1.63 | Channel cosine 0.9724423708681711
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/37_ig_node_attributions.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/37_ig_feature_channels.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/37_ig_explanation_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/37_integrated_gradients_report.json
+
+Training: NO
+Previous checkpoints: UNCHANGED
+Test partition: NOT EVALUATED
+XAI: IN PROGRESS
+
+STEP 4.2.22 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/explainable_ai/38_audit_integrated_gradients.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.23 - INTEGRATED GRADIENTS RELIABILITY
+======================================================================
+
+[1] Verifying saved Integrated Gradients outputs...
+
+[2] Reconstructing matched scanner profiles...
+Validated model-seed-region units: 60
+Degree groups: {2: 4, 3: 16, 4: 16}
+
+[3] Checking explanation agreement against degree nulls...
+Attribution agreement reproduction: VERIFIED
+
+[4] Auditing completeness and deletion fidelity...
+  ResidualGate05 | Excess node rho +0.2710 | Excess top-5 +0.403
+    AT2 fidelity excess -0.0545 | GT450 fidelity excess -0.0537
+    Mean absolute completeness error: AT2 1.701085, GT450 1.686539
+  TopologyConsistentResidual | Excess node rho +0.2993 | Excess top-5 +0.931
+    AT2 fidelity excess -0.0433 | GT450 fidelity excess -0.0357
+    Mean absolute completeness error: AT2 1.704325, GT450 1.671143
+
+[5] Computing paired model comparisons...
+  observed_node_spearman | Difference +0.0113 | Interval [-0.0563, +0.0823]
+  excess_node_spearman | Difference +0.0282 | Interval [-0.0402, +0.0957]
+  observed_top5_overlap | Difference +0.4667 | Interval [-0.0000, +0.9667]
+  excess_top5_overlap | Difference +0.5279 | Interval [+0.0245, +1.0085]
+  channel_importance_cosine | Difference +0.0015 | Interval [+0.0007, +0.0026]
+  at2_fidelity_excess | Difference +0.0113 | Interval [-0.0115, +0.0347]
+  gt450_fidelity_excess | Difference +0.0180 | Interval [-0.0192, +0.0556]
+
+[6] Saving reliability audit...
+
+======================================================================
+PHASE 4.2.23 - IG RELIABILITY AUDIT COMPLETED
+======================================================================
+ResidualGate05 | Node rho 0.3222 | Excess rho +0.2710 | Top-5 overlap 1.17
+  AT2 fidelity excess -0.0545 | GT450 fidelity excess -0.0537
+TopologyConsistentResidual | Node rho 0.3336 | Excess rho +0.2993 | Top-5 overlap 1.63
+  AT2 fidelity excess -0.0433 | GT450 fidelity excess -0.0357
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/38_ig_reliability_detail.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/38_ig_paired_region_comparison.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/38_ig_reliability_report.json
+
+Training: NO
+Model inference: NO
+Checkpoints modified: NO
+Held-out test evaluated: NO
+XAI: IN PROGRESS
+
+STEP 4.2.23 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/explainable_ai/39_diagnose_ig_convergence.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.24 - IG CONVERGENCE DIAGNOSTIC
+======================================================================
+
+[1] Checking experiment provenance...
+
+[2] Preparing training-derived baselines...
+Validation region pairs: 10
+Integration steps: (32, 128, 256)
+Baseline conditions: ('zero', 'training_mean')
+Device: cuda
+Test partition: RESERVED
+
+[3] Running IG convergence comparisons...
+  ResidualGate05, seed 42: IG convergence completed
+  ResidualGate05, seed 123: IG convergence completed
+  ResidualGate05, seed 2026: IG convergence completed
+  TopologyConsistentResidual, seed 42: IG convergence completed
+  TopologyConsistentResidual, seed 123: IG convergence completed
+  TopologyConsistentResidual, seed 2026: IG convergence completed
+
+[4] Aggregating completeness statistics...
+  ResidualGate05             | zero          |  32 steps | Mean error 1.693812 | Median relative 0.5017
+  ResidualGate05             | zero          | 128 steps | Mean error 1.686522 | Median relative 0.5016
+  ResidualGate05             | zero          | 256 steps | Mean error 1.683460 | Median relative 0.5012
+  ResidualGate05             | training_mean |  32 steps | Mean error 0.000285 | Median relative 0.0001
+  ResidualGate05             | training_mean | 128 steps | Mean error 0.000018 | Median relative 0.0000
+  ResidualGate05             | training_mean | 256 steps | Mean error 0.000004 | Median relative 0.0000
+  TopologyConsistentResidual | zero          |  32 steps | Mean error 1.687734 | Median relative 0.5212
+  TopologyConsistentResidual | zero          | 128 steps | Mean error 1.675700 | Median relative 0.5180
+  TopologyConsistentResidual | zero          | 256 steps | Mean error 1.673280 | Median relative 0.5172
+  TopologyConsistentResidual | training_mean |  32 steps | Mean error 0.000400 | Median relative 0.0001
+  TopologyConsistentResidual | training_mean | 128 steps | Mean error 0.000025 | Median relative 0.0000
+  TopologyConsistentResidual | training_mean | 256 steps | Mean error 0.000006 | Median relative 0.0000
+
+[5] Saving convergence audit...
+
+======================================================================
+PHASE 4.2.24 - IG CONVERGENCE COMPLETED
+======================================================================
+ResidualGate05 | zero | 32 steps | Mean completeness error 1.693812
+ResidualGate05 | zero | 128 steps | Mean completeness error 1.686522
+ResidualGate05 | zero | 256 steps | Mean completeness error 1.683460
+ResidualGate05 | training_mean | 32 steps | Mean completeness error 0.000285
+ResidualGate05 | training_mean | 128 steps | Mean completeness error 0.000018
+ResidualGate05 | training_mean | 256 steps | Mean completeness error 0.000004
+TopologyConsistentResidual | zero | 32 steps | Mean completeness error 1.687734
+TopologyConsistentResidual | zero | 128 steps | Mean completeness error 1.675700
+TopologyConsistentResidual | zero | 256 steps | Mean completeness error 1.673280
+TopologyConsistentResidual | training_mean | 32 steps | Mean completeness error 0.000400
+TopologyConsistentResidual | training_mean | 128 steps | Mean completeness error 0.000025
+TopologyConsistentResidual | training_mean | 256 steps | Mean completeness error 0.000006
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/39_ig_convergence_detail.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/39_ig_convergence_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/39_ig_convergence_report.json
+
+Original 32-step IG: REPRODUCED
+Training: NO
+Checkpoints modified: NO
+Test evaluated: NO
+XAI: NUMERICAL VALIDITY UNDER REVIEW
+
+STEP 4.2.24 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/explainable_ai/40_corrected_integrated_gradients.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.25 - CORRECTED INTEGRATED GRADIENTS
+======================================================================
+
+[1] Verifying source provenance...
+
+[2] Loading train and validation partitions...
+Validation regions: 10
+Integration steps: 128
+Test partition: RESERVED
+
+[3] Computing validated feature attributions...
+  ResidualGate05, seed 42 | R@1 0.9694 | Corrected IG completed
+  ResidualGate05, seed 123 | R@1 0.9722 | Corrected IG completed
+  ResidualGate05, seed 2026 | R@1 0.9667 | Corrected IG completed
+  TopologyConsistentResidual, seed 42 | R@1 0.9639 | Corrected IG completed
+  TopologyConsistentResidual, seed 123 | R@1 0.9583 | Corrected IG completed
+  TopologyConsistentResidual, seed 2026 | R@1 0.9583 | Corrected IG completed
+
+[4] Aggregating model-level XAI results...
+  ResidualGate05 | Absolute node rho 0.6121 | Signed node rho 0.3920 | Signed AT2 fidelity excess +0.4497
+  TopologyConsistentResidual | Absolute node rho 0.5984 | Signed node rho 0.3028 | Signed AT2 fidelity excess +0.3535
+
+[5] Saving corrected IG artifacts...
+
+======================================================================
+PHASE 4.2.25 - CORRECTED IG COMPLETED
+======================================================================
+ResidualGate05 | Absolute rho 0.6121 | Signed rho 0.3920 | Absolute AT2 excess +0.3214 | Signed AT2 excess +0.4497
+TopologyConsistentResidual | Absolute rho 0.5984 | Signed rho 0.3028 | Absolute AT2 excess +0.2256 | Signed AT2 excess +0.3535
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/40_ig_node_importance.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/40_ig_channel_importance.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/40_ig_corrected_detail.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/40_ig_corrected_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/40_corrected_ig_report.json
+
+Phase 4.2.24 completeness: REPRODUCED
+Training performed: NO
+Checkpoints modified: NO
+Test evaluated: NO
+XAI: IN PROGRESS
+
+STEP 4.2.25 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/explainable_ai/41_audit_corrected_ig.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.26 - CORRECTED IG RELIABILITY
+======================================================================
+
+[1] Verifying corrected IG sources...
+
+[2] Reconstructing feature-node explanations...
+Validated region-seed-model units: 60
+Test: NOT EVALUATED
+
+[3] Evaluating degree-controlled agreement...
+Prior IG correlations and overlaps: VERIFIED
+
+[4] Comparing models and fidelity...
+  ResidualGate05 | Absolute rho 0.6121 | Excess rho +0.5122 | AT2 signed fidelity +0.4497
+  TopologyConsistentResidual | Absolute rho 0.5984 | Excess rho +0.5147 | AT2 signed fidelity +0.3535
+
+[5] Computing descriptive regional uncertainty...
+  absolute_excess_rho | Difference +0.0025 | Interval [-0.0340, +0.0467]
+  absolute_excess_overlap | Difference -0.1379 | Interval [-0.5943, +0.3528]
+  signed_excess_rho | Difference -0.0783 | Interval [-0.1582, -0.0004]
+  signed_excess_overlap | Difference -0.4410 | Interval [-0.8854, +0.0058]
+  at2_signed_positive_excess | Difference -0.0962 | Interval [-0.1419, -0.0508]
+  gt450_signed_positive_excess | Difference -0.0898 | Interval [-0.1193, -0.0642]
+
+[6] Saving corrected IG audit...
+
+======================================================================
+PHASE 4.2.26 - CORRECTED IG AUDIT COMPLETED
+======================================================================
+ResidualGate05 | Absolute rho 0.6121 | Excess rho +0.5122 | Signed AT2 fidelity +0.4497
+TopologyConsistentResidual | Absolute rho 0.5984 | Excess rho +0.5147 | Signed AT2 fidelity +0.3535
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/41_corrected_ig_degree_audit.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/41_corrected_ig_paired_regions.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/41_corrected_ig_audit_report.json
+
+Training: NO
+Model inference: NO
+Checkpoints modified: NO
+Held-out test evaluated: NO
+XAI: IN PROGRESS
+
+STEP 4.2.26 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/explainable_ai/42_learned_edge_mask_explanations.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.27 - LEARNED EDGE-MASK XAI
+======================================================================
+
+[1] Verifying source experiments...
+
+[2] Preparing validation-only graphs...
+Validation region pairs: 10
+Undirected edges: 60
+Mask optimization steps: 120
+Device: cuda
+Test: RESERVED
+
+[3] Optimizing edge explanations...
+  ResidualGate05, seed 42 | Normal R@1 0.9694 | Edge masks complete
+  ResidualGate05, seed 123 | Normal R@1 0.9722 | Edge masks complete
+  ResidualGate05, seed 2026 | Normal R@1 0.9667 | Edge masks complete
+  TopologyConsistentResidual, seed 42 | Normal R@1 0.9639 | Edge masks complete
+  TopologyConsistentResidual, seed 123 | Normal R@1 0.9583 | Edge masks complete
+  TopologyConsistentResidual, seed 2026 | Normal R@1 0.9583 | Edge masks complete
+
+[4] Aggregating learned-mask metrics...
+  ResidualGate05 | Edge rho 0.0427 | Top-12 overlap 1.97/12 | AT2 fidelity +0.0978
+  TopologyConsistentResidual | Edge rho 0.0328 | Top-12 overlap 2.23/12 | AT2 fidelity +0.0605
+
+[5] Saving edge-mask explanations...
+
+======================================================================
+PHASE 4.2.27 - LEARNED EDGE-MASK XAI COMPLETED
+======================================================================
+ResidualGate05 | Mask correlation 0.0427 | Top-12 overlap 1.97 | AT2 fidelity excess +0.0978
+TopologyConsistentResidual | Mask correlation 0.0328 | Top-12 overlap 2.23 | AT2 fidelity excess +0.0605
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/42_learned_edge_masks.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/42_edge_mask_explanation_detail.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/42_edge_mask_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/42_learned_edge_mask_report.json
+
+Model training: NO
+Existing checkpoints: UNCHANGED
+Held-out test: NOT EVALUATED
+XAI: IN PROGRESS
+
+STEP 4.2.27 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/explainable_ai/43_audit_learned_edge_masks.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.28 - LEARNED EDGE-MASK RELIABILITY AUDIT
+======================================================================
+
+[1] Verifying saved edge masks...
+
+[2] Reconstructing complete edge-mask profiles...
+Endpoint-degree edge types: {'(2, 3)': 8, '(3, 3)': 12, '(3, 4)': 16, '(4, 4)': 24}
+
+[3] Reproducing prior agreement results...
+Saved edge agreement: VERIFIED
+
+[4] Auditing selectivity and fidelity...
+  ResidualGate05 | Mean mask 0.4116 | Mask std 0.3365 | Excess top12 -0.404 | AT2 fidelity +0.0978
+  TopologyConsistentResidual | Mean mask 0.3626 | Mask std 0.3456 | Excess top12 -0.111 | AT2 fidelity +0.0605
+
+[5] Computing paired regional uncertainty...
+  excess_rho | Difference -0.0161 | Interval [-0.0836, +0.0497]
+  excess_top12_overlap | Difference +0.2925 | Interval [-0.3789, +0.9237]
+  at2_fidelity_excess | Difference -0.0373 | Interval [-0.0535, -0.0218]
+  gt450_fidelity_excess | Difference -0.0294 | Interval [-0.0407, -0.0197]
+  at2_objective_change | Difference -0.0106 | Interval [-0.0171, -0.0041]
+  gt450_objective_change | Difference -0.0060 | Interval [-0.0119, +0.0014]
+
+[6] Saving edge-mask reliability audit...
+
+======================================================================
+PHASE 4.2.28 - EDGE-MASK AUDIT COMPLETED
+======================================================================
+ResidualGate05 | Mean mask 0.4116 | Mask std 0.3365 | Observed overlap 1.97 | Edge-type excess overlap -0.404
+TopologyConsistentResidual | Mean mask 0.3626 | Mask std 0.3456 | Observed overlap 2.23 | Edge-type excess overlap -0.111
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/43_edge_mask_diagnostics.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/43_edge_mask_paired_audit.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/xai/43_edge_mask_region_comparison.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/43_edge_mask_reliability_report.json
+
+Training: NO
+Model inference: NO
+Checkpoints modified: NO
+Held-out test evaluated: NO
+XAI: RELIABILITY AUDIT
+
+STEP 4.2.28 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/44_synthesize_robustness_xai.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.2.29 - ROBUSTNESS AND XAI SYNTHESIS
+======================================================================
+
+[1] Checking historical research artifacts...
+
+[2] Verifying experimental coverage...
+
+[3] Consolidating retrieval and XAI findings...
+  ResidualGate05 | Normal R@1 0.9694 | Discordant R@1 0.7809 | IG AT2 fidelity +0.4497 | Edge AT2 fidelity +0.0978
+  TopologyConsistentResidual | Normal R@1 0.9602 | Discordant R@1 0.8526 | IG AT2 fidelity +0.3535 | Edge AT2 fidelity +0.0605
+
+[4] Recording paired uncertainty...
+  Discordant retrieval difference: +7.17 pp
+  Normal retrieval difference: -0.93 pp
+
+[5] Saving final exploratory synthesis...
+
+======================================================================
+PHASE 4.2.29 - SYNTHESIS COMPLETED
+======================================================================
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/44_research_synthesis.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/44_research_synthesis_report.json
+
+Training: NO
+Model inference: NO
+Checkpoints modified: NO
+Test evaluated: NO
+Next: PHASE 4.3 - PROTOCOL FREEZE
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/45_freeze_phase43_protocol.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.3.1 - FINAL EVALUATION PROTOCOL FREEZE
+======================================================================
+
+[1] Checking required research artifacts...
+Historical graph, protocol, and XAI reports: VERIFIED
+
+[2] Verifying model checkpoints...
+  ResidualGate05: 3 checkpoint hashes VERIFIED
+  TopologyConsistentResidual: 3 checkpoint hashes VERIFIED
+
+[3] Recording validation references...
+Validation references: VERIFIED
+
+[4] Constructing frozen test protocol...
+
+[5] Writing frozen protocol...
+
+======================================================================
+PHASE 4.3.1 - PROTOCOL FREEZE COMPLETED
+======================================================================
+Frozen protocol: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/configs/45_phase43_frozen_evaluation_protocol.json
+Protocol SHA256: e6c8516e2dd279ca58b7873050c227ebe3a958a39140869065b36d38b0af78a9
+Verification report: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/45_phase43_protocol_freeze_report.json
+
+Models frozen: 2
+Seeds: (42, 123, 2026)
+Checkpoints verified: 6
+Training: NO
+Model inference: NO
+Test data loaded: NO
+Test evaluated: NO
+
+STEP 4.3.1 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/46_pre_evaluation_integrity_audit.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.3.2 - PRE-EVALUATION INTEGRITY AUDIT
+======================================================================
+
+[1] Checking frozen protocol...
+Frozen protocol checksum: VERIFIED
+
+[2] Verifying six frozen checkpoints...
+  ResidualGate05: 3 checkpoints VERIFIED
+  TopologyConsistentResidual: 3 checkpoints VERIFIED
+
+[3] Verifying locked test design...
+Frozen evaluation requirements: VERIFIED
+
+[4] Testing synthetic graph perturbations...
+Synthetic cases verified: 30
+
+[5] Saving audit report...
+
+======================================================================
+PHASE 4.3.2 - INTEGRITY AUDIT COMPLETED
+======================================================================
+Protocol SHA256: e6c8516e2dd279ca58b7873050c227ebe3a958a39140869065b36d38b0af78a9
+Verified checkpoints: 6
+Synthetic perturbation cases: 30
+Saved: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/46_pre_evaluation_integrity_audit.json
+
+Training: NO
+Model inference: NO
+Graph archive opened: NO
+Test evaluated: NO
+Next: PHASE 4.4.1
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/47_frozen_heldout_evaluation.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.4.1 - FROZEN HELD-OUT EVALUATION
+======================================================================
+
+[1] Verifying frozen evaluation protocol...
+Frozen protocol and graph hash: VERIFIED
+
+[2] Verifying frozen model checkpoints...
+  ResidualGate05: 3 checkpoints verified
+  TopologyConsistentResidual: 3 checkpoints verified
+
+[3] Loading reserved test-region pairs...
+Reserved test regions: 10
+Test scanner graphs: 20
+Device: cuda
+
+[4] Preparing prespecified scanner perturbations...
+Paired perturbation instances: 150
+
+[5] Evaluating six frozen checkpoints...
+  ResidualGate05, seed 42: completed
+  ResidualGate05, seed 123: completed
+  ResidualGate05, seed 2026: completed
+  TopologyConsistentResidual, seed 42: completed
+  TopologyConsistentResidual, seed 123: completed
+  TopologyConsistentResidual, seed 2026: completed
+
+[6] Computing frozen test metrics...
+
+[7] Computing descriptive paired uncertainty...
+
+[8] Saving held-out evaluation artifacts...
+
+======================================================================
+PHASE 4.4.1 - HELD-OUT EVALUATION COMPLETED
+======================================================================
+Residual normal R@1: 0.9222
+Consistency normal R@1: 0.9130
+Residual discordant R@1: 0.7004
+Consistency discordant R@1: 0.8046
+Primary paired difference: +10.43 pp
+Descriptive 95% region interval: [+8.96, +11.65] pp
+Regions improved / worsened / unchanged: 10 0 0
+
+Saved:
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/47_heldout_retrieval_detail.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/47_heldout_retrieval_by_seed.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/47_heldout_paired_regions.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/47_heldout_retrieval_summary.csv
+/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/47_heldout_evaluation_report.json
+
+Training: NO
+Checkpoints modified: NO
+Hyperparameter tuning: NO
+Held-out test evaluated: YES
+Further adaptive test tuning: PROHIBITED
+
+STEP 4.4.1 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/48_audit_heldout_results.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4.4.2 - HELD-OUT RESULTS INTEGRITY AUDIT
+======================================================================
+
+[1] Verifying frozen evaluation artifacts...
+Saved CSV hashes and row counts: VERIFIED
+
+[2] Reconstructing all test measurements...
+All 360 prespecified observations: VERIFIED
+
+[3] Verifying aggregate results...
+Aggregate Recall@1 and MRR: VERIFIED
+
+[4] Verifying paired region differences...
+All ten paired region differences: VERIFIED
+
+[5] Reproducing primary effect and uncertainty...
+Primary difference: +10.4259 pp
+Descriptive 95% interval: [+8.9630, +11.6481] pp
+Improved regions: 10 / 10
+
+[6] Writing final integrity audit...
+
+======================================================================
+PHASE 4.4.2 - RESULTS AUDIT COMPLETED
+======================================================================
+Primary effect: +10.4259 pp
+Interval: [+8.9630, +11.6481] pp
+Saved: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/48_heldout_results_integrity_audit.json
+Additional model inference: NO
+Source artifacts modified: NO
+Test evaluation: ALREADY COMPLETED
+Next: PHASE 5
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/49_generate_research_figures.py
+---------------------------------------------------------------------------------------
+
+=================================================================
+PHASE 5.1 - FINAL RESEARCH FIGURES
+=================================================================
+
+[1] Checking verified sources...
+Historical and held-out sources: VERIFIED
+
+[2] Preparing paper performance table...
+
+[3] Creating retrieval comparison figure...
+
+[4] Creating primary effect figure...
+
+[5] Saving figure provenance...
+
+=================================================================
+PHASE 5.1 - FIGURES COMPLETED
+=================================================================
+Table: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/tables/49_paper_performance_table.csv
+Figure 1: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/49_retrieval_comparison.png
+Figure 2: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/49_primary_robustness_effect.png
+Provenance: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/49_figure_generation_report.json
+Graph archive opened: NO
+Additional test inference: NO
+STEP 5.1 COMPLETED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/50_generate_robustness_xai_figures.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4 - ROBUSTNESS AND XAI FIGURE GENERATION
+======================================================================
+
+[1] Verifying source artifacts...
+Sources and SHA256 references: VERIFIED
+
+[2] Creating robustness degradation figure...
+
+[3] Creating corrected IG fidelity figure...
+
+[4] Creating learned edge-mask fidelity figure...
+
+[5] Creating learned mask distribution figure...
+
+[6] Saving figure provenance...
+
+======================================================================
+PHASE 4 - ADDITIONAL FIGURES COMPLETED
+======================================================================
+Saved: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/50_robustness_degradation.png
+Saved: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/50_ig_fidelity.png
+Saved: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/50_edge_fidelity.png
+Saved: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/50_edge_mask_distribution.png
+Provenance: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/50_robustness_xai_figure_report.json
+Additional test inference: NO
+Previous models: UNCHANGED
+
+---------------------------------------------------------------------------------------
+    RUN - python -u \phase4_main_research/scripts/evaluation/51_generate_architecture_workflow.py
+---------------------------------------------------------------------------------------
+
+======================================================================
+PHASE 4 - ARCHITECTURE AND WORKFLOW DIAGRAMS
+======================================================================
+
+[1] Verifying research provenance...
+Frozen research sources: VERIFIED
+
+[2] Drawing gated residual GraphSAGE...
+
+[3] Drawing full experimental workflow...
+
+[4] Saving diagram provenance...
+
+======================================================================
+PHASE 4 - DIAGRAMS COMPLETED
+======================================================================
+Saved: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/51_gated_residual_graphsage_architecture.png
+Saved: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/51_gated_residual_graphsage_architecture.svg
+Saved: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/51_complete_research_workflow.png
+Saved: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/figures/51_complete_research_workflow.svg
+Provenance: /home/dhrubo_roy/MEDICAL_GNN_RESEARCH/phase4_main_research/outputs/reports/51_diagram_generation_report.json
+Additional test inference: NO
+Existing checkpoints: UNCHANGED
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
+
+
+
+---------------------------------------------------------------------------------------
+    RUN - 
+---------------------------------------------------------------------------------------
