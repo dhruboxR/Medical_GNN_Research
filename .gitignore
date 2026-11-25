@@ -159,3 +159,11 @@ backups/
 #
 # These files document and reproduce the research.
 # ============================================================
+
+# ============================================================
+# PHASE 4 - GENERATED FEATURE ARCHIVES
+# ============================================================
+
+phase4_main_research/outputs/features/*.npz
+phase4_main_research/outputs/features/*.npy
+
