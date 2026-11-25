@@ -1,0 +1,20 @@
+{
+  "phase": "4",
+  "step": "4.1.5",
+  "generated_utc": "2026-11-24T17:53:57.700570+00:00",
+  "dataset_revision": "489cfa632886ce411ce0ab6e678e0587ac0ead04",
+  "published_inventory_sha256": "ebf893b31933396f132bb1c6f38d7e3b7fc18bfa111889b0b4850f734cd380eb",
+  "selected_acquisition_sha256": "d2316b5c894694bbc47bbcb71b72cd8ab9b92eba443558cb43dd8aa217031dad",
+  "shards_indexed": 293,
+  "shards_loaded_from_checkpoints": 0,
+  "total_row_groups": 14943,
+  "candidate_slide_rowgroup_mappings": 5120,
+  "selected_acquisitions": 31,
+  "selected_acquisitions_with_candidates": 31,
+  "missing_candidate_slides": [],
+  "image_column_values_read": false,
+  "exact_tile_overlap_verified": false,
+  "biological_independence_verified": false,
+  "phase3b_modified": false,
+  "next_step": "Read only metadata columns from candidate row groups to verify actual scanner/slide IDs, tile coordinates and exact intersection sizes."
+}

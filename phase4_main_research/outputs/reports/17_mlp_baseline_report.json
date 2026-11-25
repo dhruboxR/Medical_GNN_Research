@@ -1,0 +1,84 @@
+{
+  "phase": "4.2",
+  "step": "4.2.2",
+  "generated_utc": "2026-11-25T18:31:33.802409+00:00",
+  "experiment": "shared_mlp_baseline",
+  "architecture": "384-256-384_GELU",
+  "graph_message_passing": false,
+  "model_input": "frozen_raw_dinov2_cls",
+  "output_normalization": "L2",
+  "objective": "bidirectional_within_region_InfoNCE",
+  "temperature": 0.07,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "batch_regions": 8,
+  "max_epochs": 100,
+  "patience": 20,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "train_region_pairs": 40,
+  "validation_region_pairs": 10,
+  "test_region_pairs_reserved": 10,
+  "test_evaluated": false,
+  "checkpoint_selection_metric": "validation_recall_at_1_then_loss",
+  "seed_results": [
+    {
+      "seed": 42,
+      "best_epoch": 35,
+      "validation_loss": 0.48054438829421997,
+      "validation_recall_at_1": 0.925000011920929,
+      "validation_mrr": 0.9533367156982422,
+      "validation_reverse_recall_at_1": 0.9138889312744141,
+      "validation_reverse_mrr": 0.943193256855011,
+      "median_positive_cosine": 0.7728860378265381,
+      "checkpoint_sha256": "636951f385eac33bbc35fc2a870fac197761a2de18164d68de2cf2cbf39b311e"
+    },
+    {
+      "seed": 123,
+      "best_epoch": 12,
+      "validation_loss": 0.4655742645263672,
+      "validation_recall_at_1": 0.9416666626930237,
+      "validation_mrr": 0.9653703570365906,
+      "validation_reverse_recall_at_1": 0.9305555820465088,
+      "validation_reverse_mrr": 0.9542571306228638,
+      "median_positive_cosine": 0.7932889461517334,
+      "checkpoint_sha256": "aa8212fc6c8041c934b5e1c7e4a93f7516cc9a22f19db0bd50054bf61a518872"
+    },
+    {
+      "seed": 2026,
+      "best_epoch": 12,
+      "validation_loss": 0.5059335231781006,
+      "validation_recall_at_1": 0.9305555820465088,
+      "validation_mrr": 0.9574339389801025,
+      "validation_reverse_recall_at_1": 0.9083333611488342,
+      "validation_reverse_mrr": 0.9413955211639404,
+      "median_positive_cosine": 0.8024007678031921,
+      "checkpoint_sha256": "adb13e12f5b5cf6e66ce7ddb751b2d7b9627bd0f088cce9329b50c1dbe471d6a"
+    }
+  ],
+  "mean_validation_recall_at_1": 0.9324074188868204,
+  "std_validation_recall_at_1": 0.008486241026042868,
+  "history_sha256": "da61bae5c99db7672b6f71da5c0a29efbe41d697e2d950dd053cc51a3814dc34",
+  "summary_sha256": "d5bcb52329f4547e5898e9f1a77b8341bd4991b5298728c8bd875ae0cebde006",
+  "checkpoint_hashes": {
+    "42": "636951f385eac33bbc35fc2a870fac197761a2de18164d68de2cf2cbf39b311e",
+    "123": "aa8212fc6c8041c934b5e1c7e4a93f7516cc9a22f19db0bd50054bf61a518872",
+    "2026": "adb13e12f5b5cf6e66ce7ddb751b2d7b9627bd0f088cce9329b50c1dbe471d6a"
+  },
+  "biological_independence_verified": false,
+  "pixel_perfect_registration_assumed": false,
+  "xai_planned": true,
+  "limitations": [
+    "Small number of training regions",
+    "Training pairs share original biological material",
+    "Within-region retrieval has only 36 candidates",
+    "Validation regions are spatial but not biologically independent",
+    "Only two scanners included",
+    "Test data intentionally not evaluated"
+  ]
+}

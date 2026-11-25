@@ -1,0 +1,194 @@
+{
+  "phase": "4.2",
+  "step": "4.2.24",
+  "generated_utc": "2026-11-25T19:11:13.426643+00:00",
+  "experiment": "ig_completeness_convergence",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "architecture_sha256": "f34f3133e6ed9da57aa96bbc6da680e5dcc2d97481dfa850f47e91039128c660",
+  "source_ig_report_sha256": "2c0e826a7723cfaab598044c17ea51eac51861c7f0a16269aae3b29c929a25ad",
+  "source_ig_audit_sha256": "3ad1602657c9908c2971b30bd92a0c67e07061d4bdba8acc75c340b52622b84e",
+  "source_model_reports_sha256": {
+    "ResidualGate05": "1170a4c3ade7782f7080b2d7bb0539f3f2154a70f806393c5d8276c1f7cffb4f",
+    "TopologyConsistentResidual": "0e49112a91a8f5f52f8a86fdb3611550870a474637ba058543fd0bc90f5e841c"
+  },
+  "baselines": [
+    "zero",
+    "training_mean"
+  ],
+  "baseline_training_only": true,
+  "integration_steps": [
+    32,
+    128,
+    256
+  ],
+  "integration_batch_size": 16,
+  "integration_method": "midpoint",
+  "explanation_target": "negative_bidirectional_within_region_InfoNCE",
+  "opposite_scanner_embeddings_fixed": true,
+  "validation_region_pairs": 10,
+  "training_seeds": [
+    42,
+    123,
+    2026
+  ],
+  "summary": [
+    {
+      "model": "ResidualGate05",
+      "baseline": "zero",
+      "steps": 32,
+      "explanations": 60,
+      "mean_abs_error": 1.693811719616254,
+      "median_abs_error": 1.51744145154953,
+      "p90_abs_error": 2.8606964111328126,
+      "mean_relative_error": 0.537805302680198,
+      "median_relative_error": 0.5017272192161792,
+      "mean_abs_score_delta": 3.0640134453773498
+    },
+    {
+      "model": "ResidualGate05",
+      "baseline": "zero",
+      "steps": 128,
+      "explanations": 60,
+      "mean_abs_error": 1.6865215371052424,
+      "median_abs_error": 1.516716718673706,
+      "p90_abs_error": 2.8482389092445377,
+      "mean_relative_error": 0.5351914947037564,
+      "median_relative_error": 0.5016054317755125,
+      "mean_abs_score_delta": 3.0640134453773498
+    },
+    {
+      "model": "ResidualGate05",
+      "baseline": "zero",
+      "steps": 256,
+      "explanations": 60,
+      "mean_abs_error": 1.6834599951903024,
+      "median_abs_error": 1.5107250213623047,
+      "p90_abs_error": 2.8470037877559666,
+      "mean_relative_error": 0.5341770334673408,
+      "median_relative_error": 0.5011776396586161,
+      "mean_abs_score_delta": 3.0640134453773498
+    },
+    {
+      "model": "ResidualGate05",
+      "baseline": "training_mean",
+      "steps": 32,
+      "explanations": 60,
+      "mean_abs_error": 0.00028453667958577475,
+      "median_abs_error": 0.0002167224884033203,
+      "p90_abs_error": 0.000724029541015625,
+      "mean_relative_error": 7.929397631976906e-05,
+      "median_relative_error": 7.181730665659723e-05,
+      "mean_abs_score_delta": 3.2469400644302366
+    },
+    {
+      "model": "ResidualGate05",
+      "baseline": "training_mean",
+      "steps": 128,
+      "explanations": 60,
+      "mean_abs_error": 1.7754236857096355e-05,
+      "median_abs_error": 1.3589859008789062e-05,
+      "p90_abs_error": 4.5013427734375e-05,
+      "mean_relative_error": 4.944977118730651e-06,
+      "median_relative_error": 4.46168279251388e-06,
+      "mean_abs_score_delta": 3.2469400644302366
+    },
+    {
+      "model": "ResidualGate05",
+      "baseline": "training_mean",
+      "steps": 256,
+      "explanations": 60,
+      "mean_abs_error": 4.454453786214193e-06,
+      "median_abs_error": 3.337860107421875e-06,
+      "p90_abs_error": 1.1491775512695313e-05,
+      "mean_relative_error": 1.2398402414955983e-06,
+      "median_relative_error": 1.1030883172427981e-06,
+      "mean_abs_score_delta": 3.2469400644302366
+    },
+    {
+      "model": "TopologyConsistentResidual",
+      "baseline": "zero",
+      "steps": 32,
+      "explanations": 60,
+      "mean_abs_error": 1.687734160820643,
+      "median_abs_error": 1.5334495902061462,
+      "p90_abs_error": 2.759831613302231,
+      "mean_relative_error": 0.5548157604944445,
+      "median_relative_error": 0.5211731332871308,
+      "mean_abs_score_delta": 2.967357011636098
+    },
+    {
+      "model": "TopologyConsistentResidual",
+      "baseline": "zero",
+      "steps": 128,
+      "explanations": 60,
+      "mean_abs_error": 1.6756997177998225,
+      "median_abs_error": 1.5240229368209839,
+      "p90_abs_error": 2.7707596063613895,
+      "mean_relative_error": 0.5502545574046659,
+      "median_relative_error": 0.5179689102561076,
+      "mean_abs_score_delta": 2.967357011636098
+    },
+    {
+      "model": "TopologyConsistentResidual",
+      "baseline": "zero",
+      "steps": 256,
+      "explanations": 60,
+      "mean_abs_error": 1.67327983379364,
+      "median_abs_error": 1.52362859249115,
+      "p90_abs_error": 2.7675048112869267,
+      "mean_relative_error": 0.5494226072859635,
+      "median_relative_error": 0.5171855407490327,
+      "mean_abs_score_delta": 2.967357011636098
+    },
+    {
+      "model": "TopologyConsistentResidual",
+      "baseline": "training_mean",
+      "steps": 32,
+      "explanations": 60,
+      "mean_abs_error": 0.0004001140594482422,
+      "median_abs_error": 0.00022220611572265625,
+      "p90_abs_error": 0.0010922908782958986,
+      "mean_relative_error": 0.00011819869425699988,
+      "median_relative_error": 6.739511864834683e-05,
+      "mean_abs_score_delta": 3.2178388158480327
+    },
+    {
+      "model": "TopologyConsistentResidual",
+      "baseline": "training_mean",
+      "steps": 128,
+      "explanations": 60,
+      "mean_abs_error": 2.4910767873128255e-05,
+      "median_abs_error": 1.430511474609375e-05,
+      "p90_abs_error": 6.804466247558595e-05,
+      "mean_relative_error": 7.359491363418077e-06,
+      "median_relative_error": 4.204153203788496e-06,
+      "mean_abs_score_delta": 3.2178388158480327
+    },
+    {
+      "model": "TopologyConsistentResidual",
+      "baseline": "training_mean",
+      "steps": 256,
+      "explanations": 60,
+      "mean_abs_error": 6.2425931294759115e-06,
+      "median_abs_error": 3.337860107421875e-06,
+      "p90_abs_error": 1.7094612121582035e-05,
+      "mean_relative_error": 1.8426520220461626e-06,
+      "median_relative_error": 1.0769021629017816e-06,
+      "mean_abs_score_delta": 3.2178388158480327
+    }
+  ],
+  "detail_table_sha256": "0f5480f077c977bebaffcad5ce1a52a5bcb0e775d69635df9fe550ae2231e97d",
+  "summary_table_sha256": "f581fc8a15f048eb24a3ebbf556b50ecc88bd30b0c19d77a3a68ebe2f33550ab",
+  "training_performed": false,
+  "checkpoint_selection_performed": false,
+  "test_evaluated": false,
+  "limitations": [
+    "All completeness comparisons use the same validation regions",
+    "Nonzero mean baseline is still a reference intervention",
+    "Zero baseline passes through near-zero normalized inputs",
+    "Convergence does not prove clinical explanation validity",
+    "No new node attribution rankings are selected",
+    "No independent biological specimens were evaluated"
+  ]
+}

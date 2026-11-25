@@ -1,0 +1,18 @@
+{
+  "phase": "4",
+  "step": "4.1.4",
+  "created_utc": "2026-11-24T17:40:40.984282+00:00",
+  "dataset": "owkin/plism-dataset-tiles",
+  "pinned_revision": "489cfa632886ce411ce0ab6e678e0587ac0ead04",
+  "original_inventory_sha256": "ebf893b31933396f132bb1c6f38d7e3b7fc18bfa111889b0b4850f734cd380eb",
+  "total_published_shards": 293,
+  "probed_shards": 3,
+  "probed_rows": 15167,
+  "probed_row_groups": 153,
+  "required_schema_columns_verified": true,
+  "image_column_values_read": false,
+  "tile_level_overlap_verified": false,
+  "independent_specimens_verified": false,
+  "historical_research_modified": false,
+  "next_step": "Audit metadata columns across selected acquisitions and verify exact shared tile IDs."
+}

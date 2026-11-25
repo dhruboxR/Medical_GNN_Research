@@ -1,0 +1,126 @@
+{
+  "phase": "4",
+  "step": "4.1.11",
+  "generated_utc": "2026-11-24T22:51:17.705728+00:00",
+  "source_phase4_1_10_audit_sha256": "5ad74a54789587392d323c18a9f0de3f180db8f288162774bdfa5e351ed2a51c",
+  "verified_images": 4320,
+  "matched_scanner_pairs": 2160,
+  "regions": 60,
+  "split_counts": {
+    "train": 2880,
+    "test": 720,
+    "validation": 720
+  },
+  "scanner_quality_summary": {
+    "AT2": {
+      "images": 2160,
+      "mean_gray": {
+        "min": 101.05245208740234,
+        "mean": 170.54282224443224,
+        "median": 172.53836059570312,
+        "max": 222.62786865234375,
+        "p05": 125.89907341003418,
+        "p95": 209.49001693725586
+      },
+      "std_gray": {
+        "min": 3.4915990829467773,
+        "mean": 40.74891714111522,
+        "median": 41.110483169555664,
+        "max": 70.61276245117188,
+        "p05": 25.833882522583007,
+        "p95": 54.61128463745113
+      },
+      "near_white_fraction": {
+        "min": 0.0,
+        "mean": 0.07708639662462208,
+        "median": 0.055345184948979595,
+        "max": 0.5686184630102041,
+        "p05": 0.0036073022959183672,
+        "p95": 0.2314781967474488
+      },
+      "edge_variance": {
+        "min": 533.4403076171875,
+        "mean": 3973.2224708274557,
+        "median": 3948.9119873046875,
+        "max": 8714.2431640625,
+        "p05": 2381.004357910156,
+        "p95": 5727.564916992185
+      }
+    },
+    "GT450": {
+      "images": 2160,
+      "mean_gray": {
+        "min": 168.09982299804688,
+        "mean": 212.03898635440402,
+        "median": 213.70387268066406,
+        "max": 241.8858184814453,
+        "p05": 184.60719146728516,
+        "p95": 234.53901824951168
+      },
+      "std_gray": {
+        "min": 2.1963179111480713,
+        "mean": 25.002498936322,
+        "median": 25.107394218444824,
+        "max": 46.4466438293457,
+        "p05": 14.717283868789673,
+        "p95": 35.28934230804443
+      },
+      "near_white_fraction": {
+        "min": 0.0,
+        "mean": 0.21310217663454273,
+        "median": 0.18584582270408162,
+        "max": 0.7474489795918368,
+        "p05": 0.01912468112244898,
+        "p95": 0.5320531728316326
+      },
+      "edge_variance": {
+        "min": 785.7431640625,
+        "mean": 2327.7195922003853,
+        "median": 2304.717529296875,
+        "max": 4920.90380859375,
+        "p05": 1434.9740295410156,
+        "p95": 3478.2874755859375
+      }
+    }
+  },
+  "gray_correlation": {
+    "min": -0.22271988226401712,
+    "mean": 0.226715895456579,
+    "median": 0.14372839750237448,
+    "max": 0.9666967824098689,
+    "p05": -0.023250065952288464,
+    "p95": 0.66726338836235
+  },
+  "undefined_gray_correlations": 0,
+  "gray_absolute_difference": {
+    "min": 21.924560546875,
+    "mean": 44.59702001501013,
+    "median": 44.2509765625,
+    "max": 71.2412109375,
+    "p05": 26.662255859375,
+    "p95": 62.07403564453124
+  },
+  "contact_sheet_regions": {
+    "train": "PHASE4_REGION_001",
+    "validation": "PHASE4_REGION_009",
+    "test": "PHASE4_REGION_002"
+  },
+  "contact_sheets": {
+    "train": "outputs/figures/11_train_at2_gt450_contact_sheet.png",
+    "validation": "outputs/figures/11_validation_at2_gt450_contact_sheet.png",
+    "test": "outputs/figures/11_test_at2_gt450_contact_sheet.png"
+  },
+  "image_metrics_sha256": "75d9c30e401210aae7343c906b6814e15b2b0b481cff8e7ef77ff9aa41727b23",
+  "pair_metrics_sha256": "9fdac8908668d0ac2b0c60cb52f683e70e428c7e4a6f8b3d1656598cbbf26f4d",
+  "manual_registration_review_completed": false,
+  "automatic_quality_exclusions": 0,
+  "biological_independence_verified": false,
+  "phase3b_modified": false,
+  "limitations": [
+    "Image-level metrics are not diagnostic labels",
+    "High similarity does not prove exact registration",
+    "Scanner color and intensity differences affect correlation",
+    "Contact sheets cover one representative region per split",
+    "Human image-quality and registration review remains pending"
+  ]
+}

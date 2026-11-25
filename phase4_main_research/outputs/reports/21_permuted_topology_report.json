@@ -1,0 +1,74 @@
+{
+  "phase": "4.2",
+  "step": "4.2.6",
+  "generated_utc": "2026-11-25T18:38:50.363271+00:00",
+  "experiment": "degree_preserving_topology_permutation",
+  "model": "GraphSAGE_384_256_384",
+  "permutation_policy": "fixed_independent_per_seed_same_train_validation_topology",
+  "node_features_permuted": false,
+  "degree_multiset_preserved": true,
+  "edge_count_preserved": true,
+  "model_hyperparameters_matched": true,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "train_regions": 40,
+  "validation_regions": 10,
+  "test_regions_reserved": 10,
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "mean_original_recall_at_1": 0.974074105421702,
+  "mean_permuted_recall_at_1": 0.979629655679067,
+  "original_minus_permuted_pp": -0.555555025736491,
+  "seed_results": [
+    {
+      "seed": 42,
+      "best_epoch": 3,
+      "validation_loss": 0.6470919847488403,
+      "validation_recall_at_1": 0.9805555939674377,
+      "validation_mrr": 0.9879050850868225,
+      "original_graphsage_recall_at_1": 0.9805555939674377,
+      "original_minus_permuted_pp": 0.0,
+      "checkpoint_sha256": "bdaa038a23052f926651e19a000f3ad33aa4963472b3812cce0956f497191832"
+    },
+    {
+      "seed": 123,
+      "best_epoch": 5,
+      "validation_loss": 0.579085111618042,
+      "validation_recall_at_1": 0.9777777791023254,
+      "validation_mrr": 0.9859722852706909,
+      "original_graphsage_recall_at_1": 0.9666666984558105,
+      "original_minus_permuted_pp": -1.1111080646514893,
+      "checkpoint_sha256": "dce387ffc0921e37a34d1b18ed2e3a0e6ddcdae8a64d73fbebb3a6c04070e198"
+    },
+    {
+      "seed": 2026,
+      "best_epoch": 2,
+      "validation_loss": 0.9430716037750244,
+      "validation_recall_at_1": 0.9805555939674377,
+      "validation_mrr": 0.9880555868148804,
+      "original_graphsage_recall_at_1": 0.9750000238418579,
+      "original_minus_permuted_pp": -0.5555570125579834,
+      "checkpoint_sha256": "af9a7e75b791931c1b656ee6b84e441774fd3f6715f5caed84489c2c87629b9a"
+    }
+  ],
+  "checkpoint_hashes": {
+    "42": "bdaa038a23052f926651e19a000f3ad33aa4963472b3812cce0956f497191832",
+    "123": "dce387ffc0921e37a34d1b18ed2e3a0e6ddcdae8a64d73fbebb3a6c04070e198",
+    "2026": "af9a7e75b791931c1b656ee6b84e441774fd3f6715f5caed84489c2c87629b9a"
+  },
+  "history_sha256": "14704d900a9e3f91edde812112f2acee0f3da79c8b19a91c4d7edfdf59742bf5",
+  "summary_sha256": "af311f3ff6b071f97b944754968a6ef69af0a9af33c1178c8424a9aea8065087",
+  "test_evaluated": false,
+  "biological_independence_verified": false,
+  "xai_planned": true,
+  "limitations": [
+    "Only one permuted graph per random seed",
+    "Permutation may create nonlocal edges",
+    "Small spatial validation set",
+    "Results do not establish biological generalization",
+    "Original and permuted models are selected on validation data"
+  ]
+}

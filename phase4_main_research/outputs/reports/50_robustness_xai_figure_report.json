@@ -1,0 +1,32 @@
+{
+  "phase": "4",
+  "step": "final_reporting_50",
+  "created_utc": "2026-11-25T19:40:35.764499+00:00",
+  "source_sha256": {
+    "outputs/tables/49_paper_performance_table.csv": "9f08200f5621719db6fc95294b863c9bdfbf71f3844dce8f979d7b2af909777d",
+    "outputs/reports/49_figure_generation_report.json": "6fe56d0bc8139b26737a69a1c05dc3a09e82014fa3e2584d21b8c9e2987dd882",
+    "outputs/reports/41_corrected_ig_audit_report.json": "b75cb33c452334c3d5c5767eb348e5c409a7cafeb5317f9081eaa5973975206b",
+    "outputs/reports/43_edge_mask_reliability_report.json": "f495a5f0508a93e4462fb8997ad64ba8b64da2c7aaa04fafae133e19076a3436",
+    "outputs/xai/42_learned_edge_masks.csv": "25b9a8306f12ca9ae30b4e443eb9396879a4a65cf33dec77ee3fc1af2afb4dcb",
+    "outputs/reports/42_learned_edge_mask_report.json": "deda98fe4cdfecaa7bf67d4dfe9509ea0df80509b8ce3442810991b6d3168eac"
+  },
+  "figures_sha256": {
+    "outputs/figures/50_robustness_degradation.png": "4ec20877634f599b600a24ce89a887535ccef0f66775632f449749904149a508",
+    "outputs/figures/50_ig_fidelity.png": "cdf75fff6507f862176f5a51141c6ab167e03e02ccb587fccbf6c8677491df12",
+    "outputs/figures/50_edge_fidelity.png": "b39fa8d5d7078b66ee82e2b7edfc40615f8cd559ccfa877a75aa71ee5aadf457",
+    "outputs/figures/50_edge_mask_distribution.png": "4448d16a958ae7582e8a53ceb28bb3edd1567c60d7d81cbedb4f5a189ac3d0c6"
+  },
+  "mask_rows": 7200,
+  "graph_archive_opened": false,
+  "checkpoint_loaded": false,
+  "model_training_performed": false,
+  "model_inference_performed": false,
+  "additional_test_evaluation_performed": false,
+  "limitations": [
+    "Validation XAI results are exploratory",
+    "IG and edge fidelity use different interventions",
+    "Learned edge masks were optimized on validation regions",
+    "Edge deletion random controls are not edge-type matched",
+    "Histopathology regions share biological source material"
+  ]
+}

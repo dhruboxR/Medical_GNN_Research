@@ -1,0 +1,88 @@
+{
+  "phase": "4.2",
+  "step": "4.2.22",
+  "generated_utc": "2026-11-25T19:07:15.505421+00:00",
+  "experiment": "integrated_gradients_input_feature_attribution",
+  "method": "midpoint_integrated_gradients",
+  "integration_steps": 32,
+  "baseline": "all_zero_dinov2_features",
+  "attribution_objective": "negative_bidirectional_within_region_InfoNCE",
+  "opposite_scanner_embeddings_fixed": true,
+  "top_k": 5,
+  "degree_matched_random_controls": 20,
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "architecture_sha256": "f34f3133e6ed9da57aa96bbc6da680e5dcc2d97481dfa850f47e91039128c660",
+  "source_model_reports_sha256": {
+    "ResidualGate05": "1170a4c3ade7782f7080b2d7bb0539f3f2154a70f806393c5d8276c1f7cffb4f",
+    "TopologyConsistentResidual": "0e49112a91a8f5f52f8a86fdb3611550870a474637ba058543fd0bc90f5e841c"
+  },
+  "source_structural_xai_report_sha256": "bf12258abe6dcbf6f644ce343a1df0e12cd5b721e2c2f85da465998501ad1e57",
+  "source_degree_xai_report_sha256": "40c410ac9db3fbe333b5f306863e2ff791a3d228365bf1a2c9f302484d215973",
+  "validation_regions": 10,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "model_summary": [
+    {
+      "model": "ResidualGate05",
+      "region_seed_units": 30,
+      "mean_node_spearman": 0.3222308022308022,
+      "mean_node_top5_overlap": 1.1666666666666667,
+      "mean_channel_importance_cosine": 0.9709138544938767,
+      "mean_at2_completeness_abs_error": 1.7010849356651305,
+      "mean_gt450_completeness_abs_error": 1.6865385671456654,
+      "mean_at2_completeness_relative_error": 0.5405561125773019,
+      "mean_gt450_completeness_relative_error": 0.5350545146737448,
+      "mean_at2_top5_score_drop": 1.4850726783275605,
+      "mean_at2_random_score_drop": 1.5395956756671267,
+      "mean_gt450_top5_score_drop": 1.5017894089221955,
+      "mean_gt450_random_score_drop": 1.5554476557175319,
+      "mean_at2_fidelity_excess": -0.05452299733956654,
+      "mean_gt450_fidelity_excess": -0.0536582467953364
+    },
+    {
+      "model": "TopologyConsistentResidual",
+      "region_seed_units": 30,
+      "mean_node_spearman": 0.33357357357357353,
+      "mean_node_top5_overlap": 1.6333333333333333,
+      "mean_channel_importance_cosine": 0.9724423708681711,
+      "mean_at2_completeness_abs_error": 1.7043253183364868,
+      "mean_gt450_completeness_abs_error": 1.6711430350939434,
+      "mean_at2_completeness_relative_error": 0.5600289044566314,
+      "mean_gt450_completeness_relative_error": 0.5496026286051292,
+      "mean_at2_top5_score_drop": 1.510227386156718,
+      "mean_at2_random_score_drop": 1.553489439090093,
+      "mean_gt450_top5_score_drop": 1.5242695927619934,
+      "mean_gt450_random_score_drop": 1.5599487014611564,
+      "mean_at2_fidelity_excess": -0.04326205293337504,
+      "mean_gt450_fidelity_excess": -0.0356791086991628
+    }
+  ],
+  "node_table_sha256": "5fe446e1e8c8b511425a955d49a59cdd67d6e9d365eb48ab4ef7ac7ab636ebd9",
+  "channel_table_sha256": "e3b76adf10428be8ba3c057a2f606d0543a3f54411c22deac11fbc96965b4b23",
+  "summary_table_sha256": "645671cac6251b440f62e8c519c32bdd4391d5d8978c98a9c5f5a2453b918b7b",
+  "training_performed": false,
+  "checkpoint_selection_performed": false,
+  "test_evaluated": false,
+  "limitations": [
+    "Input attribution targets DINOv2 features, not pixels",
+    "Zero-feature baseline is out of distribution",
+    "Feature deletion can perturb the frozen input distribution",
+    "Attribution magnitude loses sign information",
+    "Midpoint integration is approximate",
+    "Completeness errors must be examined",
+    "Random fidelity controls match degree only",
+    "Top-k fidelity uses the same data as attribution",
+    "No pathologist-provided explanation labels",
+    "Validation regions are not independent patients"
+  ],
+  "next_steps": [
+    "Inspect IG completeness and fidelity",
+    "Compare feature attribution agreement",
+    "Implement GNNExplainer with a suitable score target",
+    "Perform paired region-level XAI comparisons"
+  ]
+}

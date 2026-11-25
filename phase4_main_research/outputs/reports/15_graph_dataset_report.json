@@ -1,0 +1,94 @@
+{
+  "phase": "4",
+  "step": "4.1.15",
+  "generated_utc": "2026-11-25T18:27:50.053639+00:00",
+  "source_feature_archive_sha256": "af066b8b0c25f4ec3dfbb387f23fac5d1173924e34c1fe0431c13d456b3cb71e",
+  "source_feature_metadata_sha256": "41841a0dccd563154f9345bad019759ff534067a0c17361087727a3bfda64acc",
+  "model_weight_sha256": "e2caabae87ec37343e1695c10cd341179d3fa671d2ea00a3802b52cccd7773bb",
+  "processor_sha256": "0f6addc5987e9ab323986e0e3ad4ef3aeea735e6839c6df97dc9397e8df50669",
+  "graphs": 120,
+  "paired_graphs": 60,
+  "nodes_per_graph": 36,
+  "feature_dimension": 384,
+  "undirected_edges_per_graph": 60,
+  "directed_edges_per_graph": 120,
+  "graph_shape": [
+    120,
+    36,
+    384
+  ],
+  "graph_topology": "spatial_4_neighbor",
+  "split_graph_counts": {
+    "train": 80,
+    "test": 20,
+    "validation": 20
+  },
+  "matched_cosine": {
+    "count": 2160,
+    "mean": 0.9642604109226574,
+    "median": 0.969132012125281,
+    "p05": 0.926726062377416,
+    "p95": 0.9827498057970815,
+    "min": 0.8497556915452448,
+    "max": 0.989090053993967
+  },
+  "within_region_negative_cosine": {
+    "count": 2160,
+    "mean": 0.9006425086003038,
+    "median": 0.9196216605647958,
+    "p05": 0.7826285991061943,
+    "p95": 0.9614870845264761,
+    "min": 0.2556024765045305,
+    "max": 0.9829149672282151
+  },
+  "cross_region_negative_cosine": {
+    "count": 2160,
+    "mean": 0.7798416883761233,
+    "median": 0.8038808787756961,
+    "p05": 0.5494895080818234,
+    "p95": 0.9161221332050322,
+    "min": 0.08959289051527486,
+    "max": 0.9706267754489293
+  },
+  "retrieval_recall_at_1": 0.8865740740740741,
+  "retrieval_mrr": 0.921054023772237,
+  "split_retrieval_metrics": {
+    "train": {
+      "positions": 1440,
+      "recall_at_1": 0.8902777777777777,
+      "mrr": 0.9225333790325739,
+      "median_matched_cosine": 0.9702463857397634
+    },
+    "validation": {
+      "positions": 360,
+      "recall_at_1": 0.8833333333333333,
+      "mrr": 0.9213548180214847,
+      "median_matched_cosine": 0.9676694184136901
+    },
+    "test": {
+      "positions": 360,
+      "recall_at_1": 0.875,
+      "mrr": 0.9148358084816418,
+      "median_matched_cosine": 0.9664112471011224
+    }
+  },
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "inventory_sha256": "e1a7ebfdfaa4acebc4123f05da90438c9aec54b6a3316c749aa3df123e9c178d",
+  "retrieval_metrics_sha256": "1e57ea1aec57fbfca8d24ec2b58daddbaa8b0e689d016c775538823992817719",
+  "dataset_status": "provisional_graph_ready",
+  "pixel_registration_assumed": false,
+  "biological_independence_verified": false,
+  "gnn_training_protocol_frozen": false,
+  "xai_planned": true,
+  "original_images_modified": false,
+  "phase3b_modified": false,
+  "limitations": [
+    "Only two scanners used in Stage A",
+    "The spatial 4-neighbor graph is a reference topology",
+    "Retrieval negatives are deterministic examples",
+    "High cosine values may reflect embedding anisotropy",
+    "Spatial partitions share the same biological material",
+    "No GNN training has yet occurred",
+    "No independent biological validation established"
+  ]
+}

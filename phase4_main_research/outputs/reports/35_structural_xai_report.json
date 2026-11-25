@@ -1,0 +1,64 @@
+{
+  "phase": "4.2",
+  "step": "4.2.20",
+  "generated_utc": "2026-11-25T19:03:38.128743+00:00",
+  "experiment": "structural_edge_perturbation_explanations",
+  "method": "node_incident_edge_removal",
+  "retrieval_objective": "negative_bidirectional_within_region_InfoNCE",
+  "temperature": 0.07,
+  "top_k": 5,
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "architecture_sha256": "f34f3133e6ed9da57aa96bbc6da680e5dcc2d97481dfa850f47e91039128c660",
+  "source_reports_sha256": {
+    "ResidualGate05": "1170a4c3ade7782f7080b2d7bb0539f3f2154a70f806393c5d8276c1f7cffb4f",
+    "TopologyConsistentResidual": "0e49112a91a8f5f52f8a86fdb3611550870a474637ba058543fd0bc90f5e841c"
+  },
+  "validation_regions": 10,
+  "training_seeds": [
+    42,
+    123,
+    2026
+  ],
+  "model_summary": [
+    {
+      "model": "ResidualGate05",
+      "region_seed_units": 30,
+      "defined_rank_correlations": 30,
+      "mean_attribution_rank_correlation": 0.38653796653796657,
+      "mean_top5_overlap": 1.8333333333333333,
+      "mean_at2_fidelity_gap": 0.2748178720474243,
+      "mean_gt450_fidelity_gap": 0.27771276533603667
+    },
+    {
+      "model": "TopologyConsistentResidual",
+      "region_seed_units": 30,
+      "defined_rank_correlations": 30,
+      "mean_attribution_rank_correlation": 0.32649506649506654,
+      "mean_top5_overlap": 1.8,
+      "mean_at2_fidelity_gap": 0.2102992206811905,
+      "mean_gt450_fidelity_gap": 0.20832397242387135
+    }
+  ],
+  "detail_table_sha256": "f9f140edc24480132494bbd21ed0e468d8b27f0d6e4fab893efec93fefa387a6",
+  "summary_table_sha256": "242ea62ede9cbc4e25eabc59c30e48ffe3d5db58abf58599363929a7edc67ff1",
+  "training_performed": false,
+  "checkpoint_selection_performed": false,
+  "test_evaluated": false,
+  "limitations": [
+    "Structural attribution is not morphology attribution",
+    "Both scanners share the original graph topology",
+    "Node degree may influence attribution rankings",
+    "Top-k fidelity is in-sample explanatory fidelity",
+    "Incident-edge deletion can disconnect graph nodes",
+    "Mean score change can include indirect message effects",
+    "Validation regions share biological material",
+    "No independent scanner or patient validation",
+    "No claim of clinical explanation validity"
+  ],
+  "next_xai_methods": [
+    "Integrated Gradients",
+    "GNNExplainer",
+    "Feature perturbation fidelity"
+  ]
+}

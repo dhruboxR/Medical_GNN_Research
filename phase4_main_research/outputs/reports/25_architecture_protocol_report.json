@@ -1,0 +1,15 @@
+{
+  "phase": "4.2",
+  "step": "4.2.10",
+  "generated_utc": "2026-11-25T18:46:32.932088+00:00",
+  "architecture_status": "specified_not_trained",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "initial_protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "architecture_sha256": "f34f3133e6ed9da57aa96bbc6da680e5dcc2d97481dfa850f47e91039128c660",
+  "historical_experiments_verified": 8,
+  "prior_results_modified": false,
+  "test_evaluated": false,
+  "biological_independence_verified": false,
+  "xai_included": true,
+  "next_experiment": "Train initial gated residual GraphSAGE under the existing validation protocol"
+}

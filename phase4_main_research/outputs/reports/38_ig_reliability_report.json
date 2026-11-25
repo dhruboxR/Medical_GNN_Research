@@ -1,0 +1,123 @@
+{
+  "phase": "4.2",
+  "step": "4.2.23",
+  "generated_utc": "2026-11-25T19:08:48.727009+00:00",
+  "experiment": "integrated_gradients_reliability_audit",
+  "source_ig_report_sha256": "2c0e826a7723cfaab598044c17ea51eac51861c7f0a16269aae3b29c929a25ad",
+  "source_node_table_sha256": "5fe446e1e8c8b511425a955d49a59cdd67d6e9d365eb48ab4ef7ac7ab636ebd9",
+  "source_channel_table_sha256": "e3b76adf10428be8ba3c057a2f606d0543a3f54411c22deac11fbc96965b4b23",
+  "source_summary_table_sha256": "645671cac6251b440f62e8c519c32bdd4391d5d8978c98a9c5f5a2453b918b7b",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "models": [
+    "ResidualGate05",
+    "TopologyConsistentResidual"
+  ],
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "validation_regions": 10,
+  "degree_null_repetitions": 1000,
+  "degree_null_method": "GT450_attribution_permuted_within_node_degree",
+  "model_summary": {
+    "ResidualGate05": {
+      "observed_node_spearman": 0.3222308022308022,
+      "excess_node_spearman": 0.27101646503646504,
+      "observed_top5_overlap": 1.1666666666666667,
+      "excess_top5_overlap": 0.40309999999999996,
+      "channel_importance_cosine": 0.9709138544938767,
+      "at2_fidelity_excess": -0.05452299733956654,
+      "gt450_fidelity_excess": -0.0536582467953364,
+      "at2_completeness_abs_error": 1.7010849356651305,
+      "gt450_completeness_abs_error": 1.6865385671456654,
+      "at2_completeness_relative_error": 0.5405561125773019,
+      "gt450_completeness_relative_error": 0.5350545146737448
+    },
+    "TopologyConsistentResidual": {
+      "observed_node_spearman": 0.33357357357357353,
+      "excess_node_spearman": 0.29925518661518663,
+      "observed_top5_overlap": 1.6333333333333333,
+      "excess_top5_overlap": 0.9310333333333333,
+      "channel_importance_cosine": 0.9724423708681711,
+      "at2_fidelity_excess": -0.04326205293337504,
+      "gt450_fidelity_excess": -0.0356791086991628,
+      "at2_completeness_abs_error": 1.7043253183364868,
+      "gt450_completeness_abs_error": 1.6711430350939434,
+      "at2_completeness_relative_error": 0.5600289044566314,
+      "gt450_completeness_relative_error": 0.5496026286051292
+    }
+  },
+  "paired_region_bootstrap": {
+    "sampling_unit": "validation_region",
+    "repetitions": 5000,
+    "results": {
+      "observed_node_spearman": {
+        "mean_difference": 0.011342771342771351,
+        "lower_95": -0.056287859287859246,
+        "upper_95": 0.08227627627627625,
+        "regions_positive": 4,
+        "regions_negative": 6
+      },
+      "excess_node_spearman": {
+        "mean_difference": 0.028238721578721565,
+        "lower_95": -0.040175886743886745,
+        "upper_95": 0.09565584920634916,
+        "regions_positive": 5,
+        "regions_negative": 5
+      },
+      "observed_top5_overlap": {
+        "mean_difference": 0.4666666666666667,
+        "lower_95": -1.1102230246251566e-17,
+        "upper_95": 0.9666666666666665,
+        "regions_positive": 7,
+        "regions_negative": 2
+      },
+      "excess_top5_overlap": {
+        "mean_difference": 0.5279333333333333,
+        "lower_95": 0.024497499999999957,
+        "upper_95": 1.0084574999999998,
+        "regions_positive": 8,
+        "regions_negative": 2
+      },
+      "channel_importance_cosine": {
+        "mean_difference": 0.001528516374294253,
+        "lower_95": 0.0006853266413176334,
+        "upper_95": 0.002602426412087444,
+        "regions_positive": 9,
+        "regions_negative": 1
+      },
+      "at2_fidelity_excess": {
+        "mean_difference": 0.011260944406191496,
+        "lower_95": -0.0115176877975464,
+        "upper_95": 0.03465182779729361,
+        "regions_positive": 5,
+        "regions_negative": 5
+      },
+      "gt450_fidelity_excess": {
+        "mean_difference": 0.017979138096173602,
+        "lower_95": -0.019176958585778905,
+        "upper_95": 0.05558752967913945,
+        "regions_positive": 6,
+        "regions_negative": 4
+      }
+    }
+  },
+  "detail_table_sha256": "1304616255ae1e5e0daca1879cf93ff66723250f4f05a5aa671637f4a43d40ff",
+  "region_table_sha256": "e5f423d70d0166f0f3b101edc5f01ea107af7f8734fcd29b5fccfc4cbcf7e515",
+  "training_performed": false,
+  "model_inference_performed": false,
+  "checkpoint_selection_performed": false,
+  "test_evaluated": false,
+  "limitations": [
+    "IG uses the zero-feature baseline",
+    "Completeness is checked for 32-step approximation",
+    "Fidelity deletion changes input feature distribution",
+    "Random deletion controls matched degree only",
+    "High absolute channel cosine may conceal signed differences",
+    "Bootstrap regions share one biological source context",
+    "Same validation data have been repeatedly analyzed",
+    "Attributions lack biological ground-truth annotations"
+  ]
+}

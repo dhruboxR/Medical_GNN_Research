@@ -1,0 +1,28 @@
+{
+  "phase": "5",
+  "step": "5.1",
+  "created_utc": "2026-11-25T19:38:36.793422+00:00",
+  "source_synthesis_sha256": "82f0d86b6865c8484742c98153d777d2bcf1d421fda4b51a06ae36c7f3e1ff02",
+  "source_test_report_sha256": "95db3eaa4fb7d33137c9b0aa09f4fb8e01cd1accfc9da502838ad41c1c16459a",
+  "source_test_summary_sha256": "de36ca5efa766261d663f411ef3557f236d576ccd7e06c2c88388c2f2e9c0079",
+  "source_test_audit_sha256": "019af9f303ebeed7a199ba88df44e4b5e3db596d8a931f8d9cc893fe5bf5657b",
+  "frozen_protocol_sha256": "e6c8516e2dd279ca58b7873050c227ebe3a958a39140869065b36d38b0af78a9",
+  "primary_difference_pp": 10.425926407178244,
+  "primary_interval": [
+    8.962963422139486,
+    11.648148854573567
+  ],
+  "table_sha256": "9f08200f5621719db6fc95294b863c9bdfbf71f3844dce8f979d7b2af909777d",
+  "figure_retrieval_sha256": "3aff78e26fbcbea8aae344d01d84626778a22794def09787173a1c8f9a9f80a2",
+  "figure_primary_effect_sha256": "f774aebe3fd44d7eeea1ae4fa57bcaf56dadedeabbd929ac0ceac5df1a59ccda",
+  "graph_archive_opened": false,
+  "model_inference_performed": false,
+  "model_training_performed": false,
+  "additional_test_evaluation_performed": false,
+  "limitations": [
+    "Synthetic adjacency changes are not real scanner shifts",
+    "Test regions are not independent biological specimens",
+    "Bootstrap interval is descriptive",
+    "Exploratory validation results preceded the test freeze"
+  ]
+}

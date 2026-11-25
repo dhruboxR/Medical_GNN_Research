@@ -1,0 +1,97 @@
+{
+  "phase": "4.2",
+  "step": "4.2.21",
+  "generated_utc": "2026-11-25T19:05:12.973296+00:00",
+  "experiment": "degree_controlled_structural_xai",
+  "source_report_sha256": "bf12258abe6dcbf6f644ce343a1df0e12cd5b721e2c2f85da465998501ad1e57",
+  "source_detail_sha256": "f9f140edc24480132494bbd21ed0e468d8b27f0d6e4fab893efec93fefa387a6",
+  "source_summary_sha256": "242ea62ede9cbc4e25eabc59c30e48ffe3d5db58abf58599363929a7edc67ff1",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "models": [
+    "ResidualGate05",
+    "TopologyConsistentResidual"
+  ],
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "validation_regions": 10,
+  "nodes_per_graph": 36,
+  "top_k": 5,
+  "degree_groups": {
+    "2": 4,
+    "3": 16,
+    "4": 16
+  },
+  "null_method": "permute_GT450_importance_within_equal_degree_groups",
+  "null_repetitions": 1000,
+  "model_summary": {
+    "ResidualGate05": {
+      "observed_spearman": 0.38653796653796657,
+      "null_mean_spearman": 0.027908528528528525,
+      "excess_spearman": 0.3586294380094381,
+      "observed_top5_overlap": 1.8333333333333333,
+      "null_mean_top5_overlap": 0.7429333333333334,
+      "excess_top5_overlap": 1.0903999999999998
+    },
+    "TopologyConsistentResidual": {
+      "observed_spearman": 0.32649506649506654,
+      "null_mean_spearman": 0.02388644358644359,
+      "excess_spearman": 0.30260862290862295,
+      "observed_top5_overlap": 1.8,
+      "null_mean_top5_overlap": 0.7317333333333335,
+      "excess_top5_overlap": 1.0682666666666665
+    }
+  },
+  "paired_region_bootstrap": {
+    "unit": "spatial_region",
+    "repetitions": 5000,
+    "results": {
+      "observed_spearman": {
+        "mean_paired_difference": -0.06004290004290005,
+        "lower_95": -0.1102142857142857,
+        "upper_95": -0.0016278421278421622,
+        "regions_with_positive_difference": 2,
+        "regions_with_negative_difference": 8
+      },
+      "excess_spearman": {
+        "mean_paired_difference": -0.05602081510081512,
+        "lower_95": -0.11441689768339769,
+        "upper_95": 0.006274571428571366,
+        "regions_with_positive_difference": 2,
+        "regions_with_negative_difference": 8
+      },
+      "observed_top5_overlap": {
+        "mean_paired_difference": -0.033333333333333326,
+        "lower_95": -0.3666666666666667,
+        "upper_95": 0.3000000000000001,
+        "regions_with_positive_difference": 3,
+        "regions_with_negative_difference": 5
+      },
+      "excess_top5_overlap": {
+        "mean_paired_difference": -0.02213333333333335,
+        "lower_95": -0.34906666666666664,
+        "upper_95": 0.34877916666666636,
+        "regions_with_positive_difference": 3,
+        "regions_with_negative_difference": 7
+      }
+    }
+  },
+  "null_table_sha256": "323d0ed90fa1c9741f7f7340a237a36127e690c2a9d3fb6b6a91fefe05313e75",
+  "region_table_sha256": "189a9bfedd8c9c7703c8fa8c7d3737fe03a9d3b79d2dda3ce5c2195f1921c274",
+  "training_performed": false,
+  "model_inference_performed": false,
+  "checkpoint_selection_performed": false,
+  "test_evaluated": false,
+  "limitations": [
+    "Controls node degree, not all spatial confounders",
+    "Null permutations are conditional on observed scores",
+    "Same validation regions have been repeatedly examined",
+    "Bootstrap does not represent independent patients",
+    "Explanation scores use a retrieval training objective",
+    "No biologically validated relevance labels",
+    "No degree-matched deletion fidelity control yet"
+  ]
+}

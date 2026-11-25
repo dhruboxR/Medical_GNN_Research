@@ -1,0 +1,141 @@
+{
+  "phase": "4.2",
+  "step": "4.2.29",
+  "created_utc": "2026-11-25T19:29:19.069912+00:00",
+  "type": "exploratory_research_synthesis",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "source_sha256": {
+    "representation_report": "a0a37c48b458e2a69e24c88a975cb48475f74ea46425dd094db4e81e4c089165",
+    "representation_table": "c217d40e0f5defb2a526405de98d5d81fadcb5a1958501597f1e4984184b2b37",
+    "ig_report": "b75cb33c452334c3d5c5767eb348e5c409a7cafeb5317f9081eaa5973975206b",
+    "ig_detail": "6f7035d54871d4ee41e316d8a1108883795582fadad18edc9584c140dc1614c1",
+    "ig_regions": "530a0e333d8d2eb73227eb41848fa1e78b2b84663133b201a81e3e101381e128",
+    "edge_report": "f495a5f0508a93e4462fb8997ad64ba8b64da2c7aaa04fafae133e19076a3436",
+    "edge_masks": "a07f51c8e8d1ef7534fef5df0f65436774e284989b37a120e423b3d8b7d39668",
+    "edge_pairs": "4327d9ca4352bb2d9328da3f4636a343f7d9b84190d2c506fb3bdd8179070395",
+    "edge_regions": "23e92d0bb2c7a555f74c70516b4792601230aa61b7f79077ca6ebb3f975472e2"
+  },
+  "models": [
+    {
+      "model": "ResidualGate05",
+      "normal_recall_at_1": 0.9694444457689921,
+      "discordant_recall_at_1": 0.7809259307384491,
+      "robustness_drop_pp": 18.851851503054306,
+      "absolute_ig_excess_rho": 0.5121603946803946,
+      "signed_ig_excess_rho": 0.3633104161304161,
+      "at2_signed_ig_fidelity_excess": 0.44969115366538354,
+      "gt450_signed_ig_fidelity_excess": 0.48320475002129876,
+      "edge_mask_mean": 0.4115690744471633,
+      "edge_mask_std": 0.336501515113085,
+      "edge_mask_excess_rho": 0.04800642030193571,
+      "edge_mask_excess_top12_overlap": -0.4036333333333333,
+      "at2_edge_fidelity_excess": 0.09779680969814458,
+      "gt450_edge_fidelity_excess": 0.08583458674450715
+    },
+    {
+      "model": "TopologyConsistentResidual",
+      "normal_recall_at_1": 0.9601851920286815,
+      "discordant_recall_at_1": 0.8525925991932551,
+      "robustness_drop_pp": 10.759259283542633,
+      "absolute_ig_excess_rho": 0.5146884169884169,
+      "signed_ig_excess_rho": 0.2850539253539254,
+      "at2_signed_ig_fidelity_excess": 0.35345552086830134,
+      "gt450_signed_ig_fidelity_excess": 0.39338311781485874,
+      "edge_mask_mean": 0.3626196449415552,
+      "edge_mask_std": 0.34560242214941095,
+      "edge_mask_excess_rho": 0.031927248309715654,
+      "edge_mask_excess_top12_overlap": -0.11116666666666668,
+      "at2_edge_fidelity_excess": 0.06047515645623206,
+      "gt450_edge_fidelity_excess": 0.05639096140861512
+    }
+  ],
+  "paired_regularized_minus_baseline": {
+    "discordant_recall_difference_pp": 7.1666668454806075,
+    "normal_recall_difference_pp": -0.9259253740310669,
+    "xai_descriptive_intervals": {
+      "ig_absolute_excess_rho": {
+        "difference": 0.0025280223080222874,
+        "lower_95": -0.034040348991849004,
+        "upper_95": 0.04669965465465459,
+        "positive_regions": 3,
+        "negative_regions": 7
+      },
+      "ig_signed_excess_rho": {
+        "difference": -0.0782564907764908,
+        "lower_95": -0.15822928614328616,
+        "upper_95": -0.00044677262977267304,
+        "positive_regions": 3,
+        "negative_regions": 7
+      },
+      "ig_at2_signed_fidelity": {
+        "difference": -0.09623563279708229,
+        "lower_95": -0.14185905833294,
+        "upper_95": -0.050814878714581374,
+        "positive_regions": 2,
+        "negative_regions": 8
+      },
+      "ig_gt450_signed_fidelity": {
+        "difference": -0.08982163220643995,
+        "lower_95": -0.11930381734669204,
+        "upper_95": -0.06423965436716876,
+        "positive_regions": 0,
+        "negative_regions": 10
+      },
+      "edge_excess_rho": {
+        "mean_difference": -0.01607917199222006,
+        "lower_95": -0.08359592391405019,
+        "upper_95": 0.04966670149115492,
+        "positive_regions": 4,
+        "negative_regions": 6
+      },
+      "edge_excess_top12_overlap": {
+        "mean_difference": 0.29246666666666665,
+        "lower_95": -0.37888583333333326,
+        "upper_95": 0.9236941666666657,
+        "positive_regions": 6,
+        "negative_regions": 4
+      },
+      "edge_at2_fidelity": {
+        "mean_difference": -0.03732165324191252,
+        "lower_95": -0.05345676422615846,
+        "upper_95": -0.02183282563897472,
+        "positive_regions": 1,
+        "negative_regions": 9
+      },
+      "edge_gt450_fidelity": {
+        "mean_difference": -0.029443625335892044,
+        "lower_95": -0.04074557112033169,
+        "upper_95": -0.019705199186379724,
+        "positive_regions": 0,
+        "negative_regions": 10
+      }
+    }
+  },
+  "conclusions": [
+    "Consistency improves synthetic scanner-discordant retrieval under the evaluated perturbations.",
+    "Normal-topology retrieval decreases slightly.",
+    "Corrected IG feature attributions show positive deletion-fidelity excess in both models.",
+    "The unregularized residual model has stronger signed IG deletion fidelity.",
+    "Learned edge masks show weak cross-scanner structural attribution agreement.",
+    "The unregularized residual model has stronger historical edge-deletion fidelity.",
+    "No independent biological or clinical generalization is established."
+  ],
+  "limitations": [
+    "Ten validation regions from shared biological material",
+    "Repeated exploratory use of the validation partition",
+    "Synthetic graph perturbations are not real scanner shifts",
+    "IG explains 384-dimensional features, not image pixels",
+    "Edge masks optimized on validation instances",
+    "Edge deletion fidelity lacks edge-type-matched controls",
+    "Descriptive region bootstrap is not patient-level inference",
+    "No pathologist-validated explanation ground truth",
+    "This synthesis does not choose a winning model"
+  ],
+  "synthesis_table_sha256": "0f75f68b0a7e84a3e90e2e3c6341c1b5bc8264021a7b346dc54a795510ed781b",
+  "model_training_performed": false,
+  "model_inference_performed": false,
+  "checkpoint_selection_performed": false,
+  "test_evaluated": false,
+  "recommended_next_stage": "Phase 4.3 protocol freeze"
+}

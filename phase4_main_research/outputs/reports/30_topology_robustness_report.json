@@ -1,0 +1,142 @@
+{
+  "phase": "4.2",
+  "step": "4.2.15",
+  "generated_utc": "2026-11-25T18:54:25.731687+00:00",
+  "experiment": "frozen_checkpoint_topology_robustness",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "architecture_sha256": "f34f3133e6ed9da57aa96bbc6da680e5dcc2d97481dfa850f47e91039128c660",
+  "source_report_hashes": {
+    "GraphSAGE": "437f072e09a877ad6212525f3205eac5116a4b529afc38592e7910cea3b11fda",
+    "ResidualGate05": "1170a4c3ade7782f7080b2d7bb0539f3f2154a70f806393c5d8276c1f7cffb4f"
+  },
+  "source_checkpoint_hashes": {
+    "GraphSAGE": {
+      "42": "cdb0d93434b9f9b7f93f96393ac500e06a339403bd1f095cb0ff620bff611dfd",
+      "123": "74c0acea0f60e556dc71211889f63b3e07dab31bd13f8b4a1b8cd7d96c6a1d1e",
+      "2026": "61e5b3f8dd57fec7588a9de39af3a1850f4b39781213d933734f7cc1d7110b9d"
+    },
+    "ResidualGate05": {
+      "42": "1e0978189e870f9ac784dc56971c3f30a54ab86e8669e720f47f3d3e85ddfc58",
+      "123": "35fe82ad9ce43ee55dc13f39a58f88588b9c910cfb356094208fbcee57cb2807",
+      "2026": "cb021dd5f7f55817735e72589ab53d7dcb8c5711d8e119625c685818ff994f49"
+    }
+  },
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "repetitions": 5,
+  "validation_regions": 10,
+  "conditions": [
+    "original",
+    "shared_random",
+    "scanner_discordant_random"
+  ],
+  "degree_multiset_preserved": true,
+  "graph_edge_count_preserved": true,
+  "node_features_changed": false,
+  "training_performed": false,
+  "checkpoint_selection_performed": false,
+  "test_evaluated": false,
+  "models": [
+    {
+      "model": "GraphSAGE",
+      "condition": "original",
+      "seeds": 3,
+      "repetitions": 5,
+      "regions": 10,
+      "mean_recall_at_1": 0.9740740716457367,
+      "mean_mrr": 0.9847767015298208,
+      "mean_hard_negative_margin": 0.08600329402834177,
+      "mean_matched_cosine": 0.883920959631602,
+      "mean_at2_offdiagonal_cosine": 0.662805105249087,
+      "mean_gt450_offdiagonal_cosine": 0.6780833045641581,
+      "change_from_original_pp": 0.0
+    },
+    {
+      "model": "GraphSAGE",
+      "condition": "shared_random",
+      "seeds": 3,
+      "repetitions": 5,
+      "regions": 10,
+      "mean_recall_at_1": 0.9740740768114726,
+      "mean_mrr": 0.9849681222438812,
+      "mean_hard_negative_margin": 0.09118664463361105,
+      "mean_matched_cosine": 0.8845936218897502,
+      "mean_at2_offdiagonal_cosine": 0.6676020324230194,
+      "mean_gt450_offdiagonal_cosine": 0.6832611966133117,
+      "change_from_original_pp": 5.16573595010783e-07
+    },
+    {
+      "model": "GraphSAGE",
+      "condition": "scanner_discordant_random",
+      "seeds": 3,
+      "repetitions": 5,
+      "regions": 10,
+      "mean_recall_at_1": 0.5438888931274414,
+      "mean_mrr": 0.6690945649147033,
+      "mean_hard_negative_margin": 0.004950682066070537,
+      "mean_matched_cosine": 0.7947489829858144,
+      "mean_at2_offdiagonal_cosine": 0.6660008549690246,
+      "mean_gt450_offdiagonal_cosine": 0.681843750278155,
+      "change_from_original_pp": -43.01851785182953
+    },
+    {
+      "model": "ResidualGate05",
+      "condition": "original",
+      "seeds": 3,
+      "repetitions": 5,
+      "regions": 10,
+      "mean_recall_at_1": 0.9694444457689921,
+      "mean_mrr": 0.9828703820705413,
+      "mean_hard_negative_margin": 0.12606546382109324,
+      "mean_matched_cosine": 0.885599950949351,
+      "mean_at2_offdiagonal_cosine": 0.5495943913857142,
+      "mean_gt450_offdiagonal_cosine": 0.556024111310641,
+      "change_from_original_pp": 0.0
+    },
+    {
+      "model": "ResidualGate05",
+      "condition": "shared_random",
+      "seeds": 3,
+      "repetitions": 5,
+      "regions": 10,
+      "mean_recall_at_1": 0.9688888923327128,
+      "mean_mrr": 0.981994127035141,
+      "mean_hard_negative_margin": 0.1239028927932183,
+      "mean_matched_cosine": 0.8910171715418498,
+      "mean_at2_offdiagonal_cosine": 0.539315353234609,
+      "mean_gt450_offdiagonal_cosine": 0.5449279379844666,
+      "change_from_original_pp": -0.05555534362793324
+    },
+    {
+      "model": "ResidualGate05",
+      "condition": "scanner_discordant_random",
+      "seeds": 3,
+      "repetitions": 5,
+      "regions": 10,
+      "mean_recall_at_1": 0.7809259307384491,
+      "mean_mrr": 0.8523579879601797,
+      "mean_hard_negative_margin": 0.06278392238193192,
+      "mean_matched_cosine": 0.8285140319665273,
+      "mean_at2_offdiagonal_cosine": 0.5394740281502406,
+      "mean_gt450_offdiagonal_cosine": 0.5450533737738927,
+      "change_from_original_pp": -18.851851503054306
+    }
+  ],
+  "detail_table_sha256": "86e0546fbd363b84739956bcdf870d1e729794270aec726484c5bac03e0a3e0d",
+  "summary_table_sha256": "540237ac7a9bf9c031209daaac981f8cfd7fb9df6e90fd2738e6099c901552ac",
+  "limitations": [
+    "Inference-time topology interventions",
+    "Randomized graphs are out of training distribution",
+    "AT2 and GT450 use same graph in shared condition",
+    "Independent scanner graphs may differ in node degree",
+    "Repeated randomizations are not independent specimens",
+    "Only 10 spatial validation regions",
+    "No claim of biological independence",
+    "Validation analysis remains exploratory"
+  ],
+  "xai_planned": true
+}

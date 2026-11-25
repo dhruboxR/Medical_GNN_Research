@@ -1,0 +1,164 @@
+{
+  "phase": "4.2",
+  "step": "4.2.26",
+  "generated_utc": "2026-11-25T19:14:23.626181+00:00",
+  "experiment": "corrected_integrated_gradients_paired_audit",
+  "source_report_sha256": "fe17437f43183548bd62e70e91787c3a8cdb7afc0cbddc4e2fcbd8c3d802ee9b",
+  "source_nodes_sha256": "66e093019b9da0014382acfae0b90ce01b54f4b4254a5ddc625ebcdba2051a59",
+  "source_detail_sha256": "3618a7aca431c88d484a334ef1003cf920d5cfbe4e35dfe6fc31e11d865ce996",
+  "source_summary_sha256": "d54dc8d6fed6f551b2d411a88a833aef30611a29273555fcba5a420d0043e63c",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "models": [
+    "ResidualGate05",
+    "TopologyConsistentResidual"
+  ],
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "regions": 10,
+  "top_k": 5,
+  "degree_null_repetitions": 1000,
+  "degree_null_method": "permute_GT450_attributions_within_degree_groups",
+  "model_summary": {
+    "ResidualGate05": {
+      "absolute_observed_rho": 0.612054912054912,
+      "absolute_excess_rho": 0.5121603946803946,
+      "absolute_observed_overlap": 2.4,
+      "absolute_excess_overlap": 1.5966333333333331,
+      "signed_observed_rho": 0.3920034320034321,
+      "signed_excess_rho": 0.3633104161304161,
+      "signed_observed_overlap": 2.066666666666667,
+      "signed_excess_overlap": 1.2711666666666668,
+      "at2_absolute_excess": 0.32140904883543653,
+      "gt450_absolute_excess": 0.2585136034091313,
+      "at2_signed_positive_excess": 0.44969115366538354,
+      "gt450_signed_positive_excess": 0.48320475002129876,
+      "positive_at2_signed_fidelity_units": 30,
+      "positive_gt450_signed_fidelity_units": 30
+    },
+    "TopologyConsistentResidual": {
+      "absolute_observed_rho": 0.5984298584298584,
+      "absolute_excess_rho": 0.5146884169884169,
+      "absolute_observed_overlap": 2.2666666666666666,
+      "absolute_excess_overlap": 1.4587666666666668,
+      "signed_observed_rho": 0.30278850278850283,
+      "signed_excess_rho": 0.2850539253539254,
+      "signed_observed_overlap": 1.6,
+      "signed_excess_overlap": 0.8301333333333332,
+      "at2_absolute_excess": 0.22558056304852164,
+      "gt450_absolute_excess": 0.20399054507414502,
+      "at2_signed_positive_excess": 0.35345552086830134,
+      "gt450_signed_positive_excess": 0.39338311781485874,
+      "positive_at2_signed_fidelity_units": 30,
+      "positive_gt450_signed_fidelity_units": 30
+    }
+  },
+  "paired_region_bootstrap": {
+    "resampled_unit": "spatial_region",
+    "repetitions": 5000,
+    "results": {
+      "absolute_observed_rho": {
+        "difference": -0.013625053625053608,
+        "lower_95": -0.04844337194337192,
+        "upper_95": 0.0304191334191334,
+        "positive_regions": 4,
+        "negative_regions": 6
+      },
+      "absolute_excess_rho": {
+        "difference": 0.0025280223080222874,
+        "lower_95": -0.034040348991849004,
+        "upper_95": 0.04669965465465459,
+        "positive_regions": 3,
+        "negative_regions": 7
+      },
+      "absolute_observed_overlap": {
+        "difference": -0.13333333333333336,
+        "lower_95": -0.6333333333333332,
+        "upper_95": 0.3666666666666666,
+        "positive_regions": 3,
+        "negative_regions": 5
+      },
+      "absolute_excess_overlap": {
+        "difference": -0.13786666666666667,
+        "lower_95": -0.5943350000000001,
+        "upper_95": 0.35282916666666614,
+        "positive_regions": 3,
+        "negative_regions": 7
+      },
+      "signed_observed_rho": {
+        "difference": -0.08921492921492921,
+        "lower_95": -0.1778644358644359,
+        "upper_95": -0.007644787644787658,
+        "positive_regions": 2,
+        "negative_regions": 8
+      },
+      "signed_excess_rho": {
+        "difference": -0.0782564907764908,
+        "lower_95": -0.15822928614328616,
+        "upper_95": -0.00044677262977267304,
+        "positive_regions": 3,
+        "negative_regions": 7
+      },
+      "signed_observed_overlap": {
+        "difference": -0.4666666666666667,
+        "lower_95": -0.9666666666666666,
+        "upper_95": 0.033333333333333236,
+        "positive_regions": 3,
+        "negative_regions": 6
+      },
+      "signed_excess_overlap": {
+        "difference": -0.4410333333333335,
+        "lower_95": -0.8854050000000001,
+        "upper_95": 0.005807499999999828,
+        "positive_regions": 3,
+        "negative_regions": 7
+      },
+      "at2_absolute_excess": {
+        "difference": -0.09582848578691486,
+        "lower_95": -0.13395850817859176,
+        "upper_95": -0.06067941960195705,
+        "positive_regions": 0,
+        "negative_regions": 10
+      },
+      "gt450_absolute_excess": {
+        "difference": -0.05452305833498635,
+        "lower_95": -0.09708768050869306,
+        "upper_95": -0.005120294158657406,
+        "positive_regions": 3,
+        "negative_regions": 7
+      },
+      "at2_signed_positive_excess": {
+        "difference": -0.09623563279708229,
+        "lower_95": -0.14185905833294,
+        "upper_95": -0.050814878714581374,
+        "positive_regions": 2,
+        "negative_regions": 8
+      },
+      "gt450_signed_positive_excess": {
+        "difference": -0.08982163220643995,
+        "lower_95": -0.11930381734669204,
+        "upper_95": -0.06423965436716876,
+        "positive_regions": 0,
+        "negative_regions": 10
+      }
+    }
+  },
+  "detail_table_sha256": "6f7035d54871d4ee41e316d8a1108883795582fadad18edc9584c140dc1614c1",
+  "region_table_sha256": "530a0e333d8d2eb73227eb41848fa1e78b2b84663133b201a81e3e101381e128",
+  "training_performed": false,
+  "model_inference_performed": false,
+  "checkpoint_selection_performed": false,
+  "test_evaluated": false,
+  "limitations": [
+    "Only ten spatial validation regions",
+    "Training seeds and repetitions are not independent patients",
+    "Confidence intervals are exploratory and descriptive",
+    "Null permutations control node degree only",
+    "Positive deletion fidelity does not establish biological relevance",
+    "Multiple metrics were inspected after model development",
+    "No independent slide or patient generalization"
+  ]
+}

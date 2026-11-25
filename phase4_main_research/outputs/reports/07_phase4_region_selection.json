@@ -1,0 +1,33 @@
+{
+  "phase": "4",
+  "step": "4.1.7",
+  "generated_utc": "2026-11-24T22:22:37.062077+00:00",
+  "selection_seed": 42,
+  "region_size": 6,
+  "minimum_spatial_buffer_tiles": 2,
+  "selected_regions": 60,
+  "unique_positions": 2160,
+  "acquisitions_available": 31,
+  "maximum_proposed_pngs": 66960,
+  "spatial_splits": {
+    "train": 40,
+    "validation": 10,
+    "test": 10
+  },
+  "phase3b_overlap": 0,
+  "source_exact_index_sha256": "e580390a14a3a8b9089d3351bd86dad82af973c9bec9f233da543665669a9f3f",
+  "source_acquisition_selection_sha256": "d2316b5c894694bbc47bbcb71b72cd8ab9b92eba443558cb43dd8aa217031dad",
+  "source_phase3b_manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "manifest_sha256": "3a66b5f8e5563cc6741174a5736eb40a13d1b6f67c08b505328f066a8035681c",
+  "selection_status": "provisional",
+  "image_downloads": 0,
+  "biological_independence_verified": false,
+  "scanner_condition_holdout_finalized": false,
+  "limitations": [
+    "Spatial separation does not establish specimen independence",
+    "The same tissue material appears in all selected acquisitions",
+    "Region coverage may include uninformative tissue",
+    "Scanner-condition evaluation plan must be finalized",
+    "Manual registration and tissue-quality review pending"
+  ]
+}

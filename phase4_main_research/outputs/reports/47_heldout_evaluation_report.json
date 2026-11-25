@@ -1,0 +1,125 @@
+{
+  "checkpoint_selection_performed": false,
+  "detail_csv_sha256": "384585c40391418833f9f739edd42b8ae3774a2adedcfbf87c67b2888891f0d6",
+  "discordant_measurements_per_model": 150,
+  "frozen_protocol_sha256": "e6c8516e2dd279ca58b7873050c227ebe3a958a39140869065b36d38b0af78a9",
+  "generated_utc": "2026-11-25T19:34:21.573415+00:00",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "hyperparameter_tuning_performed": false,
+  "limitations": [
+    "Single shared biological source context",
+    "Spatially held-out regions are not independent patients",
+    "Synthetic graph topology shift is not real scanner shift",
+    "Bootstrap intervals are descriptive",
+    "Three training seeds are not independent specimens",
+    "Five topology repetitions share the same region features",
+    "No clinical diagnosis or classification evaluated",
+    "Test results must not trigger adaptive model tuning"
+  ],
+  "model_training_performed": false,
+  "models": [
+    "ResidualGate05",
+    "TopologyConsistentResidual"
+  ],
+  "normal_measurements_per_model": 30,
+  "paired_region_bootstrap": {
+    "method": "descriptive_95_percentile",
+    "metrics": {
+      "discordant_mrr_difference": {
+        "lower_95": 0.06502416709065438,
+        "mean": 0.07633600989977518,
+        "negative_regions": 0,
+        "positive_regions": 10,
+        "unchanged_regions": 0,
+        "upper_95": 0.08737359641989073
+      },
+      "discordant_recall_difference_pp": {
+        "lower_95": 8.962963422139486,
+        "mean": 10.425926407178242,
+        "negative_regions": 0,
+        "positive_regions": 10,
+        "unchanged_regions": 0,
+        "upper_95": 11.648148854573567
+      },
+      "normal_mrr_difference": {
+        "lower_95": -0.014865105748176576,
+        "mean": -0.0070246656735738116,
+        "negative_regions": 6,
+        "positive_regions": 3,
+        "unchanged_regions": 1,
+        "upper_95": 0.0003834274907906778
+      },
+      "normal_recall_difference_pp": {
+        "lower_95": -2.3148143291473393,
+        "mean": -0.9259259700775146,
+        "negative_regions": 6,
+        "positive_regions": 2,
+        "unchanged_regions": 2,
+        "upper_95": 0.37037014961242687
+      }
+    },
+    "resampling_unit": "spatial_region",
+    "samples": 5000,
+    "seed": 43001
+  },
+  "perturbation_repetitions": 5,
+  "phase": "4.4",
+  "pre_evaluation_audit_sha256": "1e3d1d5ed2ae9ea0825aa9f66ff2a4b55f34a11fadc43a2b7d6ebcefa395646d",
+  "primary_metric": {
+    "difference_percentage_points": 10.425926407178244,
+    "direction": "TopologyConsistentResidual_minus_ResidualGate05",
+    "name": "scanner_discordant_recall_at_1_difference"
+  },
+  "region_csv_sha256": "f97284e6e14f2ba4a3fc44963f7d71fab8c8b109e10bc50ed1672d9aca1f0216",
+  "secondary_results": {
+    "consistency_discordant_recall": 0.8046296375989914,
+    "consistency_normal_recall": 0.9129629691441854,
+    "consistency_robustness_drop_pp": 10.833333154519398,
+    "normal_difference_pp": -0.9259259700775124,
+    "residual_discordant_recall": 0.700370373527209,
+    "residual_normal_recall": 0.9222222288449605,
+    "residual_robustness_drop_pp": 22.185185531775154
+  },
+  "seed_csv_sha256": "2e642855f9ed3bf742b30fa9a3d18f1a48ac83d89dccc8cbce5f5de928e582b1",
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "status": "HELD_OUT_EVALUATION_COMPLETED",
+  "step": "4.4.1",
+  "summary": [
+    {
+      "condition": "normal_spatial",
+      "mean_mrr": 0.9532743116219838,
+      "mean_recall_at_1": 0.9222222288449605,
+      "measurements": 30,
+      "model": "ResidualGate05"
+    },
+    {
+      "condition": "scanner_discordant_random",
+      "mean_mrr": 0.7932785753409067,
+      "mean_recall_at_1": 0.700370373527209,
+      "measurements": 150,
+      "model": "ResidualGate05"
+    },
+    {
+      "condition": "normal_spatial",
+      "mean_mrr": 0.94624964594841,
+      "mean_recall_at_1": 0.9129629691441854,
+      "measurements": 30,
+      "model": "TopologyConsistentResidual"
+    },
+    {
+      "condition": "scanner_discordant_random",
+      "mean_mrr": 0.8696145852406819,
+      "mean_recall_at_1": 0.8046296375989914,
+      "measurements": 150,
+      "model": "TopologyConsistentResidual"
+    }
+  ],
+  "summary_csv_sha256": "de36ca5efa766261d663f411ef3557f236d576ccd7e06c2c88388c2f2e9c0079",
+  "test_evaluated": true,
+  "test_regions": 10,
+  "test_scanner_graphs": 20
+}

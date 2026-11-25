@@ -1,0 +1,99 @@
+{
+  "phase": "4.2",
+  "step": "4.2.12",
+  "generated_utc": "2026-11-25T18:50:03.297620+00:00",
+  "experiment": "posthoc_residual_gate_sensitivity",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "architecture_sha256": "f34f3133e6ed9da57aa96bbc6da680e5dcc2d97481dfa850f47e91039128c660",
+  "source_model_report_sha256": "5ef4db8f4dc45c777e729e178784e4d0ca4b50eed9cf2a4a6da48bf3501a7ea0",
+  "source_checkpoint_hashes": {
+    "42": "84438fbca2606f8a791c6ac459f6f295e5960a387d0e671e8f1cc5bc7fdda9b7",
+    "123": "b03020a5ba90bc02559c593537a639f8e55a37c687f6ce7d0a4c14f7ba95c585",
+    "2026": "8413f57ef9175868f66b5ee28d63f174437515289e6c6fffd4122b3d531bb00a"
+  },
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "validation_regions": 10,
+  "candidate_count": 360,
+  "training_performed": false,
+  "checkpoint_selection_performed": false,
+  "test_evaluated": false,
+  "summary": {
+    "checkpoint_learned": {
+      "runs": 3,
+      "mean_within_recall_at_1": 0.9287037114302317,
+      "mean_global_recall_at_1": 0.9259259502092997,
+      "mean_at2_offdiagonal_cosine": 0.7966709733009338,
+      "mean_gt450_offdiagonal_cosine": 0.8019810914993286
+    },
+    "fixed_0": {
+      "runs": 3,
+      "mean_within_recall_at_1": 0.8833333313465118,
+      "mean_global_recall_at_1": 0.8833333253860474,
+      "mean_at2_offdiagonal_cosine": 0.870434582233429,
+      "mean_gt450_offdiagonal_cosine": 0.8741536140441895
+    },
+    "fixed_0.1": {
+      "runs": 3,
+      "mean_within_recall_at_1": 0.9138888955116272,
+      "mean_global_recall_at_1": 0.9129629929860433,
+      "mean_at2_offdiagonal_cosine": 0.8322350780169169,
+      "mean_gt450_offdiagonal_cosine": 0.8367390433947245
+    },
+    "fixed_0.25": {
+      "runs": 3,
+      "mean_within_recall_at_1": 0.9305555601914725,
+      "mean_global_recall_at_1": 0.9296296636263529,
+      "mean_at2_offdiagonal_cosine": 0.7565378149350485,
+      "mean_gt450_offdiagonal_cosine": 0.7628058989842733
+    },
+    "fixed_0.5": {
+      "runs": 3,
+      "mean_within_recall_at_1": 0.9333333353201549,
+      "mean_global_recall_at_1": 0.9324074188868204,
+      "mean_at2_offdiagonal_cosine": 0.6068025628725687,
+      "mean_gt450_offdiagonal_cosine": 0.6168354948361715
+    },
+    "fixed_1": {
+      "runs": 3,
+      "mean_within_recall_at_1": 0.9277777850627899,
+      "mean_global_recall_at_1": 0.9259259303410848,
+      "mean_at2_offdiagonal_cosine": 0.3778620958328247,
+      "mean_gt450_offdiagonal_cosine": 0.39390567938486737
+    },
+    "fixed_2": {
+      "runs": 3,
+      "mean_within_recall_at_1": 0.9231481552124023,
+      "mean_global_recall_at_1": 0.9212963183720907,
+      "mean_at2_offdiagonal_cosine": 0.27183738350868225,
+      "mean_gt450_offdiagonal_cosine": 0.2912665804227193
+    },
+    "fixed_4": {
+      "runs": 3,
+      "mean_within_recall_at_1": 0.9231481552124023,
+      "mean_global_recall_at_1": 0.9203703800837199,
+      "mean_at2_offdiagonal_cosine": 0.30087628960609436,
+      "mean_gt450_offdiagonal_cosine": 0.32000138362248737
+    },
+    "graph_only": {
+      "runs": 3,
+      "mean_within_recall_at_1": 0.9268518586953481,
+      "mean_global_recall_at_1": 0.9212963183720907,
+      "mean_at2_offdiagonal_cosine": 0.40299103657404584,
+      "mean_gt450_offdiagonal_cosine": 0.419727881749471
+    }
+  },
+  "table_sha256": "a8474201d98c9905c9a50cafeac525a1713c2ed100bb72ef84389ab3d2ab0a68",
+  "limitations": [
+    "Post-hoc gate interventions are exploratory",
+    "Graph pathway weights are not retrained",
+    "Alpha values above 1 exceed the original gate range",
+    "No independent biological validation",
+    "Validation data must not be treated as a new test set"
+  ],
+  "xai_planned": true
+}

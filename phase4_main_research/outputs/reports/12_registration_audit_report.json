@@ -1,0 +1,175 @@
+{
+  "phase": "4",
+  "step": "4.1.12",
+  "generated_utc": "2026-11-24T22:58:06.733647+00:00",
+  "dataset": "owkin/plism-dataset-tiles",
+  "source_audit_sha256": "5ad74a54789587392d323c18a9f0de3f180db8f288162774bdfa5e351ed2a51c",
+  "pairs_assessed": 2160,
+  "regions_assessed": 60,
+  "maximum_shift_per_axis_pixels": 8,
+  "minimum_edge_improvement": 0.02,
+  "overall_metrics": {
+    "raw_ssim": {
+      "count": 2160,
+      "min": -0.04566569732512516,
+      "p05": 0.024015014998664607,
+      "median": 0.06664357721166278,
+      "mean": 0.09550279811670329,
+      "p95": 0.28206844976832,
+      "max": 0.8725969039318227
+    },
+    "normalized_ssim": {
+      "count": 2160,
+      "min": -0.06725160314867713,
+      "p05": -0.009736781750124676,
+      "median": 0.018752177538046953,
+      "mean": 0.040133341303687974,
+      "p95": 0.1755524986262525,
+      "max": 0.5533947005147769
+    },
+    "edge_correlation": {
+      "count": 2160,
+      "min": -0.05446305117662826,
+      "p05": -0.007072344942176859,
+      "median": 0.052460801144006655,
+      "mean": 0.08545143971634911,
+      "p95": 0.294148562119346,
+      "max": 0.6181840516315564
+    },
+    "estimated_shift_magnitude": {
+      "count": 2160,
+      "min": 1.4142135623730951,
+      "p05": 5.0,
+      "median": 12.649110640673518,
+      "mean": 16.081336330756383,
+      "p95": 39.824615503479755,
+      "max": 102.30347012687302
+    },
+    "edge_improvement_bounded": {
+      "count": 641,
+      "min": 0.06809892464611622,
+      "p05": 0.33732547588625617,
+      "median": 0.5863257494915882,
+      "mean": 0.5735750834604812,
+      "p95": 0.787352196031747,
+      "max": 0.9075827259797327
+    }
+  },
+  "partition_metrics": {
+    "train": {
+      "pairs": 1440,
+      "median_raw_ssim": 0.06268805334461877,
+      "median_normalized_ssim": 0.01891999036903182,
+      "median_edge_correlation": 0.050267566524913,
+      "bounded_translation_proposals": 428,
+      "improved_translation_proposals": 428
+    },
+    "validation": {
+      "pairs": 360,
+      "median_raw_ssim": 0.07396390734702787,
+      "median_normalized_ssim": 0.02088141698589185,
+      "median_edge_correlation": 0.07638617579145351,
+      "bounded_translation_proposals": 156,
+      "improved_translation_proposals": 156
+    },
+    "test": {
+      "pairs": 360,
+      "median_raw_ssim": 0.0762422299662743,
+      "median_normalized_ssim": 0.016752697671627063,
+      "median_edge_correlation": 0.04784188718971981,
+      "bounded_translation_proposals": 57,
+      "improved_translation_proposals": 57
+    }
+  },
+  "pairs_with_bounded_shift": 641,
+  "pairs_with_bounded_improvement": 641,
+  "worst_pair_reviews": {
+    "train": [
+      {
+        "region_id": "PHASE4_REGION_036",
+        "tile_id": "tile_16_219_78",
+        "raw_ssim": -0.04566569732512516
+      },
+      {
+        "region_id": "PHASE4_REGION_044",
+        "tile_id": "tile_16_230_53",
+        "raw_ssim": -0.03292078791917118
+      },
+      {
+        "region_id": "PHASE4_REGION_045",
+        "tile_id": "tile_16_159_54",
+        "raw_ssim": -0.01872745942019302
+      },
+      {
+        "region_id": "PHASE4_REGION_045",
+        "tile_id": "tile_16_159_53",
+        "raw_ssim": -0.008110341269116802
+      }
+    ],
+    "validation": [
+      {
+        "region_id": "PHASE4_REGION_015",
+        "tile_id": "tile_16_137_52",
+        "raw_ssim": -0.04046853610585042
+      },
+      {
+        "region_id": "PHASE4_REGION_015",
+        "tile_id": "tile_16_138_53",
+        "raw_ssim": -0.0373987571580233
+      },
+      {
+        "region_id": "PHASE4_REGION_015",
+        "tile_id": "tile_16_138_54",
+        "raw_ssim": -0.021086367370916473
+      },
+      {
+        "region_id": "PHASE4_REGION_015",
+        "tile_id": "tile_16_137_53",
+        "raw_ssim": -0.01773474447599298
+      }
+    ],
+    "test": [
+      {
+        "region_id": "PHASE4_REGION_029",
+        "tile_id": "tile_16_114_170",
+        "raw_ssim": 0.02380547080218931
+      },
+      {
+        "region_id": "PHASE4_REGION_049",
+        "tile_id": "tile_16_25_162",
+        "raw_ssim": 0.02560451938802647
+      },
+      {
+        "region_id": "PHASE4_REGION_049",
+        "tile_id": "tile_16_25_158",
+        "raw_ssim": 0.025639519374016935
+      },
+      {
+        "region_id": "PHASE4_REGION_043",
+        "tile_id": "tile_16_236_106",
+        "raw_ssim": 0.029983406228753257
+      }
+    ]
+  },
+  "review_figures": {
+    "train": "outputs/figures/12_train_worst_scanner_pairs.png",
+    "validation": "outputs/figures/12_validation_worst_scanner_pairs.png",
+    "test": "outputs/figures/12_test_worst_scanner_pairs.png"
+  },
+  "pair_metrics_sha256": "4af67aa8535faf859c85e93b457f295d1279de2c605316faaf085c9448fc2ed6",
+  "region_metrics_sha256": "34576268634b5d3904e46f1fc21219e3718a9cfc80ba3086eac30c2455e9bc2b",
+  "original_images_modified": false,
+  "pairs_excluded": 0,
+  "manual_registration_review_completed": false,
+  "dataset_approved_for_training": false,
+  "biological_independence_verified": false,
+  "limitations": [
+    "SSIM is affected by scanner appearance",
+    "Contrast normalization is diagnostic only",
+    "Edge correlation is not proof of registration",
+    "Estimated translations may be unreliable",
+    "Only shifts within eight pixels per axis are evaluated",
+    "Worst-pair sheets are based on raw SSIM",
+    "Independent biological validation is unavailable"
+  ]
+}

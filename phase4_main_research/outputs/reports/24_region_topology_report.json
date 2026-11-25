@@ -1,0 +1,82 @@
+{
+  "phase": "4.2",
+  "step": "4.2.9",
+  "generated_utc": "2026-11-25T18:45:06.598815+00:00",
+  "experiment": "region_specific_topology_control",
+  "architecture": "GraphSAGE_384_256_384_GELU",
+  "randomization": "independent_per_region_and_seed; shared_between_scanners",
+  "degree_multiset_preserved": true,
+  "graph_edges_per_region": 120,
+  "input_features_unchanged": true,
+  "model_hyperparameters_matched": true,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "train_region_pairs": 40,
+  "validation_region_pairs": 10,
+  "test_region_pairs_reserved": 10,
+  "test_evaluated": false,
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "mean_region_specific_recall_at_1": 0.979629655679067,
+  "std_region_specific_recall_at_1": 0.00892932349751698,
+  "mean_original_graphsage_recall_at_1": 0.974074105421702,
+  "mean_fixed_permutation_recall_at_1": 0.979629655679067,
+  "original_minus_region_specific_pp": -0.555555025736491,
+  "fixed_minus_region_specific_pp": 0.0,
+  "seed_results": [
+    {
+      "seed": 42,
+      "best_epoch": 1,
+      "validation_loss": 1.3848469257354736,
+      "validation_recall_at_1": 0.9833333492279053,
+      "validation_mrr": 0.9916666746139526,
+      "original_graphsage_recall_at_1": 0.9805555939674377,
+      "fixed_permutation_recall_at_1": 0.9805555939674377,
+      "self_only_recall_at_1": 0.9472222328186035,
+      "checkpoint_sha256": "f68b47414b81337c8f811b17eca8d7d9a26c8f40989dad13178c8ee08d5dbf9d"
+    },
+    {
+      "seed": 123,
+      "best_epoch": 2,
+      "validation_loss": 0.9643730521202087,
+      "validation_recall_at_1": 0.9694444537162781,
+      "validation_mrr": 0.984259307384491,
+      "original_graphsage_recall_at_1": 0.9666666984558105,
+      "fixed_permutation_recall_at_1": 0.9777777791023254,
+      "self_only_recall_at_1": 0.9500000476837158,
+      "checkpoint_sha256": "76c53ac599423f2d06d83883f0a13712930f8295d7d751c8352f3460cd74aa5b"
+    },
+    {
+      "seed": 2026,
+      "best_epoch": 1,
+      "validation_loss": 1.3140193223953247,
+      "validation_recall_at_1": 0.9861111640930176,
+      "validation_mrr": 0.9923611283302307,
+      "original_graphsage_recall_at_1": 0.9750000238418579,
+      "fixed_permutation_recall_at_1": 0.9805555939674377,
+      "self_only_recall_at_1": 0.9416666626930237,
+      "checkpoint_sha256": "62aaab23802a533ec52dc79529f26c6deea488b1a236be5c7175fcbdb1249f63"
+    }
+  ],
+  "checkpoint_hashes": {
+    "42": "f68b47414b81337c8f811b17eca8d7d9a26c8f40989dad13178c8ee08d5dbf9d",
+    "123": "76c53ac599423f2d06d83883f0a13712930f8295d7d751c8352f3460cd74aa5b",
+    "2026": "62aaab23802a533ec52dc79529f26c6deea488b1a236be5c7175fcbdb1249f63"
+  },
+  "history_sha256": "a9704db0276befdce63f596b9a7e51477b8c3be026560921f89c6bf18c07f897",
+  "summary_sha256": "87ba7f48e009c08534d733e35185a4e3b7ab60fac791583cdd28c1a091ce09ce",
+  "limitations": [
+    "Only three seed-specific randomization families",
+    "Paired scanners share each region's random topology",
+    "Degree-preserving permutation does not preserve each original node's degree",
+    "Validation selection uses 36-candidate Recall@1",
+    "Validation retrieval is near saturation",
+    "No independent biological validation",
+    "Test partition untouched"
+  ],
+  "xai_planned": true,
+  "biological_independence_verified": false
+}

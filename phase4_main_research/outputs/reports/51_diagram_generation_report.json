@@ -1,0 +1,35 @@
+{
+  "phase": "4",
+  "step": "final_reporting_51",
+  "created_utc": "2026-11-25T19:42:59.265658+00:00",
+  "frozen_protocol_sha256": "e6c8516e2dd279ca58b7873050c227ebe3a958a39140869065b36d38b0af78a9",
+  "source_sha256": {
+    "configs/45_phase43_frozen_evaluation_protocol.json": "e6c8516e2dd279ca58b7873050c227ebe3a958a39140869065b36d38b0af78a9",
+    "outputs/reports/47_heldout_evaluation_report.json": "95db3eaa4fb7d33137c9b0aa09f4fb8e01cd1accfc9da502838ad41c1c16459a",
+    "outputs/reports/48_heldout_results_integrity_audit.json": "019af9f303ebeed7a199ba88df44e4b5e3db596d8a931f8d9cc893fe5bf5657b",
+    "outputs/reports/49_figure_generation_report.json": "6fe56d0bc8139b26737a69a1c05dc3a09e82014fa3e2584d21b8c9e2987dd882",
+    "outputs/reports/50_robustness_xai_figure_report.json": "1cfca78a157c71b88721f41578b78e9c789d4f909c13c7213bcd7fc0ac0841ba"
+  },
+  "diagram_sha256": {
+    "outputs/figures/51_gated_residual_graphsage_architecture.png": "55e2cb16095c61fd6252199dc6705f8bda1ca530eb0266476b35ef43dce90b38",
+    "outputs/figures/51_gated_residual_graphsage_architecture.svg": "7917184bece942080c9d75c0bec9c72040a44891e110076cfc1f112971530803",
+    "outputs/figures/51_complete_research_workflow.png": "751920057ee50d96a3fff06f93c547e4ee895018183464aa93ed15d76cff6d5a",
+    "outputs/figures/51_complete_research_workflow.svg": "b3dffb87440e4923bfc5b545e98041936165b44b43920468fca49073919ca866"
+  },
+  "diagrams": [
+    "architecture_png",
+    "architecture_svg",
+    "workflow_png",
+    "workflow_svg"
+  ],
+  "graph_archive_opened": false,
+  "checkpoint_loaded": false,
+  "model_inference_performed": false,
+  "additional_test_evaluation_performed": false,
+  "limitations": [
+    "Architecture is a schematic, not a computational graph trace",
+    "Workflow summarizes completed research stages",
+    "Spatially held-out regions share biological source material",
+    "Synthetic topology disagreement is not a real scanner shift"
+  ]
+}

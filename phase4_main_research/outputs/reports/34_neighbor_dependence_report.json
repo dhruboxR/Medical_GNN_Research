@@ -1,0 +1,110 @@
+{
+  "phase": "4.2",
+  "step": "4.2.19",
+  "generated_utc": "2026-11-25T19:00:35.257845+00:00",
+  "experiment": "neighbor_dependence_audit",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "architecture_sha256": "f34f3133e6ed9da57aa96bbc6da680e5dcc2d97481dfa850f47e91039128c660",
+  "source_model_report_hashes": {
+    "ResidualGate05": "1170a4c3ade7782f7080b2d7bb0539f3f2154a70f806393c5d8276c1f7cffb4f",
+    "TopologyConsistentResidual": "0e49112a91a8f5f52f8a86fdb3611550870a474637ba058543fd0bc90f5e841c"
+  },
+  "source_robustness_report_sha256": "b14d4ee3496d1a61a4bae4b6baf0f64f2e10374e43f43eed2c43502d2d8aae63",
+  "training_seeds": [
+    42,
+    123,
+    2026
+  ],
+  "validation_regions": 10,
+  "discordant_repetitions": 5,
+  "intervention": "zero neighbor matrices in both SAGE layers during inference, without retraining",
+  "summary": [
+    {
+      "model": "ResidualGate05",
+      "condition": "normal_spatial",
+      "measurements": 30,
+      "mean_recall_at_1": 0.9694444457689921,
+      "mean_mrr": 0.9828703820705413,
+      "mean_final_identity_cosine": 0.8271242151657741,
+      "mean_graph_identity_cosine": -0.548915817340215,
+      "mean_learned_gate": 0.5655470291773478,
+      "neighbor_removal_drop_pp": 7.314814726511642,
+      "discordant_drop_pp": 18.851851503054306
+    },
+    {
+      "model": "ResidualGate05",
+      "condition": "neighbors_disabled",
+      "measurements": 30,
+      "mean_recall_at_1": 0.8962962985038757,
+      "mean_mrr": 0.9339439968268076,
+      "mean_final_identity_cosine": 0.8403822580973307,
+      "mean_graph_identity_cosine": -0.28629475807150206,
+      "mean_learned_gate": 0.5655470291773478,
+      "neighbor_removal_drop_pp": 7.314814726511642,
+      "discordant_drop_pp": 18.851851503054306
+    },
+    {
+      "model": "ResidualGate05",
+      "condition": "scanner_discordant_random",
+      "measurements": 150,
+      "mean_recall_at_1": 0.7809259307384491,
+      "mean_mrr": 0.8523579879601797,
+      "mean_final_identity_cosine": 0.8273938538630804,
+      "mean_graph_identity_cosine": -0.5444117248058319,
+      "mean_learned_gate": 0.5655470291773478,
+      "neighbor_removal_drop_pp": 7.314814726511642,
+      "discordant_drop_pp": 18.851851503054306
+    },
+    {
+      "model": "TopologyConsistentResidual",
+      "condition": "normal_spatial",
+      "measurements": 30,
+      "mean_recall_at_1": 0.9601851920286815,
+      "mean_mrr": 0.9779321034749349,
+      "mean_final_identity_cosine": 0.8309770633776983,
+      "mean_graph_identity_cosine": -0.5559357608358065,
+      "mean_learned_gate": 0.5600037773450216,
+      "neighbor_removal_drop_pp": 5.833333333333335,
+      "discordant_drop_pp": 10.759259283542633
+    },
+    {
+      "model": "TopologyConsistentResidual",
+      "condition": "neighbors_disabled",
+      "measurements": 30,
+      "mean_recall_at_1": 0.9018518586953481,
+      "mean_mrr": 0.9396843274434408,
+      "mean_final_identity_cosine": 0.8437813510497411,
+      "mean_graph_identity_cosine": -0.2808030379315217,
+      "mean_learned_gate": 0.5600037773450216,
+      "neighbor_removal_drop_pp": 5.833333333333335,
+      "discordant_drop_pp": 10.759259283542633
+    },
+    {
+      "model": "TopologyConsistentResidual",
+      "condition": "scanner_discordant_random",
+      "measurements": 150,
+      "mean_recall_at_1": 0.8525925991932551,
+      "mean_mrr": 0.9049742448329926,
+      "mean_final_identity_cosine": 0.8310686375697454,
+      "mean_graph_identity_cosine": -0.5498319350679716,
+      "mean_learned_gate": 0.5600037773450216,
+      "neighbor_removal_drop_pp": 5.833333333333335,
+      "discordant_drop_pp": 10.759259283542633
+    }
+  ],
+  "detail_sha256": "5b51bcc2ea854bceb10e7264e572d18d019631416a63cc84eece4d2d8e932f70",
+  "summary_sha256": "7c7b9d64753d02dfc407418d419fc98a42e6eedd419a75f3bb371f9a379a4d2c",
+  "training_performed": false,
+  "checkpoint_selection_performed": false,
+  "test_evaluated": false,
+  "limitations": [
+    "Neighbor removal is an inference-time intervention",
+    "No-neighbor checkpoints were not retrained",
+    "Different active message strengths may affect sensitivity",
+    "Same ten validation regions repeatedly analyzed",
+    "Synthetic topology changes are not real scanner shifts",
+    "Results do not establish clinical generalization"
+  ],
+  "xai_planned": true
+}

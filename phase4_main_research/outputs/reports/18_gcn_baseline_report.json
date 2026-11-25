@@ -1,0 +1,91 @@
+{
+  "phase": "4.2",
+  "step": "4.2.3",
+  "generated_utc": "2026-11-25T18:33:16.557115+00:00",
+  "experiment": "spatial_gcn_baseline",
+  "architecture": "GCN_384_256_384_GELU",
+  "graph_message_passing": true,
+  "graph_topology": "spatial_4_neighbor",
+  "normalization": "symmetric_degree_with_self_loops",
+  "model_input": "frozen_raw_dinov2_cls",
+  "output_normalization": "L2",
+  "objective": "bidirectional_within_region_InfoNCE",
+  "temperature": 0.07,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "batch_regions": 8,
+  "max_epochs": 100,
+  "patience": 20,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "train_region_pairs": 40,
+  "validation_region_pairs": 10,
+  "test_region_pairs_reserved": 10,
+  "test_evaluated": false,
+  "checkpoint_selection": "validation_recall_at_1_then_loss",
+  "seed_results": [
+    {
+      "seed": 42,
+      "best_epoch": 8,
+      "validation_loss": 2.0669102668762207,
+      "validation_recall_at_1": 0.6638889312744141,
+      "validation_mrr": 0.7740497589111328,
+      "validation_reverse_recall_at_1": 0.625,
+      "validation_reverse_mrr": 0.7576407790184021,
+      "validation_at2_offdiagonal_cosine": 0.7253605127334595,
+      "validation_gt450_offdiagonal_cosine": 0.7371429800987244,
+      "checkpoint_sha256": "a60db82005f35706228eda69b90f61e5882ee7bdd25c20360a25b45cf193c0a3"
+    },
+    {
+      "seed": 123,
+      "best_epoch": 7,
+      "validation_loss": 1.9917833805084229,
+      "validation_recall_at_1": 0.7277777791023254,
+      "validation_mrr": 0.8213195204734802,
+      "validation_reverse_recall_at_1": 0.6888889074325562,
+      "validation_reverse_mrr": 0.7898715138435364,
+      "validation_at2_offdiagonal_cosine": 0.7213543057441711,
+      "validation_gt450_offdiagonal_cosine": 0.7301490306854248,
+      "checkpoint_sha256": "580d958c06b83d88c29b88e48c931bb76764a743049883c7d2b94f283344f351"
+    },
+    {
+      "seed": 2026,
+      "best_epoch": 7,
+      "validation_loss": 2.121816396713257,
+      "validation_recall_at_1": 0.6833333373069763,
+      "validation_mrr": 0.8004171848297119,
+      "validation_reverse_recall_at_1": 0.6472222208976746,
+      "validation_reverse_mrr": 0.7666031122207642,
+      "validation_at2_offdiagonal_cosine": 0.7573285102844238,
+      "validation_gt450_offdiagonal_cosine": 0.7618318796157837,
+      "checkpoint_sha256": "b91a1ebcd69e5b47951fd93c1dd0c59d34b9f1fbaae87f39ee8906b5f66ce2b2"
+    }
+  ],
+  "mean_validation_recall_at_1": 0.6916666825612386,
+  "std_validation_recall_at_1": 0.03274949925631773,
+  "mlp_mean_validation_recall_at_1": 0.9324074188868204,
+  "gcn_minus_mlp_percentage_points": -24.07407363255818,
+  "history_sha256": "9b8da00662ad27abe6511adc26a8dac4eeeab7e13ddb0b264b95f160ea19476d",
+  "summary_sha256": "3db70068467dd4c460c940503156743c3f848bd17ce04bff6d042f92c19a27bd",
+  "checkpoint_hashes": {
+    "42": "a60db82005f35706228eda69b90f61e5882ee7bdd25c20360a25b45cf193c0a3",
+    "123": "580d958c06b83d88c29b88e48c931bb76764a743049883c7d2b94f283344f351",
+    "2026": "b91a1ebcd69e5b47951fd93c1dd0c59d34b9f1fbaae87f39ee8906b5f66ce2b2"
+  },
+  "test_data_used_for_training": false,
+  "biological_independence_verified": false,
+  "xai_planned": true,
+  "limitations": [
+    "Single biological source context",
+    "Small spatial validation set",
+    "Only two scanners",
+    "Graph propagation may smooth discriminative node features",
+    "Mean off-diagonal cosine is only one smoothing diagnostic",
+    "No final test evaluation performed"
+  ]
+}

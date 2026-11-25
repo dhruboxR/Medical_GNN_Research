@@ -1,0 +1,42 @@
+{
+  "phase": "4",
+  "step": "4.1.1",
+  "generated_utc": "2026-11-24T17:34:04.642032+00:00",
+  "python_version": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "dataset_id": "owkin/plism-dataset-tiles",
+  "dataset_metadata_url": "https://huggingface.co/api/datasets/owkin/plism-dataset-tiles?blobs=true",
+  "remote_metadata_retrieved": true,
+  "remote_error": null,
+  "remote_revision": "489cfa632886ce411ce0ab6e678e0587ac0ead04",
+  "remote_repository_entries": 295,
+  "remote_parquet_file_count": 293,
+  "known_remote_file_bytes": 146245791572,
+  "phase3b_manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "phase3b_feature_sha256": "484531c4f192d228cf04135da8afa64142a8ec77b6696a1e06f12a36b0264096",
+  "phase3b_regions": 10,
+  "phase3b_tile_positions": 360,
+  "phase3b_local_pngs": {
+    "AT2": {
+      "directory": "/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/datasets/PLISM/phase3b_original_png/AT2",
+      "exists": true,
+      "png_count": 360,
+      "total_gib": 0.037
+    },
+    "GT450": {
+      "directory": "/home/dhrubo_roy/MEDICAL_GNN_RESEARCH/datasets/PLISM/phase3b_original_png/GT450",
+      "exists": true,
+      "png_count": 360,
+      "total_gib": 0.032
+    }
+  },
+  "local_disk": {
+    "total_gib": 467.347,
+    "used_gib": 110.123,
+    "free_gib": 333.414
+  },
+  "independent_specimens_confirmed": false,
+  "tile_level_slide_inventory_completed": false,
+  "next_step": "Inspect remote Parquet metadata and calculate scanner/slide/coordinate coverage without downloading image payloads.",
+  "data_modified": false,
+  "image_downloads_performed": false
+}

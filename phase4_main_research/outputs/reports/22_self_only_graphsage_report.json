@@ -1,0 +1,91 @@
+{
+  "phase": "4.2",
+  "step": "4.2.7",
+  "generated_utc": "2026-11-25T18:41:14.667028+00:00",
+  "experiment": "self_only_graphsage_control",
+  "architecture": "GraphSAGE_384_256_384_GELU",
+  "neighbor_messages": "zero_during_training_and_evaluation",
+  "optimization": "AdamW",
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "temperature": 0.07,
+  "batch_regions": 8,
+  "max_epochs": 100,
+  "patience": 20,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "train_region_pairs": 40,
+  "validation_region_pairs": 10,
+  "test_region_pairs_reserved": 10,
+  "test_evaluated": false,
+  "mean_self_only_recall_at_1": 0.9462963143984476,
+  "std_self_only_recall_at_1": 0.0042431497783322674,
+  "mean_original_graphsage_recall_at_1": 0.974074105421702,
+  "mean_permuted_graphsage_recall_at_1": 0.979629655679067,
+  "original_minus_self_only_pp": 2.7777791023254395,
+  "permuted_minus_self_only_pp": 3.33333412806193,
+  "seed_results": [
+    {
+      "seed": 42,
+      "best_epoch": 12,
+      "validation_loss": 0.5090363025665283,
+      "validation_recall_at_1": 0.9472222328186035,
+      "validation_mrr": 0.9674603343009949,
+      "reverse_recall_at_1": 0.9111111164093018,
+      "at2_offdiagonal_cosine": 0.30271121859550476,
+      "gt450_offdiagonal_cosine": 0.3086104691028595,
+      "original_graphsage_recall_at_1": 0.9805555939674377,
+      "permuted_graphsage_recall_at_1": 0.9805555939674377,
+      "checkpoint_sha256": "b984cf1378c56b4534afd046c0e7afed57811a28a4dc6cc8ca7ee870db1cf3ac"
+    },
+    {
+      "seed": 123,
+      "best_epoch": 13,
+      "validation_loss": 0.43910402059555054,
+      "validation_recall_at_1": 0.9500000476837158,
+      "validation_mrr": 0.9680125117301941,
+      "reverse_recall_at_1": 0.925000011920929,
+      "at2_offdiagonal_cosine": 0.2724062204360962,
+      "gt450_offdiagonal_cosine": 0.29163506627082825,
+      "original_graphsage_recall_at_1": 0.9666666984558105,
+      "permuted_graphsage_recall_at_1": 0.9777777791023254,
+      "checkpoint_sha256": "066d5165a4fa93b51f112d0017bd618f189f8599fbd8ddd0122fea3506ff1b05"
+    },
+    {
+      "seed": 2026,
+      "best_epoch": 29,
+      "validation_loss": 0.45886707305908203,
+      "validation_recall_at_1": 0.9416666626930237,
+      "validation_mrr": 0.9627469778060913,
+      "reverse_recall_at_1": 0.9000000357627869,
+      "at2_offdiagonal_cosine": 0.24883171916007996,
+      "gt450_offdiagonal_cosine": 0.25580549240112305,
+      "original_graphsage_recall_at_1": 0.9750000238418579,
+      "permuted_graphsage_recall_at_1": 0.9805555939674377,
+      "checkpoint_sha256": "408275e1d50fb7a2d91f2fc5aa2b9eb66c19b6de195b9939f181c9db2d3c3c86"
+    }
+  ],
+  "history_sha256": "2b0252b37d41d059d07e9eb44d3fa6698d5abd790ae56a14e608f3b5510525c8",
+  "summary_sha256": "ac49b04ad561f593d3c7563e67eeeebce8953a9ee10e9aa0b7f7c6e3779225a2",
+  "checkpoint_hashes": {
+    "42": "b984cf1378c56b4534afd046c0e7afed57811a28a4dc6cc8ca7ee870db1cf3ac",
+    "123": "066d5165a4fa93b51f112d0017bd618f189f8599fbd8ddd0122fea3506ff1b05",
+    "2026": "408275e1d50fb7a2d91f2fc5aa2b9eb66c19b6de195b9939f181c9db2d3c3c86"
+  },
+  "test_evaluated_for_selection": false,
+  "biological_independence_verified": false,
+  "xai_planned": true,
+  "limitations": [
+    "Self-only neighbor parameter branch has no active gradients",
+    "Three initialization seeds",
+    "Ten spatial validation regions",
+    "Near-ceiling retrieval performance for graph baselines",
+    "No independent biological validation",
+    "No final test evaluation"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "phase": "4",
+  "step": "4.1.13",
+  "generated_utc": "2026-11-24T23:02:27.369991+00:00",
+  "dataset": "owkin/plism-dataset-tiles",
+  "source_audit_sha256": "5ad74a54789587392d323c18a9f0de3f180db8f288162774bdfa5e351ed2a51c",
+  "seed": 42,
+  "images": 4320,
+  "paired_positions": 2160,
+  "regions": 60,
+  "synthetic_experiment": {
+    "cases": 120,
+    "max_applied_shift_per_axis": 6,
+    "recovered_within_one_pixel": 120,
+    "recovery_rate": 1.0,
+    "error_distribution": {
+      "count": 120,
+      "median": 0.0,
+      "mean": 0.0,
+      "p05": 0.0,
+      "p95": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    }
+  },
+  "real_pair_experiment": {
+    "left_half_used_for_shift_estimation": true,
+    "right_half_used_for_independent_evaluation": true,
+    "maximum_accepted_shift_per_axis": 8,
+    "minimum_improvement": 0.02,
+    "bounded_shift_proposals": 649,
+    "independent_improvements": 639,
+    "improvement_distribution": {
+      "count": 649,
+      "median": 0.45864234622887234,
+      "mean": 0.44763453592519215,
+      "p05": 0.11947575064961753,
+      "p95": 0.7636417004904694,
+      "min": -0.32076085793931014,
+      "max": 0.9298731332368999
+    }
+  },
+  "split_summary": {
+    "train": {
+      "pairs": 1440,
+      "bounded_shift_proposals": 429,
+      "heldout_improvements": 424,
+      "median_heldout_improvement": 0.48069800372661864
+    },
+    "validation": {
+      "pairs": 360,
+      "bounded_shift_proposals": 157,
+      "heldout_improvements": 156,
+      "median_heldout_improvement": 0.4232980794131587
+    },
+    "test": {
+      "pairs": 360,
+      "bounded_shift_proposals": 63,
+      "heldout_improvements": 59,
+      "median_heldout_improvement": 0.33811920257614075
+    }
+  },
+  "real_metrics_sha256": "a80d10824e9b3f525fe9d36fafe55bdc006afdea23a13812e237564a4e647488",
+  "synthetic_metrics_sha256": "74cb50240f4cfb23abf04dd903bc6b24ba101bba4958d83a6a6cf08250a38568",
+  "region_metrics_sha256": "856a8513c51a8dc72107c2d593aec899fae0ccc40ada216567b52d5d1dbb9982",
+  "original_pngs_modified": false,
+  "excluded_image_pairs": 0,
+  "dataset_approved_for_training": false,
+  "biological_independence_verified": false,
+  "manual_registration_review_completed": false,
+  "limitations": [
+    "Synthetic recovery validates only tested transformations",
+    "Estimated real-image shifts are not ground truth",
+    "Left and right image halves are spatially related",
+    "Independent evaluation does not imply specimen independence",
+    "Scanner appearance affects gradient magnitude",
+    "Phase correlation may fail under nonlinear distortion",
+    "Bounded shifts exclude potentially larger displacements",
+    "No automatic pair correction or exclusion is justified"
+  ]
+}

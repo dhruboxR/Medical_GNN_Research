@@ -1,0 +1,42 @@
+{
+  "phase": "4",
+  "step": "4.1.2",
+  "generated_utc": "2026-11-24T17:36:11.537538+00:00",
+  "companion_dataset": "owkin/plism-dataset",
+  "companion_revision": "73d7d53f6ac321d3f52c142dcc4fe25c05a7d5ea",
+  "previous_inventory_sha256": "94462d422d6faacb3406a10ba5c4351791d2c8a63fd25b8587e5da6948f0ec92",
+  "acquisition_files_found": 91,
+  "parsed_acquisitions": 91,
+  "unique_source_scanner_tokens": {
+    "AT2": 13,
+    "GT450": 13,
+    "P": 13,
+    "S210": 13,
+    "S360": 13,
+    "S60": 13,
+    "SQ": 13
+  },
+  "unique_source_condition_tokens": {
+    "GIVH": 7,
+    "GIV": 7,
+    "GMH": 7,
+    "GM": 7,
+    "GVH": 7,
+    "GV": 7,
+    "HRH": 7,
+    "HR": 7,
+    "KRH": 7,
+    "KR": 7,
+    "LMH": 7,
+    "LM": 7,
+    "MY": 7
+  },
+  "acquisition_groups": 13,
+  "published_tiles_per_acquisition": 16278,
+  "metadata_only": true,
+  "original_pngs_downloaded": 0,
+  "scanner_fields_verified_from_tile_rows": false,
+  "coordinate_overlap_verified": false,
+  "biological_independence_verified": false,
+  "next_step": "Confirm candidate slide identifiers and scanner metadata against the original tile repository, then plan matched coordinate selection and controlled download."
+}

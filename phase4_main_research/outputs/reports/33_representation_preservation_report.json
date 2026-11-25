@@ -1,0 +1,82 @@
+{
+  "phase": "4.2",
+  "step": "4.2.18",
+  "generated_utc": "2026-11-25T18:59:15.186473+00:00",
+  "experiment": "representation_preservation_and_graph_dependence",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "architecture_sha256": "f34f3133e6ed9da57aa96bbc6da680e5dcc2d97481dfa850f47e91039128c660",
+  "source_reports_sha256": {
+    "ResidualGate05": "1170a4c3ade7782f7080b2d7bb0539f3f2154a70f806393c5d8276c1f7cffb4f",
+    "TopologyConsistentResidual": "0e49112a91a8f5f52f8a86fdb3611550870a474637ba058543fd0bc90f5e841c"
+  },
+  "source_paired_audit_sha256": "20f98c30058dfa3072f0e04a13d409c8c845d54660430e226015449ae45a93a4",
+  "training_seeds": [
+    42,
+    123,
+    2026
+  ],
+  "validation_regions": 10,
+  "repetitions": 5,
+  "models": [
+    {
+      "model": "ResidualGate05",
+      "seeds": 3,
+      "regions": 10,
+      "repetitions": 5,
+      "mean_normal_recall_at_1": 0.9694444457689921,
+      "mean_normal_mrr": 0.9828703820705413,
+      "mean_normal_matched_cosine": 0.885599950949351,
+      "mean_normal_hard_negative_margin": 0.12606546382109324,
+      "mean_normal_at2_offdiag_cosine": 0.5495943913857142,
+      "mean_normal_gt450_offdiag_cosine": 0.556024111310641,
+      "mean_normal_at2_effective_rank": 17.211222729144293,
+      "mean_normal_gt450_effective_rank": 16.807497354284212,
+      "mean_discordant_recall_at_1": 0.7809259307384491,
+      "mean_discordant_mrr": 0.8523579879601797,
+      "mean_discordant_hard_negative_margin": 0.06278392238193192,
+      "mean_at2_topology_consistency": 0.908766573270162,
+      "mean_gt450_topology_consistency": 0.9081787768999735,
+      "mean_learned_gate": 0.5655470291773478,
+      "robustness_drop_pp": 18.851851503054306
+    },
+    {
+      "model": "TopologyConsistentResidual",
+      "seeds": 3,
+      "regions": 10,
+      "repetitions": 5,
+      "mean_normal_recall_at_1": 0.9601851920286815,
+      "mean_normal_mrr": 0.9779321034749349,
+      "mean_normal_matched_cosine": 0.8859187165896097,
+      "mean_normal_hard_negative_margin": 0.1196015973885854,
+      "mean_normal_at2_offdiag_cosine": 0.55524696012338,
+      "mean_normal_gt450_offdiag_cosine": 0.5635610600312551,
+      "mean_normal_at2_effective_rank": 16.79253187735484,
+      "mean_normal_gt450_effective_rank": 16.378229469885323,
+      "mean_discordant_recall_at_1": 0.8525925991932551,
+      "mean_discordant_mrr": 0.9049742448329926,
+      "mean_discordant_hard_negative_margin": 0.08101935523406913,
+      "mean_at2_topology_consistency": 0.9442613490422567,
+      "mean_gt450_topology_consistency": 0.9443474658330282,
+      "mean_learned_gate": 0.5600037773450216,
+      "robustness_drop_pp": 10.759259283542633
+    }
+  ],
+  "normal_retrieval_verified": true,
+  "discordant_retrieval_verified": true,
+  "training_performed": false,
+  "checkpoint_selection_performed": false,
+  "test_evaluated": false,
+  "detail_table_sha256": "16c81a64ee75cb2ec854db891c9fae51ba17b546b9f0c19982b0f1cbd842f019",
+  "summary_table_sha256": "c217d40e0f5defb2a526405de98d5d81fadcb5a1958501597f1e4984184b2b37",
+  "limitations": [
+    "Repeated perturbations are correlated",
+    "Validation is repeatedly used for model development",
+    "Feature diversity is descriptive",
+    "High topology consistency can result from ignoring edges",
+    "Synthetic topology intervention is not a real scanner shift",
+    "Ten regions are not independent patients or slides",
+    "No held-out test evaluation"
+  ],
+  "xai_planned": true
+}

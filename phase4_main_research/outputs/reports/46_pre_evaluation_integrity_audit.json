@@ -1,0 +1,28 @@
+{
+  "checkpoint_hashes_verified": true,
+  "checkpoint_selection_performed": false,
+  "created_utc": "2026-11-25T19:32:39.854359+00:00",
+  "freeze_report_sha256": "982083d1464c61c1823f1e73f36f44d0c0086a598065e11af49ce491255ea594",
+  "frozen_protocol_sha256": "e6c8516e2dd279ca58b7873050c227ebe3a958a39140869065b36d38b0af78a9",
+  "frozen_test_design_verified": true,
+  "graph_archive_opened": false,
+  "limitations": [
+    "Synthetic checks verify specified graph properties",
+    "Synthetic checks do not establish exact historical implementation equivalence",
+    "Graph archive contents are intentionally not inspected",
+    "Graph archive checksum must be verified during final evaluation",
+    "Test results cannot trigger model changes"
+  ],
+  "model_inference_performed": false,
+  "next_stage": "4.4.1_held_out_test_evaluation",
+  "phase": "4.3",
+  "status": "PRE_EVALUATION_INTEGRITY_VERIFIED",
+  "step": "4.3.2",
+  "synthetic_perturbation_cases": 30,
+  "synthetic_perturbations_reproducible": true,
+  "test_evaluated": false,
+  "test_features_loaded": false,
+  "test_identifiers_loaded": false,
+  "training_performed": false,
+  "verified_checkpoint_count": 6
+}

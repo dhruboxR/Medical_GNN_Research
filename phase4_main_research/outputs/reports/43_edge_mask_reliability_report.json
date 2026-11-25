@@ -1,0 +1,144 @@
+{
+  "phase": "4.2",
+  "step": "4.2.28",
+  "generated_utc": "2026-11-25T19:19:45.954445+00:00",
+  "experiment": "learned_edge_mask_reliability_audit",
+  "source_report_sha256": "deda98fe4cdfecaa7bf67d4dfe9509ea0df80509b8ce3442810991b6d3168eac",
+  "source_edge_sha256": "25b9a8306f12ca9ae30b4e443eb9396879a4a65cf33dec77ee3fc1af2afb4dcb",
+  "source_detail_sha256": "6cc35011fa300f74fbf8db86f58da9cb040de32b94580819dc84b9903ea6c314",
+  "source_summary_sha256": "6aa11b0eaef8a88f4176bac9787251608965d29696981843c9beca6a42658310",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "models": [
+    "ResidualGate05",
+    "TopologyConsistentResidual"
+  ],
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "validation_regions": 10,
+  "edges_per_graph": 60,
+  "top_k": 12,
+  "endpoint_degree_edge_type_counts": {
+    "2-3": 8,
+    "3-3": 12,
+    "3-4": 16,
+    "4-4": 24
+  },
+  "null_method": "permute_GT450_edge_weights_within_endpoint_degree_types",
+  "null_repetitions": 1000,
+  "model_results": {
+    "ResidualGate05": {
+      "mean_mask_weight": 0.4115690744471633,
+      "mean_mask_std": 0.336501515113085,
+      "mean_mask_range": 0.9678847983169059,
+      "fraction_above_half": 0.33888888888888885,
+      "fraction_below_0_1": 0.2333333333333333,
+      "fraction_above_0_9": 0.20166666666666666,
+      "near_constant_masks_std_below_0_01": 0,
+      "observed_top12_overlap": 1.9666666666666666,
+      "null_top12_overlap": 2.3703,
+      "excess_top12_overlap": -0.4036333333333333,
+      "at2_fidelity_excess": 0.09779680969814458,
+      "gt450_fidelity_excess": 0.08583458674450715,
+      "at2_positive_fidelity_units": 30,
+      "gt450_positive_fidelity_units": 30,
+      "at2_objective_change": 0.07625025808811188,
+      "gt450_objective_change": 0.07569687813520432,
+      "mean_observed_rho": 0.04266185051403166,
+      "mean_excess_rho": 0.04800642030193571,
+      "defined_rho_units": 30
+    },
+    "TopologyConsistentResidual": {
+      "mean_mask_weight": 0.3626196449415552,
+      "mean_mask_std": 0.34560242214941095,
+      "mean_mask_range": 0.9741635884934415,
+      "fraction_above_half": 0.2894444444444445,
+      "fraction_below_0_1": 0.33722222222222226,
+      "fraction_above_0_9": 0.1930555555555556,
+      "near_constant_masks_std_below_0_01": 0,
+      "observed_top12_overlap": 2.2333333333333334,
+      "null_top12_overlap": 2.3444999999999996,
+      "excess_top12_overlap": -0.11116666666666668,
+      "at2_fidelity_excess": 0.06047515645623206,
+      "gt450_fidelity_excess": 0.05639096140861512,
+      "at2_positive_fidelity_units": 30,
+      "gt450_positive_fidelity_units": 30,
+      "at2_objective_change": 0.06564622024695078,
+      "gt450_objective_change": 0.06964924534161886,
+      "mean_observed_rho": 0.03283689913864962,
+      "mean_excess_rho": 0.031927248309715654,
+      "defined_rho_units": 30
+    }
+  },
+  "paired_region_bootstrap": {
+    "unit": "spatial_region",
+    "repetitions": 5000,
+    "results": {
+      "excess_rho": {
+        "mean_difference": -0.01607917199222006,
+        "lower_95": -0.08359592391405019,
+        "upper_95": 0.04966670149115492,
+        "positive_regions": 4,
+        "negative_regions": 6
+      },
+      "excess_top12_overlap": {
+        "mean_difference": 0.29246666666666665,
+        "lower_95": -0.37888583333333326,
+        "upper_95": 0.9236941666666657,
+        "positive_regions": 6,
+        "negative_regions": 4
+      },
+      "at2_fidelity_excess": {
+        "mean_difference": -0.03732165324191252,
+        "lower_95": -0.05345676422615846,
+        "upper_95": -0.02183282563897472,
+        "positive_regions": 1,
+        "negative_regions": 9
+      },
+      "gt450_fidelity_excess": {
+        "mean_difference": -0.029443625335892044,
+        "lower_95": -0.04074557112033169,
+        "upper_95": -0.019705199186379724,
+        "positive_regions": 0,
+        "negative_regions": 10
+      },
+      "at2_objective_change": {
+        "mean_difference": -0.010604037841161089,
+        "lower_95": -0.017116034155090647,
+        "upper_95": -0.004070308307806655,
+        "positive_regions": 3,
+        "negative_regions": 7
+      },
+      "gt450_objective_change": {
+        "mean_difference": -0.006047632793585461,
+        "lower_95": -0.011875756618877251,
+        "upper_95": 0.0013869967187444313,
+        "positive_regions": 1,
+        "negative_regions": 9
+      }
+    }
+  },
+  "mask_table_sha256": "a07f51c8e8d1ef7534fef5df0f65436774e284989b37a120e423b3d8b7d39668",
+  "pair_table_sha256": "4327d9ca4352bb2d9328da3f4636a343f7d9b84190d2c506fb3bdd8179070395",
+  "region_table_sha256": "23e92d0bb2c7a555f74c70516b4792601230aa61b7f79077ca6ebb3f975472e2",
+  "training_performed": false,
+  "model_inference_performed": false,
+  "explainer_optimization_performed": false,
+  "checkpoint_selection_performed": false,
+  "test_evaluated": false,
+  "limitations": [
+    "Edge masks were learned on the validation set",
+    "Null controls endpoint-degree type only",
+    "Fidelity still uses historical unmatched random edge deletions",
+    "This audit does not rerun edge interventions",
+    "Raw mask sparsity is affected by row normalization",
+    "Uniform mask scaling may leave aggregation unchanged",
+    "Mask selectivity does not prove biological relevance",
+    "Regions share one biological source condition",
+    "Region bootstrap is descriptive, not patient-level inference",
+    "No independent scanner-shift generalization tested"
+  ]
+}

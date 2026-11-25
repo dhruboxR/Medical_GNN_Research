@@ -1,0 +1,22 @@
+{
+  "phase": "4",
+  "step": "4.1.6",
+  "generated_utc": "2026-11-24T20:09:16.974722+00:00",
+  "dataset": "owkin/plism-dataset-tiles",
+  "dataset_revision": "489cfa632886ce411ce0ab6e678e0587ac0ead04",
+  "selected_acquisitions": 31,
+  "exact_tile_records": 504618,
+  "duplicate_tile_ids": 0,
+  "acquisitions_with_exact_records": 31,
+  "givh_seven_scanner_shared_positions": 16278,
+  "all_31_shared_positions": 16278,
+  "previous_index_sha256": "35d84c15befcf8cfddc68d36af5db2a7cb58ea7c05d435ceefb716c52c2775cd",
+  "selection_sha256": "d2316b5c894694bbc47bbcb71b72cd8ab9b92eba443558cb43dd8aa217031dad",
+  "phase3b_manifest_sha256": "69d11e1a0dd1107f2e6534632727e2c2291ff83d6b17cf953ed5056bea9020f9",
+  "shard_checkpoints_reused": 0,
+  "image_column_values_requested": false,
+  "original_images_downloaded": 0,
+  "biological_independence_verified": false,
+  "final_train_validation_test_split_frozen": false,
+  "next_step": "Choose spatial regions using verified tile intersections, exclude frozen pilot positions where appropriate, establish leakage-aware evaluation partitions, then download original PNGs."
+}

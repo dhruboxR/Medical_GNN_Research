@@ -1,0 +1,158 @@
+{
+  "phase": "4.2",
+  "step": "4.2.17",
+  "generated_utc": "2026-11-25T18:57:32.552685+00:00",
+  "experiment": "paired_robustness_audit",
+  "source_old_report_sha256": "b14d4ee3496d1a61a4bae4b6baf0f64f2e10374e43f43eed2c43502d2d8aae63",
+  "source_new_report_sha256": "0e49112a91a8f5f52f8a86fdb3611550870a474637ba058543fd0bc90f5e841c",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "paired_measurements": 150,
+  "training_seeds": [
+    42,
+    123,
+    2026
+  ],
+  "topology_repetitions": 5,
+  "validation_regions": 10,
+  "baseline_discordant_recall_at_1": 0.7809259307384491,
+  "consistency_discordant_recall_at_1": 0.8525925991932551,
+  "paired_recall_improvement_pp": 7.166666845480603,
+  "paired_mrr_improvement": 0.052616256872812905,
+  "regions_improved": 10,
+  "regions_worsened": 0,
+  "regions_unchanged": 0,
+  "bootstrap": {
+    "method": "percentile_region_cluster_bootstrap",
+    "resampled_unit": "validation_region",
+    "repetitions": 5000,
+    "seed": 4217,
+    "confidence_level": 0.95,
+    "lower_pp": 5.314814958473046,
+    "upper_pp": 8.999999943872293,
+    "interpretation": "Descriptive uncertainty among the 10 spatial validation regions only"
+  },
+  "seed_results": [
+    {
+      "seed": 42,
+      "measurements": 50,
+      "baseline_mean_recall_at_1": 0.7838888931274414,
+      "consistency_mean_recall_at_1": 0.8883333396911621,
+      "recall_improvement_pp": 10.44444465637207,
+      "mrr_improvement": 0.07713413953781129
+    },
+    {
+      "seed": 123,
+      "measurements": 50,
+      "baseline_mean_recall_at_1": 0.7916666716337204,
+      "consistency_mean_recall_at_1": 0.8355555635690689,
+      "recall_improvement_pp": 4.388889193534851,
+      "mrr_improvement": 0.03365053415298462
+    },
+    {
+      "seed": 2026,
+      "measurements": 50,
+      "baseline_mean_recall_at_1": 0.7672222274541854,
+      "consistency_mean_recall_at_1": 0.8338888943195343,
+      "recall_improvement_pp": 6.666666686534882,
+      "mrr_improvement": 0.04706409692764282
+    }
+  ],
+  "region_results": [
+    {
+      "region_id": "PHASE4_REGION_009",
+      "measurements": 15,
+      "baseline_mean_recall_at_1": 0.7611111203829447,
+      "consistency_mean_recall_at_1": 0.8296296318372091,
+      "recall_improvement_pp": 6.851851145426433,
+      "mrr_improvement": 0.054477377732594805
+    },
+    {
+      "region_id": "PHASE4_REGION_010",
+      "measurements": 15,
+      "baseline_mean_recall_at_1": 0.8129629731178284,
+      "consistency_mean_recall_at_1": 0.8981481512387594,
+      "recall_improvement_pp": 8.5185178120931,
+      "mrr_improvement": 0.05135136445363363
+    },
+    {
+      "region_id": "PHASE4_REGION_011",
+      "measurements": 15,
+      "baseline_mean_recall_at_1": 0.6740740815798442,
+      "consistency_mean_recall_at_1": 0.7907407442728679,
+      "recall_improvement_pp": 11.666666269302368,
+      "mrr_improvement": 0.09011634190877278
+    },
+    {
+      "region_id": "PHASE4_REGION_015",
+      "measurements": 15,
+      "baseline_mean_recall_at_1": 0.5296296358108521,
+      "consistency_mean_recall_at_1": 0.6018518666426341,
+      "recall_improvement_pp": 7.222223083178203,
+      "mrr_improvement": 0.05438839197158814
+    },
+    {
+      "region_id": "PHASE4_REGION_031",
+      "measurements": 15,
+      "baseline_mean_recall_at_1": 0.7722222208976746,
+      "consistency_mean_recall_at_1": 0.8907407482465108,
+      "recall_improvement_pp": 11.851852734883627,
+      "mrr_improvement": 0.0865241805712382
+    },
+    {
+      "region_id": "PHASE4_REGION_035",
+      "measurements": 15,
+      "baseline_mean_recall_at_1": 0.944444457689921,
+      "consistency_mean_recall_at_1": 0.9962962945302327,
+      "recall_improvement_pp": 5.185183684031169,
+      "mrr_improvement": 0.030010286966959634
+    },
+    {
+      "region_id": "PHASE4_REGION_041",
+      "measurements": 15,
+      "baseline_mean_recall_at_1": 0.8074074069658915,
+      "consistency_mean_recall_at_1": 0.8518518646558125,
+      "recall_improvement_pp": 4.444445768992106,
+      "mrr_improvement": 0.038182640075683595
+    },
+    {
+      "region_id": "PHASE4_REGION_048",
+      "measurements": 15,
+      "baseline_mean_recall_at_1": 0.8388888915379842,
+      "consistency_mean_recall_at_1": 0.9166666825612386,
+      "recall_improvement_pp": 7.7777791023254395,
+      "mrr_improvement": 0.05742150545120239
+    },
+    {
+      "region_id": "PHASE4_REGION_054",
+      "measurements": 15,
+      "baseline_mean_recall_at_1": 0.9870370348294576,
+      "consistency_mean_recall_at_1": 1.0,
+      "recall_improvement_pp": 1.29629651705424,
+      "mrr_improvement": 0.007500000794728597
+    },
+    {
+      "region_id": "PHASE4_REGION_058",
+      "measurements": 15,
+      "baseline_mean_recall_at_1": 0.6814814845720927,
+      "consistency_mean_recall_at_1": 0.7500000079472859,
+      "recall_improvement_pp": 6.851852337519328,
+      "mrr_improvement": 0.0561904788017273
+    }
+  ],
+  "paired_table_sha256": "a3f585757221ba532b70ee4dd7de7f803eb3c7bfc454edfc90ff45f87e2ebade",
+  "region_table_sha256": "8f03013ab421ee5bb54e37e72b9ebfe67cfcae1f8b60c934ef7fee146c401b92",
+  "seed_table_sha256": "36f5adf542b13a8f68d7f3c1d92fc1a8b2bb65a0ef28b3cddac0c7ea9346779e",
+  "training_performed": false,
+  "checkpoint_selection_performed": false,
+  "test_evaluated": false,
+  "limitations": [
+    "Repeated perturbations are correlated",
+    "Training seeds share the same tissue regions",
+    "Bootstrap does not represent new patients",
+    "Validation data has been repeatedly analyzed",
+    "No independent biological generalization",
+    "Synthetic topology perturbations only"
+  ],
+  "xai_planned": true
+}

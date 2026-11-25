@@ -1,0 +1,71 @@
+{
+  "phase": "4.2",
+  "step": "4.2.5",
+  "generated_utc": "2026-11-25T18:37:21.500678+00:00",
+  "graph_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "validation_regions": 10,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "models": [
+    {
+      "model": "Frozen DINOv2",
+      "runs": 1,
+      "mean_validation_recall_at_1": 0.8833333313465118,
+      "std_validation_recall_at_1": null,
+      "mean_validation_mrr": 0.9213548421859741,
+      "mean_at2_offdiagonal_cosine": 0.8704346716403961,
+      "mean_gt450_offdiagonal_cosine": 0.8741535782814026
+    },
+    {
+      "model": "MLP",
+      "runs": 3,
+      "mean_validation_recall_at_1": 0.9324074188868204,
+      "std_validation_recall_at_1": 0.008486241026042868,
+      "mean_validation_mrr": 0.9587136705716451,
+      "mean_at2_offdiagonal_cosine": null,
+      "mean_gt450_offdiagonal_cosine": null
+    },
+    {
+      "model": "GCN",
+      "runs": 3,
+      "mean_validation_recall_at_1": 0.6916666825612386,
+      "std_validation_recall_at_1": 0.03274949925631773,
+      "mean_validation_mrr": 0.7985954880714417,
+      "mean_at2_offdiagonal_cosine": 0.7346811095873514,
+      "mean_gt450_offdiagonal_cosine": 0.7430412967999777
+    },
+    {
+      "model": "GraphSAGE original",
+      "runs": 3,
+      "mean_validation_recall_at_1": 0.9740740716457367,
+      "std_validation_recall_at_1": 0.00699059037869679,
+      "mean_validation_mrr": 0.9847767015298207,
+      "mean_at2_offdiagonal_cosine": 0.662805105249087,
+      "mean_gt450_offdiagonal_cosine": 0.6780833045641582
+    },
+    {
+      "model": "GraphSAGE neighbors disabled",
+      "runs": 3,
+      "mean_validation_recall_at_1": 0.8342592636744182,
+      "std_validation_recall_at_1": 0.01283000693790196,
+      "mean_validation_mrr": 0.8867366453011831,
+      "mean_at2_offdiagonal_cosine": 0.7773320456345876,
+      "mean_gt450_offdiagonal_cosine": 0.783952659368515
+    }
+  ],
+  "graphsage_neighbor_ablation_delta_pp": 13.981480797131852,
+  "ablation": {
+    "method": "zero_neighbor_messages_at_inference",
+    "retrained": false,
+    "interpretation": "Measures sensitivity to message removal; does not isolate the causal training benefit of edges."
+  },
+  "per_region_metrics_sha256": "94bbc763b3552ad68c4a3754dd5ad496032a42a74d0bebad44a1d80c10a94371",
+  "comparison_sha256": "5c996ab0e104e4fb92299b17da0fae8e4eefd0c9910725027ad5bc9933a569bc",
+  "test_evaluated": false,
+  "biological_independence_verified": false,
+  "xai_planned": true
+}

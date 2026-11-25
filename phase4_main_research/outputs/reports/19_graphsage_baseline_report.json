@@ -1,0 +1,91 @@
+{
+  "phase": "4.2",
+  "step": "4.2.4",
+  "generated_utc": "2026-11-25T18:35:34.468181+00:00",
+  "experiment": "spatial_graphsage_baseline",
+  "architecture": "GraphSAGE_384_256_384_GELU",
+  "aggregator": "mean_neighbors",
+  "self_features": "separate_linear_transform",
+  "graph_message_passing": true,
+  "node_output_normalization": "L2",
+  "objective": "bidirectional_within_region_InfoNCE",
+  "temperature": 0.07,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0001,
+  "batch_regions": 8,
+  "max_epochs": 100,
+  "patience": 20,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "train_region_pairs": 40,
+  "validation_region_pairs": 10,
+  "test_region_pairs_reserved": 10,
+  "test_evaluated": false,
+  "checkpoint_selection": "validation_recall_at_1_then_loss",
+  "seed_results": [
+    {
+      "seed": 42,
+      "best_epoch": 1,
+      "validation_loss": 1.593953013420105,
+      "validation_recall_at_1": 0.9805555939674377,
+      "validation_mrr": 0.988589346408844,
+      "validation_reverse_recall_at_1": 0.9500000476837158,
+      "validation_reverse_mrr": 0.9677807688713074,
+      "validation_at2_offdiagonal_cosine": 0.7360487580299377,
+      "validation_gt450_offdiagonal_cosine": 0.7415874004364014,
+      "checkpoint_sha256": "cdb0d93434b9f9b7f93f96393ac500e06a339403bd1f095cb0ff620bff611dfd"
+    },
+    {
+      "seed": 123,
+      "best_epoch": 2,
+      "validation_loss": 1.2332332134246826,
+      "validation_recall_at_1": 0.9666666984558105,
+      "validation_mrr": 0.9812500476837158,
+      "validation_reverse_recall_at_1": 0.9500000476837158,
+      "validation_reverse_mrr": 0.9662864804267883,
+      "validation_at2_offdiagonal_cosine": 0.6489171385765076,
+      "validation_gt450_offdiagonal_cosine": 0.6768020987510681,
+      "checkpoint_sha256": "74c0acea0f60e556dc71211889f63b3e07dab31bd13f8b4a1b8cd7d96c6a1d1e"
+    },
+    {
+      "seed": 2026,
+      "best_epoch": 2,
+      "validation_loss": 1.0805659294128418,
+      "validation_recall_at_1": 0.9750000238418579,
+      "validation_mrr": 0.9844908118247986,
+      "validation_reverse_recall_at_1": 0.9472222328186035,
+      "validation_reverse_mrr": 0.9643397331237793,
+      "validation_at2_offdiagonal_cosine": 0.6034492254257202,
+      "validation_gt450_offdiagonal_cosine": 0.6158602237701416,
+      "checkpoint_sha256": "61e5b3f8dd57fec7588a9de39af3a1850f4b39781213d933734f7cc1d7110b9d"
+    }
+  ],
+  "mean_validation_recall_at_1": 0.974074105421702,
+  "std_validation_recall_at_1": 0.0069905899839578945,
+  "mlp_mean_validation_recall_at_1": 0.9324074188868204,
+  "gcn_mean_validation_recall_at_1": 0.6916666825612386,
+  "sage_minus_mlp_percentage_points": 4.166668653488159,
+  "sage_minus_gcn_percentage_points": 28.240742286046338,
+  "history_sha256": "fba5551e4dcd775767c79634aead40fd87a3a83fad4a98036fb9275eef1be737",
+  "summary_sha256": "455af3bb4aa45f979c876a613a5e6e533064209a88ddbd7405669b56547d23e3",
+  "checkpoint_hashes": {
+    "42": "cdb0d93434b9f9b7f93f96393ac500e06a339403bd1f095cb0ff620bff611dfd",
+    "123": "74c0acea0f60e556dc71211889f63b3e07dab31bd13f8b4a1b8cd7d96c6a1d1e",
+    "2026": "61e5b3f8dd57fec7588a9de39af3a1850f4b39781213d933734f7cc1d7110b9d"
+  },
+  "biological_independence_verified": false,
+  "xai_planned": true,
+  "limitations": [
+    "Spatial splits are not biologically independent",
+    "Only 10 validation regions",
+    "36 candidates per retrieval query",
+    "GraphSAGE has more parameters than the reference MLP",
+    "Node cosine alone cannot establish oversmoothing",
+    "No test evaluation performed"
+  ]
+}

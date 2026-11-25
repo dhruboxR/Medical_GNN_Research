@@ -1,0 +1,35 @@
+{
+  "phase": "4.2",
+  "step": "4.2.1",
+  "generated_utc": "2026-11-25T18:29:36.395458+00:00",
+  "graphs_verified": 120,
+  "matched_graph_pairs": 60,
+  "unique_spatial_positions": 2160,
+  "graph_tensor_shape": [
+    120,
+    36,
+    384
+  ],
+  "edge_index_shape": [
+    2,
+    120
+  ],
+  "graph_splits": {
+    "train": 80,
+    "test": 20,
+    "validation": 20
+  },
+  "region_splits": {
+    "train": 40,
+    "test": 10,
+    "validation": 10
+  },
+  "spatial_buffer_verified": true,
+  "feature_source_sha256": "af066b8b0c25f4ec3dfbb387f23fac5d1173924e34c1fe0431c13d456b3cb71e",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "biological_independence_verified": false,
+  "pixel_level_registration_verified": false,
+  "gnn_training_started": false,
+  "xai_included_in_protocol": true,
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c"
+}

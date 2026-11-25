@@ -1,0 +1,53 @@
+{
+  "phase": "4.2",
+  "step": "4.2.8",
+  "generated_utc": "2026-11-25T18:43:38.496038+00:00",
+  "graph_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "validation_regions": 10,
+  "queries": 360,
+  "candidates_per_query": 360,
+  "test_evaluated": false,
+  "summary": {
+    "Frozen DINOv2": {
+      "runs": 1,
+      "mean_global_recall_at_1": 0.8833333253860474,
+      "std_global_recall_at_1": null
+    },
+    "MLP": {
+      "runs": 3,
+      "mean_global_recall_at_1": 0.9296296238899231,
+      "std_global_recall_at_1": 0.011226255179620106
+    },
+    "GCN": {
+      "runs": 3,
+      "mean_global_recall_at_1": 0.6916666626930237,
+      "std_global_recall_at_1": 0.03274952453431558
+    },
+    "GraphSAGE": {
+      "runs": 3,
+      "mean_global_recall_at_1": 0.9740740656852722,
+      "std_global_recall_at_1": 0.00699059393142208
+    },
+    "Permuted GraphSAGE": {
+      "runs": 3,
+      "mean_global_recall_at_1": 0.9796296159426371,
+      "std_global_recall_at_1": 0.0016037377473738271
+    },
+    "Self-only GraphSAGE": {
+      "runs": 3,
+      "mean_global_recall_at_1": 0.9425925811131796,
+      "std_global_recall_at_1": 0.005782415946867434
+    }
+  },
+  "table_sha256": "5c67fe48db6788dec3e2f39827463fd25f6b2aa8a363f79c7600be44157babea",
+  "region_table_sha256": "3ade9fa9ad68352063f9d2c031fd5fbdc09c6e84a1a041e541c14956f43c93c9",
+  "limitations": [
+    "Validation regions share biological material",
+    "Same-source cross-scanner retrieval",
+    "No independent patient or slide test",
+    "Only 10 validation regions",
+    "Models selected using within-region validation Recall@1",
+    "Full-candidate evaluation is exploratory and must not be used as an unrecorded new checkpoint-selection criterion"
+  ]
+}

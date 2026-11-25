@@ -1,0 +1,61 @@
+{
+  "additional_test_inference_performed": false,
+  "checkpoint_selection_performed": false,
+  "checkpoints_opened": false,
+  "created_utc": "2026-11-25T19:35:50.935778+00:00",
+  "evaluation_report_sha256": "95db3eaa4fb7d33137c9b0aa09f4fb8e01cd1accfc9da502838ad41c1c16459a",
+  "evaluation_source_files_modified": false,
+  "frozen_protocol_sha256": "e6c8516e2dd279ca58b7873050c227ebe3a958a39140869065b36d38b0af78a9",
+  "graph_archive_opened": false,
+  "hyperparameter_tuning_performed": false,
+  "next_stage": "Phase_5_results_and_manuscript",
+  "phase": "4.4",
+  "primary_bootstrap": {
+    "lower_95": 8.962963422139486,
+    "mean": 10.425926407178242,
+    "negative_regions": 0,
+    "positive_regions": 10,
+    "unchanged_regions": 0,
+    "upper_95": 11.648148854573567
+  },
+  "primary_difference_pp": 10.425926407178244,
+  "status": "HELD_OUT_RESULTS_VERIFIED",
+  "step": "4.4.2",
+  "summary_values": [
+    {
+      "condition": "normal_spatial",
+      "model": "ResidualGate05",
+      "mrr": 0.9532743116219838,
+      "recall_at_1": 0.9222222288449605
+    },
+    {
+      "condition": "scanner_discordant_random",
+      "model": "ResidualGate05",
+      "mrr": 0.7932785753409067,
+      "recall_at_1": 0.700370373527209
+    },
+    {
+      "condition": "normal_spatial",
+      "model": "TopologyConsistentResidual",
+      "mrr": 0.94624964594841,
+      "recall_at_1": 0.9129629691441854
+    },
+    {
+      "condition": "scanner_discordant_random",
+      "model": "TopologyConsistentResidual",
+      "mrr": 0.8696145852406819,
+      "recall_at_1": 0.8046296375989914
+    }
+  ],
+  "test_evaluated_previously": true,
+  "training_performed": false,
+  "verified_observations": 360,
+  "verified_regions": 10,
+  "verified_seed_summaries": 12,
+  "verified_source_hashes": {
+    "outputs/tables/47_heldout_paired_regions.csv": "f97284e6e14f2ba4a3fc44963f7d71fab8c8b109e10bc50ed1672d9aca1f0216",
+    "outputs/tables/47_heldout_retrieval_by_seed.csv": "2e642855f9ed3bf742b30fa9a3d18f1a48ac83d89dccc8cbce5f5de928e582b1",
+    "outputs/tables/47_heldout_retrieval_detail.csv": "384585c40391418833f9f739edd42b8ae3774a2adedcfbf87c67b2888891f0d6",
+    "outputs/tables/47_heldout_retrieval_summary.csv": "de36ca5efa766261d663f411ef3557f236d576ccd7e06c2c88388c2f2e9c0079"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "phase": "4.2",
+  "step": "4.2.16",
+  "generated_utc": "2026-11-25T18:56:24.127025+00:00",
+  "experiment": "topology_consistency_regularized_residual",
+  "model": "GatedResidualGraphSAGE",
+  "initial_gate": 0.5,
+  "lambda_topology": 1.0,
+  "topology_training_perturbation": "independent_per_region_scanner_epoch",
+  "topology_consistency": "same_scanner_same_node_original_vs_perturbed",
+  "original_topology_contrastive_training": true,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "training_pairs": 40,
+  "validation_pairs": 10,
+  "test_pairs_reserved": 10,
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "parent_architecture_sha256": "f34f3133e6ed9da57aa96bbc6da680e5dcc2d97481dfa850f47e91039128c660",
+  "source_baseline_report_sha256": "1170a4c3ade7782f7080b2d7bb0539f3f2154a70f806393c5d8276c1f7cffb4f",
+  "source_robustness_report_sha256": "b14d4ee3496d1a61a4bae4b6baf0f64f2e10374e43f43eed2c43502d2d8aae63",
+  "checkpoint_selection": "original_topology_validation_recall_at_1_then_loss",
+  "robustness_used_for_checkpoint_selection": false,
+  "mean_original_recall_at_1": 0.9601852099100748,
+  "mean_scanner_discordant_recall_at_1": 0.8525925991932551,
+  "mean_robustness_drop_pp": 10.759261071681976,
+  "baseline_normal_recall_at_1": 0.969444473584493,
+  "baseline_scanner_discordant_recall_at_1": 0.7809259307384491,
+  "normal_gain_vs_baseline_pp": -0.9259263674418206,
+  "discordant_gain_vs_baseline_pp": 7.1666668454806075,
+  "seed_results": [
+    {
+      "seed": 42,
+      "best_epoch": 90,
+      "validation_recall_at_1": 0.9638888835906982,
+      "validation_mrr": 0.9798611402511597,
+      "global_recall_at_1": 0.9611111283302307,
+      "scanner_discordant_recall_at_1": 0.8883333396911621,
+      "robustness_drop_pp": 7.5555543899536115,
+      "learned_gate": 0.5899415612220764,
+      "baseline_gate05_recall_at_1": 0.9694444537162781,
+      "checkpoint_sha256": "91c0eb045fd68c01b8e527d487a8faa9204bdb42f8899dcf1a2564a8bf9f7b17"
+    },
+    {
+      "seed": 123,
+      "best_epoch": 38,
+      "validation_recall_at_1": 0.9583333730697632,
+      "validation_mrr": 0.9768519401550293,
+      "global_recall_at_1": 0.9583333730697632,
+      "scanner_discordant_recall_at_1": 0.8355555635690689,
+      "robustness_drop_pp": 12.277780950069427,
+      "learned_gate": 0.5456137657165527,
+      "baseline_gate05_recall_at_1": 0.9722222685813904,
+      "checkpoint_sha256": "24ebf65c472f891131eecc829092c40eb781bb35fd773c6e30b678c3e229f36f"
+    },
+    {
+      "seed": 2026,
+      "best_epoch": 37,
+      "validation_recall_at_1": 0.9583333730697632,
+      "validation_mrr": 0.9770833849906921,
+      "global_recall_at_1": 0.9583333730697632,
+      "scanner_discordant_recall_at_1": 0.8338888943195343,
+      "robustness_drop_pp": 12.44444787502289,
+      "learned_gate": 0.5444560050964355,
+      "baseline_gate05_recall_at_1": 0.9666666984558105,
+      "checkpoint_sha256": "35e8f0e8af676eb50dab7e4168ca1a0abab9f04e127bd7114a431061e1ec9944"
+    }
+  ],
+  "checkpoint_hashes": {
+    "42": "91c0eb045fd68c01b8e527d487a8faa9204bdb42f8899dcf1a2564a8bf9f7b17",
+    "123": "24ebf65c472f891131eecc829092c40eb781bb35fd773c6e30b678c3e229f36f",
+    "2026": "35e8f0e8af676eb50dab7e4168ca1a0abab9f04e127bd7114a431061e1ec9944"
+  },
+  "history_sha256": "5e53dbc9d44c170c7f4f104d06c1c0b7344b33cd70418cbc993849ef39d246c2",
+  "summary_sha256": "2236653a7a722b89889c261f13709cb2182e1bd8e612cfea7b694ef4ec5c9cd3",
+  "robustness_table_sha256": "8036454cf16e93c44068e411ef7c6f78068d8ba1a599afafb337b6956606dde1",
+  "test_evaluated": false,
+  "biological_independence_verified": false,
+  "xai_planned": true,
+  "limitations": [
+    "Validation-only exploratory model development",
+    "Lambda equals 1.0 and was not independently validated",
+    "Synthetic adjacency permutations are not scanner simulations",
+    "Repeated perturbations are not independent tissue samples",
+    "Checkpoint selection uses original topology Recall@1",
+    "No independent patient or slide validation",
+    "Single biological source context",
+    "Historical baseline may have different stochastic trajectories"
+  ]
+}

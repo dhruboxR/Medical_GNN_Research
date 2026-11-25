@@ -1,0 +1,54 @@
+{
+  "phase": "4",
+  "step": "4.1.3",
+  "created_utc": "2026-11-24T17:37:38.983288+00:00",
+  "source_inventory_sha256": "0bc00655c1824b227a4f517e1cc78c13420d31725adf723734a98fefa8578642",
+  "reference_condition": "GIVH",
+  "reference_scanners": [
+    "AT2",
+    "GT450"
+  ],
+  "total_acquisitions": 91,
+  "conditions": [
+    "GIV",
+    "GIVH",
+    "GM",
+    "GMH",
+    "GV",
+    "GVH",
+    "HR",
+    "HRH",
+    "KR",
+    "KRH",
+    "LM",
+    "LMH",
+    "MY"
+  ],
+  "scanners": [
+    "AT2",
+    "GT450",
+    "P",
+    "S210",
+    "S360",
+    "S60",
+    "SQ"
+  ],
+  "candidate_acquisitions": 31,
+  "cross_scanner_arm": 7,
+  "cross_condition_arm": 26,
+  "overlap_between_arms": 2,
+  "selection_is_provisional": true,
+  "tile_metadata_verified": false,
+  "coordinate_overlap_verified": false,
+  "biological_independence_verified": false,
+  "final_data_split_frozen": false,
+  "image_downloads_performed": 0,
+  "next_step": "Validate the selected slide IDs and paired tile coordinates against the original PLISM Parquet data.",
+  "limitations": [
+    "Scanner/condition categories derived from filenames",
+    "No tile-level overlap verified",
+    "No independent biological samples established",
+    "No train/validation/test assignments made",
+    "Selected acquisition count is not an image budget"
+  ]
+}

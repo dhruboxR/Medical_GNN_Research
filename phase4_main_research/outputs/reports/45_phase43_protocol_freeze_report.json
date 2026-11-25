@@ -1,0 +1,30 @@
+{
+  "checkpoint_selection_performed": false,
+  "created_utc": "2026-11-25T19:31:32.403053+00:00",
+  "frozen_protocol_path": "configs/45_phase43_frozen_evaluation_protocol.json",
+  "frozen_protocol_sha256": "e6c8516e2dd279ca58b7873050c227ebe3a958a39140869065b36d38b0af78a9",
+  "model_checkpoint_hashes_verified": true,
+  "model_count": 2,
+  "model_inference_performed": false,
+  "model_training_performed": false,
+  "next_stage": "4.3.2_pre_evaluation_protocol_integrity_audit",
+  "phase": "4.3",
+  "planned_test_region_pairs": 10,
+  "source_report_hashes": {
+    "corrected_ig_audit": "b75cb33c452334c3d5c5767eb348e5c409a7cafeb5317f9081eaa5973975206b",
+    "edge_mask_audit": "f495a5f0508a93e4462fb8997ad64ba8b64da2c7aaa04fafae133e19076a3436",
+    "paired_robustness": "20f98c30058dfa3072f0e04a13d409c8c845d54660430e226015449ae45a93a4",
+    "representation_audit": "a0a37c48b458e2a69e24c88a975cb48475f74ea46425dd094db4e81e4c089165",
+    "research_synthesis": "82f0d86b6865c8484742c98153d777d2bcf1d421fda4b51a06ae36c7f3e1ff02",
+    "robustness_reference": "b14d4ee3496d1a61a4bae4b6baf0f64f2e10374e43f43eed2c43502d2d8aae63"
+  },
+  "status": "PROTOCOL_FROZEN",
+  "step": "4.3.1",
+  "test_data_loaded": false,
+  "test_evaluated": false,
+  "training_seeds": [
+    42,
+    123,
+    2026
+  ]
+}

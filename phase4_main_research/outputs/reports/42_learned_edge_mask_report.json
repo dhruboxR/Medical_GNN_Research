@@ -1,0 +1,84 @@
+{
+  "phase": "4.2",
+  "step": "4.2.27",
+  "generated_utc": "2026-11-25T19:18:20.887368+00:00",
+  "experiment": "learned_undirected_edge_mask_explanation",
+  "method": "custom_GNNExplainer_style_edge_mask",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "architecture_sha256": "f34f3133e6ed9da57aa96bbc6da680e5dcc2d97481dfa850f47e91039128c660",
+  "source_model_report_hashes": {
+    "ResidualGate05": "1170a4c3ade7782f7080b2d7bb0539f3f2154a70f806393c5d8276c1f7cffb4f",
+    "TopologyConsistentResidual": "0e49112a91a8f5f52f8a86fdb3611550870a474637ba058543fd0bc90f5e841c"
+  },
+  "source_ig_audit_sha256": "b75cb33c452334c3d5c5767eb348e5c409a7cafeb5317f9081eaa5973975206b",
+  "validation_regions": 10,
+  "seeds": [
+    42,
+    123,
+    2026
+  ],
+  "undirected_edges": 60,
+  "optimization_steps": 120,
+  "mask_learning_rate": 0.05,
+  "initial_mask_logit": 2.0,
+  "sparsity_weight": 0.03,
+  "retrieval_objective": "negative_bidirectional_within_region_InfoNCE",
+  "top_k": 12,
+  "random_deletion_controls": 20,
+  "model_summary": [
+    {
+      "model": "ResidualGate05",
+      "region_seed_pairs": 30,
+      "mean_edge_mask_spearman": 0.04266185051403166,
+      "mean_top12_overlap": 1.9666666666666666,
+      "mean_at2_mask_mean": 0.41472326414504396,
+      "mean_gt450_mask_mean": 0.40841488474928256,
+      "mean_at2_fraction_above_half": 0.3388888888888889,
+      "mean_gt450_fraction_above_half": 0.3388888888888889,
+      "mean_at2_objective_change": 0.07625025808811188,
+      "mean_gt450_objective_change": 0.07569687813520432,
+      "mean_at2_fidelity_excess": 0.09779680969814458,
+      "mean_gt450_fidelity_excess": 0.08583458674450715
+    },
+    {
+      "model": "TopologyConsistentResidual",
+      "region_seed_pairs": 30,
+      "mean_edge_mask_spearman": 0.03283689913864962,
+      "mean_top12_overlap": 2.2333333333333334,
+      "mean_at2_mask_mean": 0.36692399351805866,
+      "mean_gt450_mask_mean": 0.3583152963650517,
+      "mean_at2_fraction_above_half": 0.29499999999999993,
+      "mean_gt450_fraction_above_half": 0.28388888888888886,
+      "mean_at2_objective_change": 0.06564622024695078,
+      "mean_gt450_objective_change": 0.06964924534161886,
+      "mean_at2_fidelity_excess": 0.06047515645623206,
+      "mean_gt450_fidelity_excess": 0.05639096140861512
+    }
+  ],
+  "edge_table_sha256": "25b9a8306f12ca9ae30b4e443eb9396879a4a65cf33dec77ee3fc1af2afb4dcb",
+  "detail_table_sha256": "6cc35011fa300f74fbf8db86f58da9cb040de32b94580819dc84b9903ea6c314",
+  "summary_table_sha256": "6aa11b0eaef8a88f4176bac9787251608965d29696981843c9beca6a42658310",
+  "model_training_performed": false,
+  "explainer_optimization_performed": true,
+  "checkpoint_selection_performed": false,
+  "test_evaluated": false,
+  "limitations": [
+    "Edge masks are optimized on validation instances",
+    "Explainer fidelity uses the optimization objective",
+    "Random edge-deletion controls do not match edge degree types",
+    "Low mask weights do not imply unimportant biological tissue",
+    "Masks use row-normalized neighbor aggregation",
+    "Weak sparsity may retain most graph edges",
+    "Edge explanations are not pathologist annotations",
+    "Both scanners share the same original topology",
+    "Ten validation regions are not independent patients",
+    "No real scanner-shift generalization tested"
+  ],
+  "next_steps": [
+    "Audit mask sparsity and optimization behavior",
+    "Compare model explanations by spatial region",
+    "Introduce degree-aware random edge controls",
+    "Assess explanation fidelity and consistency jointly"
+  ]
+}
