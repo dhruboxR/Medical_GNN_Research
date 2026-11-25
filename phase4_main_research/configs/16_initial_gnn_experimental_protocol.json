@@ -1,0 +1,90 @@
+{
+  "phase": "4.2",
+  "step": "4.2.1",
+  "version": "initial_v1",
+  "status": "initial_protocol_frozen_for_baselines",
+  "source_graph_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "source_feature_sha256": "af066b8b0c25f4ec3dfbb387f23fac5d1173924e34c1fe0431c13d456b3cb71e",
+  "dataset": {
+    "source": "owkin/plism-dataset-tiles",
+    "condition": "GIVH",
+    "scanners": [
+      "AT2",
+      "GT450"
+    ],
+    "regions": 60,
+    "graph_pairs": 60,
+    "graphs": 120,
+    "nodes_per_graph": 36,
+    "feature_dimension": 384,
+    "topology": "spatial_4_neighbor",
+    "directed_edges_per_graph": 120,
+    "encoder": "facebook/dinov2-small",
+    "encoder_training": "frozen",
+    "pixel_level_registration_assumed": false
+  },
+  "partition_policy": {
+    "train_regions": 40,
+    "validation_regions": 10,
+    "test_regions": 10,
+    "same_region_across_scanners_same_split": true,
+    "minimum_spatial_buffer_tiles": 2,
+    "train_used_for_gradient_updates": true,
+    "validation_used_for_model_selection": true,
+    "test_used_for_final_locked_evaluation": true,
+    "test_used_for_hyperparameter_selection": false,
+    "biologically_independent_test": false
+  },
+  "initial_baselines": [
+    "frozen_dinov2_identity",
+    "mlp_projection",
+    "spatial_gcn",
+    "spatial_graphsage"
+  ],
+  "proposed_model": {
+    "working_name": "stability_aware_gnn",
+    "design_status": "not_implemented",
+    "candidate_components": [
+      "shared_scanner_encoder",
+      "residual_graph_message_passing",
+      "cross_scanner_representation_consistency",
+      "representation_diversity_preservation"
+    ],
+    "loss_weights_status": "not_selected"
+  },
+  "evaluation": {
+    "primary": "within_region_cross_scanner_recall_at_1",
+    "secondary": [
+      "within_region_reciprocal_rank",
+      "cross_scanner_cosine_similarity",
+      "cross_scanner_euclidean_distance",
+      "node_representation_diversity",
+      "oversmoothing_diagnostics"
+    ],
+    "paired_position_matching": true,
+    "full_dataset_retrieval": "not_yet_evaluated",
+    "uncertainty": "report_multiple_seeds_and_region_level_variation"
+  },
+  "xai": {
+    "planned": true,
+    "stage": "phase_4_2_model_evaluation",
+    "folder_to_create_later": "scripts/explainable_ai",
+    "methods_to_evaluate": [
+      "GNNExplainer",
+      "Integrated_Gradients",
+      "node_edge_perturbation"
+    ],
+    "questions": [
+      "explanation_fidelity",
+      "cross_scanner_explanation_consistency"
+    ],
+    "implementation_status": "not_started"
+  },
+  "restrictions": [
+    "No test-set tuning",
+    "No biological-independence claims",
+    "No assumption of pixel-perfect registration",
+    "No final novelty or superiority claims before baselines",
+    "No XAI clinical-validity claims without supporting evidence"
+  ]
+}

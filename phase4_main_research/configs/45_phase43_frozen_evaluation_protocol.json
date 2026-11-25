@@ -1,0 +1,204 @@
+{
+  "created_utc": "2026-11-25T19:31:32.402154+00:00",
+  "data_provenance": {
+    "architecture_sha256": "f34f3133e6ed9da57aa96bbc6da680e5dcc2d97481dfa850f47e91039128c660",
+    "graph_archive_path": "outputs/features/15_stage_a_spatial_graphs.npz",
+    "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+    "initial_protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+    "test_data_loaded_during_freeze": false
+  },
+  "evaluation_rules": {
+    "evaluate_only_saved_checkpoint_weights": true,
+    "fail_on_partition_count_mismatch": true,
+    "fail_on_region_or_tile_pairing_mismatch": true,
+    "never_overwrite_evaluation_outputs": true,
+    "no_model_changes_after_test_inspection": true,
+    "no_retraining_after_test_inspection": true,
+    "no_selective_reporting_of_seeds_or_regions": true,
+    "report_all_prespecified_conditions": true,
+    "report_negative_results": true,
+    "verify_checkpoint_hashes_before_inference": true,
+    "verify_graph_archive_sha256_before_inference": true
+  },
+  "inference_conditions": {
+    "normal_spatial": {
+      "adjacency": "original_degree_normalized_grid",
+      "repetitions": 1,
+      "same_adjacency_for_both_scanners": true
+    },
+    "scanner_discordant_random": {
+      "adjacency": "independent_scanner_permutations_of_original_grid",
+      "edge_row_normalization": true,
+      "exclude_original_adjacency": true,
+      "node_feature_order_fixed": true,
+      "permutation_random_source": "numpy_default_rng",
+      "permutation_retry_limit": 200,
+      "preserve_degree_multiset": true,
+      "preserve_edge_count": true,
+      "preserve_undirected_symmetry": true,
+      "repetitions": 5,
+      "same_adjacency_for_both_scanners": false,
+      "seed_derivation": {
+        "hash": "sha256",
+        "join_character": "|",
+        "key_components": [
+          "phase4215",
+          "training_seed",
+          "repetition_index",
+          "region_id",
+          "scanner"
+        ],
+        "seed_byteorder": "little",
+        "seed_bytes": "first_8"
+      }
+    }
+  },
+  "limitations": [
+    "One biological tissue/source context",
+    "Spatial regions are not independent patients",
+    "Only two scanner views of matched tissue locations",
+    "Synthetic topology disagreement is not real scanner shift",
+    "Validation has been extensively used for development",
+    "Test results will not establish clinical applicability",
+    "Validation XAI is exploratory and method dependent"
+  ],
+  "metrics": {
+    "candidate_gallery": "36_GT450_nodes_from_corresponding_region",
+    "primary": {
+      "aggregation": "mean_over_seeds_regions_and_five_repetitions",
+      "direction": "TopologyConsistentResidual_minus_ResidualGate05",
+      "name": "scanner_discordant_recall_at_1_difference",
+      "unit": "percentage_points"
+    },
+    "ranking": "descending_cosine_similarity",
+    "retrieval_direction": "AT2_to_GT450",
+    "secondary": [
+      "normal_topology_recall_at_1",
+      "scanner_discordant_mrr",
+      "normal_topology_mrr",
+      "robustness_degradation_percentage_points"
+    ],
+    "target": "matching_node_index",
+    "tie_handling": "torch_argmax_first_index"
+  },
+  "models": {
+    "ResidualGate05": {
+      "allow_checkpoint_reselection": false,
+      "allow_retraining": false,
+      "architecture": "gated_residual_graphsage",
+      "checkpoints": {
+        "123": {
+          "path": "outputs/checkpoints/28_residual_gate_init05/gate_init05_seed_123.pt",
+          "sha256": "35fe82ad9ce43ee55dc13f39a58f88588b9c910cfb356094208fbcee57cb2807"
+        },
+        "2026": {
+          "path": "outputs/checkpoints/28_residual_gate_init05/gate_init05_seed_2026.pt",
+          "sha256": "cb021dd5f7f55817735e72589ab53d7dcb8c5711d8e119625c685818ff994f49"
+        },
+        "42": {
+          "path": "outputs/checkpoints/28_residual_gate_init05/gate_init05_seed_42.pt",
+          "sha256": "1e0978189e870f9ac784dc56971c3f30a54ab86e8669e720f47f3d3e85ddfc58"
+        }
+      },
+      "original_initial_gate": 0.5,
+      "source_report": "outputs/reports/28_gate_init05_report.json",
+      "source_report_sha256": "1170a4c3ade7782f7080b2d7bb0539f3f2154a70f806393c5d8276c1f7cffb4f",
+      "topology_consistency_lambda": 0.0,
+      "training_seeds": [
+        42,
+        123,
+        2026
+      ]
+    },
+    "TopologyConsistentResidual": {
+      "allow_checkpoint_reselection": false,
+      "allow_retraining": false,
+      "architecture": "gated_residual_graphsage",
+      "checkpoints": {
+        "123": {
+          "path": "outputs/checkpoints/31_topology_consistent_residual/topology_consistent_seed_123.pt",
+          "sha256": "24ebf65c472f891131eecc829092c40eb781bb35fd773c6e30b678c3e229f36f"
+        },
+        "2026": {
+          "path": "outputs/checkpoints/31_topology_consistent_residual/topology_consistent_seed_2026.pt",
+          "sha256": "35e8f0e8af676eb50dab7e4168ca1a0abab9f04e127bd7114a431061e1ec9944"
+        },
+        "42": {
+          "path": "outputs/checkpoints/31_topology_consistent_residual/topology_consistent_seed_42.pt",
+          "sha256": "91c0eb045fd68c01b8e527d487a8faa9204bdb42f8899dcf1a2564a8bf9f7b17"
+        }
+      },
+      "original_initial_gate": 0.5,
+      "source_report": "outputs/reports/31_topology_consistent_report.json",
+      "source_report_sha256": "0e49112a91a8f5f52f8a86fdb3611550870a474637ba058543fd0bc90f5e841c",
+      "topology_consistency_lambda": 1.0,
+      "training_seeds": [
+        42,
+        123,
+        2026
+      ]
+    }
+  },
+  "name": "frozen_cross_scanner_graph_retrieval_protocol",
+  "phase": "4.3",
+  "protocol_status": "FROZEN",
+  "research_scope": {
+    "biological_scope": "single_tissue_condition_shared_source",
+    "clinical_classification_claim": false,
+    "dataset": "Owkin PLISM subset",
+    "directed_edges_per_graph": 120,
+    "feature_dimension": 384,
+    "feature_extractor": "facebook/dinov2-small",
+    "graph_type": "6x6_four_neighbor_grid",
+    "independent_patient_claim": false,
+    "nodes_per_graph": 36,
+    "scanners": [
+      "AT2",
+      "GT450"
+    ],
+    "task": "matched_tissue_tile_retrieval",
+    "undirected_edges_per_graph": 60
+  },
+  "step": "4.3.1",
+  "test_evaluated": false,
+  "test_partition": {
+    "allow_checkpoint_selection": false,
+    "allow_hyperparameter_tuning": false,
+    "allow_model_training": false,
+    "allow_repeated_adaptive_test_evaluation": false,
+    "expected_matched_region_pairs": 10,
+    "expected_scanner_graphs": 20,
+    "node_correspondence": "exact_tile_id_order",
+    "region_pairing": "same_region_id",
+    "split_name": "test"
+  },
+  "uncertainty": {
+    "bootstrap_repetitions": 5000,
+    "independent_patient_inference": false,
+    "independent_slide_inference": false,
+    "interval": "descriptive_95_percentile",
+    "keep_all_perturbation_repetitions_within_region": true,
+    "keep_all_seeds_within_region": true,
+    "method": "paired_spatial_region_bootstrap",
+    "random_seed": 43001,
+    "resampling_unit": "spatial_region"
+  },
+  "validation_reference_only": {
+    "ResidualGate05": {
+      "normal_recall_at_1": 0.9694444457689921,
+      "scanner_discordant_recall_at_1": 0.7809259307384491
+    },
+    "TopologyConsistentResidual": {
+      "normal_recall_at_1": 0.9601851920286815,
+      "scanner_discordant_recall_at_1": 0.8525925991932551
+    }
+  },
+  "xai_reporting": {
+    "claim_of_biological_explanation_validity": false,
+    "corrected_integrated_gradients": "exploratory_validation_evidence",
+    "learned_edge_masks": "exploratory_validation_evidence",
+    "new_test_xai_optimization_planned": false,
+    "selection_using_test_xai": false,
+    "structural_node_perturbation": "exploratory_validation_evidence"
+  }
+}

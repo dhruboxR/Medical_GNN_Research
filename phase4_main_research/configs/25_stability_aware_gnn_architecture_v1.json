@@ -1,0 +1,134 @@
+{
+  "phase": "4.2",
+  "step": "4.2.10",
+  "version": "candidate_v1",
+  "status": "architecture_specification_not_trained",
+  "graph_archive_sha256": "82cf83826dcf0409657c22104625bd6eed40614e78e4aa34df92e03af772b86f",
+  "initial_protocol_sha256": "004042d93697ea4f1d240bd799bee58727721892e2a7f126b8d0b34b5227265c",
+  "research_goal": "Cross-scanner representation stability with node discriminability and explainability",
+  "dataset": {
+    "scanner_pair": [
+      "AT2",
+      "GT450"
+    ],
+    "train_regions": 40,
+    "validation_regions": 10,
+    "reserved_test_regions": 10,
+    "nodes_per_graph": 36,
+    "feature_dimension": 384,
+    "encoder": "facebook/dinov2-small",
+    "encoder_frozen": true,
+    "biologically_independent_test": false
+  },
+  "model": {
+    "working_name": "GatedResidualGraphSAGE",
+    "backbone": "mean_aggregation_graphsage",
+    "dimensions": [
+      384,
+      256,
+      384
+    ],
+    "activation": "GELU",
+    "shared_between_scanners": true,
+    "identity_residual": true,
+    "gate_type": "learned_global_scalar",
+    "gate_initial_value": 0.1,
+    "gate_range": [
+      0.0,
+      1.0
+    ],
+    "output_l2_normalization": true,
+    "topology": "original_spatial_four_neighbor",
+    "batch_normalization": false,
+    "dropout": 0.0
+  },
+  "initial_training": {
+    "loss": "bidirectional_within_region_InfoNCE",
+    "temperature": 0.07,
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "batch_regions": 8,
+    "maximum_epochs": 100,
+    "early_stopping_patience": 20,
+    "seeds": [
+      42,
+      123,
+      2026
+    ],
+    "checkpoint_selection": "validation_within_region_recall_at_1_then_validation_loss",
+    "test_used_for_selection": false,
+    "diversity_regularization_initial_weight": 0.0
+  },
+  "required_ablations": [
+    "full_gated_residual",
+    "remove_identity_residual",
+    "remove_neighbor_messages",
+    "fixed_gate_vs_trainable_gate",
+    "without_vs_with_diversity_regularization",
+    "scanner_discordant_random_topology"
+  ],
+  "evaluation": {
+    "primary": "validation_within_region_recall_at_1",
+    "secondary": [
+      "validation_within_region_mrr",
+      "validation_360_candidate_recall_at_1",
+      "validation_360_candidate_recall_at_5",
+      "validation_360_candidate_mrr",
+      "reverse_scanner_retrieval",
+      "cross_scanner_positive_cosine",
+      "off_diagonal_node_cosine",
+      "per_region_retrieval_accuracy",
+      "per_region_representation_diversity"
+    ],
+    "analysis_unit": "spatial_region",
+    "report_multiple_seeds": true,
+    "note": "The 360-candidate evaluation was introduced after earlier validation experiments and is exploratory, not independent confirmation."
+  },
+  "xai": {
+    "required": true,
+    "implementation_stage": "model_evaluation",
+    "methods": [
+      "GNNExplainer",
+      "Integrated_Gradients",
+      "node_edge_perturbation"
+    ],
+    "metrics": [
+      "explanation_fidelity",
+      "cross_scanner_explanation_consistency",
+      "explanation_sparsity"
+    ],
+    "planned_script_folder": "scripts/explainable_ai",
+    "planned_output_folder": "outputs/xai",
+    "clinical_validation_claims_allowed": false
+  },
+  "scientific_restrictions": [
+    "No test-set hyperparameter selection",
+    "Do not claim independently sampled tissue",
+    "Do not claim random topology is superior",
+    "Do not claim anatomical topology is validated",
+    "Near-ceiling retrieval requires careful interpretation",
+    "Explicitly compare against stronger existing controls",
+    "Report ablations before superiority claims",
+    "No clinical interpretability claims from XAI alone"
+  ],
+  "historical_baseline_validation_recall_at_1": {
+    "frozen_dinov2": 0.8833333313465118,
+    "mlp": 0.9324074188868204,
+    "gcn": 0.6916666825612386,
+    "graphsage": 0.974074105421702,
+    "fixed_random": 0.979629655679067,
+    "self_only": 0.9462963143984476,
+    "region_random": 0.979629655679067
+  },
+  "historical_report_hashes": {
+    "mlp": "dc8ca97169f345ac49548cec6cd90ce66d402de48397f8f1d54d79ef0954b6aa",
+    "gcn": "8c9f70aae1e77c5415292c277638fde69540560433301ba03f4ba2917bc29101",
+    "graphsage": "437f072e09a877ad6212525f3205eac5116a4b529afc38592e7910cea3b11fda",
+    "diagnostics": "311b56aabf4ba51acc664c6718eb75d30b3ec7c9b8eb42e86dee7526482ba15f",
+    "fixed_random": "8a808f683e2139c96f41f6f0f54b5a044a5db03154f4cb05ad8e4e4e4eddd0bc",
+    "self_only": "2ac323529823192ffcd7ca353fb58f6fb6bdccabd82a43743914ffefbd7212c9",
+    "global_retrieval": "37fc7817ff2d254722afcca9c9a9a98bdbcaaf7e2dd6d4890573d87994a782bd",
+    "region_random": "440386e2e928d9af20fed430cf6611297edb2a5016fc73e48c7648da74974e4c"
+  }
+}
